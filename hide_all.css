@@ -1,0 +1,46 @@
+/* IITC */
+#sidebar,
+#sidebartoggle,
+#chat,
+#chatinput > *,
+#chatcontrols,
+.leaflet-control-layers-toggle,
+.leaflet-control-zoom
+{
+    display: none !important;
+}
+
+#chatinput
+{
+    width: 350px !important;
+}
+
+#chatinput:after
+{
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    color: #ffce00;
+    content: 'Ingress Intel Helper (@Cizaquita for support)';
+}
+
+/* Intel */
+#header > *,
+#geotools,
+#player_stats,
+#comm,
+#filters_container,
+#portal_filter_header,
+#tm_button,
+#snapcontrol
+{
+    display: none !important;
+}
+
+#header:before
+{
+    margin-left: 20px;
+    content: 'Ingress Intel Helper (@Cizaquita for support)';
+}
+
