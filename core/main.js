@@ -495,7 +495,7 @@ var app = {};
 
             if (text.includes("ada ") && text.length > 5) {
             // LA HORA
-                if ( text.indexOf("hora") > -1){
+                if ( text.indexOf("hora") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -513,7 +513,7 @@ var app = {};
                     }                   
                 }
             // SALUDAR 
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1) {
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
                     if (chat < 0) {
                         app.telegram.sendMessage(chat, "Hola!, un saludo para todos en " + message.chat.title + "!", null, message_id);
                     }else{
@@ -521,7 +521,7 @@ var app = {};
                     }
                 }
             // HOLA ADA
-                else if(text.indexOf("hola") > -1){
+                else if(text.indexOf("hola") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", cómo estás?", null, message_id);
                 }
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){

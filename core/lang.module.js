@@ -10,7 +10,7 @@
     app.modules = app.modules || {};
     app.modules.lang = Lang;
 
-    Lang.initMessage = '/language';
+    //Lang.initMessage = '/language';
 
     /**
      * @param message {object} Telegram message object
