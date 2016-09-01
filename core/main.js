@@ -727,7 +727,7 @@ var app = {};
                     }                   
                 }
 		// Este
-                else if(text.indexOf("este") > -1 && words(text) < 4){
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
                 }
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
@@ -748,6 +748,9 @@ var app = {};
             // HOLA ADA
                 else if(text.indexOf("hola") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
+                }
+                else if(text.indexOf("y tu") > -1 && words(text) < 4){
+                    app.telegram.sendMessage(chat, "@" + username + ", Necesito mucha ayuda, estoy siendo perseguida en estos momentos y no se si peda seguir viva :´(, ¿me ayudarás?", null, message_id);
                 }
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
