@@ -493,43 +493,8 @@ var app = {};
             //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-            if (text.includes("ada ") && text.length > 5) {
-            // LA HORA
-                if ( text.indexOf("hora") > -1 && words(text) < 5){
-                    function addZero(i) {
-                        if (i < 10) {
-                            i = "0" + i;
-                        }
-                        return i;
-                    }
-                    var d = new Date();
-                    var h = addZero(d.getHours());
-                    var m = addZero(d.getMinutes());
-                    var s = addZero(d.getSeconds());
-                    if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
-                    }                   
-                }
-		// Este
-                else if(text.indexOf("este") > -1 && words(text) < 4){
-                    app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
-                }
-                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
-                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
-                }
-            // SALUDAR 
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
-                	if (text.indexOf("saludame") > -1 && words(text) < 4){ 
-			app.telegram.sendMessage(chat, "Hola! soy ADA y te envio un gran saludo @" + username + "! :*", null, message_id);
-			}else if (chat < 0) {
-                        app.telegram.sendMessage(chat, "Hola!, un saludo para todos en " + message.chat.title + "! :*", null, message_id);
-                    	}else{
-                        app.telegram.sendMessage(chat, "Hola! soy ADA y te envio un gran saludo @" + username + "! :*", null, message_id);
-                    }
-                }
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
+            if (text.contain("soy de") || text.contain("vivo en") || text.contain("en") || text.contain("juego en") && text.length > 5) {
 		// Arauca
                 else if (text.indexOf("arauca") > -1 && words(text) < 4) {
                         app.telegram.sendMessage(chat, "@" + username + "En Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
@@ -643,7 +608,45 @@ var app = {};
                 else if (text.indexOf("Guainia") > -1 || text.indexOf("Guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 4) {
                         app.telegram.sendMessage(chat, "@" + username + "En Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
                 }
+}
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
+
+            if (text.includes("ada ") && text.length > 5) {
+            // LA HORA
+                if ( text.indexOf("hora") > -1 && words(text) < 5){
+                    function addZero(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+                    var d = new Date();
+                    var h = addZero(d.getHours());
+                    var m = addZero(d.getMinutes());
+                    var s = addZero(d.getSeconds());
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
+                    }                   
+                }
+		// Este
+                else if(text.indexOf("este") > -1 && words(text) < 4){
+                    app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
+                }
+                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
+                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
+                }
+            // SALUDAR 
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
+                	if (text.indexOf("saludame") > -1 && words(text) < 4){ 
+			app.telegram.sendMessage(chat, "Hola! soy ADA y te envio un gran saludo @" + username + "! :*", null, message_id);
+			}else if (chat < 0) {
+                        app.telegram.sendMessage(chat, "Hola!, un saludo para todos en " + message.chat.title + "! :*", null, message_id);
+                    	}else{
+                        app.telegram.sendMessage(chat, "Hola! soy ADA y te envio un gran saludo @" + username + "! :*", null, message_id);
+                    }
+                }
             // HOLA ADA
                 else if(text.indexOf("hola") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", cómo estás?", null, message_id);
