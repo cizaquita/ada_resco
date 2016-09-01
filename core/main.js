@@ -530,7 +530,11 @@ var app = {};
             // FEEDBACK cuando no sabe responder
                 else{
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
-                    app.telegram.sendMessage(7455490, "feedback semántico: " + text, null);
+                    if (message.chat.title) {
+                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
+                    }else{
+                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
+                    }
                 }
             }
         ///////////END
