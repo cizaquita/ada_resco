@@ -708,6 +708,13 @@ var app = {};
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
 
             if (text.includes("ada ") && text.length > 5) {
+		// Este
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 && words(text) < 4){
+                    app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
+                }
+                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
+                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
+                }
             // LA HORA
                 if ( text.indexOf("hora") > -1 && words(text) < 5){
                     function addZero(i) {
@@ -726,12 +733,46 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
-		// Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 && words(text) < 4){
-                    app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
-                }
-                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
-                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
+            // Despedida
+                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 && words(text) < 5){
+                    function addZero(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+		    var sal = new String();
+                    var d = new Date();
+                    var h = addZero(d.getHours());
+			if (h>=5 && h<6){
+				sal = ",que tengas un buen día.";
+			}
+			else if (h>=6 && h<8){
+				sal = ",ve a desayunar que se te hace tarde.";
+			}
+			else if (h>=8 && h<12){
+				sal = ",que tengas un buen día con un hermoso cielo azul.";
+			}
+			else if (h>=12 && h<14){
+				sal = ",almuerza rápido y aprovecha a espichar sapos.";
+			}
+			else if (h>=14 && h<18){
+				sal = ",espero estes tenido un lindo día y estes espichando muchos sapos.";
+			}
+			else if (h>=18 && h<21){
+				sal = ",te vas temprano, quiero creer que vas a un farm o a espichar sapos.";
+			}
+			else if (h>=21 && h<24){
+				sal = ",que descanses, hoy ha sido un largo día aquí seguiré con los del turno nocturno.";
+			}
+			else {
+				sal = ",eres de los que siempre están dando lo mejor y me acompañas en todo momento, toma un merecido descanso.";
+			}
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Adios @' + username + ' ' + sal + ' ADA :*', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' ADA :*', null, message_id);
+                    }                   
                 }
             // SALUDAR 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
@@ -745,7 +786,48 @@ var app = {};
                         app.telegram.sendMessage(chat, "Hola! soy ADA y te envio un gran saludo @" + username + "! :*", null, message_id);
                     }
                 }
-            // HOLA ADA
+            // Hola ada
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("buen") > -1 || text.indexOf("hi") > -1 && words(text) < 4){
+                    function addZero(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+		    var sal = new String();
+                    var d = new Date();
+                    var h = addZero(d.getHours());
+			if (h>=5 && h<6){
+				sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
+			}
+			else if (h>=6 && h<8){
+				sal = ", buenos días, ve y toma tu desayuno y alistate para esta jornada.";
+			}
+			else if (h>=8 && h<12){
+				sal = ", buenos días, sigue y tomate un powercube.";
+			}
+			else if (h>=12 && h<14){
+				sal = ", buenas tardes, es hora de almorzar, aprovecha y espicha sapos apenas termines.";
+			}
+			else if (h>=14 && h<18){
+				sal = ", buenas tardes, animo que ya falta poco para salir a espichar sapos.";
+			}
+			else if (h>=18 && h<21){
+				sal = ", buenas noches, ¿tuviste un lindo día? Espero que si";
+			}
+			else if (h>=21 && h<24){
+				sal = ", buenas noches, bienvenido al turno nocturno, cuentanos tus aventuras espichando sapos hoy.";
+			}
+			else {
+				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
+			}
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA :*', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA :*', null, message_id);
+                    }                   
+                }
+          /*  // HOLA ADA
                 else if(text.indexOf("hola") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
                 }
@@ -754,11 +836,11 @@ var app = {};
                 }
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
-                }
+                }*/
             // FEEDBACK cuando no sabe responder
                 else{
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a PAC, gracias!", null);
-                    app.telegram.sendMessage(7455490, "feedback semántico: " + text, null);
+                    app.telegram.sendMessage(7455490, "#feedback semántico: " + text, null);
                 }
             }
         ///////////END
