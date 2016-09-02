@@ -493,9 +493,9 @@ var app = {};
             //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-            if (text.includes("ada ") && text.length > 5) {
+            if (text.includes("ada ") && text.length > 5 && words(text) <= 4) {
             // LA HORA
-                if ( text.indexOf("hora") > -1 && words(text) < 5){
+                if ( text.indexOf("hora") > -1 && words(text) <= 4){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
