@@ -76,6 +76,7 @@ var app = {};
             text = "";
             if (textEx) {
                 text = textEx.toLowerCase();
+                text = acentos(text);
             };
         var audio = message.audio
             documentEx = message.document,
@@ -729,8 +730,12 @@ var app = {};
                     }
                 }
                 else{
-                        //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a PAC, gracias!", null);
-                        app.telegram.sendMessage(7455490, "#feedback ciudades: " + text, null);
+                        //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
+                        if (message.chat.title) {
+                            app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de grupo: " + message.chat.title, null);  
+                        }else{
+                            app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de: @" + username, null);                          
+                        }
                     }
             }
         /////////////////////////////////////////////////////////////////////
@@ -860,9 +865,13 @@ var app = {};
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }*/
             // FEEDBACK cuando no sabe responder
-                else{
-                    //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a PAC, gracias!", null);
-                    app.telegram.sendMessage(-1001069963507, "#feedback semántico: " + text, null);
+                else{                    
+                    //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
+                    if (message.chat.title) {
+                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
+                    }else{
+                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
+                    }
                 }
             }
         ///////////END
@@ -899,6 +908,28 @@ var app = {};
         s = s.replace(/\n /,"\n"); // exclude newline with a start spacing
         return s.split(' ').length; 
     };
+
+    var acentos = (function() {
+        var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç", 
+        to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+        mapping = {};
+
+        for(var i = 0, j = from.length; i < j; i++ )
+        mapping[ from.charAt( i ) ] = to.charAt( i );
+
+        return function( str ) {
+            var ret = [];
+            for( var i = 0, j = str.length; i < j; i++ ) {
+                var c = str.charAt( i );
+                if( mapping.hasOwnProperty( str.charAt( i ) ) )
+                    ret.push( mapping[ c ] );
+                else
+                    ret.push( c );
+            }      
+            return ret.join( '' );
+        }
+
+    })();
 
     function processInlineQuery(inlineQuery){
         //app.telegram.sendMessage(7455490, 'inlineQuery: ' + JSON.stringify(inlineQuery), null);

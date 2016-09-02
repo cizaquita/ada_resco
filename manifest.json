@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "DuNord Intel Helper",
+    "name": "ADA_ResCo_bot",
     "version": "2.3.0",
-    "description": "Intel Ingress Helper for DuNord",
+    "description": "ADA_ResCo_bot",
     "background": {
         "persistent": true,
         "scripts": [

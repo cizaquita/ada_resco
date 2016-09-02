@@ -573,17 +573,17 @@ app.i18nTexts = {
 			"ja": "TODO: Please rate us in the storebot"
 		},
 		"rate_us_3": {
-			"en": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"ru": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"ua": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"fi": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"de": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"chde": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"es": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"br": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"it": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"ro-md": "http://telegram.me/storebot?start=dunord_intel_bot",
-			"ja": "http://telegram.me/storebot?start=dunord_intel_bot"
+			"en": "http://telegram.me/storebot?start=ada_resco_bot",
+			"ru": "http://telegram.me/storebot?start=ada_resco_bot",
+			"ua": "http://telegram.me/storebot?start=ada_resco_bot",
+			"fi": "http://telegram.me/storebot?start=ada_resco_bot",
+			"de": "http://telegram.me/storebot?start=ada_resco_bot",
+			"chde": "http://telegram.me/storebot?start=ada_resco_bot",
+			"es": "http://telegram.me/storebot?start=ada_resco_bot",
+			"br": "http://telegram.me/storebot?start=ada_resco_bot",
+			"it": "http://telegram.me/storebot?start=ada_resco_bot",
+			"ro-md": "http://telegram.me/storebot?start=ada_resco_bot",
+			"ja": "http://telegram.me/storebot?start=ada_resco_bot"
 		},
 		"welcome_chat_1": {
 			"en": "Hi",
@@ -693,7 +693,7 @@ app.i18nTexts = {
 			"ja": "TODO: Task saved. Please wait for a few minutes"
 		},
 		"location_required": {
-			"en": "Send geolocation now.\n\n<b>1)</b> You can select 'Send my location' button (Private chat only)\n<b>2)</b> Attach(📎) a different location \n<b>3)</b> Use an inline query searching by place name \n<i>@DuNord_Intel_Bot Place Name</i>",
+			"en": "Send geolocation now.\n\n<b>1)</b> You can select 'Send my location' button (Private chat only)\n<b>2)</b> Attach(📎) a different location \n<b>3)</b> Use an inline query searching by place name \n<i>@ada_resco_bot Place Name</i>",
 			"ru": "Пришлите геолокацию нужной области.\n\nМожно выбрать кнопку «Отправить мое местоположение» (Приватный чат только), (📎)прикрепить другое местоположение или использовать встроенный запрос, поиск по названию места",
 			"ua": "Надішліть геолокацію необхідної області.\n\nМожна вибрати кнопку 'Надіслати моє місцезнаходження'(Тільки приватний чат), (📎)прикріпити інше розташування або використати запит на inline пошуку назва місця",
 			"zh-cmn-Hans": "选择放大级别.\n\n你可以选择发送我的位置按钮 (私人聊天只)，(📎)附加一个不同的位置或使用内联查询按地方名称搜索",
@@ -701,11 +701,11 @@ app.i18nTexts = {
 			"fi": "Lähetä sijaintisi.\n\nValitse Lähetä oma sijainti painiketta (Yksityiskeskustelu vain), (📎)liitä toiseen paikkaan tai käyttää inline kysely hakee paikannimellä",
 			"de": "Bitte den Standort senden.\n\nWählen Sie 'Mein Standort' Absenden (Privatchat nur), (📎)befestigen Sie einen anderen Speicherort oder verwenden Sie eine Inline-Abfrage nach Ortsnamen suchen",
 			"chde": "Bitte de Standort schicke.\n\nWählen Sie 'Mein Standort' Absenden (Privatchat nur), (📎)befestigen Sie einen anderen Speicherort oder verwenden Sie eine Inline-Abfrage nach Ortsnamen suchen",
-			"es": "Envía geolocalización ahora.\n\n<b>1)</b> Puede seleccionar el botón 'Enviar mi ubicación' (Solo en chat privado)\n<b>2)</b> Adjuntar(📎) una ubicación diferente\n<b>3)</b> Utilizar una consulta, para buscar un lugar \n<i>@DuNord_Intel_Bot Nombre del lugar</i>",
-			"br": "Enviar geolocalização agora.\n\n<b>1)</b> Você pode selecionar o botão 'Enviar a minha localização' (Chat privado só)\n<b>2)</b> Aanexar(📎) um localização diferente\n<b>3)</b> Ou usar uma consulta de inline pesquisando pelo nome do lugar \n<i>@DuNord_Intel_Bot Nome do lugar</i>",
-			"it": "Manda adesso la tua posizione.\n\n<b>1)</b> È possibile selezionare il pulsante 'Invia la mia posizione' (Chat privata solo)\n<b>2)</b> Collegare(📎) una posizione diversa\n<b>3)</b> Utilizzare una query di inline ricerca di nome di luogo \n<i>@DuNord_Intel_Bot Nome di luogo</i>",
+			"es": "Envía geolocalización ahora.\n\n<b>1)</b> Puede seleccionar el botón 'Enviar mi ubicación' (Solo en chat privado)\n<b>2)</b> Adjuntar(📎) una ubicación diferente\n<b>3)</b> Utilizar una consulta, para buscar un lugar \n<i>@ada_resco_bot Nombre del lugar</i>",
+			"br": "Enviar geolocalização agora.\n\n<b>1)</b> Você pode selecionar o botão 'Enviar a minha localização' (Chat privado só)\n<b>2)</b> Aanexar(📎) um localização diferente\n<b>3)</b> Ou usar uma consulta de inline pesquisando pelo nome do lugar \n<i>@ada_resco_bot Nome do lugar</i>",
+			"it": "Manda adesso la tua posizione.\n\n<b>1)</b> È possibile selezionare il pulsante 'Invia la mia posizione' (Chat privata solo)\n<b>2)</b> Collegare(📎) una posizione diversa\n<b>3)</b> Utilizzare una query di inline ricerca di nome di luogo \n<i>@ada_resco_bot Nome di luogo</i>",
 			"ro-md": "Trimite geolocația zonei dorite.\n\nPuteţi selecta butonul 'Trimite locaţia mea' (Chat privat numai), (📎)ataşaţi o locaţie diferită sau utilizaţi o interogare inline căutare după nume de loc",
-			"ja": "TODO: Send geolocation now.\n\n<b>1)</b> You can select 'Send my location' button (Private chat only)\n<b>2)</b> Attach(📎) a different location \n<b>3)</b> Use an inline query searching by place name \n<i>@DuNord_Intel_Bot Place Name</i>"
+			"ja": "TODO: Send geolocation now.\n\n<b>1)</b> You can select 'Send my location' button (Private chat only)\n<b>2)</b> Attach(📎) a different location \n<b>3)</b> Use an inline query searching by place name \n<i>@ada_resco_bot Place Name</i>"
 		},
 		"options_1": {
 			"en": "17 - All portals",

@@ -22,7 +22,7 @@
 
 // CHANGELOG //////////////////////////////////////////////////////////////
 // 0.2.1.2016804.0010
-// + Optimized for Telegram Bot @DuNord_Intel_Bot
+// + Optimized for Telegram Bot @ada_resco_bot
 // 0.2.1.20150708.0004
 // + Add Support for database
 // 0.2.1.20150704.0003

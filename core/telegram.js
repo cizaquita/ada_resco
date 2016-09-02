@@ -329,7 +329,7 @@
             params = {};
         var inline_button_califica = {}, inline_button_buscar = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Rate me 👍";
-        inline_button_califica.url = "http://telegram.me/storebot?start=dunord_intel_bot";
+        inline_button_califica.url = "http://telegram.me/storebot?start=ada_resco_bot";
         //inline_button.callback_data = "data";
         inline_button_buscar.text = "Share & search new location";
         inline_button_buscar.switch_inline_query = "";
@@ -364,7 +364,7 @@
             params = {};
         var inline_button_califica = {}, inline_button_buscar = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Rate me 👍";
-        inline_button_califica.url = "http://telegram.me/storebot?start=dunord_intel_bot";
+        inline_button_califica.url = "http://telegram.me/storebot?start=ada_resco_bot";
         //inline_button.callback_data = "data";
         inline_button_buscar.text = "Share & search new location";
         inline_button_buscar.switch_inline_query = "";
