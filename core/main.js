@@ -494,7 +494,7 @@ var app = {};
 
 
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
-            if (text.contain("soy de") || text.contain("vivo en") || text.contain("en") || text.contain("juego en") && text.length > 5) {
+            if (text.indexOf("soy de") !=-1 || text.indexOf("vivo en") !=-1 || text.indexOf("en") !=-1 || text.indexOf("juego en") !=-1 && text.length > 5) {
 
 		// Arauca
                 else if (text.indexOf("arauca") > -1 && words(text) < 4) {
@@ -707,7 +707,7 @@ var app = {};
 }
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
 
-            if (text.includes("ada ") && text.length > 5) {
+            if (text.startsWith("ada") && text.length > 5) {
 		// Este
                 else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
