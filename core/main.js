@@ -499,7 +499,7 @@ var app = {};
 
 
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
-            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("juego en") > -1 && text.length > 5) 
+            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es en") > -1  && text.length > 5) 
             {
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 4) {
@@ -765,8 +765,12 @@ var app = {};
                     }                   
                 }
             // Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 && words(text) < 4){
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
+                }
+            // baka
+                else if(text.indexOf("baka") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 && words(text) < 4){
+                    app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shappers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te forces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que haces") > -1 || text.indexOf("para que sirves") > -1 && words(text) < 4){
