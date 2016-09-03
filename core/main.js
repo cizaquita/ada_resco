@@ -614,7 +614,7 @@ var app = {};
                     }
                 }
     		// Neiva
-                else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 || text.indexOf("pitalito") || text.indexOf("la plata") > -1 && words(text) < 4) {
+                else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 && words(text) < 4) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
