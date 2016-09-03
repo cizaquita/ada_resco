@@ -769,8 +769,8 @@ var app = {};
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
                 }
             // Reglas
-                else if(text.indexOf("reglas") > -1 && words(text) < 4){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist Viva la Resistance!!! ADA 😘😘😘", null, message_id);
+                else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist!!! Viva la Resistance!!! ADA 😘😘😘", null, message_id);
                 }
             // regresado
                 else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 4){
