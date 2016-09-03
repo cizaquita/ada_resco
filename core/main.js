@@ -745,7 +745,7 @@ var app = {};
         /////////////////////////////////////////////////////////////////////
         ////////////////////////////// ADA //////////////////////////////////
         /////////////////////////////////////////////////////////////////////
-            if (text.startsWith("ada") && text.length > 5) {
+            if (text.startsWith("ada") || text.startsWith("アダ") && text.length > 5) {
             // LA HORA
                 if ( text.indexOf("hora") > -1 && words(text) < 5){
                     function addZero(i) {
