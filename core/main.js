@@ -865,6 +865,7 @@ var app = {};
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
                         //
                         //
+                        //
                     }
                 }
             // Hola ada
