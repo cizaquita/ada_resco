@@ -862,7 +862,7 @@ var app = {};
                 else if (text.indexOf("que es") > -1) {
                     if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
                         app.telegram.sendMessage(chat, 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.'
-                                                        + '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null, message_id);
+                                                        + '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.\n\nasdasdsadasd', null, message_id);
                     }
                 }
             // Hola ada
