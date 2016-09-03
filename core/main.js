@@ -785,7 +785,7 @@ var app = {};
                     app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shappers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te forces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
-                else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que haces") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
+                else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, a futuro puedes preguntarme por portales en el intel y yo con gusto te mandaré un screen de ello, con mucho cariño ADA 😘😘😘", null, message_id);
                 }
             // NICK
@@ -889,7 +889,7 @@ var app = {};
                     }
                 }
             // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 4){
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 4){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
