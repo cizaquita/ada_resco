@@ -164,7 +164,9 @@
             //app.telegram.sendMessage(chatId, data.result, null);
             console.log(JSON.stringify(data.result));
             data.result.forEach(function(val) {
-                console.log(" val: " + val)
+                console.log("\nval.user.username: " + val.user.username +
+                            "\nID: " + val.user.id + 
+                            "\nstatus: " + val.status)
             });   
         });
     };
