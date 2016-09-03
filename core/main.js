@@ -178,7 +178,7 @@ var app = {};
         // TOMAR LA LISTA DE ADMINS
         else if (text === '/adminlist') {
             if (chat < 0) {
-                app.telegram.getChatAdministrators(chat);
+                app.telegram.getChatAdministrators(chat, message.chat.title);
             }
         }
 

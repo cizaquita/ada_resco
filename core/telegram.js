@@ -155,14 +155,14 @@
      * https://core.telegram.org/bots/api#getchatadministrators
      * @param chatId {Number} Chat id
      */
-    app.telegram.getChatAdministrators = function(chatId, callback) {
+    app.telegram.getChatAdministrators = function(chatId, chat_title) {
         var url = API_URL + '/getChatAdministrators',
-            params = {}, text = "";
+            params = {}, text = " - Admins de " + chat_title + " -\n";
 
         params.chat_id = chatId;
         request('post', url, params, function(data) {
             data.result.forEach(function(val) {
-                text += "(" + val.user.id + ") @" + val.user.username + " - " + val.status;
+                text += "\n(" + val.user.id + ") @" + val.user.username + " - " + val.status;
             });
             app.telegram.sendMessage(chatId, text, null);
         });
