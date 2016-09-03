@@ -158,22 +158,14 @@
     app.telegram.getChatAdministrators = function(chatId, callback) {
         var url = API_URL + '/getChatAdministrators',
             params = {}, admins = {}, admin;
+
         params.chat_id = chatId;
-
         request('post', url, params, function(data) {
-            app.telegram.sendMessage(chatId, data, null);
+            //app.telegram.sendMessage(chatId, data.result, null);
             console.log(JSON.stringify(data.result));
-            if (typeof callback === 'function') {
-                callback(function(data){
-                    data.result.forEach(function(val) {
-                        admin.id = val.user.id;
-                        admin.username = val.user.username;
-                        admins.push(admin);
-                        return admins;
-                    });                    
-                });
-
-            }
+            data.result.forEach(function(val) {
+                console.log(" val: " + val)
+            });   
         });
     };
     /**
