@@ -504,233 +504,233 @@ var app = {};
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 4) {
         			if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
         			}else{
-                        app.telegram.sendMessage(chat, "" + name + " en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }    		
     		// Barranquilla
                 else if (text.indexOf("barranquilla") > -1 || text.indexOf("atlantico") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Bogota
                 else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Boyacá
                 else if (text.indexOf("boyaca") > -1 || text.indexOf("tunja") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                            app.telegram.sendMessage(chat, "" + name + " en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                            app.telegram.sendMessage(chat, "" + name + " en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                         }
                 }
     		// caldas
                 else if (text.indexOf("manizales") > -1 || text.indexOf("caldas") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// cali
                 else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// cartagena
                 else if (text.indexOf("cartagena") > -1 || text.indexOf("bolivar") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// choco
                 else if (text.indexOf("choco") > -1 || text.indexOf("quibdo") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		//Cucuta
                 else if (text.indexOf("norte de santander") > -1 || text.indexOf("cucuta") > -1 && words(text) < 8) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Cúcuta y Norte de Santander está @lozanorincon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Cúcuta y Norte de Santander está @lozanorincon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Cúcuta y Norte de Santander está @lozanorincon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Cúcuta y Norte de Santander está @lozanorincon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Florencia
                 else if (text.indexOf("florencia") > -1 || text.indexOf("caqueta") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// ibague
                 else if (text.indexOf("ibague") > -1 || text.indexOf("tolima") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Leticia
                 else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Medallo
                 else if (text.indexOf("medellin") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                            app.telegram.sendMessage(chat, "" + name + " en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                            app.telegram.sendMessage(chat, "" + name + " en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// monteria
                 else if (text.indexOf("monteria") > -1 || text.indexOf("cordoba") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Neiva
                 else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 || text.indexOf("antioquia") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// pasto
                 else if (text.indexOf("pasto") > -1 || text.indexOf("nariño") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// popa
                 else if (text.indexOf("popayan") > -1 || text.indexOf("popa") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Quindio
                 else if (text.indexOf("armenia") > -1 || text.indexOf("quindio") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en el Quindio están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en el Quindio están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en el Quindio están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en el Quindio están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Rioacha
                 else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// risaralda
                 else if (text.indexOf("pereira") > -1 || text.indexOf("risaralda") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// sai
                 else if (text.indexOf("sai") > -1 || text.indexOf("san andres") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en sai está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en sai está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en sai está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en sai está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// santa marta
                 else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		//Santander
                 else if (text.indexOf("santander") > -1 || text.indexOf("bucaramanga") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// sincelejo
                 else if (text.indexOf("sincelejo") > -1 || text.indexOf("sucre") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Valledupar
                 else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// villavo
                 else if (text.indexOf("villavicencio") > -1 || text.indexOf("meta") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// yopal
                 else if (text.indexOf("yopal") > -1 || text.indexOf("casanare") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// territorios nacionales
                 else if (text.indexOf("guainia") > -1 || text.indexOf("guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
     		// Costa rica
                 else if (text.indexOf("costa rica") > -1 && words(text) < 4) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + " en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + " en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + " en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :*", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + " en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr ;3, cualquier duda la puedes indicar aquí ;3, saludos ADA :kissing_heart:", null, message_id);
                     }
                 }
                 else{
@@ -808,14 +808,14 @@ var app = {};
         				sal = ",eres de los que siempre están dando lo mejor y me acompañas en todo momento, toma un merecido descanso.";
         			}
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Adios @' + username + ' ' + sal + ' ADA :*', null, message_id);
+                        app.telegram.sendMessage(chat, 'Adios @' + username + ' ' + sal + ' ADA :kissing_heart:', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' ADA :*', null, message_id);
+                        app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' ADA :kissing_heart:', null, message_id);
                     }                   
                 }
             // SALUDAR 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans :*", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans :kissing_heart:", null, message_id);
                 }
             /////////////////
             ///// INTEL /////
@@ -892,9 +892,9 @@ var app = {};
         				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
         			}
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA :*', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA :kissing_heart:', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA :*', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA :kissing_heart:', null, message_id);
                     }                   
                 }
           /*  // HOLA ADA
