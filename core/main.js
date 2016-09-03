@@ -175,6 +175,12 @@ var app = {};
             delete activeModule[chat];            
             app.telegram.sendMessage(chat, 'Sorry, /interval command disabled.', null);
         }
+        // TOMAR LA LISTA DE ADMINS
+        else if (text === '/adminlist') {
+            if (chat < 0) {
+                app.telegram.getChatAdministrators(chat);
+            }
+        }
 
         // BANEAR USUARIOS
         /*else if(text == "/ban"){

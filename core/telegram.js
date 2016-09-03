@@ -161,6 +161,7 @@
         params.chat_id = chatId;
 
         request('post', url, params, function(data) {
+            app.telegram.sendMessage(chatId, data);
             console.log(JSON.stringify(data.result));
             if (typeof callback === 'function') {
                 callback(function(data){
@@ -168,12 +169,12 @@
                         admin.id = val.user.id;
                         admin.username = val.user.username;
                         admins.push(admin);
+                        return admins;
                     });                    
                 });
 
             }
         });
-        return admins;
     };
     /**
      * getChatMembersCount ver la cantidad de usuarios en el chat
