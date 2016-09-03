@@ -502,7 +502,7 @@ var app = {};
             if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es en") > -1  && text.length > 5) 
             {
     		// Arauca
-                if (text.indexOf("arauca") > -1 && words(text) < 4) {
+                if (text.indexOf("arauca") > -1 && words(text) < 5) {
         			if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en Cúcuta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
         			}else{
@@ -510,7 +510,7 @@ var app = {};
                     }
                 }    		
     		// Barranquilla
-                else if (text.indexOf("barranquilla") > -1 || text.indexOf("atlantico") > -1 && words(text) < 4) {
+                else if (text.indexOf("barranquilla") > -1 || text.indexOf("atlantico") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -518,7 +518,7 @@ var app = {};
                     }
                 }
     		// Bogota
-                else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 && words(text) < 4) {
+                else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -526,7 +526,7 @@ var app = {};
                     }
                 }
     		// Boyacá
-                else if (text.indexOf("boyaca") > -1 || text.indexOf("boyacá") > -1 || text.indexOf("tunja") > -1 && words(text) < 4) {
+                else if (text.indexOf("boyaca") > -1 || text.indexOf("boyacá") > -1 || text.indexOf("tunja") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Boyacá y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -534,7 +534,7 @@ var app = {};
                         }
                 }
     		// caldas
-                else if (text.indexOf("manizales") > -1 || text.indexOf("caldas") > -1 && words(text) < 4) {
+                else if (text.indexOf("manizales") > -1 || text.indexOf("caldas") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -542,7 +542,7 @@ var app = {};
                     }
                 }
     		// cali
-                else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 4) {
+                else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -550,7 +550,7 @@ var app = {};
                     }
                 }
     		// cartagena
-                else if (text.indexOf("cartagena") > -1 || text.indexOf("bolivar") > -1 && words(text) < 4) {
+                else if (text.indexOf("cartagena") > -1 || text.indexOf("bolivar") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -558,7 +558,7 @@ var app = {};
                     }
                 }
     		// choco
-                else if (text.indexOf("choco") > -1 || text.indexOf("chocó") > -1 || text.indexOf("quibdo") > -1 && words(text) < 4) {
+                else if (text.indexOf("choco") > -1 || text.indexOf("chocó") > -1 || text.indexOf("quibdo") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Quibdo y Chocó no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -574,7 +574,7 @@ var app = {};
                     }
                 }
     		// Florencia
-                else if (text.indexOf("florencia") > -1 || text.indexOf("caqueta") > -1 || text.indexOf("caquetá") > -1 && words(text) < 4) {
+                else if (text.indexOf("florencia") > -1 || text.indexOf("caqueta") > -1 || text.indexOf("caquetá") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Florencia y Caquetá no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -582,7 +582,7 @@ var app = {};
                     }
                 }
     		// ibague
-                else if (text.indexOf("ibague") > -1 || text.indexOf("ibagué") > -1 || text.indexOf("tolima") > -1 && words(text) < 4) {
+                else if (text.indexOf("ibague") > -1 || text.indexOf("ibagué") > -1 || text.indexOf("tolima") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Ibagué y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -590,7 +590,7 @@ var app = {};
                     }
                 }
     		// Leticia
-                else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 4) {
+                else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -598,7 +598,7 @@ var app = {};
                     }
                 }
     		// Medallo
-                else if (text.indexOf("medellin") > -1 || text.indexOf("medellín") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 4) {
+                else if (text.indexOf("medellin") > -1 || text.indexOf("medellín") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -606,7 +606,7 @@ var app = {};
                     }
                 }
     		// monteria
-                else if (text.indexOf("monteria") > -1 || text.indexOf("montería") > -1 || text.indexOf("cordoba") > -1 && words(text) < 4) {
+                else if (text.indexOf("monteria") > -1 || text.indexOf("montería") > -1 || text.indexOf("cordoba") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Cordoba y Montería no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -614,7 +614,7 @@ var app = {};
                     }
                 }
     		// Neiva
-                else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 && words(text) < 4) {
+                else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -622,7 +622,7 @@ var app = {};
                     }
                 }
     		// pasto
-                else if (text.indexOf("pasto") > -1 || text.indexOf("nariño") > -1 && words(text) < 4) {
+                else if (text.indexOf("pasto") > -1 || text.indexOf("nariño") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -630,7 +630,7 @@ var app = {};
                     }
                 }
     		// popa
-                else if (text.indexOf("popayan") > -1 || text.indexOf("popayán") > -1 || text.indexOf("cauca") > -1 || text.indexOf("popa") > -1 && words(text) < 4) {
+                else if (text.indexOf("popayan") > -1 || text.indexOf("popayán") > -1 || text.indexOf("cauca") > -1 || text.indexOf("popa") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Popayán y Cauca están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -638,7 +638,7 @@ var app = {};
                     }
                 }
     		// Quindio
-                else if (text.indexOf("armenia") > -1 || text.indexOf("Quindío") > -1 || text.indexOf("quindio") > -1 && words(text) < 4) {
+                else if (text.indexOf("armenia") > -1 || text.indexOf("Quindío") > -1 || text.indexOf("quindio") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en el Quindío están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -646,7 +646,7 @@ var app = {};
                     }
                 }
     		// Rioacha
-                else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 4) {
+                else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -654,7 +654,7 @@ var app = {};
                     }
                 }
     		// risaralda
-                else if (text.indexOf("pereira") > -1 || text.indexOf("risaralda") > -1 && words(text) < 4) {
+                else if (text.indexOf("pereira") > -1 || text.indexOf("risaralda") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -670,7 +670,7 @@ var app = {};
                     }
                 }
     		// santa marta
-                else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 4) {
+                else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -678,7 +678,7 @@ var app = {};
                     }
                 }
     		//Santander
-                else if (text.indexOf("santander") > -1 || text.indexOf("bucaramanga") > -1 && words(text) < 4) {
+                else if (text.indexOf("santander") > -1 || text.indexOf("bucaramanga") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -686,7 +686,7 @@ var app = {};
                     }
                 }
     		// sincelejo
-                else if (text.indexOf("sincelejo") > -1 || text.indexOf("sucre") > -1 && words(text) < 4) {
+                else if (text.indexOf("sincelejo") > -1 || text.indexOf("sucre") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -694,7 +694,7 @@ var app = {};
                     }
                 }
     		// Valledupar
-                else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 4) {
+                else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -702,7 +702,7 @@ var app = {};
                     }
                 }
     		// villavo
-                else if (text.indexOf("villavicencio") > -1 || text.indexOf("meta") > -1 && words(text) < 4) {
+                else if (text.indexOf("villavicencio") > -1 || text.indexOf("meta") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -710,7 +710,7 @@ var app = {};
                     }
                 }
     		// yopal
-                else if (text.indexOf("yopal") > -1 || text.indexOf("casanare") > -1 && words(text) < 4) {
+                else if (text.indexOf("yopal") > -1 || text.indexOf("casanare") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -718,7 +718,7 @@ var app = {};
                     }
                 }
     		// territorios nacionales
-                else if (text.indexOf("guainia") > -1 || text.indexOf("guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 4) {
+                else if (text.indexOf("guainia") > -1 || text.indexOf("guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -726,7 +726,7 @@ var app = {};
                     }
                 }
     		// Costa Rica
-                else if (text.indexOf("costa rica") > -1 || text.indexOf("cr") > -1 && words(text) < 4) {
+                else if (text.indexOf("costa rica") > -1 || text.indexOf("cr") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -765,7 +765,7 @@ var app = {};
                     }                   
                 }
             // Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 4){
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
                 }
             // Reglas
@@ -777,11 +777,11 @@ var app = {};
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡a", null, message_id);
                 }
             // regresado
-                else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 4){
+                else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　ADA 😘😘😘", null, message_id);
                 }
             // baka
-                else if(text.indexOf("baka") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 && words(text) < 4){
+                else if(text.indexOf("baka") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te forces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
@@ -834,7 +834,7 @@ var app = {};
                     }                   
                 }
             // SALUDAR 
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 4) {
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
             /////////////////
@@ -889,7 +889,7 @@ var app = {};
                     }
                 }
             // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 4){
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -930,10 +930,10 @@ var app = {};
                     }                   
                 }
           /*  // HOLA ADA
-                else if(text.indexOf("hola") > -1 && words(text) < 4){
+                else if(text.indexOf("hola") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
                 }
-                else if(text.indexOf("y tu") > -1 && words(text) < 4){
+                else if(text.indexOf("y tu") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "@" + username + ", Necesito mucha ayuda, estoy siendo perseguida en estos momentos y no se si peda seguir viva :´(, ¿me ayudarás?", null, message_id);
                 }
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
