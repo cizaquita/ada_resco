@@ -548,7 +548,7 @@ var app = {};
                     }
                 }
     		// Valledupar
-                else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
+                else if (text.indexOf("valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -895,7 +895,7 @@ var app = {};
                     }
                 }
             // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
