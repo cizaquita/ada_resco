@@ -856,6 +856,14 @@ var app = {};
                         xmlhttp.send(null);
                     };
                 }
+            ////////////////////////
+            ///// DEFINICIONES /////
+            ///////////////////////
+                else if (text.indexOf("que es") > -1) {
+                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
+                        app.telegram.sendMessage(chat, 'Un glypho es...', null, message_id);
+                    }
+                }
             // Hola ada
                 else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("buen") > -1 || text.indexOf("hi") > -1 && words(text) < 4){
                     function addZero(i) {

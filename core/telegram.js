@@ -70,12 +70,18 @@
      * @param chatId {Number} Chat id
      * @param photo {String} Base64 encrypted image or String
      */
-    app.telegram.sendPhotoEx = function(chatId, photo) {
+    app.telegram.sendPhotoEx = function(chatId, photo, caption, reply_to_message_id, reply_markup) {
         var url = API_URL + '/sendPhoto',
             params = {};
+            if (!reply_markup) {
+                reply_markup = null;
+            };
 
         params.chat_id = chatId;
-        params.photo = photo;//String or file
+        params.caption = caption;
+        params.photo = photo;
+        params.reply_to_message_id = reply_to_message_id;
+        params.reply_markup = reply_markup;
 
         request('post', url, params, function(data) {
             if (typeof callback === 'function') {
@@ -490,8 +496,9 @@
                 if (!data.hasOwnProperty(i)) {
                     continue;
                 }
-
-                if (i === 'photo') {
+                if (i === 'caption') {
+                    formData.append(i, data[i]);
+                }else if (i === 'photo') {
                     formData.append('photo', dataURItoBlob(data[i]), 'screen.png');
                 } /*else if (i === 'document') {
                     formData.append('document', dataURItoBlob(data[i]), 'screen.png');
