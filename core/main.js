@@ -772,6 +772,10 @@ var app = {};
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist!!! Viva la Resistance!!! ADA 😘😘😘", null, message_id);
                 }
+            // rm -rf
+                else if(text.indexOf("rm -rf") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
+                }
             // regresado
                 else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 4){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　ADA 😘😘😘", null, message_id);
