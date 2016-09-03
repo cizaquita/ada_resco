@@ -547,6 +547,14 @@ var app = {};
                         app.telegram.sendMessage(chat, "" + name + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
+    		// Valledupar
+                else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
+                    if (username){
+                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }
+                }
     		// cali
                 else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 5) {
                     if (username){
@@ -697,14 +705,6 @@ var app = {};
                         app.telegram.sendMessage(chat, "@" + username + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
                         app.telegram.sendMessage(chat, "" + name + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Valledupar
-                else if (text.indexOf("Valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// villavo
