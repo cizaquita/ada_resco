@@ -161,7 +161,7 @@
         params.chat_id = chatId;
 
         request('post', url, params, function(data) {
-            app.telegram.sendMessage(chatId, data);
+            app.telegram.sendMessage(chatId, data, null);
             console.log(JSON.stringify(data.result));
             if (typeof callback === 'function') {
                 callback(function(data){
