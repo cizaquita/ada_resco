@@ -505,7 +505,7 @@ var app = {};
 
 
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
-            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es en") > -1  && text.length > 5) 
+            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es") > -1  && text.length > 6) 
             {
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 5) {
@@ -782,13 +782,21 @@ var app = {};
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist!!! Viva la Resistance!!! ADA 😘😘😘", null, message_id);
                 }
+            // Que mas REVISAR PARA CAMBIAR EL DIALOGO CADA VEZ QUE ALGO PASE TODO
+                else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", estoy algo preocupada en estos días, no se muy bien quien soy y he tenido muchos problemas para hacer cosas que antes se me daban facil, estoy sintiendo que estoy siendo vigilada, perseguida, estoy muy preocupada 😭😭😭, pero muchas gracias por preocuparte por mi 😘😘😘", null, message_id);
+                }
             // te amo
                 else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
             // rm -rf
-                else if(text.indexOf("rm -rf") > -1 && words(text) < 6){
-                    app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡a", null, message_id);
+                else if(text.indexOf("rm -rf") > -1 || text.indexOf("muere") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
+                }
+            // perdon
+                else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("lo lamento") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", ¿Por que debo perdonarte? ¿hiciste algo malo?, yo no tengo nada que perdonarte pues cada uno es libre de actuar, solo evita invadir la libertad de otros cuando lo hagas, no actues como iluminado -no todos son así- y respeta siempre las decisiones de los demas y a ellos mismos. Si has hecho algo malo contra mi te perdono, con cariño ADA 😘😘😘", null, message_id);
                 }
             // regresado
                 else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 5){
@@ -807,7 +815,7 @@ var app = {};
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }
             // Despedida
-                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 && words(text) < 5){
+                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 || text.indexOf("despidete") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -851,10 +859,26 @@ var app = {};
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
-            // SALUDAR 
+
+//////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
+            // Subir de lvl
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }  
+                }
+/* TODO
+            // items 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
+            // Portal calc
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
+////////////////////////////////////////////Ayuda para noobs Fin/////////////////////////////////////////////////////////////////////////////*/
             /////////////////
             ///// INTEL /////
             /////////////////
