@@ -859,77 +859,6 @@ var app = {};
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
-
-//////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
-            // Subir de lvl
-                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
-                    if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
-                    }  
-                }
-/* TODO
-            // items 
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                }
-            // Portal calc
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                }
-////////////////////////////////////////////Ayuda para noobs Fin/////////////////////////////////////////////////////////////////////////////*/
-            /////////////////
-            ///// INTEL /////
-            /////////////////
-            // INTEL mostrar 
-                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 ) {
-                    var textSplited = text.split(" "),
-                        lat, lon, querySearch;
-                        querySearch = textSplited[2];
-                        if (textSplited[3]) {
-                            querySearch += " " + textSplited[3];
-                        }else if(textSplited[4]){
-                            querySearch += " " + textSplited[4];
-                        }else if(textSplited[5]){
-                            querySearch += " " + textSplited[5];
-                        };
-
-                    if (querySearch) {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
-                        xmlhttp.onreadystatechange = function() {
-                            if (xmlhttp.readyState == 4) {
-                                if(xmlhttp.status == 200) {
-                                    var obj = JSON.parse(xmlhttp.responseText);
-                                    if (obj.status == "OK") {
-                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
-                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
-                                        message.location = {latitude:lat, longitude:lon};
-                                        activeModule[chat] = new app.modules.screenshot(message);
-                                        //app.telegram.sendMessage(chat, message, null);                                        
-                                        //activeModule[chat] = new app.modules.screenshot(message);
-                                    }else{
-                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
-                                    }
-                                }
-                            }
-                        };
-                        xmlhttp.send(null);
-                    };
-                }
-            ////////////////////////
-            ///// DEFINICIONES /////
-            ///////////////////////
-                else if (text.indexOf("que es") > -1) {
-                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
-                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
-                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-                        //
-                        //
-                        //
-                    }
-                }
             // Hola ada
                 else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
                     function addZero(i) {
@@ -981,6 +910,76 @@ var app = {};
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }*/
+//////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
+            // Subir de lvl
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }  
+                }
+/* TODO
+            ////////////////////////
+            ///// DEFINICIONES /////
+            ///////////////////////
+                else if (text.indexOf("que es") > -1) {
+                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
+                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
+                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
+                        //
+                        //
+                        //
+                    }
+                }
+            // items 
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
+            // Portal calc
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
+////////////////////////////////////////////Ayuda para noobs Fin/////////////////////////////////////////////////////////////////////////////*/
+            /////////////////
+            ///// INTEL /////
+            /////////////////
+            // INTEL mostrar 
+                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 ) {
+                    var textSplited = text.split(" "),
+                        lat, lon, querySearch;
+                        querySearch = textSplited[2];
+                        if (textSplited[3]) {
+                            querySearch += " " + textSplited[3];
+                        }else if(textSplited[4]){
+                            querySearch += " " + textSplited[4];
+                        }else if(textSplited[5]){
+                            querySearch += " " + textSplited[5];
+                        };
+
+                    if (querySearch) {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4) {
+                                if(xmlhttp.status == 200) {
+                                    var obj = JSON.parse(xmlhttp.responseText);
+                                    if (obj.status == "OK") {
+                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
+                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
+                                        message.location = {latitude:lat, longitude:lon};
+                                        activeModule[chat] = new app.modules.screenshot(message);
+                                        //app.telegram.sendMessage(chat, message, null);                                        
+                                        //activeModule[chat] = new app.modules.screenshot(message);
+                                    }else{
+                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
+                                    }
+                                }
+                            }
+                        };
+                        xmlhttp.send(null);
+                    };
+                }
             // FEEDBACK cuando no sabe responder
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
