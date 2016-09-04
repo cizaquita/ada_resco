@@ -946,7 +946,7 @@ var app = {};
             ///// INTEL /////
             /////////////////
             // INTEL mostrar 
-                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 ) {
+                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("intel") > -1|| text.indexOf("mapa") > -1|| text.indexOf("map") > -1) {
                     var textSplited = text.split(" "),
                         lat, lon, querySearch;
                         querySearch = textSplited[2];
