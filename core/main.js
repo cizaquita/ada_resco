@@ -524,7 +524,7 @@ var app = {};
                     }
                 }
     		// Bogota
-                else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 || text.indexOf("fusa") > -1 && words(text) < 5) {
+                else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 || text.indexOf("fusag") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @fredanake y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
@@ -788,7 +788,7 @@ var app = {};
                 }
             // baka
                 else if(text.indexOf("baka") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te forces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
+                    app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
