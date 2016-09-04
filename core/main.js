@@ -787,7 +787,7 @@ var app = {};
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
             // rm -rf
-                else if(text.indexOf("rm -rf") > -1 && words(text) < 6){
+                else if(text.indexOf("rm -rf") > -1 || text.indexOf("muere") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡a", null, message_id);
                 }
             // regresado
