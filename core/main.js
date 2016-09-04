@@ -858,7 +858,7 @@ var app = {};
 
 //////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
             // Subir de lvl
-                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 && words(text) < 5) {
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
 /* TODO
