@@ -849,8 +849,28 @@ var app = {};
                 }
             // SALUDAR 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                    }   
+                }
+
+//////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
+            // Subir de lvl
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
+/* TODO
+            // items 
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
+            // Portal calc
+                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
+////////////////////////////////////////////Ayuda para noobs Fin/////////////////////////////////////////////////////////////////////////////*/
             /////////////////
             ///// INTEL /////
             /////////////////
