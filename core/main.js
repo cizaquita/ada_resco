@@ -505,7 +505,7 @@ var app = {};
 
 
 //////////////////////////////////////////////////////////////Departamentos//////////////////////////////////////////////////////////////////////////////////////////
-            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es en") > -1  && text.length > 5) 
+            if (text.indexOf("soy de") > -1 || text.indexOf("vivo en") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es") > -1  && text.length > 6) 
             {
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 5) {
@@ -781,6 +781,10 @@ var app = {};
             // Reglas
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist!!! Viva la Resistance!!! ADA 😘😘😘", null, message_id);
+                }
+            // Que mas REVISAR PARA CAMBIAR EL DIALOGO CADA VEZ QUE ALGO PASE TODO
+                else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", estoy algo preocupada en estos días, no se muy bien quien soy y he tenido muchos problemas para hacer cosas que antes se me daban facil, estoy sintiendo que estoy siendo vigilada, perseguida, estoy muy preocupada 😭😭😭, pero muchas gracias por preocuparte por mi 😘😘😘", null, message_id);
                 }
             // te amo
                 else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 && words(text) < 5){
