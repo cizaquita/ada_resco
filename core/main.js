@@ -893,7 +893,7 @@ var app = {};
                                 }
                             };
                             xmlhttp.send(null);
-                        };
+                        }
                     }else{                      
 
                         //REPLY MARKUP
@@ -907,7 +907,7 @@ var app = {};
                             inline_keyboard: inline_keyboard
                         };
                         /////////////////////////////////7
-                        app.telegram.sendMessage(chat, "Puedes utilizar esta funcionalidad en privado! gracias, ADA." inline_markup)
+                        app.telegram.sendMessage(chat, "Puedes utilizar esta funcionalidad en privado! gracias, ADA." inline_markup);
                     }
                 }
             ////////////////////////
