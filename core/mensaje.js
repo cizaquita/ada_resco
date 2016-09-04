@@ -28,6 +28,6 @@
     ].join('\n\n');
 
 
-    app.telegram.sendMessage(7455490, message);
+    app.telegram.sendMessage(-1001069963507, message);
 
 }());

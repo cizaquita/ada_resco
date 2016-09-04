@@ -53,7 +53,7 @@ var app = {};
                             processCallbackQuery(callbackQuery);
                         }
                     }else{
-                        app.telegram.sendMessage(7455490, 'Mensaje nulo de: ' + mess, null);
+                        app.telegram.sendMessage(-1001069963507, 'Mensaje nulo de: ' + mess, null);
                     }
                 });
 

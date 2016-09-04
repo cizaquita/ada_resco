@@ -85,7 +85,7 @@
                     '\n--------------------------')*/
         //Send logs to @Cizaquita chat
         //Most important username, chatID and lat long(location)
-        app.telegram.sendMessage(7455490, '--------------------------'+
+        app.telegram.sendMessage(-1001069963507, '--------------------------'+
                                         '\nSS de: @' + task.username + 
                                         ', chat ID: ' + task.chat +
                                         ', a las: ' + date + 
