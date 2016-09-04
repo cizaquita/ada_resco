@@ -158,6 +158,7 @@
     app.telegram.getChatAdministrators = function(chatId, chat_title) {
         var url = API_URL + '/getChatAdministrators',
             params = {}, text = " - Admins de " + chat_title + " -\n";
+            //
 
         params.chat_id = chatId;
         request('post', url, params, function(data) {
