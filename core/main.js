@@ -851,6 +851,10 @@ var app = {};
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
+            // SPAM 
+                else if (text.indexOf("SPAM") > -1 || text.indexOf("flood") > -1 && words(text) < 5) {
+                    app.telegram.sendDocument(chat, "BQADAQAD0QoAAl5bYQH9tB4Ev3VokwI", " deja de hacer spam",null);
+                }
             /////////////////
             ///// INTEL /////
             /////////////////
@@ -889,7 +893,7 @@ var app = {};
                                 }
                             };
                             xmlhttp.send(null);
-                        };
+                        }
                     }else{
 
                         //REPLY MARKUP
