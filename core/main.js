@@ -854,7 +854,7 @@ var app = {};
 
 //////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
             // Subir de lvl
-                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 5) {
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
                     if (username) {
                         app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }else{
