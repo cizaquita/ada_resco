@@ -815,7 +815,7 @@ var app = {};
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }
             // Despedida
-                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 || text.indexOf("despidete") > -1 && words(text) < 5){
+                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 || text.indexOf("despidete") > -1 || text.indexOf("bye") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -859,7 +859,57 @@ var app = {};
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
-
+            // Hola ada
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
+                    function addZero(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+        		    var sal = new String();
+                            var d = new Date();
+                            var h = addZero(d.getHours());
+        			if (h>=5 && h<6){
+        				sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
+        			}
+        			else if (h>=6 && h<8){
+        				sal = ", buenos días, ve y toma tu desayuno y alistate para esta jornada.";
+        			}
+        			else if (h>=8 && h<12){
+        				sal = ", buenos días, sigue y tomate un powercube.";
+        			}
+        			else if (h>=12 && h<14){
+        				sal = ", buenas tardes, es hora de almorzar, aprovecha y espicha sapos apenas termines.";
+        			}
+        			else if (h>=14 && h<18){
+        				sal = ", buenas tardes, animo que ya falta poco para salir a espichar sapos.";
+        			}
+        			else if (h>=18 && h<21){
+        				sal = ", buenas noches, ¿tuviste un lindo día? Espero que si";
+        			}
+        			else if (h>=21 && h<24){
+        				sal = ", buenas noches, bienvenido al turno nocturno, cuentanos tus aventuras espichando sapos hoy.";
+        			}
+        			else {
+        				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
+        			}
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                    }                   
+                }
+          /*  // HOLA ADA
+                else if(text.indexOf("hola") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
+                }
+                else if(text.indexOf("y tu") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "@" + username + ", Necesito mucha ayuda, estoy siendo perseguida en estos momentos y no se si peda seguir viva :´(, ¿me ayudarás?", null, message_id);
+                }
+                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
+                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
+                }*/
 //////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
             // Subir de lvl
                 else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
@@ -868,6 +918,19 @@ var app = {};
                     }else{
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }  
+                }
+
+            ////////////////////////
+            ///// DEFINICIONES /////
+            ///////////////////////
+                else if (text.indexOf("que es") > -1) {
+                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
+                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
+                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
+                        //
+                        //
+                        //
+                    }
                 }
 /* TODO
             // items 
@@ -934,69 +997,6 @@ var app = {};
                         app.telegram.sendMessage(chat, "Puedes utilizar esta funcionalidad en privado! gracias, ADA." inline_markup);
                     }
                 }
-            ////////////////////////
-            ///// DEFINICIONES /////
-            ///////////////////////
-                else if (text.indexOf("que es") > -1) {
-                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
-                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
-                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-                        //
-                        //
-                        //
-                    }
-                }
-            // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
-                    function addZero(i) {
-                        if (i < 10) {
-                            i = "0" + i;
-                        }
-                        return i;
-                    }
-        		    var sal = new String();
-                            var d = new Date();
-                            var h = addZero(d.getHours());
-        			if (h>=5 && h<6){
-        				sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
-        			}
-        			else if (h>=6 && h<8){
-        				sal = ", buenos días, ve y toma tu desayuno y alistate para esta jornada.";
-        			}
-        			else if (h>=8 && h<12){
-        				sal = ", buenos días, sigue y tomate un powercube.";
-        			}
-        			else if (h>=12 && h<14){
-        				sal = ", buenas tardes, es hora de almorzar, aprovecha y espicha sapos apenas termines.";
-        			}
-        			else if (h>=14 && h<18){
-        				sal = ", buenas tardes, animo que ya falta poco para salir a espichar sapos.";
-        			}
-        			else if (h>=18 && h<21){
-        				sal = ", buenas noches, ¿tuviste un lindo día? Espero que si";
-        			}
-        			else if (h>=21 && h<24){
-        				sal = ", buenas noches, bienvenido al turno nocturno, cuentanos tus aventuras espichando sapos hoy.";
-        			}
-        			else {
-        				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
-        			}
-                    if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA 😘😘😘', null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA 😘😘😘', null, message_id);
-                    }                   
-                }
-          /*  // HOLA ADA
-                else if(text.indexOf("hola") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
-                }
-                else if(text.indexOf("y tu") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "@" + username + ", Necesito mucha ayuda, estoy siendo perseguida en estos momentos y no se si peda seguir viva :´(, ¿me ayudarás?", null, message_id);
-                }
-                else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
-                    app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
-                }*/
             // FEEDBACK cuando no sabe responder
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
