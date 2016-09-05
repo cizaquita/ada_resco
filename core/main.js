@@ -826,7 +826,7 @@ var app = {};
             /////////////////
             // WEATHER clima REST API @cizaquita
                 else if(text.indexOf("clima") > -1 || text.indexOf("tiempo") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "clima...", null, message_id);
+                    //app.telegram.sendMessage(chat, "clima...", null, message_id);
                     var textSplited = text.split(" "),
                         lat, lon, querySearch;
                         querySearch = textSplited[2];
@@ -849,9 +849,11 @@ var app = {};
                                         lat = obj["results"][0]["geometry"]["location"]["lat"];
                                         lon = obj["results"][0]["geometry"]["location"]["lng"];
 
-                                        app.api.getWeather(function(lat, lon, data){
+                                        app.api.getWeather(lat, lon, function(data){
                                             if (data != null) {
-                                                app.telegram.sendMessage(chat, data, null, message_id);
+                                                app.telegram.sendMessage(chat, "El clima en <b>" + data.timezone + "</b> es " + data.currently.summary + " con <b>" + data.currently.temperature + " °C</b>" 
+                                                                               "\nEl pronóstico es " + hourly.sumary, null, message_id);
+                                                //app.telegram.sendMessage(chat, data, null, message_id);
                                             };
                                         });
                                     }else{
