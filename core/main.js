@@ -831,7 +831,7 @@ var app = {};
                                      '¿Por qué mas bien no le dice eso a su madrecita?',
                                      '¿Fuiste el Espermatozoide mas rápido?'];
                     var msjIndex = Math.floor((Math.random() * mensajes.length) + 1);
-                    app.telegram.sendMessage(chat, "Oye @" + username +", " + mensajes[msjIndex] , null, message_id);
+                    app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
                 }
             // iluminada
