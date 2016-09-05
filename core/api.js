@@ -1,6 +1,6 @@
 (function() {
     var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
-        API_URL = 'http://catfacts-api.appspot.com/api/facts',
+        API_URL = 'http://catfacts-api.appspot.com/api/facts?number={}',
         TIMEOUT = 10;
 
     app.api = {};
@@ -59,7 +59,9 @@
                 }
             }
         } else {
-            url += '?' + serialize(data);
+        	if (data) {
+            	url += '?' + serialize(data);        		
+        	}
         }
 
         xmlhttp.onreadystatechange = function() {
