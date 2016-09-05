@@ -47,8 +47,14 @@
         if (chat < 0) {
             app.telegram.sendMessage(chat, "<i>Escríbeme por privado primero</i>", inline_markup);
         }else{
-            app.telegram.sendMessage(chat, "\t<b>Centro de ayuda de ADA</b>" +
-                                           "\n\nBot en desarrollo, se añadirán más características pronto...", null);
+            app.telegram.sendMessage(chat, "\t<b>Centro de ayuda ADA</b>" +
+                                           "\n\n- Estas son algunas de las funcionalidades con las que cuento:"+
+                                           "\n- /plugins - Te permite configurar la lista de plugins para IITC."+
+                                           "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar."+
+                                           "\n- Diríjete a mi como "ada" seguramente tengo alguna respuesta para tí."+
+                                           "\n\n- Puedes preguntarme:"+
+                                           "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
+                                           "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia<i>", null);
         }
     };
 }());

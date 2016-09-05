@@ -62,7 +62,7 @@
         };
         /////////////////////////////////7
 
-        if (chat < 0) {
+        if (this.chat < 0) {
             app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);            
         }else{
             //Debug information

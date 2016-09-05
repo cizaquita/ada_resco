@@ -67,7 +67,7 @@
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
 
         if (chat < 0) {
-            app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
+            app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
         }else{
             if (temp === text) {
                 this.complete = true;
