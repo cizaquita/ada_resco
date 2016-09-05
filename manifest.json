@@ -20,7 +20,8 @@
             "core/iitc.module.js",
             "core/interval.module.js",
             "core/compression.module.js",
-            "core/stats.module.js"
+            "core/stats.module.js",
+            "core/api.js"
         ]
     },
     "content_scripts": [
