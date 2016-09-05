@@ -826,6 +826,7 @@ var app = {};
             /////////////////
             // WEATHER clima REST API @cizaquita
                 else if(text.indexOf("clima") > -1 || text.indexOf("tiempo") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "clima...", null, message_id);
                     var textSplited = text.split(" "),
                         lat, lon, querySearch;
                         querySearch = textSplited[2];
