@@ -764,7 +764,6 @@ var app = {};
         // Este
 
         else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
-        app.telegram.sendMessage(chat, , null);
         {
         app.telegram.sendMessage(chat, "Oye @" + username +", " + mensajes[msjIndex] , null, message_id);
         }
