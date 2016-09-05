@@ -14,7 +14,7 @@
 
         request('get', API_URL, null, function(data) {
             if (data && data.ok) {
-                console.log("data: " +JSON.stringify(data));
+                console.log("data: " + JSON.stringify(data));
                 data.result.forEach(function(val) {
                     result.push(val);
                 });
@@ -35,7 +35,7 @@
      */
     app.api.getCat = function() {
         request('get', API_URL, null, function(data) {
-        	console.log("getCat" + data)
+        	console.log("getCat" + JSON.stringify(data))
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
             }
