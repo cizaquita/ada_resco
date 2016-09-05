@@ -1,6 +1,5 @@
 (function() {
-    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
-        API_URL = 'http://catfacts-api.appspot.com/api/facts?number={}',
+    var API_URL = 'http://127.0.0.1:8000',
         TIMEOUT = 10;
 
     app.api = {};
@@ -9,10 +8,30 @@
      * Get cat-facts testing API request
      * @param callback {Function} Callback function
      */
-    app.api.getCatFact = function(callback) {
-        var result = "";
+    app.api.getAgents = function(callback) {
+        var url = API_URL + "/agents",
+        	result = "";
 
-        request('get', API_URL, null, function(data) {
+        request('get', url, null, function(data) {
+            if (data) {
+                console.log("data: " + JSON.stringify(data));
+                result = data;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Get cat-facts testing API request
+     * @param callback {Function} Callback function
+     */
+    app.api.getCatFact = function(callback) {
+        var url = "http://catfacts-api.appspot.com/api/facts?number={}",
+        	result = "";
+
+        request('get', url, null, function(data) {
             if (data) {
                 console.log("data: " + JSON.stringify(data));
                 result = data.facts;
@@ -22,21 +41,6 @@
             }
         })
     };
-
-
-    /**
-     * get cat fact
-     * @param callback {Function} Callback function
-     */
-    app.api.getCat = function() {
-        request('get', API_URL, null, function(data) {
-        	console.log("getCat" + JSON.stringify(data))
-            if (typeof callback === 'function') {
-                callback(data && data.ok, data.description);
-            }
-        });
-    };
-
 
     /**
      * get weather from https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/
