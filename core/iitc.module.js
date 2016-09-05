@@ -32,26 +32,7 @@
         this.chat = message.chat.id;
         this.lang = app.settings.lang(this.chat);
 
-        markup = {
-            one_time_keyboard: true,
-            resize_keyboard: true,
-            keyboard: this.buildKeyboard()
-        };
-
-        resp = app.i18n(this.lang, 'iitc', 'help');
-        resp += '\n';
-        resp += this.getCurrentStatus();
-
-        app.telegram.sendMessage(this.chat, resp, markup);
-    }
-
-    /**
-     * @param message {object} Telegram message object
-     */
-    IITC.prototype.onMessage = function (message) {
-        var index, isEnabled, url, resp, temp,
-            text = message.text,
-            enabled = app.settings.plugins(this.chat);
+        
         //REPLY MARKUP
         var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Ir"
@@ -63,43 +44,63 @@
             inline_keyboard: inline_keyboard
         };
         /////////////////////////////////
+        markup = {
+            one_time_keyboard: true,
+            resize_keyboard: true,
+            keyboard: this.buildKeyboard()
+        };
+
+        resp = app.i18n(this.lang, 'iitc', 'help');
+        resp += '\n';
+        resp += this.getCurrentStatus();
 
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
 
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
         }else{
-            if (temp === text) {
-                this.complete = true;
-                app.telegram.sendMessage(this.chat, '👍', null); // thumbs up
-            } else if (plugins[text]) {
-                url = plugins[text];
-                index = enabled.indexOf(url);
-                isEnabled = index > -1;
+            app.telegram.sendMessage(this.chat, resp, markup);
+        }
+    }
 
-                if (isEnabled) {
-                    if (text === 'IITC') {
-                        enabled = [];
-                    } else {
-                        enabled.splice(index, 1);
-                    }
+    /**
+     * @param message {object} Telegram message object
+     */
+    IITC.prototype.onMessage = function (message) {
+        var index, isEnabled, url, resp, temp,
+            text = message.text,
+            enabled = app.settings.plugins(this.chat);
+
+        if (temp === text) {
+            this.complete = true;
+            app.telegram.sendMessage(this.chat, '👍', null); // thumbs up
+        } else if (plugins[text]) {
+            url = plugins[text];
+            index = enabled.indexOf(url);
+            isEnabled = index > -1;
+
+            if (isEnabled) {
+                if (text === 'IITC') {
+                    enabled = [];
                 } else {
-                    if (enabled.length === 0 && url !== plugins.IITC) {
-                        enabled.push(plugins.IITC);
-                    }
-
-                    enabled.push(url);
+                    enabled.splice(index, 1);
+                }
+            } else {
+                if (enabled.length === 0 && url !== plugins.IITC) {
+                    enabled.push(plugins.IITC);
                 }
 
-                app.settings.plugins(this.chat, enabled);
-
-                resp = this.getCurrentStatus();
-                app.telegram.sendMessage(this.chat, resp, markup);
-
-            } else {
-                resp = app.i18n(this.lang, 'iitc', 'plugin_not_found');
-                app.telegram.sendMessage(this.chat, resp, markup);
+                enabled.push(url);
             }
+
+            app.settings.plugins(this.chat, enabled);
+
+            resp = this.getCurrentStatus();
+            app.telegram.sendMessage(this.chat, resp, markup);
+
+        } else {
+            resp = app.i18n(this.lang, 'iitc', 'plugin_not_found');
+            app.telegram.sendMessage(this.chat, resp, markup);
         }
     };
 
