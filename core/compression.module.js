@@ -7,7 +7,7 @@
     app.modules = app.modules || {};
     app.modules.compression = Compression;
 
-    Compression.initMessage = '/compression';
+    Compression.initMessage = '/compression_disable';
 
     /**
      * @param message {object} Telegram message object

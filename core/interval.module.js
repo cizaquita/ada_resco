@@ -15,7 +15,7 @@
 	//@cizaquita
 	//The result of this command will be a /cancel command
 	//For future testing the command will be /intervalEx
-    Interval.initMessage = '/intervalEx';
+    Interval.initMessage = '/interval_disable';
 
     intervals = localStorage.getItem('interval__tasks');
 

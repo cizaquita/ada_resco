@@ -18,6 +18,17 @@
             sent = users[chat] || 0,
             lang = app.settings.lang(chat);
 
+        //REPLY MARKUP
+        var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
+        inline_button_califica.text = "⭐⭐⭐⭐⭐"
+        inline_button_califica.url = "http://telegram.me/storebot?start=ada_resco_bot";
+        //
+
+        inline_keyboard = [[inline_button_califica]];
+        inline_markup = {
+            inline_keyboard: inline_keyboard
+        };
+        /////////////////////////////////7
         ++sent;
 
         console.log(chat, sent);
@@ -31,7 +42,7 @@
                 app.i18n(lang, 'main', 'rate_us_3')
             ].join('\n');
 
-            app.telegram.sendMessage(chat, resp, null);
+            app.telegram.sendMessage(chat, resp, inline_markup);
         }
 
         users[chat] = sent;

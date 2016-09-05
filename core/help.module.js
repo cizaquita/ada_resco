@@ -51,7 +51,7 @@
                                            "\n\n- Estas son algunas de las funcionalidades con las que cuento:"+
                                            "\n- /plugins - Te permite configurar la lista de plugins para IITC."+
                                            "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar."+
-                                           "\n- Diríjete a mi como "ada" seguramente tengo alguna respuesta para tí."+
+                                           "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí."+
                                            "\n\n- Puedes preguntarme:"+
                                            "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
                                            "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia<i>", null);
