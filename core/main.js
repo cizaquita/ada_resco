@@ -830,7 +830,7 @@ var app = {};
                                      'Creo que fuí diseñada para algo mas útil, Madura.',
                                      '¿Por qué mas bien no le dice eso a su madrecita?',
                                      '¿Fuiste el Espermatozoide mas rápido?'];
-                    var msjIndex = Math.floor((Math.random() * mensajes.lenght) + 1);                    
+                    var msjIndex = Math.floor((Math.random() * mensajes.length) + 1);
                     app.telegram.sendMessage(chat, "Oye @" + username +", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
                 }
