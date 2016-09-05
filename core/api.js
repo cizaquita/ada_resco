@@ -5,7 +5,7 @@
     app.api = {};
 
     /**
-     * Get cat-facts testing API request
+     * Get Agents from BOT API
      * @param callback {Function} Callback function
      */
     app.api.getAgents = function(callback) {
@@ -13,7 +13,67 @@
         	result = "";
 
         request('get', url, null, function(data) {
+			//console.log("data: " + JSON.stringify(data));
+            if (data) {
+                result = data;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Create new Agent in BOT API
+     * @param name, 
+     * @param faction / 0 Res - 1 Enl
+     * @param city,
+     * @param verified, boolean
+     * @param ingress_nick,
+     * @param ingress_level, integer
+     * @param telegram_nick,
+     * @param telegram_id, integer
+     * @param geo_latitude
+     * @param geo_longitude
+     */
+    app.api.createAgent = function(callback) {
+        var url = API_URL + "agents/",
+        	result = "",
+        	params = {};
+
+        params.name = "RATAELTRIFORCE";
+        params.faction = 0;
+        params.city = "BOGOTA";
+        params.verified = true;
+        params.ingress_nick = "RATAELTRIFORCE";
+        params.ingress_level = 16;
+        params.telegram_nick = "RATAELTRIFORCE";
+        params.telegram_id = 123123123;
+        params.geo_latitude = "5.7657";
+        params.geo_longitude = "30.76567";
+
+
+        request('post', url, params, function(data) {
 			console.log("data: " + JSON.stringify(data));
+            if (data) {
+                result = data;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Get Factions from BOT API
+     * @param callback {Function} Callback function
+     */
+    app.api.getFactions = function(callback) {
+        var url = API_URL + "factions/",
+        	result = "";
+
+        request('get', url, null, function(data) {
+			//console.log("data: " + JSON.stringify(data));
             if (data) {
                 result = data;
                 callback(result);
