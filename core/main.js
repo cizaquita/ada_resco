@@ -770,6 +770,57 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
+            /////////////////
+            ///// INTEL /////
+            /////////////////
+            // INTEL mostrar 
+                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("intel") > -1|| text.indexOf("mapa") > -1|| text.indexOf("map") > -1) {
+                    var textSplited = text.split(" "),
+                        lat, lon, querySearch;
+                        querySearch = textSplited[2];
+                        if (textSplited[3]) {
+                            querySearch += " " + textSplited[3];
+                        }else if(textSplited[4]){
+                            querySearch += " " + textSplited[4];
+                        }else if(textSplited[5]){
+                            querySearch += " " + textSplited[5];
+                        };
+
+                    if (querySearch) {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4) {
+                                if(xmlhttp.status == 200) {
+                                    var obj = JSON.parse(xmlhttp.responseText);
+                                    if (obj.status == "OK") {
+                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
+                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
+                                        message.location = {latitude:lat, longitude:lon};
+                                        activeModule[chat] = new app.modules.screenshot(message);
+                                        //app.telegram.sendMessage(chat, message, null);                                        
+                                        //activeModule[chat] = new app.modules.screenshot(message);
+                                    }else{
+                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
+                                    }
+                                }
+                            }
+                        };
+                        xmlhttp.send(null);
+                    }
+                }
+            ////////////////////////
+            ///// DEFINICIONES /////
+            ///////////////////////
+                else if (text.indexOf("que es") > -1) {
+                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
+                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
+                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
+                        //
+                        //
+                        //
+                    }
+                }
             // Este
                 else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", no seas irrespetuoso, no quiero que seas como los iluminados.", null, message_id);
@@ -919,19 +970,6 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }  
                 }
-
-            ////////////////////////
-            ///// DEFINICIONES /////
-            ///////////////////////
-                else if (text.indexOf("que es") > -1) {
-                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
-                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
-                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-                        //
-                        //
-                        //
-                    }
-                }
 /* TODO
             // items 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
@@ -942,45 +980,6 @@ var app = {};
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
 ////////////////////////////////////////////Ayuda para noobs Fin/////////////////////////////////////////////////////////////////////////////*/
-            /////////////////
-            ///// INTEL /////
-            /////////////////
-            // INTEL mostrar 
-                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("intel") > -1|| text.indexOf("mapa") > -1|| text.indexOf("map") > -1) {
-                    var textSplited = text.split(" "),
-                        lat, lon, querySearch;
-                        querySearch = textSplited[2];
-                        if (textSplited[3]) {
-                            querySearch += " " + textSplited[3];
-                        }else if(textSplited[4]){
-                            querySearch += " " + textSplited[4];
-                        }else if(textSplited[5]){
-                            querySearch += " " + textSplited[5];
-                        };
-
-                    if (querySearch) {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
-                        xmlhttp.onreadystatechange = function() {
-                            if (xmlhttp.readyState == 4) {
-                                if(xmlhttp.status == 200) {
-                                    var obj = JSON.parse(xmlhttp.responseText);
-                                    if (obj.status == "OK") {
-                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
-                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
-                                        message.location = {latitude:lat, longitude:lon};
-                                        activeModule[chat] = new app.modules.screenshot(message);
-                                        //app.telegram.sendMessage(chat, message, null);                                        
-                                        //activeModule[chat] = new app.modules.screenshot(message);
-                                    }else{
-                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
-                                    }
-                                }
-                            }
-                        };
-                        xmlhttp.send(null);
-                    }
-                }
             // FEEDBACK cuando no sabe responder
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
