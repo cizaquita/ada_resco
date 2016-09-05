@@ -842,14 +842,19 @@ var app = {};
                         };
                     });
                 }
-            // FLIP A COIN
-                else if(text.indexOf("lanzar") > -1 && text.indexOf("moneda") > -1 && words(text) < 5){
-                    var rand = (Math.floor(Math.random() * 2) + 1);
-                    if (rand == 1) {
-                        app.telegram.sendMessage(chat, "Cara", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "Sello", null, message_id);                        
-                    }
+            //  LANZAR: moneda, dados
+                else if(text.indexOf("lanzar") > -1 && words(text) < 5){
+                    if (text.indexOf("moneda") > -1 ) {
+                        var moneda = (Math.floor(Math.random() * 2) + 1);
+                        if (moneda == 1) {
+                            app.telegram.sendMessage(chat, "Cara", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "Sello", null, message_id);                        
+                        }
+                    }else if (text.indexOf("dado") > -1) {
+                        var dado = (Math.floor(Math.random() * 6) + 1);
+                        app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió " + dado + ".", null, message_id);
+                    };
                 }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
