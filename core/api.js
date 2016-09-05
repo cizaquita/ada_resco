@@ -10,10 +10,9 @@
      * @param callback {Function} Callback function
      */
     app.api.getCatFact = function(callback) {
-        var result = [],
-            url = API_URL;
+        var result = [];
 
-        request('get', url, null, function(data) {
+        request('get', API_URL, null, function(data) {
             if (data && data.ok) {
                 console.log("data: " +JSON.stringify(data));
                 data.result.forEach(function(val) {
@@ -24,6 +23,23 @@
                 callback(null);
             }
         })
+    };
+
+
+    /**
+     * Send photo to specified chat
+     * @param chatId {Number} Chat id
+     * @param photo {String} Base64 encrypted image
+     * @param compression {Boolean} If true image will be compressed by telegram
+     * @param callback {Function} Callback function
+     */
+    app.api.getCat = function() {
+        request('get', API_URL, null, function(data) {
+        	console.log("getCat" + data)
+            if (typeof callback === 'function') {
+                callback(data && data.ok, data.description);
+            }
+        });
     };
 
     /**
