@@ -55,7 +55,7 @@
         resp += this.getCurrentStatus();
 
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
-        temp = acentos(temp);
+        temp = acentos(temp).toLowerCase();
 
 
         if (this.chat < 0) {

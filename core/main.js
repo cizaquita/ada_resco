@@ -124,8 +124,8 @@ var app = {};
             "\n\nRecuerda visitar https://LaResistencia.co para más información :)", null);
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
-        if (text === '/iitc@ada_resco_bot') {
-            text = '/iitc';
+        if (text === '/plugins@ada_resco_bot') {
+            text = '/plugins';
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
         if (text === '/screenshot@ada_resco_bot') {
