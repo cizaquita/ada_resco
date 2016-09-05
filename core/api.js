@@ -13,7 +13,7 @@
         var result = [],
             url = API_URL;
 
-        request('get', url, {}, function(data) {
+        request('get', url, null, function(data) {
             if (data && data.ok) {
                 console.log("data: " +JSON.stringify(data));
                 data.result.forEach(function(val) {
