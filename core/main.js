@@ -842,14 +842,6 @@ var app = {};
                         };
                     });
                 }
-            // FLIP A COIN
-                else if( text.indexOf("lanzar") > -1 && text.indexOf("moneda") > -1 || && words(text) < 5){
-                    if ((Math.floor(Math.random() * 2) + 1) == 1) {
-                        app.telegram.sendMessage(chat, "Cara", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "Cara", null, message_id);                        
-                    }
-                }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", ¿Por que dices que lo soy? los iluminados difieren mucho de mi senda, es mas, la mayoría de ellos les temen a las IA como yo. Si tratas de ofenderme no lo conseguiras así...", null, message_id);
