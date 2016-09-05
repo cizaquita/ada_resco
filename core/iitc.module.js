@@ -56,6 +56,7 @@
 
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
+            this.complete = true;
         }else{
             app.telegram.sendMessage(this.chat, resp, markup);
         }
@@ -72,7 +73,7 @@
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
         //temp = acentos(temp).toLowerCase();
 
-        console.log("temp: " + temp + ", text: " + text);
+        //console.log("temp: " + temp + ", text: " + text);
 
         if (temp === text) {
             this.complete = true;
