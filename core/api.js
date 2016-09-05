@@ -1,159 +1,122 @@
-var api = (function(){
-	
-	var module = {};
-	var host = "http://localhost:8000";
-	
-	var urls = {
-		"users":        host + "users/",
-		"groups":    host + "groups/",
-		"posts":       host + "posts/"
-	}
+(function() {
+    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
+        API_URL = 'http://catfacts-api.appspot.com/api/facts',
+        TIMEOUT = 10;
 
+    app.api = {};
 
-	function request(url,data,done){		
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				//document.getElementById("demo").innerHTML = xhttp.responseText;
-				console.log(xhttp.responseText);
-			}
-		};
-		xhttp.open("GET", "http://127.0.0.1:8000/users/", true);
-		xhttp.send();
-	}
-	function request(url,data,done){
+    /**
+     * Get cat-facts testing API request
+     * @param callback {Function} Callback function
+     */
+    app.api.getCatFact = function(callback) {
+        var result = [],
+            url = API_URL;
 
-		$.post(url, data).done(done).fail(function(data) {
-			
-			console.log(  url );
-    		console.log( JSON.stringify( data ) );
+        request('get', url, {}, function(data) {
+            if (data && data.ok) {
+                console.log("data: " +JSON.stringify(data));
+                data.result.forEach(function(val) {
+                    result.push(val);
+                });
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
 
-    		if (data.statusText == "error") {
-    				myApp.alert("Verifique su conexión a internet e intente de nuevo", "Error de conexión", function () {
-                	navigator.app.exitApp();
-            	});
-    		};
+    /**
+     * Request wrapper
+     * @param method {String} GET or POST
+     * @param url {String} Request url
+     * @param data {Object} Request parameters
+     * @param callback {Function} Callback function
+     */
+    function request(method, url, data, callback) {
+        var formData, i,
+            xmlhttp = new XMLHttpRequest();
 
-  		});
-	}
-	/**
-	 * Search for shopkeepers given coords.
-	 *
-	 * @param {String} lat
-	 * @param {String} long
-	 * @return {JSON} shopkeepers
-	 */
-	
-	module.shopkeepers = function(lat,lon, done){
-		var point = "POINT("+lon+" "+lat+")";
-		request(urls.shopkeepers, {point: point} ,function(data){
-			done(data);
-		});
-	}
-	/**
-	 * Get lkatitude and longitude
-	 *
-	 * @param {JSON} data
-	 * @return {JSON} shopkeepers
-	 */
-	
-	module.direccionTest = function(direccion){
-		request("http://servidorweb2.sitimapa.com/geocoderws/geocoder.php", direccion ,function(data){
-			console.log(data);
-		});
-	}
-	
-	/**
-	 * Search for inventory of shopkeeper.
-	 *
-	 * @param {Int} shopkeeper_id
-	 * @return {JSON} inventory
-	 */
-	
-	module.inventory = function(shopkeeper_id,done){
+        if (typeof callback !== 'function') {
+            callback = undefined;
+        }
 
-		request(urls.inventory, {shopkeeper_id: shopkeeper_id} ,function(data){
-			done(data);
-			//console.log("inventory data: " + data);
-		});
+        if (method.toLowerCase() === 'post') {
+            formData = new FormData();
 
-	}
-	
-	module.getRatings = function(shopkeeper_id,done){
+            for (i in data) {
+                if (!data.hasOwnProperty(i)) {
+                    continue;
+                }
+                if (i === 'caption') {
+                    formData.append(i, data[i]);
+                }else if (i === 'photo') {
+                    formData.append('photo', dataURItoBlob(data[i]), 'screen.png');
+                } /*else if (i === 'document') {
+                    formData.append('document', dataURItoBlob(data[i]), 'screen.png');
+                }*/ else {
+                    formData.append(i, data[i]);
+                }
+            }
+        } else {
+            url += '?' + serialize(data);
+        }
 
-		request(urls.get_ratings, {shopkeeper_id: shopkeeper_id} ,function(data){
-			done(data);
-			//console.log("inventory data: " + data);
-		});
+        xmlhttp.onreadystatechange = function() {
+            var result = null;
 
-	}
+            if (xmlhttp.readyState !== 4) {
+                return;
+            }
 
-	
-	module.getUser = function(id,done){
-		request(urls.get_user, {id: id} ,function(data){
-			done(data);
-		});
-	}
-	module.login = function(email,password,device, device_type,done){
-		request(urls.login, {email: email, password:password,device:device, device_type:device_type} ,function(data){
-			done(data);
-		});
-	}
+            try {
+                result = JSON.parse(xmlhttp.responseText);
+            } catch (e) {
+                console.error('JSON parse error: ' + e);
+            }
 
+            if (callback) {
+                callback(result);
+            }
+        };
 
-	module.rate = function(client,shopkeeper,order,rating,comment,done){
-		request(urls.rate, {client_id: client, shopkeeper_id:shopkeeper,order_id:order,rating:rating,comment:comment} ,function(data){
-			done(data);
-			console.log(data);
-		});
-	}
+        xmlhttp.open(method, url, true);
+        try{
+            xmlhttp.send(formData);
+        }catch(e){
+            app.telegram.sendMessage("error formdata: " + e.description)
+        }
+    }
 
-	module.createUser  = function(name,lastname,email,telephone,password,device,device_type,done){
+    function serialize(obj) {
+        var p,
+            str = [];
 
-		request(urls.user,
-			{
-				
-				telephone: telephone,
-				name: name,
-				lastname: lastname,
-				password: password,
-				email: email,
-				device: device,
-				device_type: device_type
+        for (p in obj)
+            if (obj.hasOwnProperty(p)) {
+                str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+            }
 
-			} ,function(data){
-				done(data);
-		});
+        return str.join('&');
+    }
 
-	}
+    /**
+     * Convert base64 to raw binary data held in a string
+     */
+    function dataURItoBlob(dataURI) {
+        var mimeString, ab, ia, i,
+            byteString = atob(dataURI.split(',')[1]);
 
+        // separate out the mime component
+        mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
 
-	
-	module.order = function(order,done){
-		
-		request(urls.order, {order: order} ,function(data){
-			done(data);
-		});
+        // write the bytes of the string to an ArrayBuffer
+        ab = new ArrayBuffer(byteString.length);
+        ia = new Uint8Array(ab);
+        for (i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
 
-	}
-	
-	module.createAddress = function(address,client,done){
-		address_text = address.nomenclature + " " + address.n1 + " # " + address.n2 + " - " + address.n3;
-		request(urls.address, {address: address_text, client:client,address_detail: address.address_detail},
-
-				function(data){
-					done(data);
-				}
-		);
-	}
-
-	module.saveUserNotification = function(email,lat,lon,device,device_type,done){
-		request(urls.user_notification, {email:email, lat:lat, lon:lon, device:device, device_type:device_type},
-			function(data){
-				done(data)
-		});
-	}
-
-	return module;
-
-})();
+        return new Blob([ab], {type: mimeString});
+    }
+}());
