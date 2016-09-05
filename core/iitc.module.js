@@ -55,6 +55,8 @@
         resp += this.getCurrentStatus();
 
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
+        temp = acentos(temp);
+
 
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
@@ -139,6 +141,28 @@
 
         return result.join('\n');
     };
+
+    var acentos = (function() {
+        var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç", 
+        to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+        mapping = {};
+
+        for(var i = 0, j = from.length; i < j; i++ )
+        mapping[ from.charAt( i ) ] = to.charAt( i );
+
+        return function( str ) {
+            var ret = [];
+            for( var i = 0, j = str.length; i < j; i++ ) {
+                var c = str.charAt( i );
+                if( mapping.hasOwnProperty( str.charAt( i ) ) )
+                    ret.push( mapping[ c ] );
+                else
+                    ret.push( c );
+            }      
+            return ret.join( '' );
+        }
+
+    })();
 
     /**
      * Build keyboard with modules list
