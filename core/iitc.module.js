@@ -54,10 +54,6 @@
         resp += '\n';
         resp += this.getCurrentStatus();
 
-        temp = app.i18n(this.lang, 'iitc', 'complete_setup');
-        temp = acentos(temp).toLowerCase();
-
-
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
         }else{
@@ -72,6 +68,10 @@
         var index, isEnabled, url, resp, temp,
             text = message.text,
             enabled = app.settings.plugins(this.chat);
+
+        temp = app.i18n(this.lang, 'iitc', 'complete_setup');
+        temp = acentos(temp).toLowerCase();
+        
         console.log("temp: " + temp + ", text: " + text);
 
         if (temp === text) {
