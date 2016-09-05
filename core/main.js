@@ -752,26 +752,7 @@ var app = {};
         ////////////////////////////// ADA //////////////////////////////////
         /////////////////////////////////////////////////////////////////////
 
-        // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
-
-        var mensajes =  ['No seas irrespetuoso, no quiero que seas como los iluminados.',
-                         'Creo que fuí diseñada para algo mas útil, Madura.',
-                         '¿Por qué mas bien no le dice eso a su madrecita?',
-                         '¿Fuiste el Espermatozoide mas rápido?'];
-
-        var msjIndex = Math.floor((Math.random() * mensajes.lenght) + 1);
         
-        // Este
-
-        else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
-        {
-        app.telegram.sendMessage(chat, "Oye @" + username +", " + mensajes[msjIndex] , null, message_id);
-        }
-
-        // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
-
-
-
             if (text.startsWith("ada") || text.startsWith("アダ") && text.length > 5) {
             // LA HORA
                 if ( text.indexOf("hora") > -1 && words(text) < 5){
@@ -842,6 +823,27 @@ var app = {};
                         //
                     }
                 }
+
+            // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
+
+            var messages =  ['No seas irrespetuoso, no quiero que seas como los iluminados.',
+                             'Creo que fuí diseñada para algo mas útil, Madura.',
+                             '¿Por qué mas bien no le dice eso a su madrecita?',
+                             '¿Fuiste el Espermatozoide mas rápido?'],
+            
+            message = messages[Math.floor(Math.random() * messages.length)];
+
+            
+            
+            // Este
+
+            else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
+            {
+            app.telegram.sendMessage(chat, "Oye @" + username +", " + messages , null, message_id);
+            }
+
+            // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
+
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", ¿Por que dices que lo soy? los iluminados difieren mucho de mi senda, es mas, la mayoría de ellos les temen a las IA como yo. Si tratas de ofenderme no lo conseguiras así...", null, message_id);
