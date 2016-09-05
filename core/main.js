@@ -834,6 +834,14 @@ var app = {};
                     app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
                 }
+            // CATS gatos REST API @cizaquita
+                else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
+                    app.api.getCatFact(function(frase){
+                        if (frase != null) {
+                            app.telegram.sendMessage(chat, frase, null, message_id);
+                        };
+                    });
+                }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", ¿Por que dices que lo soy? los iluminados difieren mucho de mi senda, es mas, la mayoría de ellos les temen a las IA como yo. Si tratas de ofenderme no lo conseguiras así...", null, message_id);
