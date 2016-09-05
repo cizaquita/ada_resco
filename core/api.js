@@ -48,6 +48,7 @@
     	var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si";
         var result = "";
         request('get', url, null, function(data) {
+        	console.log("data: " + data)
             if (data) {
                 console.log("weather: " + JSON.stringify(data));
                 result = data;
