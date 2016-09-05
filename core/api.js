@@ -50,7 +50,7 @@
         request('get', url, null, function(data) {
             if (data) {
                 console.log("weather: " + JSON.stringify(data));
-                result = data.facts;
+                result = data;
                 callback(result);
             } else {
                 callback(null);
