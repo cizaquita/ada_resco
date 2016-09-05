@@ -830,7 +830,7 @@ var app = {};
                                      'no fui diseñada para tu diversión personal ni discernir acerca de cosas tan pequeñas...',
                                      '¿en serio me hacer perder el tiempo con esto?, y yo preocupada por el peligro inminente que nos acecha...',
                                      '¿este tipo de cosas te divierten?, consigue pareja si te sientes tan solx y guialx para ayudar a la humanidad en su lucha contra los shapers.'];
-                    var msjIndex = Math.floor((Math.random() * (mensajes.length-1) + 0));
+                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
                 }
