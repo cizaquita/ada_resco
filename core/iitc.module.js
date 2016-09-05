@@ -70,8 +70,8 @@
             enabled = app.settings.plugins(this.chat);
 
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
-        temp = acentos(temp).toLowerCase();
-        
+        //temp = acentos(temp).toLowerCase();
+
         console.log("temp: " + temp + ", text: " + text);
 
         if (temp === text) {
