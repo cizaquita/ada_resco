@@ -25,7 +25,7 @@
 
 
     /**
-     * get cat
+     * get cat fact
      * @param callback {Function} Callback function
      */
     app.api.getCat = function() {
@@ -35,6 +35,27 @@
                 callback(data && data.ok, data.description);
             }
         });
+    };
+
+
+    /**
+     * get weather from https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/
+     * param latitude
+     * @param longitude
+     * @param callback {Function} Callback function
+     */
+	app.api.getWeather = function(latitude, longitude, callback){
+    	var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si";
+        var result = "";
+        request('get', url, null, function(data) {
+            if (data) {
+                console.log("weather: " + JSON.stringify(data));
+                result = data.facts;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
     };
 
     /**

@@ -821,6 +821,64 @@ var app = {};
                         //
                     }
                 }
+            /////////////////
+            ///// CLIMA /////
+            /////////////////
+            // WEATHER clima REST API @cizaquita
+                else if(text.indexOf("clima") > -1 || text.indexOf("tiempo") > -1 && words(text) < 5){
+                    var textSplited = text.split(" "),
+                        lat, lon, querySearch;
+                        querySearch = textSplited[2];
+                        if (textSplited[3]) {
+                            querySearch += " " + textSplited[3];
+                        }else if(textSplited[4]){
+                            querySearch += " " + textSplited[4];
+                        }else if(textSplited[5]){
+                            querySearch += " " + textSplited[5];
+                        };
+
+                    if (querySearch) {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4) {
+                                if(xmlhttp.status == 200) {
+                                    var obj = JSON.parse(xmlhttp.responseText);
+                                    if (obj.status == "OK") {
+                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
+                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
+
+                                        app.api.getWeather(function(lat, lon, data){
+                                            if (data != null) {
+                                                app.telegram.sendMessage(chat, data, null, message_id);
+                                            };
+                                        });
+                                    }else{
+                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);
+                                    }
+                                }
+                            }
+                        };
+                        xmlhttp.send(null);
+                    }
+                }
+            //////////////////
+            ///// LANZAR /////
+            //////////////////
+            //  LANZAR: moneda, dados
+                else if(text.indexOf("lanzar") > -1 && words(text) < 5){
+                    if (text.indexOf("moneda") > -1 ) {
+                        var moneda = (Math.floor(Math.random() * 2) + 1);
+                        if (moneda == 1) {
+                            app.telegram.sendMessage(chat, "@" + username + " lanzó una moneda y salió <b>cara</b>.", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "@" + username + " lanzó una moneda y salió <b>sello</b>.", null, message_id);
+                        }
+                    }else if (text.indexOf("dado") > -1) {
+                        var dado = (Math.floor(Math.random() * 6) + 1);
+                        app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió <b>" + dado + "</b>.", null, message_id);
+                    };
+                }
             // Este
                 else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
                 {                        
@@ -841,20 +899,6 @@ var app = {};
                             app.telegram.sendMessage(chat, frase, null, message_id);
                         };
                     });
-                }
-            //  LANZAR: moneda, dados
-                else if(text.indexOf("lanzar") > -1 && words(text) < 5){
-                    if (text.indexOf("moneda") > -1 ) {
-                        var moneda = (Math.floor(Math.random() * 2) + 1);
-                        if (moneda == 1) {
-                            app.telegram.sendMessage(chat, "Cara", null, message_id);
-                        }else{
-                            app.telegram.sendMessage(chat, "Sello", null, message_id);                        
-                        }
-                    }else if (text.indexOf("dado") > -1) {
-                        var dado = (Math.floor(Math.random() * 6) + 1);
-                        app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió " + dado + ".", null, message_id);
-                    };
                 }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
