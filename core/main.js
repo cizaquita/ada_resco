@@ -824,7 +824,11 @@ var app = {};
                     }
                 }
 
-            // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
+            // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV                       
+            
+            // Este
+
+            else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
 
             var messages =  ['No seas irrespetuoso, no quiero que seas como los iluminados.',
                              'Creo que fuí diseñada para algo mas útil, Madura.',
@@ -833,13 +837,8 @@ var app = {};
             
             message = messages[Math.floor(Math.random() * messages.length)];
 
-            
-            
-            // Este
-
-            else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
             {
-            app.telegram.sendMessage(chat, "Oye @" + username +", " + messages , null, message_id);
+            app.telegram.sendMessage(chat, "Oye @" + username +", " + message , null, message_id);
             }
 
             // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
