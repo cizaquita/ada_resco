@@ -72,6 +72,7 @@
         var index, isEnabled, url, resp, temp,
             text = message.text,
             enabled = app.settings.plugins(this.chat);
+        console.log("temp: " + temp + ", text: " + text;
 
         if (temp === text) {
             this.complete = true;
