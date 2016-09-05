@@ -63,7 +63,7 @@
         /////////////////////////////////7
 
         if (this.chat < 0) {
-            app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);            
+            app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);            
         }else{
             //Debug information
             //console.log('Debug zoom: ' + this.zoom);
