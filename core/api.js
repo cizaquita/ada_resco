@@ -1,5 +1,5 @@
 (function() {
-    var API_URL = 'http://127.0.0.1:8000',
+    var API_URL = 'http://127.0.0.1:8000/',
         TIMEOUT = 10;
 
     app.api = {};
@@ -9,12 +9,12 @@
      * @param callback {Function} Callback function
      */
     app.api.getAgents = function(callback) {
-        var url = API_URL + "/agents",
+        var url = API_URL + "agents/",
         	result = "";
 
         request('get', url, null, function(data) {
+			console.log("data: " + JSON.stringify(data));
             if (data) {
-                console.log("data: " + JSON.stringify(data));
                 result = data;
                 callback(result);
             } else {
