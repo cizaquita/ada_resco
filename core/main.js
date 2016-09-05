@@ -852,7 +852,7 @@ var app = {};
                                         app.api.getWeather(lat, lon, function(data){
                                             if (data != null) {
                                                 app.telegram.sendMessage(chat, "El clima en <b>" + data.timezone + "</b> es " + data.currently.summary + " con <b>" + data.currently.temperature + " °C</b>" +
-                                                                               "\nEl pronóstico es " + hourly.sumary, null, message_id);
+                                                                               "\nEl pronóstico es " + data.hourly.summary, null, message_id);
                                                 //app.telegram.sendMessage(chat, data, null, message_id);
                                             };
                                         });
