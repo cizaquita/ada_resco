@@ -9,7 +9,7 @@
     app.modules = app.modules || {};
     app.modules.iitc = IITC;
 
-    IITC.initMessage = '/iitc';
+    IITC.initMessage = '/plugins';
 
     plugins = {
         'IITC': 'iitc/total-conversion-build.user.js',
@@ -52,39 +52,54 @@
         var index, isEnabled, url, resp, temp,
             text = message.text,
             enabled = app.settings.plugins(this.chat);
+        //REPLY MARKUP
+        var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
+        inline_button_califica.text = "Ir"
+        inline_button_califica.url = "https://telegram.me/ada_resco_bot?start";
+        //
+
+        inline_keyboard = [[inline_button_califica]];
+        inline_markup = {
+            inline_keyboard: inline_keyboard
+        };
+        /////////////////////////////////
 
         temp = app.i18n(this.lang, 'iitc', 'complete_setup');
 
-        if (temp === text) {
-            this.complete = true;
-            app.telegram.sendMessage(this.chat, '👍', null); // thumbs up
-        } else if (plugins[text]) {
-            url = plugins[text];
-            index = enabled.indexOf(url);
-            isEnabled = index > -1;
+        if (chat < 0) {
+            app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
+        }else{
+            if (temp === text) {
+                this.complete = true;
+                app.telegram.sendMessage(this.chat, '👍', null); // thumbs up
+            } else if (plugins[text]) {
+                url = plugins[text];
+                index = enabled.indexOf(url);
+                isEnabled = index > -1;
 
-            if (isEnabled) {
-                if (text === 'IITC') {
-                    enabled = [];
+                if (isEnabled) {
+                    if (text === 'IITC') {
+                        enabled = [];
+                    } else {
+                        enabled.splice(index, 1);
+                    }
                 } else {
-                    enabled.splice(index, 1);
+                    if (enabled.length === 0 && url !== plugins.IITC) {
+                        enabled.push(plugins.IITC);
+                    }
+
+                    enabled.push(url);
                 }
+
+                app.settings.plugins(this.chat, enabled);
+
+                resp = this.getCurrentStatus();
+                app.telegram.sendMessage(this.chat, resp, markup);
+
             } else {
-                if (enabled.length === 0 && url !== plugins.IITC) {
-                    enabled.push(plugins.IITC);
-                }
-
-                enabled.push(url);
+                resp = app.i18n(this.lang, 'iitc', 'plugin_not_found');
+                app.telegram.sendMessage(this.chat, resp, markup);
             }
-
-            app.settings.plugins(this.chat, enabled);
-
-            resp = this.getCurrentStatus();
-            app.telegram.sendMessage(this.chat, resp, markup);
-
-        } else {
-            resp = app.i18n(this.lang, 'iitc', 'plugin_not_found');
-            app.telegram.sendMessage(this.chat, resp, markup);
         }
     };
 
