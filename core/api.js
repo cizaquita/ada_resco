@@ -45,7 +45,7 @@
      * @param callback {Function} Callback function
      */
 	app.api.getWeather = function(latitude, longitude, callback){
-    	var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si";
+    	var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si&lang=es";
         var result = "";
         request('get', url, null, function(data) {
         	console.log("data: " + data)
