@@ -42,40 +42,41 @@
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
             this.complete = true;
         }else{
-
             if (text == "Cancelar") {
                 app.telegram.sendMessage(this.chat, "Tarea cancelada.", null);
                 this.complete = true;
-            }
+            }else{
+                /////////////////////////////////////
+                if (this.resos.length <= 8) {
+                    //this.complete = true;              
+                    keyboard = [
+                        ["1","2","3","4"],
+                        ["5","6","7","8"],
+                        ["Cancelar"]
+                    ];
+                    markup = {
+                        keyboard: keyboard,
+                        one_time_keyboard: false,
+                        resize_keyboard: true
+                    };
+                    if (text != "/distance") {
+                        this.resos[this.i] = text;
+                        this.i++;
+                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);
+                    }
 
-            /////////////////////////////////////
-            if (this.resos.length >= 8) {
-                app.telegram.sendMessage(this.chat, "Resonadores: " +
-                                                    "\n<b>1</b> - L" +this.resos[0] +
-                                                    "\n<b>2</b> - L" +this.resos[1] +
-                                                    "\n<b>3</b> - L" +this.resos[2] +
-                                                    "\n<b>4</b> - L" +this.resos[3] +
-                                                    "\n<b>5</b> - L" +this.resos[4] +
-                                                    "\n<b>6</b> - L" +this.resos[5] +
-                                                    "\n<b>7</b> - L" +this.resos[6] +
-                                                    "\n<b>8</b> - L" +this.resos[7], null);
-                //this.complete = true;
-            }else{                  
-                keyboard = [
-                    ["1","2","3","4"],
-                    ["5","6","7","8"],
-                    ["Cancelar"]
-                ];
-                markup = {
-                    keyboard: keyboard,
-                    one_time_keyboard: false,
-                    resize_keyboard: true
-                };
-                if(text != "/distance"){
-                    this.resos[this.i] = text;
-                    this.i++;
+                }else{
+                    app.telegram.sendMessage(this.chat, "Resonadores: " +
+                                                        "\n<b>1</b> - L" +this.resos[0] +
+                                                        "\n<b>2</b> - L" +this.resos[1] +
+                                                        "\n<b>3</b> - L" +this.resos[2] +
+                                                        "\n<b>4</b> - L" +this.resos[3] +
+                                                        "\n<b>5</b> - L" +this.resos[4] +
+                                                        "\n<b>6</b> - L" +this.resos[5] +
+                                                        "\n<b>7</b> - L" +this.resos[6] +
+                                                        "\n<b>8</b> - L" +this.resos[7], null);
                 }
-                app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador:", markup);
+
             }
         }
     };
