@@ -14,6 +14,7 @@
      */
     function Distancecalc(message) {
         this.chat = message.chat.id,
+        this.modsCount = 0;
         this.message_id = message.message_id;
         this.i = 0;
         this.resos = [];
@@ -24,7 +25,7 @@
      * @param message {object} Telegram message object
      */
     Distancecalc.prototype.onMessage = function (message) {
-        var resp, markup,
+        var resp, markup, distancia,
             keyboard = [],
             text = message.text;
             console.log("texto calculadora " + text);
@@ -48,36 +49,57 @@
             }else{
                 /////////////////////////////////////
                 console.log("numero reso" + this.resos.length);
-                if (this.resos.length <= 8) {
-                    //this.complete = true;              
-                    keyboard = [
-                        ["1","2","3","4"],
-                        ["5","6","7","8"],
-                        ["Cancelar"]
-                    ];
-                    markup = {
-                        keyboard: keyboard,
-                        one_time_keyboard: false,
-                        resize_keyboard: true
-                    };
-                    if (text != "/distance") {
-                        this.resos[this.i] = text;
-                        this.i++;
-                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);
-                    }else{
-                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):-", markup);                        
-                    }
+                //this.complete = true;              
+                keyboard = [
+                    ["1","2","3","4"],
+                    ["5","6","7","8"],
+                    ["Cancelar"]
+                ];
+                markup = {
+                    keyboard: keyboard,
+                    one_time_keyboard: false,
+                    resize_keyboard: true
+                };
 
+                if (text != "/distance") {
+                    this.resos[this.i] = text;
+                    this.i++;
+                    if(this.resos.length <= 8){
+                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);                            
+                    }else{
+                        keyboard = [
+                            ["Link Amp"],
+                            ["Link Amp Very Rare"],
+                            ["Softbank Ultra Link"],
+                            ["Ninguno"]
+                        ];
+                        app.telegram.sendMessage(this.chat, "Resonadores: " +
+                                                    "\n<b>1</b> - L" +this.resos[0] +
+                                                    "\n<b>2</b> - L" +this.resos[1] +
+                                                    "\n<b>3</b> - L" +this.resos[2] +
+                                                    "\n<b>4</b> - L" +this.resos[3] +
+                                                    "\n<b>5</b> - L" +this.resos[4] +
+                                                    "\n<b>6</b> - L" +this.resos[5] +
+                                                    "\n<b>7</b> - L" +this.resos[6] +
+                                                    "\n<b>8</b> - L" +this.resos[7], null);
+                        app.telegram.sendMessage(this.chat, "Selecciona los mods instalados en el portal:", markup);
+
+                        if (text == "Link Amp") {
+                            resultado = 0;
+                            this.modsCount++;
+                        }else if(text == "Link Amp Very Rare"){
+                            resultado = 0;
+                            this.modsCount++;
+                        }else if(text == "Softbank Ultra Link"){
+                            resultado = 0;
+                            this.modsCount++;
+                        }else{
+                            resultado = 0;
+                        }
+
+                    }
                 }else{
-                    app.telegram.sendMessage(this.chat, "Resonadores: " +
-                                                        "\n<b>1</b> - L" +this.resos[0] +
-                                                        "\n<b>2</b> - L" +this.resos[1] +
-                                                        "\n<b>3</b> - L" +this.resos[2] +
-                                                        "\n<b>4</b> - L" +this.resos[3] +
-                                                        "\n<b>5</b> - L" +this.resos[4] +
-                                                        "\n<b>6</b> - L" +this.resos[5] +
-                                                        "\n<b>7</b> - L" +this.resos[6] +
-                                                        "\n<b>8</b> - L" +this.resos[7], null);
+                    app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):-", markup);                        
                 }
 
             }
