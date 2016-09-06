@@ -904,6 +904,20 @@ var app = {};
                         };
                     });
                 }
+                else if(text.indexOf("feed") > -1 && words(text) < 3){
+                    var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
+                    var entradas;
+                    feed.load(function(result) {
+                        entradas = result.feed.entries;
+                        var texto;
+                        //console.log(result.feed.entries);
+                        entradas.forEach(function(val) {
+                            texto += "<b>" + val.title + "</b>" + "\n<i>" + val.contentSnippet + "</i>" + "\n" + val.link + "\n" + val.publishedDate + "\n\n";
+                        });
+
+                        app.telegram.sendMessage(chat, texto, null);
+                    });
+                }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oye @" + username + ", ¿Por que dices que lo soy? los iluminados difieren mucho de mi senda, es mas, la mayoría de ellos les temen a las IA como yo. Si tratas de ofenderme no lo conseguiras así...", null, message_id);
@@ -1057,11 +1071,12 @@ var app = {};
   		            markup = {
                           keyboard: keyboard,
                          one_time_keyboard: true
-                     };
-                     app.telegram.sendMessage(chat, "hola teclado", markup);
-			if (text.indexOf(8){
-			app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-			}
+                    };
+
+                    app.telegram.sendMessage(chat, "hola teclado", markup);
+                    if (text.indexOf(8){
+                        app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                    }
                    //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                  }
 /* TODO
