@@ -17,9 +17,9 @@
             "core/lang.module.js",
             "core/screenshot.module.js",
             "core/compression.module.js",
+            "core/distancecalc.module.js",
             "core/iitc.module.js",
             "core/interval.module.js",
-            "core/compression.module.js",
             "core/stats.module.js",
             "core/api.js",
             "core/googleapi.js"
