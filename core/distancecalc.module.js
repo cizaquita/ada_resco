@@ -47,6 +47,7 @@
                 this.complete = true;
             }else{
                 /////////////////////////////////////
+                console.log("numero reso" + resos.length);
                 if (this.resos.length <= 8) {
                     //this.complete = true;              
                     keyboard = [
