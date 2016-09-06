@@ -915,7 +915,7 @@ var app = {};
                             texto += "<b>" + val.title + "</b>" + "\n<i>" + val.contentSnippet + "</i>" + "\n" + val.link + "\n" + val.publishedDate + "\n\n";
                         });
 
-                        app.telegram.sendMessage(chat, , null);
+                        app.telegram.sendMessage(chat, texto, null);
                     });
                 }
             // iluminada
