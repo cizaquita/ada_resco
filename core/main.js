@@ -1065,18 +1065,18 @@ var app = {};
                 }
             // Portal calc 
                 else if (text.indexOf("alcance") > -1 || text.indexOf("portales") > -1 && words(text) < 5) {
-                    keyboard = [
- 			                    ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
- 			        ];
-  		            markup = {
-                          keyboard: keyboard,
-                         one_time_keyboard: true
+		    var level = new Number(0);
+		    var resos = new Number(0);
+		    var mods = new Number(0);
+                    resonators = [
+ 			       ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
+ 			       ];
+  		    markupr = {
+                          keyboard: resonators,
+                          one_time_keyboard: true
                     };
-
-                    app.telegram.sendMessage(chat, "hola teclado", markup);
-                    if (markup(8)){
-                        app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                    }
+                    app.telegram.sendMessage(chat, "hola teclado", markupr);
+		// aquí debe tomar la respuesta y asignarla a resos, luego viene un if que pregunta si resos = 8, si si, salga y pregunte si tiene mods de alcance y  multiplica resos por 1 y lo divide en 8 y la asigna a nivel, luego pregunta el numero de mods, si no tiene mods o los tuviera, vaya a calcular el rango, si resos es diferente de 8 va a preguntar por el numero de resos lvl2, cuando los tenga los suma a resos y va preguntando hasta que llegue a los lvl8 y pregunta si tiene mods y cuantos y así
                    //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                  }
 /* TODO
