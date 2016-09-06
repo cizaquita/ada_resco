@@ -906,7 +906,7 @@ var app = {};
                 }
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
-                    var entradas;
+                    var entradas = "";
                     feed.load(function(result) {
                         entradas = result.feed.entries;
                         var texto;
