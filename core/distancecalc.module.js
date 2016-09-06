@@ -27,6 +27,7 @@
         var resp, markup,
             keyboard = [],
             text = message.text;
+            console.log("texto calculadora " + text);
         //REPLY MARKUP
         var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Ir"
