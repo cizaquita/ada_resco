@@ -1058,7 +1058,7 @@ var app = {};
                          one_time_keyboard: true
                      };
                      app.telegram.sendMessage(chat, "hola teclado", markup);
-			if (getMessageId()=8){
+			if (text.indexOf(8){
 			app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
 			}
                    //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
