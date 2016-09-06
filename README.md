@@ -1,8 +1,8 @@
 # ada_resco
 
-Lista de comandos:
+## Lista de comandos:
 
-help - Información
-screenshot - Pantallazo de INTEL
-plugins - Plugins de IITC para INTEL
-cancel - Cancelar cualquier tarea
+* help - Información
+* screenshot - Pantallazo de INTEL
+* plugins - Plugins de IITC para INTEL
+* cancel - Cancelar cualquier tarea
