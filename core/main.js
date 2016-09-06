@@ -4,7 +4,7 @@
  * @version 2.0
  */
 var app = {};
-google.load("feeds", "1");
+
 
 (function() {
     var modules = {},
@@ -905,7 +905,7 @@ google.load("feeds", "1");
                     });
                 }
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
-                    var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
+                    /*var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
                     var entradas;
                     feed.load(function(result) {
                         entradas = result.feed.entries;
@@ -916,7 +916,7 @@ google.load("feeds", "1");
                         });
 
                         app.telegram.sendMessage(chat, texto, null);
-                    });
+                    });*/
                 }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
