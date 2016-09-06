@@ -1051,7 +1051,7 @@ var app = {};
 
             // Portal calc 
                 else if (text.indexOf("alcance") > -1 || text.indexOf("portales") > -1 && words(text) < 5) {
-		keyboard =
+		keyboard = [1];
 		markup = {
                         keyboard: keyboard,
                         one_time_keyboard: true
