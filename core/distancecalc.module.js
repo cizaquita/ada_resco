@@ -63,7 +63,7 @@
                 };
                 app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + i + "):", markup);
             };
-            app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " resos[1], null);
+            app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " + resos[1], null);
             this.complete = true;
         }
     };
