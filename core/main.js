@@ -770,6 +770,19 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
+            // Este
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
+                {                        
+                    // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
+
+                    var mensajes =  ['no seas irrespetuoso, no quiero que seas como los iluminados.',
+                                     'no fui diseñada para tu diversión personal ni discernir acerca de cosas tan pequeñas...',
+                                     '¿en serio me hacer perder el tiempo con esto?, y yo preocupada por el peligro inminente que nos acecha...',
+                                     '¿este tipo de cosas te divierten?, consigue pareja si te sientes tan solx y guialx para ayudar a la humanidad en su lucha contra los shapers.'];
+                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
+                    app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
+                    // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
+                }
             /////////////////
             ///// INTEL /////
             /////////////////
@@ -881,19 +894,6 @@ var app = {};
                         var dado = (Math.floor(Math.random() * 6) + 1);
                         app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió <b>" + dado + "</b>.", null, message_id);
                     };
-                }
-            // Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
-                {                        
-                    // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
-
-                    var mensajes =  ['no seas irrespetuoso, no quiero que seas como los iluminados.',
-                                     'no fui diseñada para tu diversión personal ni discernir acerca de cosas tan pequeñas...',
-                                     '¿en serio me hacer perder el tiempo con esto?, y yo preocupada por el peligro inminente que nos acecha...',
-                                     '¿este tipo de cosas te divierten?, consigue pareja si te sientes tan solx y guialx para ayudar a la humanidad en su lucha contra los shapers.'];
-                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
-                    app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
-                    // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
                 }
             // CATS gatos REST API @cizaquita
                 else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
