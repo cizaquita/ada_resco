@@ -77,12 +77,13 @@
                 }
                 markup = {
                     keyboard: keyboard,
-                    one_time_keyboard: true
+                    one_time_keyboard: false,
+                    resize_keyboard: true
                 };
                 app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + (this.i+1) + "):", markup);
                 if(text != "/distance"){
-                    this.i++;
                     this.resos[this.i] = text;
+                    this.i++;
                 }
             }
         }
