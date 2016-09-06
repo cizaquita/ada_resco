@@ -49,7 +49,7 @@
             }
 
             /////////////////////////////////////
-            if (this.i >= 8) {
+            if (resos.length >= 8) {
                 app.telegram.sendMessage(this.chat, "Resonadores: " +
                                                     "\n<b>1</b> - L" +this.resos[0] +
                                                     "\n<b>2</b> - L" +this.resos[1] +
