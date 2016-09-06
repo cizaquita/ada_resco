@@ -49,7 +49,7 @@
             }
 
             /////////////////////////////////////
-            if (this.i == 8) {
+            if (this.i == 7) {
                 app.telegram.sendMessage(this.chat, "Resonadores: " +
                                                     "\n<b>1</b> - L" +this.resos[0] +
                                                     "\n<b>2</b> - L" +this.resos[1] +
@@ -59,22 +59,13 @@
                                                     "\n<b>6</b> - L" +this.resos[5] +
                                                     "\n<b>7</b> - L" +this.resos[6] +
                                                     "\n<b>8</b> - L" +this.resos[7], null);
-                this.complete = true;
-            }else{
-                if (this.i == 8) {
-                    keyboard = [
-                        ["1","2","3","4"],
-                        ["5","6","7","8"],
-                        ["Listo"],
-                        ["Cancelar"]
-                    ];
-                }else{                    
-                    keyboard = [
-                        ["1","2","3","4"],
-                        ["5","6","7","8"],
-                        ["Cancelar"]
-                    ];
-                }
+                //this.complete = true;
+            }else{                  
+                keyboard = [
+                    ["1","2","3","4"],
+                    ["5","6","7","8"],
+                    ["Cancelar"]
+                ];
                 markup = {
                     keyboard: keyboard,
                     one_time_keyboard: false,
@@ -83,8 +74,9 @@
                 if(text != "/distance"){
                     this.resos[this.i] = text;
                     this.i++;
+                }else{
+                    app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + (this.i+1) + "):", markup);
                 }
-                app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + (this.i) + "):", markup);
             }
         }
     };
