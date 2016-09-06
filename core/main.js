@@ -1048,6 +1048,17 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }  
                 }
+
+            // Portal calc 
+                else if (text.indexOf("alcance") > -1 || text.indexOf("portales") > -1 && words(text) < 5) {
+		keyboard =
+		markup = {
+                        keyboard: keyboard,
+                        one_time_keyboard: true
+                    };
+                    app.telegram.sendMessage(this.chat, "hola teclado", markup);
+                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
 /* TODO
             // items 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
