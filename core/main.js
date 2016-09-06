@@ -1094,7 +1094,7 @@ var app = {};
                     };
                     app.telegram.sendMessage(chat, "hola teclado", markupl);
 
-		// aquí debe tomar la respuesta y asignarla a resos, luego viene un if que pregunta si resos = 8, si si, salga y pregunte si tiene mods de alcance y  multiplica resos por 1 y lo divide en 8 y la asigna a nivel, luego pregunta el numero de mods, si no tiene mods o los tuviera, vaya a calcular el rango, si resos es diferente de 8 va a preguntar por el numero de resos lvl2, cuando los tenga los suma a resos y va preguntando hasta que llegue a los lvl8 y pregunta si tiene mods y cuantos y así
+		// aquí debe tomar la respuesta y asignarla a resos, luego viene un if que pregunta si resos = 8, si si, salga y pregunte si tiene mods de alcance y  multiplica resos por 1 y lo divide en 8 y la asigna a nivel, luego pregunta el numero de mods, si no tiene mods o los tuviera, vaya a calcular el rango, si resos es diferente de 8 va a preguntar por el numero de resos lvl2, cuando los tenga los suma a resos y va preguntando hasta que llegue a los lvl8 y pregunta si tiene mods y cuantos y así---- la formula del rango viene dada por 160 metros x lvl exacto del portal elevado a la 4
                    //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                  }
 /* TODO
