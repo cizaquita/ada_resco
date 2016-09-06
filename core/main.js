@@ -1057,7 +1057,7 @@ var app = {};
                         one_time_keyboard: true
                     };
                     app.telegram.sendMessage(this.chat, "hola teclado", markup);
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                  //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
 /* TODO
             // items 
