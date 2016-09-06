@@ -22,7 +22,8 @@
             "core/compression.module.js",
             "core/stats.module.js",
             "core/api.js",
-            "core/googleapi.js"
+            "core/googleapi.js",
+            "core/distance.module.js"
         ]
     },
     "content_scripts": [
