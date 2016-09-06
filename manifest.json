@@ -21,7 +21,8 @@
             "core/interval.module.js",
             "core/compression.module.js",
             "core/stats.module.js",
-            "core/api.js"
+            "core/api.js",
+            "core/googleapi.js"
         ]
     },
     "content_scripts": [

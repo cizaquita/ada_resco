@@ -882,6 +882,14 @@ var app = {};
                         app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió <b>" + dado + "</b>.", null, message_id);
                     };
                 }
+            // CATS gatos REST API @cizaquita
+                else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
+                    app.api.getCatFact(function(frase){
+                        if (frase != null) {
+                            app.telegram.sendMessage(chat, frase, null, message_id);
+                        };
+                    });
+                }
             // Este
                 else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
                 {                        
@@ -894,14 +902,6 @@ var app = {};
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
-                }
-            // CATS gatos REST API @cizaquita
-                else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
-                    app.api.getCatFact(function(frase){
-                        if (frase != null) {
-                            app.telegram.sendMessage(chat, frase, null, message_id);
-                        };
-                    });
                 }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
