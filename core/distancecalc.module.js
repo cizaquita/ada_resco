@@ -43,16 +43,27 @@
                 resos = [];
             for (i; i <= 8; i++) {
                 resos[i] = text;
-                keyboard = [
-                    [["1"],["2"],["3"],["4"]],
-                    [["5"],["6"],["7"],["8"]]
-                ];
+                if (resos[i] == 8) {
+                    keyboard = [
+                        ["1","2","3","4"],
+                        ["5","6","7","8"],
+                        ["Listo"],
+                        ["Cancelar"]
+                    ];
+                }else{                    
+                    keyboard = [
+                        ["1","2","3","4"],
+                        ["5","6","7","8"],
+                        ["Cancelar"]
+                    ];
+                }
                 markup = {
                     keyboard: keyboard,
                     one_time_keyboard: true
                 };
                 app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + i + "):", markup);
             };
+            app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " resos[1], null);
             this.complete = true;
         }
     };
