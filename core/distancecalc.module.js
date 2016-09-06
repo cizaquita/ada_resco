@@ -64,7 +64,7 @@
                         this.i++;
                         app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);
                     }else{
-                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);                        
+                        app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):-", markup);                        
                     }
 
                 }else{
