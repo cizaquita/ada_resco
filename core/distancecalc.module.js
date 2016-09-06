@@ -15,8 +15,8 @@
     function Distancecalc(message) {
         this.chat = message.chat.id,
         this.message_id = message.message_id;
-        this.onMessage(message);
         this.i = 1;
+        this.onMessage(message);
     }
 
     /**
@@ -66,7 +66,7 @@
                     one_time_keyboard: true
                 };
                 app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + this.i + "):", markup);
-                i++;
+                this.i++;
             }
         }
     };
