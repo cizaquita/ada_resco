@@ -15,7 +15,8 @@
     function Distancecalc(message) {
         this.chat = message.chat.id,
         this.message_id = message.message_id;
-        this.i = 1;
+        this.i = 0;
+        this.resos = [];
         this.onMessage(message);
     }
 
@@ -40,14 +41,27 @@
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
             this.complete = true;
         }else{
-            var resos = [];
 
-            if (text == "8") {
-                app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " + resos[1], null);
+            if (text == "cancelar") {
+                app.telegram.sendMessage(this.chat, "Tarea cancelada.", null);
+                this.complete = true;
+            }
+            
+            /////////////////////////////////////
+            if (this.i == 7) {
+                app.telegram.sendMessage(this.chat, "Resonadores: " +
+                                                    "\n<b>1</b>" +this.resos[0] +
+                                                    "\n<b>2</b>" +this.resos[1] +
+                                                    "\n<b>3</b>" +this.resos[2] +
+                                                    "\n<b>4</b>" +this.resos[3] +
+                                                    "\n<b>5</b>" +this.resos[4] +
+                                                    "\n<b>6</b>" +this.resos[5] +
+                                                    "\n<b>7</b>" +this.resos[6] +
+                                                    "\n<b>8</b>" +this.resos[7], null);
                 this.complete = true;
             }else{
-                resos[this.i] = text;
-                if (resos[this.i] == 8) {
+                this.resos[this.i] = text;
+                if (this.resos[this.i] == 8) {
                     keyboard = [
                         ["1","2","3","4"],
                         ["5","6","7","8"],
