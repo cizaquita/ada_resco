@@ -73,7 +73,7 @@
                             ["Softbank Ultra Link"],
                             ["Ninguno"]
                         ];
-			var suma = new Number();
+			var suma = new Number(0);
                         suma = (this.resos[0] + this.resos[1] + this.resos[2] + this.resos[3] +
                                       this.resos[4] + this.resos[5] + this.resos[6] + this.resos[7]);
                         var elevar = Math.pow(suma, 4);
