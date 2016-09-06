@@ -86,7 +86,7 @@
                                                     "\n<b>6</b> - L" +this.resos[5] +
                                                     "\n<b>7</b> - L" +this.resos[6] +
                                                     "\n<b>8</b> - L" +this.resos[7] +
-                                                    "\n\nDistancia: " + suma + resultado + "km", null);
+                                                    "\n\nDistancia: " + suma + "asd" + resultado + "m", null);
                         app.telegram.sendMessage(this.chat, "Selecciona los mods instalados en el portal:", markup);
 
                         if (text == "Link Amp") {
