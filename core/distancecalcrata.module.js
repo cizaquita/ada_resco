@@ -71,7 +71,7 @@
                     one_time_keyboard: false,
                     resize_keyboard: true
                 };
-                if(text != "/distance"){
+                if(text != "/distancia"){
                     this.resos[this.i] = text;
                     this.i++;
                 }else{
