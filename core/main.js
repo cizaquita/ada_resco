@@ -909,7 +909,7 @@ var app = {};
                     var entradas = "";
                     feed.load(function(result) {
                         entradas = result.feed.entries;
-                        var texto;
+                        var texto = "";
                         //console.log(result.feed.entries);
                         entradas.forEach(function(val) {
                             texto += "<b>" + val.title + "</b>" + "\n<i>" + val.contentSnippet + "</i>" + "\n" + val.link + "\n" + val.publishedDate + "\n\n";
