@@ -4,12 +4,12 @@
  * @version 2.0
  */
 var app = {};
+google.load("feeds", "1");
 
 (function() {
     var modules = {},
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8";
-    google.load("feeds", "1");
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
     // API MOODLE: AIzaSyBt9Hcwt_5fxsChvB_1yB4D1ZVCeiZlYuI
