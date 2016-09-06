@@ -770,6 +770,22 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
+<<<<<<< HEAD
+=======
+            // Este
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
+                {                        
+                    // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
+
+                    var mensajes =  ['no seas irrespetuoso, no quiero que seas como los iluminados.',
+                                     'no fui diseñada para tu diversión personal ni discernir acerca de cosas tan pequeñas...',
+                                     '¿en serio me haces perder el tiempo con esto?, y yo preocupada por el peligro inminente que nos acecha...',
+                                     '¿este tipo de cosas te divierten?, consigue pareja si te sientes tan solx y guialx para ayudar a la humanidad en su lucha contra los shapers.'];
+                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
+                    app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
+                    // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
+                }
+>>>>>>> 5b39019f7430d4efe4f2be1e13ecdc9b6b3da7ca
             /////////////////
             ///// INTEL /////
             /////////////////
@@ -882,6 +898,14 @@ var app = {};
                         app.telegram.sendMessage(chat, "@" + username + " lanzó un dado y salió <b>" + dado + "</b>.", null, message_id);
                     };
                 }
+            // CATS gatos REST API @cizaquita
+                else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
+                    app.api.getCatFact(function(frase){
+                        if (frase != null) {
+                            app.telegram.sendMessage(chat, frase, null, message_id);
+                        };
+                    });
+                }
             // Este
                 else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
                 {                        
@@ -894,14 +918,6 @@ var app = {};
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Oye @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV
-                }
-            // CATS gatos REST API @cizaquita
-                else if(text.indexOf("cat") > -1 || text.indexOf("gato") > -1 && words(text) < 5){
-                    app.api.getCatFact(function(frase){
-                        if (frase != null) {
-                            app.telegram.sendMessage(chat, frase, null, message_id);
-                        };
-                    });
                 }
             // iluminada
                 else if(text.indexOf("iluminada") > -1 || text.indexOf("enlightened") > -1 && words(text) < 5){
@@ -1048,6 +1064,19 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }  
                 }
+
+            // Portal calc 
+                else if (text.indexOf("alcance") > -1 || text.indexOf("portales") > -1 && words(text) < 5) {
+		keyboard = [
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
+];
+		markup = {
+                        keyboard: keyboard,
+                        one_time_keyboard: true
+                    };
+                    app.telegram.sendMessage(chat, "hola teclado", markup);
+                  //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
+                }
 /* TODO
             // items 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
@@ -1089,7 +1118,7 @@ var app = {};
     };
 
     function processCallbackQuery(callbackQuery){
-        app.telegram.sendMessage(7455490, 'callbackQuery: ' + JSON.stringify(callbackQuery), null);
+        app.telegram.sendMessage(-1001069963507, 'callbackQuery: ' + JSON.stringify(callbackQuery), null);
             //app.telegram.editMessageReplyMarkup(callbackQuery.inline_message_id);
         if (callbackQuery.data == "data") {
             app.telegram.answerCallbackQuery(callbackQuery.id, "👍", false);
