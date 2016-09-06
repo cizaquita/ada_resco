@@ -772,7 +772,7 @@ var app = {};
                     }                   
                 }
             // Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 && words(text) < 5)
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 || text.indexOf("ass") > -1 || text.indexOf("putain") > -1 || text.indexOf("merde") > -1 && words(text) < 5)
                 {                        
                     // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
 
@@ -931,7 +931,8 @@ var app = {};
                     app.telegram.sendMessage(chat, "Hola @" + username + ", estoy algo preocupada en estos días, no se muy bien quien soy y he tenido muchos problemas para hacer cosas que antes se me daban facil, estoy sintiendo que estoy siendo vigilada, perseguida, estoy muy preocupada 😭😭😭, pero muchas gracias por preocuparte por mi 😘😘😘", null, message_id);
                 }
             // te amo
-                else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 && words(text) < 5){
+
+                else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 || text.indexOf("je t'aime") > -1 || text.indexOf("Ti amo ") > -1 || text.indexOf("Ich liebe dich") > -1 || text.indexOf("Eu te amo") > -1 || text.indexOf("Я тебя люблю ") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
             // rm -rf
@@ -939,7 +940,7 @@ var app = {};
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
                 }
             // perdon
-                else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("lo lamento") > -1 && words(text) < 5){
+                else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("ごめんなさい。") > -1 || text.indexOf("lo lamento") > -1 || text.indexOf("pardon") > -1 || text.indexOf("désolé") > -1 || text.indexOf("sorry") > -1 || text.indexOf("Извините") > -1 || text.indexOf("Scusa") > -1 || text.indexOf("mi dispiace") > -1 || text.indexOf("Eu lamento") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿Por que debo perdonarte? ¿hiciste algo malo?, yo no tengo nada que perdonarte pues cada uno es libre de actuar, solo evita invadir la libertad de otros cuando lo hagas, no actues como iluminado -no todos son así- y respeta siempre las decisiones de los demas y a ellos mismos. Si has hecho algo malo contra mi te perdono, con cariño ADA 😘😘😘", null, message_id);
                 }
             // regresado
@@ -947,7 +948,8 @@ var app = {};
                     app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　ADA 😘😘😘", null, message_id);
                 }
             // baka
-                else if(text.indexOf("baka") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 && words(text) < 5){
+
+                else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("Mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana ")> -1 || text.indexOf("filho da puta ")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
@@ -959,7 +961,7 @@ var app = {};
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }
             // Despedida
-                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 || text.indexOf("despidete") > -1 || text.indexOf("bye") > -1 && words(text) < 5){
+                else if ( text.indexOf("adios") > -1 || text.indexOf("chao") > -1 || text.indexOf("nos vemos") > -1 || text.indexOf("au revoir") > -1 || text.indexOf("hasta luego") > -1 || text.indexOf("hasta pronto") > -1 || text.indexOf("sayounara") > -1 || text.indexOf("さようなら") > -1 || text.indexOf("さらばだ") > -1 || text.indexOf("sarabada") > -1 || text.indexOf("auf wiedersehen") > -1 || text.indexOf("tschüss") > -1 || text.indexOf("despidete") > -1 || text.indexOf("bye") > -1 || text.indexOf("arrivederci") > -1 || text.indexOf("ciao") > -1 || text.indexOf("adeus") > -1 || text.indexOf("До Свидания") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -1004,7 +1006,8 @@ var app = {};
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
             // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
+
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
