@@ -60,7 +60,7 @@
                                                     "\n<b>8</b> - L" +this.resos[7], null);
                 this.complete = true;
             }else{
-                if (this.resos[this.i] == 8) {
+                if (this.i == 8) {
                     keyboard = [
                         ["1","2","3","4"],
                         ["5","6","7","8"],
@@ -79,8 +79,8 @@
                     one_time_keyboard: true
                 };
                 app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + (this.i+1) + "):", markup);
-                this.i++;
                 if(text != "/distance"){
+                    this.i++;
                     this.resos[this.i] = text;
                 }
             }
