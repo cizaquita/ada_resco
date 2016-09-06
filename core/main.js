@@ -30,7 +30,7 @@ var app = {};
                 modules[magicWord] = module;
             }
         });
-
+        app.google.load("feeds", "1");
         getUpdates();
     }
 
