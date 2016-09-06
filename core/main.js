@@ -9,6 +9,7 @@ var app = {};
     var modules = {},
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8";
+    google.load("feeds", "1");
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
     // API MOODLE: AIzaSyBt9Hcwt_5fxsChvB_1yB4D1ZVCeiZlYuI
@@ -901,6 +902,20 @@ var app = {};
                         if (frase != null) {
                             app.telegram.sendMessage(chat, frase, null, message_id);
                         };
+                    });
+                }
+                else if(text.indexOf("feed") > -1 && words(text) < 3){
+                    var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
+                    var entradas;
+                    feed.load(function(result) {
+                        entradas = result.feed.entries;
+                        var texto;
+                        //console.log(result.feed.entries);
+                        entradas.forEach(function(val) {
+                            texto += "<b>" + val.title + "</b>" + "\n<i>" + val.contentSnippet + "</i>" + "\n" + val.link + "\n" + val.publishedDate + "\n\n";
+                        });
+
+                        app.telegram.sendMessage(chat, , null);
                     });
                 }
             // iluminada
