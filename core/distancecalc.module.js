@@ -43,13 +43,13 @@
             this.complete = true;
         }else{
 
-            if (text == "cancelar") {
+            if (text == "Cancelar") {
                 app.telegram.sendMessage(this.chat, "Tarea cancelada.", null);
                 this.complete = true;
             }
 
             /////////////////////////////////////
-            if (this.i == 7) {
+            if (this.i >= 8) {
                 app.telegram.sendMessage(this.chat, "Resonadores: " +
                                                     "\n<b>1</b> - L" +this.resos[0] +
                                                     "\n<b>2</b> - L" +this.resos[1] +
