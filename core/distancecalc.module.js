@@ -73,6 +73,10 @@
                             ["Softbank Ultra Link"],
                             ["Ninguno"]
                         ];
+                        var suma = (this.resos[0] + this.resos[1] + this.resos[2] + this.resos[3] +
+                                      this.resos[4] + this.resos[5] + this.resos[6] + this.resos[7]);
+                        var elevar = Math.pow(suma, 4);
+                        resultado = elevar * 160;
                         app.telegram.sendMessage(this.chat, "Resonadores: " +
                                                     "\n<b>1</b> - L" +this.resos[0] +
                                                     "\n<b>2</b> - L" +this.resos[1] +
@@ -81,7 +85,8 @@
                                                     "\n<b>5</b> - L" +this.resos[4] +
                                                     "\n<b>6</b> - L" +this.resos[5] +
                                                     "\n<b>7</b> - L" +this.resos[6] +
-                                                    "\n<b>8</b> - L" +this.resos[7], null);
+                                                    "\n<b>8</b> - L" +this.resos[7] +
+                                                    "\n\nDistancia: " + resultado + "km", null);
                         app.telegram.sendMessage(this.chat, "Selecciona los mods instalados en el portal:", markup);
 
                         if (text == "Link Amp") {
