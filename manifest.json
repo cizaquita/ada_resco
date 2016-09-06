@@ -42,5 +42,5 @@
         "<all_urls>"
     ],
     "web_accessible_resources": ["iitc/*", "stats/*"],
-    "content_security_policy":"script-src 'self' 'unsafe-eval' https://api-maps.yandex.ru; object-src 'self'"
+    "content_security_policy":"script-src 'self' 'unsafe-eval' https://api-maps.yandex.ru https://www.google.com; object-src 'self'"
 }
