@@ -16,6 +16,7 @@
         this.chat = message.chat.id,
         this.message_id = message.message_id;
         this.onMessage(message);
+        this.i = 1;
     }
 
     /**
@@ -39,11 +40,14 @@
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
             this.complete = true;
         }else{
-            var i = 1,
-                resos = [];
-            for (i; i <= 8; i++) {
-                resos[i] = text;
-                if (resos[i] == 8) {
+            var resos = [];
+
+            if (text == "8") {
+                app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " + resos[1], null);
+                this.complete = true;
+            }else{
+                resos[this.i] = text;
+                if (resos[this.i] == 8) {
                     keyboard = [
                         ["1","2","3","4"],
                         ["5","6","7","8"],
@@ -61,10 +65,9 @@
                     keyboard: keyboard,
                     one_time_keyboard: true
                 };
-                app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + i + "):", markup);
-            };
-            app.telegram.sendMessage(this.chat, "Resonadores: " + resos[0] + ", " + resos[1], null);
-            this.complete = true;
+                app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador (" + this.i + "):", markup);
+                i++;
+            }
         }
     };
 }());
