@@ -84,7 +84,6 @@
                     if(this.resos.length <= 7){
                         app.telegram.sendMessage(this.chat, "Selecciona el nivel resonador(" + (this.i+1) + "):", markup);                            
                     }else{
-<<<<<<< HEAD
                         keyboard = [
                             ["Link Amp"],
                             ["Link Amp Very Rare"],
@@ -96,10 +95,8 @@
                                       this.resos[4] + this.resos[5] + this.resos[6] + this.resos[7]);
                         var suma = (Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
                                       Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]));
-=======
                         var suma = ((Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
                                       Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]))/8);
->>>>>>> 555fc121f5deb0ccb2f288869bf22fdb304bc281
                         var elevar = Math.pow(suma, 4);
                         resultado = elevar * 160;
 			if ((text != 1) && (text != 2) && (text != 3) && (text != 4) && (text != 5) && (text != 6) && (text != 7) && (text != 8)){
