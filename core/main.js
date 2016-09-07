@@ -302,10 +302,6 @@ var app = {};
             app.telegram.sendMessage(chat, "Reiniciado...", null, message_id);
             chrome.runtime.reload();
         }
-        // If user has another active module
-        else if (activeModule[chat]) {
-            activeModule[chat].onMessage(message);
-        }
 
         // In other case check is it location UBICACION ADJUNTA
         /*else if (message.location && app.modules.screenshot) {
@@ -1095,6 +1091,10 @@ var app = {};
                 }
             }
         ///////////END
+        }
+        // If user has another active module
+        else if (activeModule[chat]) {
+            activeModule[chat].onMessage(message);
         }
         // Or maybe user made a mistake (do not reply in groups)
         //Users and chat group that sends a message, it will be logged
