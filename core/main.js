@@ -791,61 +791,61 @@ var app = {};
 		    var dias = new String();
                     var dm = addZero(d.getDate());
 		    if(dia == 0){
-			dias=Domingo;
+			dias="Domingo";
 		    }
 		    else if(dia == 1){
-			dias=Lunes;
+			dias="Lunes";
 		    }
 		    else if(dia == 2){
-			dias=Martes;
+			dias="Martes";
 		    }
 		    else if(dia == 3){
-			dias=Miercoles;
+			dias="Miercoles";
 		    }
 		    else if(dia == 4){
-			dias=Jueves;
+			dias="Jueves";
 		    }
 		    else if(dia == 5){
-			dias=Viernes;
+			dias="Viernes";
 		    }
 		    else if(dia == 6){
-			dias=Sábado;
+			dias="Sábado";
 		    }
 		    if(m == 0){
-			mes=Enero;
+			mes="Enero";
 		    }
 		    else if(m == 1 ){
-			mes=Febrero;
+			mes="Febrero";
 		    }
 		    else if(m == 2 ){
-			mes=Marzo;
+			mes="Marzo";
 		    }
 		    else if(m == 3 ){
-			mes=Abril;
+			mes="Abril";
 		    }
 		    else if(m == 4 ){
-			mes=Mayo;
+			mes="Mayo";
 		    }
 		    else if(m == 5 ){
-			mes=Junio;
+			mes="Junio";
 		    }
 		    else if(m == 6 ){
-			mes=Julio;
+			mes="Julio";
 		    }
 		    else if(m == 7 ){
-			mes=Agosto;
+			mes="Agosto";
 		    }
 		    else if(m == 8 ){
-			mes=Septiembre;
+			mes="Septiembre";
 		    }
 		    else if(m == 9 ){
-			mes=Octubre;
+			mes="Octubre";
 		    }
 		    else if(m == 10 ){
-			mes=Noviembre;
+			mes="Noviembre";
 		    }
 		    else if(m == 11 ){
-			mes=Diciembre;
+			mes="Diciembre";
 		    }
                     if (username) {
                         app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dias + ", " + dm + " de " + mes + ' del año' + y, null, message_id);
