@@ -133,6 +133,10 @@ var app = {};
             text = '/screenshot';
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
+        if (text === '/distance@ada_resco_bot') {
+            text = '/distance';
+        }
+        // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
         if (text === '/help@ada_resco_bot') {
             text = '/help';
         }
@@ -903,6 +907,10 @@ var app = {};
                             app.telegram.sendMessage(chat, frase, null, message_id);
                         };
                     });
+                }
+            // DISTANCIA
+                else if(text.indexOf("distancia") > -1 && words(text) < 5){
+                    text = '/distance';
                 }
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
