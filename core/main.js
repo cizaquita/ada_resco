@@ -786,67 +786,69 @@ var app = {};
                     var d = new Date();
                     var y = addZero(d.getFullYear());
                     var m = addZero(d.getMonth());
+		    var mes = new String();
                     var dia = addZero(d.getDay());
+		    var dias = new String();
                     var dm = addZero(d.getDate());
 		    if(dia == 0){
-			dia=Domingo;
+			dias=Domingo;
 		    }
 		    else if(dia == 1){
-			dia=Lunes;
+			dias=Lunes;
 		    }
 		    else if(dia == 2){
-			dia=Martes;
+			dias=Martes;
 		    }
 		    else if(dia == 3){
-			dia=Miercoles;
+			dias=Miercoles;
 		    }
 		    else if(dia == 4){
-			dia=Jueves;
+			dias=Jueves;
 		    }
 		    else if(dia == 5){
-			dia=Viernes;
+			dias=Viernes;
 		    }
 		    else if(dia == 6){
-			dia=Sábado;
+			dias=Sábado;
 		    }
 		    if(m == 0){
-			m=Enero;
+			mes=Enero;
 		    }
 		    else if(m == 1 ){
-			m=Febrero;
+			mes=Febrero;
 		    }
 		    else if(m == 2 ){
-			m=Marzo;
+			mes=Marzo;
 		    }
 		    else if(m == 3 ){
-			m=Abril;
+			mes=Abril;
 		    }
 		    else if(m == 4 ){
-			m=Mayo;
+			mes=Mayo;
 		    }
 		    else if(m == 5 ){
-			m=Junio;
+			mes=Junio;
 		    }
 		    else if(m == 6 ){
-			m=Julio;
+			mes=Julio;
 		    }
 		    else if(m == 7 ){
-			m=Agosto;
+			mes=Agosto;
 		    }
 		    else if(m == 8 ){
-			m=Septiembre;
+			mes=Septiembre;
 		    }
 		    else if(m == 9 ){
-			m=Octubre;
+			mes=Octubre;
 		    }
 		    else if(m == 10 ){
-			m=Noviembre;
+			mes=Noviembre;
 		    }
 		    else if(m == 11 ){
-			m=Diciembre;
+			mes=Diciembre;
 		    }
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año' + y, null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dias + ", " + dm + " de " + mes + ' del año' + y, null, message_id);
                     }else{
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }                   
