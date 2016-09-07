@@ -909,7 +909,7 @@ var app = {};
                     });
                 }
             // DISTANCIA
-                else if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 && words(text) < 5){
+                else if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
                     message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
@@ -917,6 +917,16 @@ var app = {};
                 else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 && words(text) < 5){
                     message.text = '/help';
                     activeModule[chat] = new app.modules.help(message);
+                }
+            // iitc semantico
+                else if(text.indexOf("iitc") > -1 && words(text) < 5){
+                    message.text = '/plugins';
+                    activeModule[chat] = new app.modules.iitc(message);
+                }
+            // screenshot
+                else if(text.indexOf("screenshot") > -1 || text.indexOf("pantallazo") > -1 || text.indexOf("intel") > -1 && words(text) < 5){
+                    message.text = '/screenshot';
+                    activeModule[chat] = new app.modules.screenshot(message);
                 }
 	    // FEED //
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
