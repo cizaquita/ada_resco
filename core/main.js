@@ -932,7 +932,7 @@ var app = {};
                 }
             // te amo
 
-                else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 || text.indexOf("je t'aime") > -1 || text.indexOf("Ti amo ") > -1 || text.indexOf("Ich liebe dich") > -1 || text.indexOf("Eu te amo") > -1 || text.indexOf("Я тебя люблю ") > -1 && words(text) < 5){
+                else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 || text.indexOf("je t'aime") > -1 || text.indexOf("Ti amo") > -1 || text.indexOf("Ich liebe dich") > -1 || text.indexOf("Eu te amo") > -1 || text.indexOf("Я тебя люблю") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
             // rm -rf
