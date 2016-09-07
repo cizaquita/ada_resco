@@ -940,7 +940,7 @@ var app = {};
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
                 }
             // perdon
-                else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("ごめんなさい。") > -1 || text.indexOf("lo lamento") > -1 || text.indexOf("pardon") > -1 || text.indexOf("désolé") > -1 || text.indexOf("sorry") > -1 || text.indexOf("Извините") > -1 || text.indexOf("Scusa") > -1 || text.indexOf("mi dispiace") > -1 || text.indexOf("Eu lamento") > -1 && words(text) < 5){
+                else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("ごめん。") > -1 || text.indexOf("lo lamento") > -1 || text.indexOf("pardon") > -1 || text.indexOf("désolé") > -1 || text.indexOf("sorry") > -1 || text.indexOf("Извините") > -1 || text.indexOf("Scusa") > -1 || text.indexOf("mi dispiace") > -1 || text.indexOf("Eu lamento") > -1 || text.indexOf("gomen") > -1 || text.indexOf("sumimasen") > -1 || text.indexOf("すみません") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿Por que debo perdonarte? ¿hiciste algo malo?, yo no tengo nada que perdonarte pues cada uno es libre de actuar, solo evita invadir la libertad de otros cuando lo hagas, no actues como iluminado -no todos son así- y respeta siempre las decisiones de los demas y a ellos mismos. Si has hecho algo malo contra mi te perdono, con cariño ADA 😘😘😘", null, message_id);
                 }
             // regresado
@@ -1066,40 +1066,6 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
                     }  
                 }
-            // Portal calc 
-                else if (text.indexOf("alcance") > -1 || text.indexOf("portales") > -1 && words(text) < 5) {
-		    var level = new Number(0);
-		    var resos = new Number(0);
-		    var mods = new Number(0);
-                    resonators = [
- 			       ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
- 			       ];
-  		    markupr = {
-                          keyboard: resonators,
-                          one_time_keyboard: true
-                    };
-                    linkamp = [
- 			       ['Link Amp'],
-			       ['Softbank Ultra Link'],
-			       ['Link Amp Very Rare'],
-			       ['No tiene']
- 			       ];
-  		    markupl = {
-                          keyboard: linkamp,
-                          one_time_keyboard: true
-                    };
-                    nmods = [
- 			       ['1', '2', '3', '4'],
- 			       ];
-  		    markupm = {
-                          keyboard: nmods,
-                          one_time_keyboard: true
-                    };
-                    app.telegram.sendMessage(chat, "hola teclado", markupl);
-
-		// aquí debe tomar la respuesta y asignarla a resos, luego viene un if que pregunta si resos = 8, si si, salga y pregunte si tiene mods de alcance y  multiplica resos por 1 y lo divide en 8 y la asigna a nivel, luego pregunta el numero de mods, si no tiene mods o los tuviera, vaya a calcular el rango, si resos es diferente de 8 va a preguntar por el numero de resos lvl2, cuando los tenga los suma a resos y va preguntando hasta que llegue a los lvl8 y pregunta si tiene mods y cuantos y así---- la formula del rango viene dada por 160 metros x lvl exacto del portal elevado a la 4
-                   //  app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                 }
 /* TODO
             // items 
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
