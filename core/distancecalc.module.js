@@ -73,15 +73,13 @@
                             ["Softbank Ultra Link"],
                             ["Ninguno"]
                         ];
-			var suma = new Number(0);
-                        suma = (this.resos[0] + this.resos[1] + this.resos[2] + this.resos[3] +
-                                      this.resos[4] + this.resos[5] + this.resos[6] + this.resos[7]);
-                        var suma = (Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
-                                      Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]));
->>>>>>> 4525b25f67745fdab5c9b04cd8447eca45a7e6ae
+                        var suma = ((Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
+                                      Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]))/8);
                         var elevar = Math.pow(suma, 4);
                         resultado = elevar * 160;
-                        app.telegram.sendMessage(this.chat, "Resonadores: " +
+                        if (resultado >= 1000){
+				resultado = resultado /1000;
+                       		app.telegram.sendMessage(this.chat, "Resonadores: " +
                                                     "\n<b>1</b> - L" +this.resos[0] +
                                                     "\n<b>2</b> - L" +this.resos[1] +
                                                     "\n<b>3</b> - L" +this.resos[2] +
@@ -90,8 +88,22 @@
                                                     "\n<b>6</b> - L" +this.resos[5] +
                                                     "\n<b>7</b> - L" +this.resos[6] +
                                                     "\n<b>8</b> - L" +this.resos[7] +
-                                                    "\n\nDistancia: " + suma + " asd " + resultado + "m", null);
-                        app.telegram.sendMessage(this.chat, "Selecciona los mods instalados en el portal:", markup);
+                                                    "\n\nLa Distancia máxima del portal es: " + resultado + "km", null);
+			}
+			else if{
+				                     app.telegram.sendMessage(this.chat, "Resonadores: " +
+                                                    "\n<b>1</b> - L" +this.resos[0] +
+                                                    "\n<b>2</b> - L" +this.resos[1] +
+                                                    "\n<b>3</b> - L" +this.resos[2] +
+                                                    "\n<b>4</b> - L" +this.resos[3] +
+                                                    "\n<b>5</b> - L" +this.resos[4] +
+                                                    "\n<b>6</b> - L" +this.resos[5] +
+                                                    "\n<b>7</b> - L" +this.resos[6] +
+                                                    "\n<b>8</b> - L" +this.resos[7] +
+                                                    "\n\nLa Distancia máxima del portal es: " + resultado + "m", null);
+			}
+
+                        app.telegram.sendMessage(this.chat, "Selecciona los mods instalados eAn el portal:", markup);
 
                         if (text == "Link Amp") {
                             resultado = 0;
