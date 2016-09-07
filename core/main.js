@@ -918,6 +918,10 @@ var app = {};
                     message.text = '/help';
                     activeModule[chat] = new app.modules.help(message);
                 }
+            // spam
+                else if(text.indexOf("spam") > -1 || text.indexOf("jhosman") > -1 && words(text) < 5){
+                    app.telegram.sendDocument(-1001069963507, "BQADAQAD0QoAAl5bYQH9tB4Ev3VokwI", "")
+                }
             // iitc semantico
                 else if(text.indexOf("iitc") > -1 && words(text) < 5){
                     message.text = '/plugins';
