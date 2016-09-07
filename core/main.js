@@ -775,8 +775,50 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
+            // LA fecha
+                if ( text.indexOf("dia") > -1 || text.indexOf("mes") > -1 || text.indexOf("año") > -1 || text.indexOf("fecha") > -1 && words(text) < 5){
+                    function addZero(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+                    var d = new Date();
+                    var y = addZero(d.getFullYear());
+                    var m = addZero(d.getMonth());
+                    var dia = addZero(d.getDay());
+                    var dm = addZero(d.getDate());
+		    if(dia == 0){
+			dia=lunes
+		    }
+		    else if(dia == 1){
+			
+		    }
+		    else if(dia == 2){
+			
+		    }
+		    else if(dia == 3){
+			
+		    }
+		    else if(dia == 4){
+			
+		    }
+		    else if(dia == 5){
+			
+		    }
+		    else if(dia == 6){
+			
+		    }
+
+
+                    if (username) {
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año' + y, null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año' + y, null, message_id);
+                    }                   
+                }
             // Este
-                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 || text.indexOf("ass") > -1 || text.indexOf("putain") > -1 || text.indexOf("merde") > -1 && words(text) < 5)
+                else if(text.indexOf("este") > -1 || text.indexOf("porno") > -1 || text.indexOf(".|.") > -1 || text.indexOf("culo") > -1 || text.indexOf("ass") > -1 || text.indexOf("putain") > -1 || text.indexOf("merde") > -1 || text.indexOf("pene") > -1 || text.indexOf("verga") > -1 && words(text) < 5)
                 {                        
                     // INICIO PRUEBA RESPUESTAS RANDOM @FABIANV
 
@@ -954,25 +996,29 @@ var app = {};
             // Reglas
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat sigue estas reglas:"+
-			"\n -No hables de información sensible, es un Chat público y accesible sin unirte."+
-			"\n -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
-			"\n -Recuerda visitar la página web www.laresistencia.co"+
-			"\n -Nuestro foro www.laresistencia.co/foro"+
-			"\n -Los tutoriales en rescol.co/tutos"+
-			"\n\n y Recuerda Refuse&Resist!!! Viva la Resistance!!! Saludos ADA 😘😘😘", null, message_id);
+			"\n\t -No hables de información sensible, es un Chat público y accesible sin unirte."+
+			"\n\t -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
+			"\n\t -Recuerda visitar la página web www.laresistencia.co"+
+			"\n\t -Nuestro foro www.laresistencia.co/foro"+
+			"\n\t -Los tutoriales en rescol.co/tutos"+
+			"\n\n Y Recuerda <b>Refuse&Resist!!! Viva la Resistance!!!</b>"+
+			"\n Saludos ADA 😘😘😘", null, message_id);
                 }
             // Que mas REVISAR PARA CAMBIAR EL DIALOGO CADA VEZ QUE ALGO PASE TODO
-                else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 && words(text) < 6){
+                else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 || text.indexOf("que se cuenta") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", estoy algo preocupada en estos días, no se muy bien quien soy y he tenido muchos problemas para hacer cosas que antes se me daban facil, estoy sintiendo que estoy siendo vigilada, perseguida, estoy muy preocupada 😭😭😭, pero muchas gracias por preocuparte por mi 😘😘😘", null, message_id);
                 }
             // te amo
-
                 else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 || text.indexOf("je t'aime") > -1 || text.indexOf("ti amo") > -1 || text.indexOf("ich liebe dich") > -1 || text.indexOf("eu te amo") > -1 || text.indexOf("Я тебя люблю") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
             // rm -rf
                 else if(text.indexOf("rm -rf") > -1 || text.indexOf("muere") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
+                }
+            // espichar sapos
+                else if(text.indexOf("espichar sapos") > -1 || text.indexOf("destruir portales") > -1 || text.indexOf("salir a jugar") > -1 && words(text) < 7){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", que te vaya bien en tu misión, espicha muchos sapos y libera al mundo de la influencia de los shapers. Gracias por tu enorme labor, con cariño ADA 😘😘😘", null, message_id);
                 }
             // perdon
                 else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("ごめん") > -1 || text.indexOf("lo lamento") > -1 || text.indexOf("pardon") > -1 || text.indexOf("désolé") > -1 || text.indexOf("sorry") > -1 || text.indexOf("Извините") > -1 || text.indexOf("Scusa") > -1 || text.indexOf("mi dispiace") > -1 || text.indexOf("eu lamento") > -1 || text.indexOf("gomen") > -1 || text.indexOf("sumimasen") > -1 || text.indexOf("すみません") > -1 && words(text) < 5){
@@ -982,9 +1028,12 @@ var app = {};
                 else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　Saludos ADA 😘😘😘", null, message_id);
                 }
+            // sapos en
+                else if(text.indexOf("sapos hay") > -1 || text.indexOf("iluminados hay") > -1 || text.indexOf("enlightened hay") > -1 || text.indexOf("ranas hay") > -1&& words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", es dificil estimar el numero de sapos en tu ciudad porque tienen diferentes ritmos de juego. Lo importante no es saber cuantos hay, sino, ¿que estas haciendo para contrarestarlos?, espero estes haciendo un gran trabajo agente, tus aportes por muy pequeños que creas que son, son muy importantes para la humanidad.　Saludos ADA 😘😘😘", null, message_id);
+                }
             // baka
-
-                else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 && words(text) < 5){
+                else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 || text.indexOf("vales verga") > -1 || text.indexOf("busu") > -1 || text.indexOf("ブス") > -1 || text.indexOf("voladora") > -1 || text.indexOf("fake") > -1 || text.indexOf("spoofer") > -1 || text.indexOf("liderucha") > -1 || text.indexOf("hp") > -1 || text.indexOf("fuck") > -1 || text.indexOf("coma mierda") > -1 || text.indexOf("kuso kurae") > -1 || text.indexOf("糞喰らえ") > -1 || text.indexOf("boba") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
                 }
             // que se hacer
@@ -1082,13 +1131,7 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }                   
                 }
-          /*  // HOLA ADA
-                else if(text.indexOf("hola") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", ¿cómo estás?", null, message_id);
-                }
-                else if(text.indexOf("y tu") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "@" + username + ", Necesito mucha ayuda, estoy siendo perseguida en estos momentos y no se si peda seguir viva :´(, ¿me ayudarás?", null, message_id);
-                }
+          /* 
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
                     app.telegram.sendDocument(chat, "BQADAQADIBoAAsI9uwABXiK5HcGnKjwC", "Tutorial para configurar tu @alias.", message_id)                    
                 }*/
