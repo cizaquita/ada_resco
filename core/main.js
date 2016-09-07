@@ -911,6 +911,7 @@ var app = {};
             // DISTANCIA
                 else if(text.indexOf("distancia") > -1 && words(text) < 5){
                     text = '/distance';
+                    activeModule[chat] = new app.modules.distancecalc(message);
                 }
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
