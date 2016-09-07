@@ -910,7 +910,7 @@ var app = {};
                 }
             // DISTANCIA
                 else if(text.indexOf("distancia") > -1 && words(text) < 5){
-                    text = '/distance';
+                    message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
