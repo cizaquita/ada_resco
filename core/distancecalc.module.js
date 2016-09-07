@@ -111,6 +111,7 @@
 		                   		 this.modsCount++;
 		             		}				
 				}
+
 				else{
 					if (text == "Link Amp Rare") {
 		                   		 this.LAmp ++;
