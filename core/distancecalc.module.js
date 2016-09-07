@@ -90,9 +90,12 @@
                             ["Softbank Ultra Link"],
                             ["Ninguno"]
                         ];
-                        var suma = (Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
-                                      Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]));
-                        var elevar = Math.pow(suma, 4);
+			var suma = 0;
+			var elevar = 0;
+			var resultado = 0;
+                        suma = ((Number(this.resos[0]) + Number(this.resos[1]) + Number(this.resos[2]) + Number(this.resos[3]) +
+                                      Number(this.resos[4]) + Number(this.resos[5]) + Number(this.resos[6]) + Number(this.resos[7]))/8);
+                        elevar = Math.pow(suma, 4);
                         resultado = elevar * 160;
 			if ((text != 1) && (text != 2) && (text != 3) && (text != 4) && (text != 5) && (text != 6) && (text != 7) && (text != 8)){
 				if((text != "No mas") && (this.modsCount <3)){
