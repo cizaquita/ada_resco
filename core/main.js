@@ -909,7 +909,7 @@ var app = {};
                     });
                 }
             // DISTANCIA
-                else if(text.indexOf("distancia") > -1 && words(text) < 5){
+                else if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 && words(text) < 5){
                     message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
