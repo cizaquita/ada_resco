@@ -776,7 +776,7 @@ var app = {};
                     }                   
                 }
             // LA fecha
-                if ( text.indexOf("dia") > -1 || text.indexOf("mes") > -1 || text.indexOf("año") > -1 || text.indexOf("fecha") > -1 && words(text) < 5){
+                if ( text.indexOf("dia") > -1 || text.indexOf("mes") > -1 || text.indexOf("que ano es") > -1 || text.indexOf("fecha") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -789,32 +789,66 @@ var app = {};
                     var dia = addZero(d.getDay());
                     var dm = addZero(d.getDate());
 		    if(dia == 0){
-			dia=lunes
+			dia=Domingo;
 		    }
 		    else if(dia == 1){
-			
+			dia=Lunes;
 		    }
 		    else if(dia == 2){
-			
+			dia=Martes;
 		    }
 		    else if(dia == 3){
-			
+			dia=Miercoles;
 		    }
 		    else if(dia == 4){
-			
+			dia=Jueves;
 		    }
 		    else if(dia == 5){
-			
+			dia=Viernes;
 		    }
 		    else if(dia == 6){
-			
+			dia=Sábado;
 		    }
-
-
+		    if(m == 0){
+			m=Enero;
+		    }
+		    else if(m == 1 ){
+			m=Febrero;
+		    }
+		    else if(m == 2 ){
+			m=Marzo;
+		    }
+		    else if(m == 3 ){
+			m=Abril;
+		    }
+		    else if(m == 4 ){
+			m=Mayo;
+		    }
+		    else if(m == 5 ){
+			m=Junio;
+		    }
+		    else if(m == 6 ){
+			m=Julio;
+		    }
+		    else if(m == 7 ){
+			m=Agosto;
+		    }
+		    else if(m == 8 ){
+			m=Septiembre;
+		    }
+		    else if(m == 9 ){
+			m=Octubre;
+		    }
+		    else if(m == 10 ){
+			m=Noviembre;
+		    }
+		    else if(m == 11 ){
+			m=Diciembre;
+		    }
                     if (username) {
                         app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año' + y, null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año' + y, null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }                   
                 }
             // Este
