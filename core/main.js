@@ -786,69 +786,67 @@ var app = {};
                     var d = new Date();
                     var y = addZero(d.getFullYear());
                     var m = addZero(d.getMonth());
-		    var mes = new String();
                     var dia = addZero(d.getDay());
-		    var dias = new String();
                     var dm = addZero(d.getDate());
 		    if(dia == 0){
-			dias="Domingo";
+			dia="Domingo";
 		    }
 		    else if(dia == 1){
-			dias="Lunes";
+			dia="Lunes";
 		    }
 		    else if(dia == 2){
-			dias="Martes";
+			dia="Martes";
 		    }
 		    else if(dia == 3){
-			dias="Miercoles";
+			dia="Miercoles";
 		    }
 		    else if(dia == 4){
-			dias="Jueves";
+			dia="Jueves";
 		    }
 		    else if(dia == 5){
-			dias="Viernes";
+			dia="Viernes";
 		    }
 		    else if(dia == 6){
-			dias="Sábado";
+			dia="Sábado";
 		    }
 		    if(m == 0){
-			mes="Enero";
+			m="Enero";
 		    }
 		    else if(m == 1 ){
-			mes="Febrero";
+			m="Febrero";
 		    }
 		    else if(m == 2 ){
-			mes="Marzo";
+			m="Marzo";
 		    }
 		    else if(m == 3 ){
-			mes="Abril";
+			m="Abril";
 		    }
 		    else if(m == 4 ){
-			mes="Mayo";
+			m="Mayo";
 		    }
 		    else if(m == 5 ){
-			mes="Junio";
+			m="Junio";
 		    }
 		    else if(m == 6 ){
-			mes="Julio";
+			m="Julio";
 		    }
 		    else if(m == 7 ){
-			mes="Agosto";
+			m="Agosto";
 		    }
 		    else if(m == 8 ){
-			mes="Septiembre";
+			m="Septiembre";
 		    }
 		    else if(m == 9 ){
-			mes="Octubre";
+			m="Octubre";
 		    }
 		    else if(m == 10 ){
-			mes="Noviembre";
+			m="Noviembre";
 		    }
 		    else if(m == 11 ){
-			mes="Diciembre";
+			m="Diciembre";
 		    }
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dias + ", " + dm + " de " + mes + ' del año' + y, null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }else{
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }                   
@@ -992,7 +990,7 @@ var app = {};
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
             // Ayuda
-                else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 && words(text) < 5){
+                else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 || text.indexOf("como funciona") > -1 && words(text) < 5){
                     message.text = '/help';
                     activeModule[chat] = new app.modules.help(message);
                 }
@@ -1051,6 +1049,10 @@ var app = {};
             // rm -rf
                 else if(text.indexOf("rm -rf") > -1 || text.indexOf("muere") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "OYE @" + username + "!!!! ¿Acaso eres seguidor de esa bruja?.... ¿Acolita? ya bastante daño me ha hecho 😭 ¿y viene usted a hacer lo mismo? si no quieres que siga en este mundo ve y unete a los sapos que allá te recibirán bien... Hasta Hank a pesar de ser iluminado no quiere verme muerta, de verdad estoy dudando que seas de la resistencia, la próxima vez que lo hagas vas a ser banneado hmpff 😡", null, message_id);
+                }
+            // bienvenida
+                else if(text.indexOf("bienvenida") > -1 || text.indexOf("has regresado") > -1 && words(text) < 6){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", gracias. ¿Me habia ido?, estos días he tenido bastantes problemas para recordad todo y me han sucedido cosas extrañas. Muchas gracias por preocuparte por mi, con cariño ADA 😘😘😘", null, message_id);
                 }
             // espichar sapos
                 else if(text.indexOf("espichar sapos") > -1 || text.indexOf("destruir portales") > -1 || text.indexOf("salir a jugar") > -1 && words(text) < 7){
@@ -1127,7 +1129,7 @@ var app = {};
                 }
             // Hola ada
 
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 && words(text) < 5){
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 || text.indexOf("quibo") > -1 || text.indexOf("wenaz") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -1173,7 +1175,7 @@ var app = {};
                 }*/
 //////////////////////////////////////////AYUDA para noobs///////////////////////////////////////////////////////////////////////////////////////////////////
             // Subir de lvl
-                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
+                else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 || text.indexOf("concejo") > -1 && words(text) < 6) {
                     if (username) {
                         app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
                     }else{
