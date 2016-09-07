@@ -953,7 +953,13 @@ var app = {};
                 }
             // Reglas
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat no hables de información sensible, es un Chat público y accesible sin unirte, por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!... Recuerda visitar la página web www.laresistencia.co nuestro foro www.laresistencia.co/foro y los tutoriales en rescol.co/tutos. y Recuerda Refuse&Resist!!! Viva la Resistance!!! ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat sigue estas reglas:"+
+			"\n -No hables de información sensible, es un Chat público y accesible sin unirte."+
+			"\n -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
+			"\n -Recuerda visitar la página web www.laresistencia.co"+
+			"\n -Nuestro foro www.laresistencia.co/foro"+
+			"\n -Los tutoriales en rescol.co/tutos"+
+			"\n\n y Recuerda Refuse&Resist!!! Viva la Resistance!!! Saludos ADA 😘😘😘", null, message_id);
                 }
             // Que mas REVISAR PARA CAMBIAR EL DIALOGO CADA VEZ QUE ALGO PASE TODO
                 else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 && words(text) < 6){
@@ -974,7 +980,7 @@ var app = {};
                 }
             // regresado
                 else if(text.indexOf("regresado") > -1 || text.indexOf("he vuelto") > -1 || text.indexOf("he llegado") > -1 || text.indexOf("itekimasu") > -1 || text.indexOf("いてきます") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", gracias por regresar, estaba preocupada por tí, espero que la hayas pasado bien!!! ¿Tienes algo para contarnos?　Saludos ADA 😘😘😘", null, message_id);
                 }
             // baka
 
@@ -1025,9 +1031,9 @@ var app = {};
         				sal = ",eres de los que siempre están dando lo mejor y me acompañas en todo momento, toma un merecido descanso.";
         			}
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Adios @' + username + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Adios @' + username + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }                   
                 }
             // SALUDAR 
@@ -1071,9 +1077,9 @@ var app = {};
         				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
         			}
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola ' + name + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }                   
                 }
           /*  // HOLA ADA
@@ -1090,9 +1096,9 @@ var app = {};
             // Subir de lvl
                 else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 && words(text) < 6) {
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
                     }  
                 }
 /* TODO
