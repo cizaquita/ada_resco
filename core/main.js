@@ -913,6 +913,12 @@ var app = {};
                     message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
+            // Ayuda
+                else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 && words(text) < 5){
+                    message.text = '/help';
+                    activeModule[chat] = new app.modules.help(message);
+                }
+	    // FEED //
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
                     var entradas = "";

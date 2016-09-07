@@ -51,6 +51,7 @@
                                            "\n\n- Estas son algunas de las funcionalidades con las que cuento:"+
                                            "\n- /plugins - Te permite configurar la lista de plugins para IITC."+
                                            "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar."+
+                                           "\n- /distance - Te permite calcular el alcance que tiene un portal según sus resos y mods"+
                                            "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí."+
                                            "\n\n- Puedes preguntarme:"+
                                            "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
