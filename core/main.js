@@ -562,9 +562,9 @@ var app = {};
     		// Valledupar
                 else if (text.indexOf("valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// cali
@@ -674,9 +674,9 @@ var app = {};
     		// Rioacha
                 else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @MI_AMOR de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @ComiendoAlpinitoSinCucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @MI_AMOR de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// risaralda
@@ -698,9 +698,9 @@ var app = {};
     		// santa marta
                 else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @ComiendoAlpinitoSinCucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		//Santander
@@ -877,8 +877,15 @@ var app = {};
                 }
 
             // baka
-                else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 || text.indexOf("vales verga") > -1 || text.indexOf("busu") > -1 || text.indexOf("ブス") > -1 || text.indexOf("voladora") > -1 || text.indexOf("fake") > -1 || text.indexOf("spoofer") > -1 || text.indexOf("liderucha") > -1 || text.indexOf("hp") > -1 || text.indexOf("fuck") > -1 || text.indexOf("coma mierda") > -1 || text.indexOf("kuso kurae") > -1 || text.indexOf("糞喰らえ") > -1 || text.indexOf("boba") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Oyeme @" + username + ", eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?", null, message_id);
+                else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("konoiaro") > -1 || text.indexOf("kono iaro") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 || text.indexOf("vales verga") > -1 || text.indexOf("busu") > -1 || text.indexOf("ブス") > -1 || text.indexOf("voladora") > -1 || text.indexOf("fake") > -1 || text.indexOf("spoofer") > -1 || text.indexOf("liderucha") > -1 || text.indexOf("hp") > -1 || text.indexOf("fuck") > -1 || text.indexOf("coma mierda") > -1 || text.indexOf("kuso kurae") > -1 || text.indexOf("糞喰らえ") > -1 || text.indexOf("puta") > -1 || text.indexOf("boba") > -1 && words(text) < 5){
+                   
+                   var mensajes =  ['eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?',
+                                     'Mas lo será su Adorada progenitora',
+                                     '¿y es que ya te has visto en un Espejo?',
+                                     'Guarda tus Insultos para el momento en el que te cubran con un Campo verde por estar perdiendo el tiempo en cosas vanales.'];
+                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
+                    app.telegram.sendMessage(chat, "Oyeme @" + username + ", " + mensajes[msjIndex] , null, message_id);
+                    // FIN PRUEBA RESPUESTAS RANDOM @FABIANV                    
                 }
 
             // rm -rf
@@ -889,6 +896,17 @@ var app = {};
             // perdon
                 else if(text.indexOf("perdon") > -1 || text.indexOf("perdoname") > -1 || text.indexOf("lo siento") > -1 || text.indexOf("ごめん") > -1 || text.indexOf("lo lamento") > -1 || text.indexOf("pardon") > -1 || text.indexOf("désolé") > -1 || text.indexOf("sorry") > -1 || text.indexOf("Извините") > -1 || text.indexOf("Scusa") > -1 || text.indexOf("mi dispiace") > -1 || text.indexOf("eu lamento") > -1 || text.indexOf("gomen") > -1 || text.indexOf("sumimasen") > -1 || text.indexOf("すみません") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", ¿Por que debo perdonarte? ¿hiciste algo malo?, yo no tengo nada que perdonarte pues cada uno es libre de actuar, solo evita invadir la libertad de otros cuando lo hagas, no actues como iluminado -no todos son así- y respeta siempre las decisiones de los demas y a ellos mismos. Si has hecho algo malo contra mi te perdono, con cariño ADA 😘😘😘", null, message_id);
+                }
+
+            // responda
+                else if(text.indexOf("responda") > -1 || text.indexOf("conteste") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", ¿Que deseas que te " + text.split(" ").splice(-1) + " ?", null, message_id);
+                
+                }
+
+            // respondeme
+                else if(text.indexOf("respondeme") > -1 || text.indexOf("responde") > -1 || text.indexOf("contestame")  > -1 || text.indexOf("contesta") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA!; ¿Qué inquietud tienes?. ", null, message_id);
                 }
 
             // espichar sapos
