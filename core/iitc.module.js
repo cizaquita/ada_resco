@@ -13,12 +13,12 @@
 
     plugins = {
         'IITC': 'iitc/total-conversion-build.user.js',
-        'Missions': 'iitc/missions.user.js',
-        'Show portal weakness': 'iitc/show-portal-weakness.user.js',
-        'Player tracker': 'iitc/player-tracker.user.js',
-        'Portal names': 'iitc/portal-names.user.js',
-        'Portal level numbers': 'iitc/portal-level-numbers.user.js',
-        'Show the direction of links': 'iitc/link-show-direction.user.js',
+        'Mostrar Misiones': 'iitc/missions.user.js',
+        'Mostrar Portales Débiles': 'iitc/show-portal-weakness.user.js',
+        'Mostrar Jugadores': 'iitc/player-tracker.user.js',
+        'Mostrar Nombre de los portales': 'iitc/portal-names.user.js',
+        'Mostrar Nivel de los portales': 'iitc/portal-level-numbers.user.js',
+        'Mostrar la dirección de los Links': 'iitc/link-show-direction.user.js',
         'Zonas':'iitc/draw-tools.user.js'
     };
 

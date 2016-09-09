@@ -16,7 +16,6 @@
     app.taskManager.add = function(options, callback) {
         options = JSON.parse(JSON.stringify(options)); // TODO: Find better way to clone objects
         options.callback = callback;
-        console.log(options.chat);
         tasks.push(options);
         saveTasks();         
 
@@ -102,33 +101,15 @@
             timeout = 2 * 60 * 1000;
         }
 
-        //SAca Screenshot pero no la envia, envia los datos de los portales PORTALS
-        console.log("hay portals?: " + task.portals);
-        if (task.portals != null) {
+        chrome.windows.create({ url: url, type: 'popup' }, function(window) {
+            task.windowId = window.id;
+            task.timeoutId = setTimeout(makeScreenshot, timeout);
+            console.log(JSON.stringify(window));
 
-            chrome.windows.create({ url: url, type: 'popup' }, function(window) {
-                task.windowId = window.id;
-                task.timeoutId = setTimeout(makeScreenshot, (4*60*1000));
-
-                chrome.tabs.executeScript({
-                    code: 'document.body.style.backgroundColor="red"'
-                });
-
-                //if (isFullScreen) {
-                    chrome.windows.update(window.id, { state: 'fullscreen' });
-                //}
-            });
-
-        }else{
-            chrome.windows.create({ url: url, type: 'popup' }, function(window) {
-                task.windowId = window.id;
-                task.timeoutId = setTimeout(makeScreenshot, timeout);
-
-                //if (isFullScreen) {
-                    chrome.windows.update(window.id, { state: 'fullscreen' });
-                //}
-            });
-        }
+            //if (isFullScreen) {
+                chrome.windows.update(window.id, { state: 'fullscreen' });
+            //}
+        });
     }
 
     /**
