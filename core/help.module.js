@@ -52,6 +52,7 @@
                                            "\n- /plugins - Te permite configurar la lista de plugins para IITC."+
                                            "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar."+
                                            "\n- /distance - Te permite calcular el alcance que tiene un portal según sus resos y mods"+
+                                           "\n- /level - Te permite saber los requisitos y que obtienes en cierto nivel"+
                                            "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí."+
                                            "\n\n- Puedes preguntarme:"+
                                            "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+

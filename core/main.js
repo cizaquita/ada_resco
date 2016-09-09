@@ -141,6 +141,10 @@ var app = {};
             text = '/help';
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
+        if (text === '/levelp@ada_resco_bot') {
+            text = '/level';
+        }
+        // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
         /*if (text === '/language@ada_resco_bot') {
             text = '/language';
         }
