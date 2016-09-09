@@ -791,6 +791,11 @@ var app = {};
                     message.text = '/screenshot';
                     activeModule[chat] = new app.modules.screenshot(message);
                 }
+            // Nivel
+                else if(text.indexOf("nivel") > -1 || text.indexOf("como llego a") > -1 || text.indexOf("level") > -1 && words(text) < 5){
+                    message.text = '/level';
+                    activeModule[chat] = new app.modules.nivelreq(message);
+                }
 	//////////////////////////
 	//Fin Ordenes Semanticas//
 	/////////////////////////
