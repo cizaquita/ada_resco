@@ -20,5 +20,5 @@ ADA funciona como una extensión de Google Chrome que permíte tomar el pantalla
 * screenshot - Pantallazo de INTEL
 * plugins - Plugins de IITC para INTEL
 * distance - Calcula el rango de un portal
-* level - Requisitos y mas de nivel
+* level - Información sobre NIVELES y como subir
 * cancel - Cancelar cualquier tarea
