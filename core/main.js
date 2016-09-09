@@ -1128,7 +1128,7 @@ var app = {};
                     }                   
                 }
 		 // LA HORA
-                if ( text.indexOf("hora") > -1 && words(text) < 5){
+		else if ( text.indexOf("hora") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
