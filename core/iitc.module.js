@@ -45,7 +45,7 @@
         };
         /////////////////////////////////
         markup = {
-            one_time_keyboard: true,
+            one_time_keyboard: false,
             resize_keyboard: true,
             keyboard: this.buildKeyboard()
         };

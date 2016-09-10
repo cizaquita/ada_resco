@@ -32,6 +32,7 @@ var app = {};
         });
         google.load("feeds", "1");
         getUpdates();
+        //
     }
 
     /**
