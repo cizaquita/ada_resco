@@ -1187,13 +1187,122 @@ var app = {};
             ////////////////////////
             ///// DEFINICIONES /////
             ///////////////////////
-                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 && words(text) < 8) {
+                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 && words(text) < 8) {
                     if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
                         app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
                     }
-			else if(text.indexOf("armas") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABiHOFuD6ov_wC", 'Las armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', message_id);
+			else if(text.indexOf("ada refactor") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("armas") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingress son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("capsula") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("capsula de llaves") > -1 || text.indexOf("keylocker") > -1 || text.indexOf("key locker") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADDQIAAr177AABtO29vqiBXiEC", 'KEYLOCKER', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("mufg") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADDgIAAr177AABBCgcsNwFOgsC", 'CAPSULA MUFG', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("CAPSULAS") > -1 && words(text) < 6){
+				app.telegram.sendDocument(chat, "BQADAQADDwIAAr177AABwSufZvHvm04C", 'CAPSULAS', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("flash hack") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("forceamp") > -1 || text.indexOf("force amp") > -1 || text.indexOf("fa") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMP', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("hack complex") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADEgIAAr177AABk3Vr816kq58C", 'HACK COMPLEX', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con glifo") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 && words(text) < 9){
+				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("hack simple") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADFQIAAr177AABGfNHMvH3Wh8C", 'HACK SIMPLE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("hack menos") > -1 || text.indexOf("hack less") > -1 || text.indexOf("hack con menos") > -1 || text.indexOf("hack sin") > -1 && words(text) < 9){
+				app.telegram.sendDocument(chat, "BQADAQADFgIAAr177AABGbXMgLxl3LcC", 'HACK SIN LLAVE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("heat") > -1 || text.indexOf("hs") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADFwIAAr177AABt--lugnGYLUC", 'HEAT SINK', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("jarvis") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADGAIAAr177AABNbT07XIKKxkC", 'JARVIS VIRUS', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("lawson") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADGQIAAr177AABcNaSg1J7Vz0C", 'LAWSON POWER CUBE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("link amp") > -1 || text.indexOf("la") > -1 || text.indexOf("softbank") > -1 || text.indexOf("softbank") > -1 || text.indexOf("ultra link") > -1 || text.indexOf("sbul") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADGgIAAr177AABESshr9Ol94IC", 'LINK AMP/ULTRA LINK　AMP', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("llave") > -1 || text.indexOf("key") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADGwIAAr177AABe4XEcK8d86IC", 'LLAVES', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("mod") > -1 && words(text) < 6){
+				app.telegram.sendDocument(chat, "BQADAQADHAIAAr177AABpsznQDC1C3MC", 'MODS', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("multihack") > -1 || text.indexOf("multi hack") > -1 || text.indexOf("mh") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("portal quemado") > -1 || text.indexOf("burn out") > -1 || text.indexOf("queme un") > -1 || text.indexOf("quemo") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADHgIAAr177AABrGIMwKPdeUQC", 'PORTAL QUEMADO', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("shield") > -1 || text.indexOf("axxa") > -1 || text.indexOf("ps") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADHwIAAr177AABaUpM2uhkFw4C", 'PORTAL SHIELD/AXXA', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("cubo") > -1 || text.indexOf("cube") > -1 || text.indexOf("pc") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADIAIAAr177AABYXXNNKHMO7MC", 'POWER CUBE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("recicla") > -1 && words(text) < 5){
+				app.telegram.sendDocument(chat, "BQADAQADIQIAAr177AABwHHvq8dGtKwC", 'RECICLAR', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("reso") > -1 && words(text) < 7){
+				app.telegram.sendDocument(chat, "BQADAQADIgIAAr177AABmmkMXDiPsf4C", 'RESONADORES', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("torreta") > -1 ||text.indexOf("turret") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADIwIAAr177AAB5rKIHjPAX0kC", 'TORRETA', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("strike") > -1 || text.indexOf("us") > -1 && words(text) < 6){
+				app.telegram.sendDocument(chat, "BQADAQADJAIAAr177AABJWaY2Oa8eAoC", 'ULTRA STRIKE', message_id);
+                        app.telegram.sendMessage(chat, '\nLas armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
+			}
+			else if(text.indexOf("xmp") > -1 && words(text) < 6){
+				app.telegram.sendDocument(chat, "BQADAQADJQIAAr177AAB_xHwvUfV8vIC", 'DISPENSADOR　XMP', message_id);
+                        app.telegram.sendMessage(chat, '\nXMP. Con cariño ADA 😘😘😘', null);
 			}
 			else{
 		                if (message.chat.title) {
