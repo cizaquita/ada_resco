@@ -1187,17 +1187,21 @@ var app = {};
             ////////////////////////
             ///// DEFINICIONES /////
             ///////////////////////
-                else if (text.indexOf("que es") > -1) {
-                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 ) {
+                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 && words(text) < 8) {
+                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
                         app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-                    }else{
-                        if (message.chat.title) {
-                            app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
-                        }else{
-                            app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
-                        }
                     }
+			else if(text.indexOf("armas") > -1 && words(text) < 8){
+				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABiHOFuD6ov_wC", 'Las armas que existen en ingres son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', message_id);
+			}
+			else{
+		                if (message.chat.title) {
+		                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
+		                }else{
+		                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
+		                }
+                   	 }
                 }else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 && words(text) < 8){
                     app.telegram.sendMessage(chat, "<i>Puntos de Glyph por portal para medalla Translator</i>"+
                                                    "\n\nPortales <b>L0 y L1</b> - 1 Glyph - <b>1</b> punto"+
