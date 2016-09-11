@@ -216,12 +216,13 @@
      * @param chatId {Number} Chat id
      * @param sticker {String} file_id
      */
-    app.telegram.sendSticker = function(chatId, sticker) {
+    app.telegram.sendSticker = function(chatId, sticker, reply_to_message_id) {
         var url = API_URL + '/sendSticker',
             params = {};
 
         params.chat_id = chatId;
         params.sticker = sticker;
+        params.reply_to_message_id = reply_to_message_id;
 
         request('post', url, params, function(data) {
             if(data && data.ok){
