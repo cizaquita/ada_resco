@@ -1192,7 +1192,7 @@ var app = {};
                         app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
                     }
-        			else if(text.indexOf("ada refactor") > -1 && words(text) < 7){
+        			else if(text.lastIndexOf("ada") > 0 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada refactora, todos los resos pasan a ser del agente que los coloco o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
         			}
@@ -1220,19 +1220,19 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
                         		app.telegram.sendMessage(chat, '\nEl Flash hack, es un hack extremadamente rápido y evita tener que entrar al portal y descargar toda su información, hay de dos tipos, el hack y el hack sin clave, el primero siempre que no tengas la llave, te permite obtener una con el 75% de probabilidades, en el caso del hack si clave, estas probabilidades se van a 0. Puedes consultarme también hack con glifo, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("forceamp") > -1 || text.indexOf("force amp") > -1 || text.indexOf("fa") > -1 && words(text) < 7){
+        			else if(text.indexOf("forceamp") > -1 || text.indexOf("force amp") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
                         		app.telegram.sendMessage(chat, '\nEl force amplifier -FA-, es un mod que aumenta el daño que el portal hace, siendo su incremento del doble del daño que hace, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas- Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack complex") > -1 && words(text) < 7){
+        			else if(text.indexOf("hack complex") > -1 || text.indexOf("hack complejo") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEgIAAr177AABk3Vr816kq58C", 'HACK COMPLEX', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack complex lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo complejo (complex, como lo ves en el gif). Este tipo de hack tiene una velocidad mayor cuado aparecen los glifos, pero te aumenta las posibilidades de recibir items raros y muy raros en el hack. Puedes consultarme también flash hack, hack con glifo, hack simple, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
+        			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con gl") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack con glifo, es un tipo de hack que lo puedes hacer llendo al portal y dejando presionado el dedo en el boton de hack por unos segundos. Al hacerlo te va a salir una secuencia de glifos, los cuales debes hacer correctamente y en su orden, entre más glifos aciertes, mas porcentaje de bonus obtendrás, y si lo haces muy rápidamente, te dará un bonus de velocidad. El numero de glifos que te salen depende del mayor entre tu nivel y el nivel del portal, para saber mas consulta punto de glifos conmigo. Si aciertas almenos un glifo, te dará una bonificación adicional el portal, y según el porcentaje de puntos de bonificación, harán que te den mas y mejores items en el bonus. tambien puedes usar glifos antes de iniciar la secuencia sean sencillos o combinados. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 && words(text) < 9){
+        			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 || text.indexOf("hack con llave") > -1 && words(text) < 9){
         				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack more lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo mas (more, como lo ves en el gif). Este tipo de hack te permite resetear las posibilidades que te salga una llave extra del portal (siempre que tengas una o mas llaves en el inventario, si las guardas en capsula o las arrojas al piso, hace que "desaparezcan" de tu inventario), pues al tener ya una llave las posibilidades de sacar una extra se van a 0%, mientras que si no tienes llaves o haces este glifo, las posibilidades son del 75% aproximadamente. Puedes consultarme también flash hack, hack simple, hack complejo, hack menos y hack con glifo. Con cariño ADA 😘😘😘', null);
         			}
@@ -1277,7 +1277,7 @@ var app = {};
 				        app.telegram.sendDocument(chat, "BQADAQADGwIAAr177AABe4XEcK8d86IC", 'LLAVES', message_id);
 				        app.telegram.sendMessage(chat, '\nLas llaves son items con los que puedes hacer varias cosas. La primera es ver un portal de forma remota. La segunda y dependiendo de tu nivel, puedes recargar el portal, consultame acerca de nivel para que sepas cual es tu alcance, de igual forma la eficiencia de recarga se reduce con forme llegues a tu limite de alcance. La tercera y quizá la mas importante, te permite enlazar -linkear- portales entre ellos para así generar campos de protección en nuestro caso o campos de control en el caso de los sapo, puedes consultarme acerca de los campos y los links preguntandome, o la distancia máxima de un portal consultandome distancia y también preguntame acerca de los link amp para darte mas detalles de los rangos de los portales. Con cariño ADA 😘😘😘', null);
                     }
-        			else if(text.indexOf("link amp") > -1 || text.indexOf("softbank") > -1 || text.indexOf("softbank") > -1 || text.indexOf("ultra link") > -1 || text.indexOf("sbul") > -1 && words(text) < 8){
+        			else if(text.indexOf("link amp") > -1 || text.indexOf("softbank") > -1 || text.indexOf("softbank") > -1 || text.indexOf("ultra link") > -1 || text.indexOf("sbul") > -1 || text.indexOf("ultralink") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADGgIAAr177AABESshr9Ol94IC", 'LINK AMPLIFIER/SOFTBANK ULTRA LINK', message_id);
                         		app.telegram.sendMessage(chat, '\nEl Link Amplifier -LA- y el Softbank ultra link -SBUL-, son dos mods cuyo efecto es aumentar la distancia que puede alcanzar un portal para ser linkeado, depende del alcance original del portal siendo este igual al promedio del portal (suma de resonadores/8), elevando este resultado a la cuarta potencia y luego multiplicandolo por 160m. La amplificación dependerá de la rareza del mod, siendo el comun de 2 veces la distancia, el softbank ultra link de 5 veces la distancia y el very rare (no se obtiene hackeado, solo através de passcodes) de 7 veces la distancia, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas, puedes preguntarme por distancia y te mostraré una calculadora de la distancia de un porta. Esto con respecto a la amplificación, ahora hablemos del Softbank Ultra Link, Softbank es un banco japones que patrocina estos item, por lo que además de dar este gran incremento, le da al portal 15% de protección extra como si de un shield se tratase, además cada uno de estos, aumenta en 8 el numero de links salientes del portal (recuerda que un portal sin sbul solo pueden salir 8 links). Y te voy a dar una idea para trollear a un verde, si sabes donde vive o trabaja, tumbale el portal y capturaselo con resonadores lvl1 lo mas cerca del portal y dejale LA raros, luego ponle un jarvis -al fin y al cabo, el portal permanece verde :(-, con ello el portal le queda lvl bajo y con mods que no le servirán ni para defender, ni para hackear, así al sapito sitico, le tocará que usar un ada para cambiarlo y poder quitarle los mods. Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
         			}
@@ -1293,7 +1293,7 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADHgIAAr177AABrGIMwKPdeUQC", 'PORTAL QUEMADO', message_id);
                         		app.telegram.sendMessage(chat, '\nUn portal sin mods, solo puede ser hackeado 4 veces y cada 5 minutos, después de ello no puedes hackearlo mas veces hasta que pasen 4 horas después del primer hack, si quieres evitar ello, puedes usar mods como el multihack como se ve en el gif, o como el heatsink, preguntame acerca de ellos y te diré más información. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("shield") > -1 || text.indexOf("axxa") > -1 || text.indexOf("ps") > -1 && words(text) < 8){
+        			else if(text.indexOf("shield") > -1 || text.indexOf("axxa") > -1 || text.indexOf("ps") > -1 || text.indexOf("escudo") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADHwIAAr177AABaUpM2uhkFw4C", 'PORTAL SHIELD/AXXA', message_id);
                         		app.telegram.sendMessage(chat, '\nLos Escudos o portal shield, son mods que aumentan la defensa del portal, es decir, su mitigación de ataque y dependen de su rareza, siendo los comunes de un 30% no tiene aumento de pegajosidad -fuerza con que se sostine del portal-, los raros 40% y una pegajosidad de un 15%y los muy raros 60% y una pegajosidad de 45%. Los Escudos AXXA son escudos patrocinados por AXXA, una compañia de seguros japones, y tienen una defensa del 70% y una pegajosidad del 80%. Los valores de mitigación se suman para obtener la mitigación totál, pero solo llega a un 95%, despues de ello, el portal no obtiene mas defensa, pero si dejas mas shields y cae uno de ellos, la nueva defensa será de los shield que queden, pero sin superar el 95%, este numero solo se puede aumentar a través de links. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
         			}
@@ -1359,6 +1359,19 @@ var app = {};
                                                    "\n", null);
 
                 }
+
+/* TODO
+
+            // Portal calc xmps y otros
+*/
+
+	/////////////////////////
+	//Fin Ayuda Para NOOBS//
+	///////////////////////
+
+	///////////////////////////////
+	// #OnlyForTheLulz/////////////
+	//////////////////////////////
             /////////////////
             ///// CLIMA /////
             /////////////////
