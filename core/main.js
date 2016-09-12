@@ -1192,161 +1192,162 @@ var app = {};
                         app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
                     }
-			else if(text.indexOf("ada refactor") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
+        			else if(text.indexOf("ada refactor") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada refactora, todos los resos pasan a ser del agente que los coloco o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("armas") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
+        			}
+        			else if(text.indexOf("armas") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
                         app.telegram.sendMessage(chat, '\nLas armas que existen en ingress son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("capsula") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
+        			}
+        			else if(text.indexOf("capsula") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
                         app.telegram.sendMessage(chat, '\nEstas son las capsulas o las capsulas comunes, sirven para organizar o pasar inventario a otro agente, NO reducen el numero de items en el inventario. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("capsula de llaves") > -1 || text.indexOf("keylocker") > -1 || text.indexOf("key locker") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADDQIAAr177AABtO29vqiBXiEC", 'KEYLOCKER', message_id);
+        			}
+        			else if(text.indexOf("capsula de llaves") > -1 || text.indexOf("keylocker") > -1 || text.indexOf("key locker") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADDQIAAr177AABtO29vqiBXiEC", 'KEYLOCKER', message_id);
                         app.telegram.sendMessage(chat, '\nLas capsulas de llaves o keylocker son items de pago, están hechos de darkXM y necesitas tener materia exotica para adquirirlas, consulta la tienda desde el menu de ops para ver su precio. Su función es guardar llaves, y estas al ser guardadas, dejan de contar en el inventario, pero solo sirven para guardar llaves, y es el único item que tiene esta funcion. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas.. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("mufg") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADDgIAAr177AABBCgcsNwFOgsC", 'CAPSULA MUFG', message_id);
+        			}
+        			else if(text.indexOf("mufg") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADDgIAAr177AABBCgcsNwFOgsC", 'CAPSULA MUFG', message_id);
                         app.telegram.sendMessage(chat, '\nLas Capsulas Mufg -Mufg-, son un tipo de item patrocinado por el banco japones Mufg. Su función además de guardar items es multiplicar los items que hay dentro, como si de un banco real se tratase, las "tazas de interes" dependen del numero y rareza de los items, y son muy utiles para replicar items muy raros. Estas capsulas NO reducen el numero de items en el inventario, antes lo aumenta periodicamente. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas.. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("capsulas") > -1 && words(text) < 6){
-				app.telegram.sendDocument(chat, "BQADAQADDwIAAr177AABwSufZvHvm04C", 'CAPSULAS', message_id);
+        			}
+        			else if(text.indexOf("capsulas") > -1 && words(text) < 6){
+        				app.telegram.sendDocument(chat, "BQADAQADDwIAAr177AABwSufZvHvm04C", 'CAPSULAS', message_id);
                         app.telegram.sendMessage(chat, '\nLas capsulas son un tipo de item cuyo objetivo es guardar y organizar items, también pasar inventario a otros agentes de forma mas rápida. Las capsulas NO reducen los items del inventario (salvo las keylocker). Hay tres tipos de capsulas, las comunes, las mufg y las capsulas de llaves, por favor preguntame por cada una de ellas y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("flash hack") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
+        			}
+        			else if(text.indexOf("flash hack") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
                         app.telegram.sendMessage(chat, '\nEl Flash hack, es un hack extremadamente rápido y evita tener que entrar al portal y descargar toda su información, hay de dos tipos, el hack y el hack sin clave, el primero siempre que no tengas la llave, te permite obtener una con el 75% de probabilidades, en el caso del hack si clave, estas probabilidades se van a 0. Puedes consultarme también hack con glifo, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("forceamp") > -1 || text.indexOf("force amp") > -1 || text.indexOf("fa") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
+        			}
+        			else if(text.indexOf("forceamp") > -1 || text.indexOf("force amp") > -1 || text.indexOf("fa") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
                         app.telegram.sendMessage(chat, '\nEl force amplifier -FA-, es un mod que aumenta el daño que el portal hace, siendo su incremento del doble del daño que hace, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas- Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("hack complex") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADEgIAAr177AABk3Vr816kq58C", 'HACK COMPLEX', message_id);
+        			}
+        			else if(text.indexOf("hack complex") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEgIAAr177AABk3Vr816kq58C", 'HACK COMPLEX', message_id);
                         app.telegram.sendMessage(chat, '\nEl hack complex lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo complejo (complex, como lo ves en el gif). Este tipo de hack tiene una velocidad mayor cuado aparecen los glifos, pero te aumenta las posibilidades de recibir items raros y muy raros en el hack. Puedes consultarme también flash hack, hack con glifo, hack simple, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
+        			}
+        			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
                         app.telegram.sendMessage(chat, '\nEl hack con glifo, es un tipo de hack que lo puedes hacer llendo al portal y dejando presionado el dedo en el boton de hack por unos segundos. Al hacerlo te va a salir una secuencia de glifos, los cuales debes hacer correctamente y en su orden, entre más glifos aciertes, mas porcentaje de bonus obtendrás, y si lo haces muy rápidamente, te dará un bonus de velocidad. El numero de glifos que te salen depende del mayor entre tu nivel y el nivel del portal, para saber mas consulta punto de glifos conmigo. Si aciertas almenos un glifo, te dará una bonificación adicional el portal, y según el porcentaje de puntos de bonificación, harán que te den mas y mejores items en el bonus. tambien puedes usar glifos antes de iniciar la secuencia sean sencillos o combinados. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 && words(text) < 9){
-				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
+        			}
+        			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 && words(text) < 9){
+        				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
                         app.telegram.sendMessage(chat, '\nEl hack more lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo mas (more, como lo ves en el gif). Este tipo de hack te permite resetear las posibilidades que te salga una llave extra del portal (siempre que tengas una o mas llaves en el inventario, si las guardas en capsula o las arrojas al piso, hace que "desaparezcan" de tu inventario), pues al tener ya una llave las posibilidades de sacar una extra se van a 0%, mientras que si no tienes llaves o haces este glifo, las posibilidades son del 75% aproximadamente. Puedes consultarme también flash hack, hack simple, hack complejo, hack menos y hack con glifo. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("hack simple") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADFQIAAr177AABGfNHMvH3Wh8C", 'HACK SIMPLE', message_id);
+        			}
+        			else if(text.indexOf("hack simple") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADFQIAAr177AABGfNHMvH3Wh8C", 'HACK SIMPLE', message_id);
                         app.telegram.sendMessage(chat, '\nEl hack simple lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo simple (como lo ves en el gif). Con este tipo de hack los glifos te salen a una velocidad muy lenta y reduce las posibilidades que te salgan items raros o muy raros en el hack. Puedes consultarme también flash hack, hack complejo, hack mas, hack menos y hack con glifo. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("hack menos") > -1 || text.indexOf("hack less") > -1 || text.indexOf("hack con menos") > -1 || text.indexOf("hack sin") > -1 && words(text) < 9){
-				app.telegram.sendDocument(chat, "BQADAQADFgIAAr177AABGbXMgLxl3LcC", 'HACK SIN LLAVE', message_id);
+        			}
+        			else if(text.indexOf("hack menos") > -1 || text.indexOf("hack less") > -1 || text.indexOf("hack con menos") > -1 || text.indexOf("hack sin") > -1 && words(text) < 9){
+        				app.telegram.sendDocument(chat, "BQADAQADFgIAAr177AABGbXMgLxl3LcC", 'HACK SIN LLAVE', message_id);
                         app.telegram.sendMessage(chat, '\nEl hack less lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo menos (less, como lo ves en el gif). Con este tipo de hack te garantiza que si no tienes llave, no te vaya a salir una del portal cuando lo hackees. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack con glifo. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("heat") > -1 || text.indexOf("hs") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADFwIAAr177AABt--lugnGYLUC", 'HEAT SINK', message_id);
+        			}
+        			else if(text.indexOf("heat") > -1 || text.indexOf("hs") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADFwIAAr177AABt--lugnGYLUC", 'HEAT SINK', message_id);
                         app.telegram.sendMessage(chat, '\nEl Heat Sink -HS-, es un mod que te permite reducir la velocidad con la que puedes volver a hackear el portal, y según su rareza puede decrementar en un 70% el muy raro, un 50% el raro y un 20% el común, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de reducción y los demás solo un 50%. Un efecto interesante del heat sink es que si lo pones apenas hayas hackeado, el portal este reseteará el tiempo inmediatamente, pudiendo volver a hackearlo al instante, además que te reseteará a 0 el numero de hacks que lleves en el portal, sin importar que mods tenga, pero solo lo hará con el que ponga el hs. Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("jarvis") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADGAIAAr177AABNbT07XIKKxkC", 'JARVIS VIRUS', message_id);
+        			}
+        			else if(text.indexOf("jarvis") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADGAIAAr177AABNbT07XIKKxkC", 'JARVIS VIRUS', message_id);
                         app.telegram.sendMessage(chat, '\nLos Jarvis Virus, son armas cuyo fin es infectar los portales, por lo que solo pueden usarse en portales azules y así volverlos verdes. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a nombre de jarvis o al nombre de alguno de algún sapo, cuando usas un virus jarvis, todos los resos pasan a ser del agente que los coloco o de jarvis si fue un pitufo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("lawson") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADGQIAAr177AABcNaSg1J7Vz0C", 'LAWSON POWER CUBE', message_id);
+        			}
+        			else if(text.indexOf("lawson") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADGQIAAr177AABcNaSg1J7Vz0C", 'LAWSON POWER CUBE', message_id);
                         app.telegram.sendMessage(chat, '\nLos Cubos Lawson -CL-, son items patrocinados por las tiendas de conveniencia japonesas lawson, que rellenan la barra de xm un cierto numero de veces y depende del nivel del jugado entregando un valor de xm al jugador de:'+
-			"\n nivel <b>1</b>\t - 18.000xm."+
-			"\n nivel <b>2</b>\t - 20.250xm."+
-			"\n nivel <b>3</b>\t - 11.500xm."+
-			"\n nivel <b>4</b>\t - 24.750xm."+
-			"\n nivel <b>5</b>\t - 27.000xm."+
-			"\n nivel <b>6</b>\t - 29.250xm."+
-			"\n nivel <b>7</b>\t - 31.500xm."+
-			"\n nivel <b>8</b>\t - 33.750xm."+
-			"\n nivel <b>9</b>\t - 36.000xm."+
-			"\n nivel <b>10</b>\t - 38.400xm."+
-			"\n nivel <b>11</b>\t - 40.800xm."+
-			"\n nivel <b>12</b>\t - 43.200xm."+
-			"\n nivel <b>13</b>\t - 45.600xm."+
-			"\n nivel <b>14</b>\t - 48.000xm."+
-			"\n nivel <b>15</b>\t - 50.400xm."+
-			"\n nivel <b>16</b>\t - 52.800xm."+
-			'\n Esto no quiere decir que tu barra de xm se aumente hasta ese valor, sino que te aparece una nueva barra en la parte inferior y esta se va gastando conforme tu vayas usando xm recargando tu barra, por lo que no podrás usar jarvis o adas si no tienes el nivel minimo para usarlas en cierto portal; solo te mantendrá la barra de xm llena hasta agotar la capacidad que tiene el cl según tu nivel. Cabe destacar que mientras estes usando este tipo de cubo, no podrás recoger xm del camino hasta que agotes el cubo por completo. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("link amp") > -1 || text.indexOf("la") > -1 || text.indexOf("softbank") > -1 || text.indexOf("softbank") > -1 || text.indexOf("ultra link") > -1 || text.indexOf("sbul") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADGgIAAr177AABESshr9Ol94IC", 'LINK AMPLIFIER/SOFTBANK ULTRA LINK', message_id);
+                                            			"\n nivel <b>1</b>\t - 18.000xm."+
+                                            			"\n nivel <b>2</b>\t - 20.250xm."+
+                                            			"\n nivel <b>3</b>\t - 11.500xm."+
+                                            			"\n nivel <b>4</b>\t - 24.750xm."+
+                                            			"\n nivel <b>5</b>\t - 27.000xm."+
+                                            			"\n nivel <b>6</b>\t - 29.250xm."+
+                                            			"\n nivel <b>7</b>\t - 31.500xm."+
+                                            			"\n nivel <b>8</b>\t - 33.750xm."+
+                                            			"\n nivel <b>9</b>\t - 36.000xm."+
+                                            			"\n nivel <b>10</b>\t - 38.400xm."+
+                                            			"\n nivel <b>11</b>\t - 40.800xm."+
+                                            			"\n nivel <b>12</b>\t - 43.200xm."+
+                                            			"\n nivel <b>13</b>\t - 45.600xm."+
+                                            			"\n nivel <b>14</b>\t - 48.000xm."+
+                                            			"\n nivel <b>15</b>\t - 50.400xm."+
+                                            			"\n nivel <b>16</b>\t - 52.800xm."+
+                                            			'\n Esto no quiere decir que tu barra de xm se aumente hasta ese valor, sino que te aparece una nueva barra en la parte inferior y esta se va gastando conforme tu vayas usando xm recargando tu barra, por lo que no podrás usar jarvis o adas si no tienes el nivel minimo para usarlas en cierto portal; solo te mantendrá la barra de xm llena hasta agotar la capacidad que tiene el cl según tu nivel. Cabe destacar que mientras estes usando este tipo de cubo, no podrás recoger xm del camino hasta que agotes el cubo por completo. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("link amp") > -1 || text.indexOf("la") > -1 || text.indexOf("softbank") > -1 || text.indexOf("softbank") > -1 || text.indexOf("ultra link") > -1 || text.indexOf("sbul") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADGgIAAr177AABESshr9Ol94IC", 'LINK AMPLIFIER/SOFTBANK ULTRA LINK', message_id);
                         app.telegram.sendMessage(chat, '\nEl Link Amplifier -LA- y el Softbank ultra link -SBUL-, son dos mods cuyo efecto es aumentar la distancia que puede alcanzar un portal para ser linkeado, depende del alcance original del portal siendo este igual al promedio del portal (suma de resonadores/8), elevando este resultado a la cuarta potencia y luego multiplicandolo por 160m. La amplificación dependerá de la rareza del mod, siendo el comun de 2 veces la distancia, el softbank ultra link de 5 veces la distancia y el very rare (no se obtiene hackeado, solo através de passcodes) de 7 veces la distancia, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas, puedes preguntarme por distancia y te mostraré una calculadora de la distancia de un porta. Esto con respecto a la amplificación, ahora hablemos del Softbank Ultra Link, Softbank es un banco japones que patrocina estos item, por lo que además de dar este gran incremento, le da al portal 15% de protección extra como si de un shield se tratase, además cada uno de estos, aumenta en 8 el numero de links salientes del portal (recuerda que un portal sin sbul solo pueden salir 8 links). Y te voy a dar una idea para trollear a un verde, si sabes donde vive o trabaja, tumbale el portal y capturaselo con resonadores lvl1 lo mas cerca del portal y dejale LA raros, luego ponle un jarvis -al fin y al cabo, el portal permanece verde :(-, con ello el portal le queda lvl bajo y con mods que no le servirán ni para defender, ni para hackear, así al sapito sitico, le tocará que usar un ada para cambiarlo y poder quitarle los mods. Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("llave") > -1 || text.indexOf("key") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADGwIAAr177AABe4XEcK8d86IC", 'LLAVES', message_id);
+        			}
+        			else if(text.indexOf("llave") > -1 || text.indexOf("key") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADGwIAAr177AABe4XEcK8d86IC", 'LLAVES', message_id);
                         app.telegram.sendMessage(chat, '\nLas llaves son items con los que puedes hacer varias cosas. La primera es ver un portal de forma remota. La segunda y dependiendo de tu nivel, puedes recargar el portal, consultame acerca de nivel para que sepas cual es tu alcance, de igual forma la eficiencia de recarga se reduce con forme llegues a tu limite de alcance. La tercera y quizá la mas importante, te permite enlazar -linkear- portales entre ellos para así generar campos de protección en nuestro caso o campos de control en el caso de los sapo, puedes consultarme acerca de los campos y los links preguntandome, o la distancia máxima de un portal consultandome distancia y también preguntame acerca de los link amp para darte mas detalles de los rangos de los portales. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("mod") > -1 && words(text) < 6){
-				app.telegram.sendDocument(chat, "BQADAQADHAIAAr177AABpsznQDC1C3MC", 'MODIFICADORES', message_id);
+        			}
+        			else if(text.indexOf("mod") > -1 && words(text) < 6){
+        				app.telegram.sendDocument(chat, "BQADAQADHAIAAr177AABpsznQDC1C3MC", 'MODIFICADORES', message_id);
                         app.telegram.sendMessage(chat, '\nLos Modificadores o mods, son un tipo de items que cambian las condiciones básicas del portal y cada uno tiene una función especial, consultame de cada uno de ellos, escudo, link amp, heat sink, multi hack, foce amp y torreta y te daré información especifica de ellos. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("multihack") > -1 || text.indexOf("multi hack") > -1 || text.indexOf("mh") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
+        			}
+        			else if(text.indexOf("multihack") > -1 || text.indexOf("multi hack") > -1 || text.indexOf("mh") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
                         app.telegram.sendMessage(chat, '\nLos Multi Hack, son mods que aumentan el numero de hacks en el portal, pero depende de su rareza, siendo el muy raro de 12, el raro de 8 y el común de 4, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, los siguientes solo un 50% más. Este mod no tiene pegajosidad extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("portal quemado") > -1 || text.indexOf("burn out") > -1 || text.indexOf("queme un") > -1 || text.indexOf("quemo") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADHgIAAr177AABrGIMwKPdeUQC", 'PORTAL QUEMADO', message_id);
+        			}
+        			else if(text.indexOf("portal quemado") > -1 || text.indexOf("burn out") > -1 || text.indexOf("queme un") > -1 || text.indexOf("quemo") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADHgIAAr177AABrGIMwKPdeUQC", 'PORTAL QUEMADO', message_id);
                         app.telegram.sendMessage(chat, '\nUn portal sin mods, solo puede ser hackeado 4 veces y cada 5 minutos, después de ello no puedes hackearlo mas veces hasta que pasen 4 horas después del primer hack, si quieres evitar ello, puedes usar mods como el multihack como se ve en el gif, o como el heatsink, preguntame acerca de ellos y te diré más información. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("shield") > -1 || text.indexOf("axxa") > -1 || text.indexOf("ps") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADHwIAAr177AABaUpM2uhkFw4C", 'PORTAL SHIELD/AXXA', message_id);
+        			}
+        			else if(text.indexOf("shield") > -1 || text.indexOf("axxa") > -1 || text.indexOf("ps") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADHwIAAr177AABaUpM2uhkFw4C", 'PORTAL SHIELD/AXXA', message_id);
                         app.telegram.sendMessage(chat, '\nLos Escudos o portal shield, son mods que aumentan la defensa del portal, es decir, su mitigación de ataque y dependen de su rareza, siendo los comunes de un 30% no tiene aumento de pegajosidad -fuerza con que se sostine del portal-, los raros 40% y una pegajosidad de un 15%y los muy raros 60% y una pegajosidad de 45%. Los Escudos AXXA son escudos patrocinados por AXXA, una compañia de seguros japones, y tienen una defensa del 70% y una pegajosidad del 80%. Los valores de mitigación se suman para obtener la mitigación totál, pero solo llega a un 95%, despues de ello, el portal no obtiene mas defensa, pero si dejas mas shields y cae uno de ellos, la nueva defensa será de los shield que queden, pero sin superar el 95%, este numero solo se puede aumentar a través de links. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("cubo") > -1 || text.indexOf("cube") > -1 || text.indexOf("pc") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADIAIAAr177AABYXXNNKHMO7MC", 'POWER CUBE', message_id);
+        			}
+        			else if(text.indexOf("cubo") > -1 || text.indexOf("cube") > -1 || text.indexOf("pc") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADIAIAAr177AABYXXNNKHMO7MC", 'POWER CUBE', message_id);
                         app.telegram.sendMessage(chat, '\nLos cubos -PC-, son items que guardan XM y te permiten recuperarla sin tener que recolectarla del suelo y su uso es para cuando te quedes sin energía cuando estas atacando, deployando, linkeando o farmeando, los uses y puedas seguir en ello (hay otras formas de conseguir XM, consultame sobre reciclar). Cada uno te da 1000 de XM por cada nivel del cubo, aunque existe un tipo especial de cubo llamado lawson, puedes consultarme que son ellos. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("recicla") > -1 && words(text) < 5){
-				app.telegram.sendDocument(chat, "BQADAQADIQIAAr177AABwHHvq8dGtKwC", 'RECICLAR', message_id);
+        			}
+        			else if(text.indexOf("recicla") > -1 && words(text) < 5){
+        				app.telegram.sendDocument(chat, "BQADAQADIQIAAr177AABwHHvq8dGtKwC", 'RECICLAR', message_id);
                         app.telegram.sendMessage(chat, '\nReciclar es una forma de recuperar XM para realizar acciones en el juego, cada item tiene un valor especial de XM que te da por reciclarlo, siendo las llaves las que dan mas en proporcionalidad a como salen, pues da 500 de XM, aunque los cubos dan 1000 por nivel, es mas probable que tengas mas cantidad de llaves que cubos, y muchas veces te encartas con un monton de llaves que no sabes que hacer, reciclalas y recargate de XM. Una buena estrategia para consevar el inventario limpio, es reciclar XMPs de niveles bajos y solo quedate con uno o dos niveles bajo el tuyo -si tienes de niveles mas altos conservalas que te servirán cuando alcances eses nivel-, hasta que alcances el limite de 2000 de inventario, siendo hora que empieces a reciclar los XMPs de niveles mas bajos que aún tienes, siempre que estes en un farm -no vaya a ser que te quedes sin XMPs por reciclarlos a la loca-. Una nota adicional, al reciclar los items te dice que tanto llenan tu barra de XM, aprovecha esto para no pasarte y poder usar el reciclado al máximo -te advierte cuando te pasas-, y usa esta estrategia con los cubos para que recargues mas rápidamente y no uses mas de los necesarios. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("reso") > -1 && words(text) < 7){
-				app.telegram.sendDocument(chat, "BQADAQADIgIAAr177AABmmkMXDiPsf4C", 'RESONADORES', message_id);
+        			}
+        			else if(text.indexOf("reso") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADIgIAAr177AABmmkMXDiPsf4C", 'RESONADORES', message_id);
                         app.telegram.sendMessage(chat, '\nLos resonadores -Resos-, son items que te permiten capturar el portal para tu facción, en nuestro caso, bloquea el ingreso de los shapers a nuestro mundo y el envío de sus mensajes a través del XM. Los resonadores van de diferentes niveles hasta un máximo de nivel 8, cada uno aporta un nivel de XM al portal dependiendo de su nivel, siendo los de nivel 1 de 1000 de XM y aumentando de a 500 de XM por cada nivel, hasta un máximo de 6000 en los resos nivel 8, haciendo mas dificil destruirlos según vaya aumentando su nivel, consultame que son armas para darte mas información de como destruirlos. Además de ello, solo puedes poner un cierto numero de resos según el nivel de ellos, siendo 8 resos nivel 1, 4 resos nivel 2, 3 o 4, 2 resos nivel 5 o 6, y 1 reso nivel 1 o 2. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("torreta") > -1 ||text.indexOf("turret") > -1 && words(text) < 8){
-				app.telegram.sendDocument(chat, "BQADAQADIwIAAr177AAB5rKIHjPAX0kC", 'TORRETA', message_id);
+        			}
+        			else if(text.indexOf("torreta") > -1 ||text.indexOf("turret") > -1 && words(text) < 8){
+        				app.telegram.sendDocument(chat, "BQADAQADIwIAAr177AAB5rKIHjPAX0kC", 'TORRETA', message_id);
                         app.telegram.sendMessage(chat, '\nLas torretas, son mods que hacen dos cosas, aumentar el critico de ataque en un 20% por cada uno que se ponga, y aumenta en 1,5 veces el factor de ataque, osea las veces que el portal te golpea, pero este factor decrementa según el numero de torretas que pongas, siendo el primero de un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas. Además de ello, tiene una pegajosidad -fuerza que se sostiene del portal- del 20% cada uno. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("strike") > -1 || text.indexOf("us") > -1 && words(text) < 6){
-				app.telegram.sendDocument(chat, "BQADAQADJAIAAr177AABJWaY2Oa8eAoC", 'ULTRA STRIKE', message_id);
+        			}
+        			else if(text.indexOf("strike") > -1 || text.indexOf("us") > -1 && words(text) < 6){
+        				app.telegram.sendDocument(chat, "BQADAQADJAIAAr177AABJWaY2Oa8eAoC", 'ULTRA STRIKE', message_id);
                         app.telegram.sendMessage(chat, '\nLos Ultra Strike -US-, son un tipo de arma que tienen un muy corto alcance pero tienen un critico de daño muy elevado dado su alcance, usalos para tumbar mods parandote en el centro del portal (visita https://youtu.be/W_jzpj5I7DM), o también puedes pararte sobre los resonadores y dado su critico, los destruirás mas fácil; para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
-			'\n<b>1</b> \t<b>10m</b>\t<b>150XM</b>'+
-			'\n<b>2</b> \t<b>13m</b>\t<b>300XM</b>'+
-			'\n<b>3</b> \t<b>16m</b>\t<b>500XM</b>'+
-			'\n<b>4</b> \t<b>18m</b>\t<b>900XM</b>'+
-			'\n<b>5</b> \t<b>21m</b>\t<b>1200XM</b>'+
-			'\n<b>6</b> \t<b>24m</b>\t<b>1500XM</b>'+
-			'\n<b>7</b> \t<b>27m</b>\t<b>1800XM</b>'+
-			'\n<b>8</b> \t<b>30m</b>\t<b>2700XM</b>'+
-			'El critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else if(text.indexOf("xmp") > -1 && words(text) < 6){
-				app.telegram.sendMessage(chat, '\nLos Dispensores XMP -XMP-, son un tipo de arma que tienen un largo alcance y un critico no muy alto, dado su alcance, se usan principalmente para tumbar resonadores, la forma mas efectiva de usarlos, dependerá de tu nivel (visita https://youtu.be/Zy28WuyFNcU); para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
-			'\n<b>1</b> \t<b>42m</b>\t<b>150XM</b>'+
-			'\n<b>2</b> \t<b>48m</b>\t<b>300XM</b>'+
-			'\n<b>3</b> \t<b>58m</b>\t<b>500XM</b>'+
-			'\n<b>4</b> \t<b>72m</b>\t<b>900XM</b>'+
-			'\n<b>5</b> \t<b>90m</b>\t<b>1200XM</b>'+
-			'\n<b>6</b> \t<b>112m</b>\t<b>1500XM</b>'+
-			'\n<b>7</b> \t<b>138m</b>\t<b>1800XM</b>'+
-			'\n<b>8</b> \t<b>168m</b>\t<b>2700XM</b>'+
-			'El critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
-			}
-			else{
-		                if (message.chat.title) {
-		                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
-		                }else{
-		                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
-		                }
-                   	 }
+                                            			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b> \t<b>10m</b>\t<b>150XM</b>'+
+                                            			'\n<b>2</b> \t<b>13m</b>\t<b>300XM</b>'+
+                                            			'\n<b>3</b> \t<b>16m</b>\t<b>500XM</b>'+
+                                            			'\n<b>4</b> \t<b>18m</b>\t<b>900XM</b>'+
+                                            			'\n<b>5</b> \t<b>21m</b>\t<b>1200XM</b>'+
+                                            			'\n<b>6</b> \t<b>24m</b>\t<b>1500XM</b>'+
+                                            			'\n<b>7</b> \t<b>27m</b>\t<b>1800XM</b>'+
+                                            			'\n<b>8</b> \t<b>30m</b>\t<b>2700XM</b>'+
+                                            			'El critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("xmp") > -1 && words(text) < 6){
+        				app.telegram.sendMessage(chat, '\nLos Dispensores XMP -XMP-, son un tipo de arma que tienen un largo alcance y un critico no muy alto, dado su alcance, se usan principalmente para tumbar resonadores, la forma mas efectiva de usarlos, dependerá de tu nivel (visita https://youtu.be/Zy28WuyFNcU); para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
+                                            			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b> \t<b>42m</b>\t<b>150XM</b>'+
+                                            			'\n<b>2</b> \t<b>48m</b>\t<b>300XM</b>'+
+                                            			'\n<b>3</b> \t<b>58m</b>\t<b>500XM</b>'+
+                                            			'\n<b>4</b> \t<b>72m</b>\t<b>900XM</b>'+
+                                            			'\n<b>5</b> \t<b>90m</b>\t<b>1200XM</b>'+
+                                            			'\n<b>6</b> \t<b>112m</b>\t<b>1500XM</b>'+
+                                            			'\n<b>7</b> \t<b>138m</b>\t<b>1800XM</b>'+
+                                            			'\n<b>8</b> \t<b>168m</b>\t<b>2700XM</b>'+
+                                            			'El critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+        			}
+                    else{
+                        if (message.chat.title) {
+                            app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de grupo: " + message.chat.title, null);  
+                        }else{
+                            app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de: @" + username, null);                          
+                        }
+                    }
+                //ACÀ TERMINA EL QUÉ ES, TENER EN CUENTA QUE SIGUEN LOS DEMÁS DE "ADA" que es la principal
                 }else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 || text.indexOf("puntos de glifo") > -1 && words(text) < 8){
                     app.telegram.sendMessage(chat, "<i>Puntos de Glyph por portal para medalla Translator</i>"+
                                                    "\n\nPortales <b>L0 y L1</b> - 1 Glyph - <b>1</b> punto"+
@@ -1357,25 +1358,6 @@ var app = {};
                                                    "\n", null);
 
                 }
-/* TODO
-            // items 
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                }
-            // Portal calc
-                else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
-                    app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
-                }
-*/
-
-	/////////////////////////
-	//Fin Ayuda Para NOOBS//
-	///////////////////////
-
-	///////////////////////////////
-	// #OnlyForTheLulz/////////////
-	//////////////////////////////
-
             /////////////////
             ///// CLIMA /////
             /////////////////
