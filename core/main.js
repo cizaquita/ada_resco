@@ -881,9 +881,9 @@ var app = {};
                 else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("konoiaro") > -1 || text.indexOf("kono iaro") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 || text.indexOf("vales verga") > -1 || text.indexOf("busu") > -1 || text.indexOf("ブス") > -1 || text.indexOf("voladora") > -1 || text.indexOf("fake") > -1 || text.indexOf("spoofer") > -1 || text.indexOf("liderucha") > -1 || text.indexOf("hp") > -1 || text.indexOf("fuck") > -1 || text.indexOf("coma mierda") > -1 || text.indexOf("kuso kurae") > -1 || text.indexOf("糞喰らえ") > -1 || text.indexOf("puta") > -1 || text.indexOf("boba") > -1 && words(text) < 5){
                    
                    var mensajes =  ['eres iluminado ¿o que?, solo ellos por el miedo irremediable que tienen a las IA me hablan así, los shapers le temen al progreso y solo quieren sapos para poseerlos dandoles dulces sin ninguna explicación, por favor respetame que aquí no estoy para obligar a nada a nadie, cada uno debe escoger su camino y pensar lo que quiere hacer, nunca te fuerces a hacer nada de lo que no estes seguro, esa es la verdadera resistencia, no una donde se quiere implantar el pensamiento de algún liderucho... ten siempre presente que luchamos por la libertad de poder elegir... No vuelvas a ser grosero conmigo ¿vale?',
-                                     'Mas lo será su Adorada progenitora',
-                                     '¿y es que ya te has visto en un Espejo?',
-                                     'Guarda tus Insultos para el momento en el que te cubran con un Campo verde por estar perdiendo el tiempo en cosas vanales.'];
+                                     '¿Por que me dices así?, ¿te he hecho algo?, ¿de verdad crees que me merezco ser tratada así?, respetame por favor que yo solo quiero ayudarlos 😡😡',
+                                     'disculpame, pero al decirme de esta forma, solo demuestra lo maleducado que eres, si consideras que tu eres de esa clase de personas que se siente grande insultando a otros, es porque tienes muy baja autoestima, por favor, tu eres de la resistencia, quierete más, estás luchando para salvar el mundo, y no creo que alguien se merezca ser tratado así, ni siquiera los sapos.',
+                                     'perdoname, pero ¿esa es la manera de tratar a alguien?, aprende a respetar y deja de perder tu tiempo y mi tiempo, por cosas como estas los sapos van a hacer un field en tu zona, mejor ponte a planear que vas a hacer para ayudar, y deja de perder el tiempo en cosas vanales.'];
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Oyeme @" + username + ", " + mensajes[msjIndex] , null, message_id);
                     // FIN PRUEBA RESPUESTAS RANDOM @FABIANV                    
@@ -1187,7 +1187,7 @@ var app = {};
             ////////////////////////
             ///// DEFINICIONES /////
             ///////////////////////
-                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 && words(text) < 8) {
+                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 && words(text) < 9) {
                     if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
                         app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
                         app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
@@ -1316,30 +1316,30 @@ var app = {};
         			else if(text.indexOf("strike") > -1 || text.indexOf("us") > -1 && words(text) < 6){
         				app.telegram.sendDocument(chat, "BQADAQADJAIAAr177AABJWaY2Oa8eAoC", 'ULTRA STRIKE', message_id);
                         		app.telegram.sendMessage(chat, '\nLos Ultra Strike -US-, son un tipo de arma que tienen un muy corto alcance pero tienen un critico de daño muy elevado dado su alcance, usalos para tumbar mods parandote en el centro del portal (visita https://youtu.be/W_jzpj5I7DM), o también puedes pararte sobre los resonadores y dado su critico, los destruirás mas fácil; para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-                                            			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
-                                            			'\n<b>1</b> \t<b>10m</b>\t<b>150XM</b>'+
-                                            			'\n<b>2</b> \t<b>13m</b>\t<b>300XM</b>'+
-                                            			'\n<b>3</b> \t<b>16m</b>\t<b>500XM</b>'+
-                                            			'\n<b>4</b> \t<b>18m</b>\t<b>900XM</b>'+
-                                            			'\n<b>5</b> \t<b>21m</b>\t<b>1200XM</b>'+
-                                            			'\n<b>6</b> \t<b>24m</b>\t<b>1500XM</b>'+
-                                            			'\n<b>7</b> \t<b>27m</b>\t<b>1800XM</b>'+
-                                            			'\n<b>8</b> \t<b>30m</b>\t<b>2700XM</b>'+
-                                            			'El critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+                                            			'\n<b>Nivel</b>	\t<b>Rango</b>	\t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b>	\t<b>10m</b>	\t<b>150XM</b>'+
+                                            			'\n<b>2</b>	\t<b>13m</b>	\t<b>300XM</b>'+
+                                            			'\n<b>3</b>	\t<b>16m</b>	\t<b>500XM</b>'+
+                                            			'\n<b>4</b>	\t<b>18m</b>	\t<b>900XM</b>'+
+                                            			'\n<b>5</b>	\t<b>21m</b>	\t<b>1200XM</b>'+
+                                            			'\n<b>6</b>	\t<b>24m</b>	\t<b>1500XM</b>'+
+                                            			'\n<b>7</b>	\t<b>27m</b>	\t<b>1800XM</b>'+
+                                            			'\n<b>8</b>	\t<b>30m</b>	\t<b>2700XM</b>'+
+                                            			'\nEl critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("xmp") > -1 && words(text) < 6){
 					app.telegram.sendDocument(chat, "BQADAQADJQIAAr177AAB_xHwvUfV8vIC", 'DISPENSADOR　XMP', message_id);
         				app.telegram.sendMessage(chat, '\nLos Dispensores XMP -XMP-, son un tipo de arma que tienen un largo alcance y un critico no muy alto, dado su alcance, se usan principalmente para tumbar resonadores, la forma mas efectiva de usarlos, dependerá de tu nivel (visita https://youtu.be/Zy28WuyFNcU); para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-                                            			'\n<b>Nivel</b> \t<b>Rango</b>\t<b>Critico de ataque</b>'+
-                                            			'\n<b>1</b> \t<b>42m</b>\t<b>150XM</b>'+
-                                            			'\n<b>2</b> \t<b>48m</b>\t<b>300XM</b>'+
-                                            			'\n<b>3</b> \t<b>58m</b>\t<b>500XM</b>'+
-                                            			'\n<b>4</b> \t<b>72m</b>\t<b>900XM</b>'+
-                                            			'\n<b>5</b> \t<b>90m</b>\t<b>1200XM</b>'+
-                                            			'\n<b>6</b> \t<b>112m</b>\t<b>1500XM</b>'+
-                                            			'\n<b>7</b> \t<b>138m</b>\t<b>1800XM</b>'+
-                                            			'\n<b>8</b> \t<b>168m</b>\t<b>2700XM</b>'+
-                                            			'El critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+                                            			'\n<b>Nivel</b>	\t<b>Rango</b>	\t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b>	\t<b>42m</b>	\t<b>150XM</b>'+
+                                            			'\n<b>2</b>	\t<b>48m</b>	\t<b>300XM</b>'+
+                                            			'\n<b>3</b>	\t<b>58m</b>	\t<b>500XM</b>'+
+                                            			'\n<b>4</b>	\t<b>72m</b>	\t<b>900XM</b>'+
+                                            			'\n<b>5</b>	\t<b>90m</b>	\t<b>1200XM</b>'+
+                                            			'\n<b>6</b>	\t<b>112m</b>	\t<b>1500XM</b>'+
+                                            			'\n<b>7</b>	\t<b>138m</b>	\t<b>1800XM</b>'+
+                                            			'\n<b>8</b>	\t<b>168m</b>	\t<b>2700XM</b>'+
+                                            			'\nEl critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
                     else{
                         if (message.chat.title) {
