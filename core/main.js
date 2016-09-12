@@ -1200,10 +1200,6 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
                         		app.telegram.sendMessage(chat, '\nLas armas que existen en ingress son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("capsula") > -1 && words(text) < 7){
-        				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
-                        		app.telegram.sendMessage(chat, '\nEstas son las capsulas o las capsulas comunes, sirven para organizar o pasar inventario a otro agente, NO reducen el numero de items en el inventario. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas. Con cariño ADA 😘😘😘', null);
-        			}
         			else if(text.indexOf("capsula de llaves") > -1 || text.indexOf("keylocker") > -1 || text.indexOf("key locker") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADDQIAAr177AABtO29vqiBXiEC", 'KEYLOCKER', message_id);
                         		app.telegram.sendMessage(chat, '\nLas capsulas de llaves o keylocker son items de pago, están hechos de darkXM y necesitas tener materia exotica para adquirirlas, consulta la tienda desde el menu de ops para ver su precio. Su función es guardar llaves, y estas al ser guardadas, dejan de contar en el inventario, pero solo sirven para guardar llaves, y es el único item que tiene esta funcion. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas.. Con cariño ADA 😘😘😘', null);
@@ -1215,6 +1211,10 @@ var app = {};
         			else if(text.indexOf("capsulas") > -1 && words(text) < 6){
         				app.telegram.sendDocument(chat, "BQADAQADDwIAAr177AABwSufZvHvm04C", 'CAPSULAS', message_id);
                         		app.telegram.sendMessage(chat, '\nLas capsulas son un tipo de item cuyo objetivo es guardar y organizar items, también pasar inventario a otros agentes de forma mas rápida. Las capsulas NO reducen los items del inventario (salvo las keylocker). Hay tres tipos de capsulas, las comunes, las mufg y las capsulas de llaves, por favor preguntame por cada una de ellas y te responderé. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("capsula") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
+                        		app.telegram.sendMessage(chat, '\nEstas son las capsulas o las capsulas comunes, sirven para organizar o pasar inventario a otro agente, NO reducen el numero de items en el inventario. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("flash hack") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
