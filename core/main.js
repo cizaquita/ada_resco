@@ -1316,29 +1316,29 @@ var app = {};
         			else if(text.indexOf("strike") > -1 || text.indexOf("us") > -1 && words(text) < 6){
         				app.telegram.sendDocument(chat, "BQADAQADJAIAAr177AABJWaY2Oa8eAoC", 'ULTRA STRIKE', message_id);
                         		app.telegram.sendMessage(chat, '\nLos Ultra Strike -US-, son un tipo de arma que tienen un muy corto alcance pero tienen un critico de daño muy elevado dado su alcance, usalos para tumbar mods parandote en el centro del portal (visita https://youtu.be/W_jzpj5I7DM), o también puedes pararte sobre los resonadores y dado su critico, los destruirás mas fácil; para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-                                            			'\n<b>Nivel</b>	\t<b>Rango</b>	\t<b>Critico de ataque</b>'+
-                                            			'\n<b>1</b>	\t<b>10m</b>	\t<b>150XM</b>'+
-                                            			'\n<b>2</b>	\t<b>13m</b>	\t<b>300XM</b>'+
-                                            			'\n<b>3</b>	\t<b>16m</b>	\t<b>500XM</b>'+
-                                            			'\n<b>4</b>	\t<b>18m</b>	\t<b>900XM</b>'+
-                                            			'\n<b>5</b>	\t<b>21m</b>	\t<b>1200XM</b>'+
-                                            			'\n<b>6</b>	\t<b>24m</b>	\t<b>1500XM</b>'+
-                                            			'\n<b>7</b>	\t<b>27m</b>	\t<b>1800XM</b>'+
-                                            			'\n<b>8</b>	\t<b>30m</b>	\t<b>2700XM</b>'+
+                                            			'\n<b>Nivel</b> \t<b>Rango</b> \t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b>        \t<b>10m</b>     \t<b>150XM</b>'+
+                                            			'\n<b>2</b>        \t<b>13m</b>     \t<b>300XM</b>'+
+                                            			'\n<b>3</b>        \t<b>16m</b>     \t<b>500XM</b>'+
+                                            			'\n<b>4</b>        \t<b>18m</b>     \t<b>900XM</b>'+
+                                            			'\n<b>5</b>        \t<b>21m</b>     \t<b>1200XM</b>'+
+                                            			'\n<b>6</b>        \t<b>24m</b>     \t<b>1500XM</b>'+
+                                            			'\n<b>7</b>        \t<b>27m</b>     \t<b>1800XM</b>'+
+                                            			'\n<b>8</b>        \t<b>30m</b>     \t<b>2700XM</b>'+
                                             			'\nEl critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("xmp") > -1 && words(text) < 6){
 					app.telegram.sendDocument(chat, "BQADAQADJQIAAr177AAB_xHwvUfV8vIC", 'DISPENSADOR　XMP', message_id);
         				app.telegram.sendMessage(chat, '\nLos Dispensores XMP -XMP-, son un tipo de arma que tienen un largo alcance y un critico no muy alto, dado su alcance, se usan principalmente para tumbar resonadores, la forma mas efectiva de usarlos, dependerá de tu nivel (visita https://youtu.be/Zy28WuyFNcU); para maximizar su critico de ataque, deja presionado el boton de dispara y trata que el circulo que se acerca este lo mas cerca posible del cursor, si lo dejas en todo el medio, te dará un adicional del 20% en el crítico. La relación de nivel, rango -radio de ataque- y critico de ataque viene dado por:'+
-                                            			'\n<b>Nivel</b>	\t<b>Rango</b>	\t<b>Critico de ataque</b>'+
-                                            			'\n<b>1</b>	\t<b>42m</b>	\t<b>150XM</b>'+
-                                            			'\n<b>2</b>	\t<b>48m</b>	\t<b>300XM</b>'+
-                                            			'\n<b>3</b>	\t<b>58m</b>	\t<b>500XM</b>'+
-                                            			'\n<b>4</b>	\t<b>72m</b>	\t<b>900XM</b>'+
-                                            			'\n<b>5</b>	\t<b>90m</b>	\t<b>1200XM</b>'+
-                                            			'\n<b>6</b>	\t<b>112m</b>	\t<b>1500XM</b>'+
-                                            			'\n<b>7</b>	\t<b>138m</b>	\t<b>1800XM</b>'+
-                                            			'\n<b>8</b>	\t<b>168m</b>	\t<b>2700XM</b>'+
+                                            			'\n<b>Nivel</b> \t<b>Rango</b> \t<b>Critico de ataque</b>'+
+                                            			'\n<b>1</b>        \t<b>42m</b>     \t<b>150XM</b>'+
+                                            			'\n<b>2</b>        \t<b>48m</b>     \t<b>300XM</b>'+
+                                            			'\n<b>3</b>        \t<b>58m</b>     \t<b>500XM</b>'+
+                                            			'\n<b>4</b>        \t<b>72m</b>     \t<b>900XM</b>'+
+                                            			'\n<b>5</b>        \t<b>90m</b>     \t<b>1200XM</b>'+
+                                            			'\n<b>6</b>        \t<b>112m</b>    \t<b>1500XM</b>'+
+                                            			'\n<b>7</b>        \t<b>138m</b>    \t<b>1800XM</b>'+
+                                            			'\n<b>8</b>        \t<b>168m</b>    \t<b>2700XM</b>'+
                                             			'\nEl critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
                     else{
