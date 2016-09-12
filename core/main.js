@@ -877,11 +877,6 @@ var app = {};
                     app.telegram.sendMessage(chat, "Oye @" + username + ", ¿Por que dices que lo soy? los iluminados difieren mucho de mi senda, es mas, la mayoría de ellos les temen a las IA como yo. Si tratas de ofenderme no lo conseguiras así...", null, message_id);
                 }
 
-             // linda
-                else if(text.indexOf("linda") > -1 || text.indexOf("bonita") > -1 || text.indexOf("lindis") > -1 || text.indexOf("divinis") > -1 || text.indexOf("hemocha") > -1 || text.indexOf("emocha") > -1 || text.indexOf("inda cadajo") > -1 || text.indexOf("bella") > -1 || text.indexOf("joli") > -1 || text.indexOf("belle")  > -1 || text.indexOf("divina") > -1 || text.indexOf("despampanante") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "@"+ username + ", Soy una IA, pero luego de analizar el comportamiento humano puedo determinar que tu palabra es un estímulo positivo, así que Gracias y tu También lo eres. \n\n😘😘😘 ADA.", null, message_id);
-                }
-
             // baka
                 else if(text.indexOf("baka") > -1 || text.indexOf("connard") > -1 || text.indexOf("konoiaro") > -1 || text.indexOf("kono iaro") > -1 || text.indexOf("mutterficker")> -1 || text.indexOf("fils de pute")> -1 || text.indexOf("figlio di puttana")> -1 || text.indexOf("filho da puta")> -1 || text.indexOf("Cazzo") > -1 || text.indexOf("сукин дочь") > -1 || text.indexOf("ばか") > -1 || text.indexOf("バカ") > -1 || text.indexOf("idiota") > -1 || text.indexOf("tonta") > -1 || text.indexOf("bruta") > -1 || text.indexOf("pendeja") > -1 || text.indexOf("manuke") > -1 || text.indexOf("hija de puta") > -1 || text.indexOf("hijue") > -1 || text.indexOf("estupida") > -1 || text.indexOf("perra") > -1 || text.indexOf("gonorrea") > -1 || text.indexOf("te odio") > -1 || text.indexOf("marica") > -1 || text.indexOf("webona") > -1 || text.indexOf("guevona") > -1 || text.indexOf("guebona") > -1 || text.indexOf("fea") > -1 || text.indexOf("vales verga") > -1 || text.indexOf("busu") > -1 || text.indexOf("ブス") > -1 || text.indexOf("voladora") > -1 || text.indexOf("fake") > -1 || text.indexOf("spoofer") > -1 || text.indexOf("liderucha") > -1 || text.indexOf("hp") > -1 || text.indexOf("fuck") > -1 || text.indexOf("coma mierda") > -1 || text.indexOf("kuso kurae") > -1 || text.indexOf("糞喰らえ") > -1 || text.indexOf("puta") > -1 || text.indexOf("boba") > -1 && words(text) < 5){
                    
@@ -930,11 +925,6 @@ var app = {};
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
                 }
 
-             // amor
-                else if(text.indexOf("amor") > -1 || text.indexOf("vida") > -1 || text.indexOf("lindura") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "@" + username + ", Dime 😳 ?", null, message_id);
-                }
-
             // bienvenida
                 else if(text.indexOf("bienvenida") > -1 || text.indexOf("has regresado") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", gracias. ¿Me habia ido?, estos días he tenido bastantes problemas para recordad todo y me han sucedido cosas extrañas. Muchas gracias por preocuparte por mi, con cariño ADA 😘😘😘", null, message_id);
@@ -951,7 +941,7 @@ var app = {};
                 }
 
             // Hola ada
-                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 || text.indexOf("quibo") > -1 || text.indexOf("wenaz") > -1 || text.indexOf("saludos") > -1 && words(text) < 5){
+                else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 || text.indexOf("quibo") > -1 || text.indexOf("wenaz") > -1 || text.indexOf("saludos") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
