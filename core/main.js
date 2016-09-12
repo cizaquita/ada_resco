@@ -1340,11 +1340,11 @@ var app = {};
 			'\n<b>8</b> \t<b>168m</b>\t<b>2700XM</b>'+
 			'El critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
 			}else{
-                    if (message.chat.title) {
-                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);
-                    }else{
-                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);
-                    }
+                if (message.chat.title) {
+                    app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de grupo: " + message.chat.title, null);  
+                }else{
+                    app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de: @" + username, null);                          
+                }
 
             }
 			else{
