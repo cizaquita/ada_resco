@@ -1636,38 +1636,38 @@ var app = {};
                                      '¿Como se hace un Hack Mas llave?',
                                      '¿Como se hace un Hack Sin llave?',
                                      '¿Como se aprenden los glifos?',
-                                     '¿Que rango de recarga tiene un Agente nivel 1?'
-                                     '¿Que rango de recarga tiene un Agente nivel 2?'
-                                     '¿Que rango de recarga tiene un Agente nivel 3?'
-                                     '¿Que rango de recarga tiene un Agente nivel 4?'
-                                     '¿Que rango de recarga tiene un Agente nivel 5?'
-                                     '¿Que rango de recarga tiene un Agente nivel 6?'
-                                     '¿Que rango de recarga tiene un Agente nivel 7?'
-                                     '¿Que rango de recarga tiene un Agente nivel 8?'
-                                     '¿Que rango de recarga tiene un Agente nivel 9?'
-                                     '¿Que rango de recarga tiene un Agente nivel 10?'
-                                     '¿Que rango de recarga tiene un Agente nivel 11?'
-                                     '¿Que rango de recarga tiene un Agente nivel 12?'
-                                     '¿Que rango de recarga tiene un Agente nivel 13?'
-                                     '¿Que rango de recarga tiene un Agente nivel 14?'
-                                     '¿Que rango de recarga tiene un Agente nivel 15?'
-                                     '¿Que rango de recarga tiene un Agente nivel 16?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 1?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 2?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 3?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 4?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 5?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 6?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 7?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 8?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 9?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 10?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 11?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 12?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 13?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 14?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 15?'
-                                     '¿Que capacidad de XM tiene un Agente nivel 16?',];
+                                     '¿Que rango de recarga tiene un Agente nivel 1?',
+                                     '¿Que rango de recarga tiene un Agente nivel 2?',
+                                     '¿Que rango de recarga tiene un Agente nivel 3?',
+                                     '¿Que rango de recarga tiene un Agente nivel 4?',
+                                     '¿Que rango de recarga tiene un Agente nivel 5?',
+                                     '¿Que rango de recarga tiene un Agente nivel 6?',
+                                     '¿Que rango de recarga tiene un Agente nivel 7?',
+                                     '¿Que rango de recarga tiene un Agente nivel 8?',
+                                     '¿Que rango de recarga tiene un Agente nivel 9?',
+                                     '¿Que rango de recarga tiene un Agente nivel 10?',
+                                     '¿Que rango de recarga tiene un Agente nivel 11?',
+                                     '¿Que rango de recarga tiene un Agente nivel 12?',
+                                     '¿Que rango de recarga tiene un Agente nivel 13?',
+                                     '¿Que rango de recarga tiene un Agente nivel 14?',
+                                     '¿Que rango de recarga tiene un Agente nivel 15?',
+                                     '¿Que rango de recarga tiene un Agente nivel 16?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 1?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 2?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 3?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 4?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 5?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 6?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 7?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 8?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 9?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 10?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 11?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 12?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 13?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 14?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 15?',
+                                     '¿Que capacidad de XM tiene un Agente nivel 16?'];
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Hola @" + username + ", " + mensajes[msjIndex] , null, message_id);                   
                 }
