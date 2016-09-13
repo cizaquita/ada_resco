@@ -1361,26 +1361,26 @@ var app = {};
                    
                    var mensajes =  ['¿Que es un XMP?',
                                      '¿Que es un Ultra Strike?',
-                                     '¿Que es un ADA Refactor?'
-                                     '¿Que es un Jarvis Virus?'
-                                     '¿Que es un Resonador?'
-                                     '¿Que es un Power Cube?'
-                                     '¿Que es un Cubo Lawson?'
-                                     '¿Que es una Llave?'
-                                     '¿Que es un Mod?'
-                                     '¿Que es un Escudo?'
-                                     '¿Que es un AXA?'
-                                     '¿Que es un Link Amp?'
-                                     '¿Que es un Softbank Ultra Link?'
-                                     '¿Que item aumenta la distancia máxima de un portal?'
-                                     '¿Que amplificador de link tiene una razón de aumento de distancia mayor?'
-                                     '¿Que es un Heat Sink?'
-                                     '¿Que es un Multi Hack?'
-                                     '¿Que es un Force Amp?'
-                                     '¿Que es una Turret?'
-                                     '¿Que es un Media o multimedia?'
-                                     '¿Que es una Capsula?'
-                                     '¿Que es una Capsula Mufg?'
+                                     '¿Que es un ADA Refactor?',
+                                     '¿Que es un Jarvis Virus?',
+                                     '¿Que es un Resonador?',
+                                     '¿Que es un Power Cube?',
+                                     '¿Que es un Cubo Lawson?',
+                                     '¿Que es una Llave?',
+                                     '¿Que es un Mod?',
+                                     '¿Que es un Escudo?',
+                                     '¿Que es un AXA?',
+                                     '¿Que es un Link Amp?',
+                                     '¿Que es un Softbank Ultra Link?',
+                                     '¿Que item aumenta la distancia máxima de un portal?',
+                                     '¿Que amplificador de link tiene una razón de aumento de distancia mayor?',
+                                     '¿Que es un Heat Sink?',
+                                     '¿Que es un Multi Hack?',
+                                     '¿Que es un Force Amp?',
+                                     '¿Que es una Turret?',
+                                     '¿Que es un Media o multimedia?',
+                                     '¿Que es una Capsula?',
+                                     '¿Que es una Capsula Mufg?',
                                      '¿Que es una Capsula de llaves?',];
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Hola @" + username + ", " + mensajes[msjIndex] , null, message_id);                   
