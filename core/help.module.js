@@ -56,6 +56,8 @@
                                            "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí."+
                                            "\n\n- Puedes preguntarme:"+
                                            "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
+                                           "\n- Ada que es -item- y te diré que es y que hace este item"+
+                                           "\n- Ada trivia, con ello puedes recibir una pregunta"+
                                            "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia</i>", null);
         }
     };

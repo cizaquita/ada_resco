@@ -1033,8 +1033,8 @@ var app = {};
 	//////////////
 
             // que se hacer
-                else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora, preguntame por el clima, puedes pedirme un screenshot del intel, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se la definicion de muchos items y responder a saludos o despididas entre otras cosas, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, a futuro puedes preguntarme por portales en el intel y yo con gusto te mandaré un screen de ello, con mucho cariño ADA 😘😘😘", null, message_id);
+                else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("que funciones") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora, preguntame por el clima, puedes pedirme un screenshot del intel, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se la definicion de muchos items y responder a saludos o despididas entre otras cosas, si quieres decirle a Henry Bowles y PAC. algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
                 }
 
             // Reglas
@@ -1188,10 +1188,10 @@ var app = {};
             ///// DEFINICIONES /////
             ///////////////////////
                 else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
-                    if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
-                        app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
-                        app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-                    }
+		            if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
+		                app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
+		                app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
+		            }
         			else if(text.lastIndexOf("ada") > 0 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada refactora, todos los resos pasan a ser del agente que los coloco o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
@@ -1348,8 +1348,49 @@ var app = {};
                             app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de: @" + username, null);                          
                         }
                     }
+                }
+            ////////////////////////////
+            ///// FIN DEFINICIONES /////
+            ///////////////////////////
+
+
+	////////////
+	// TRIVIA //
+	////////////
+		else if(text.indexOf("trivia") > -1 || text.indexOf("preguntas") > -1 && words(text) < 5){
+                   
+                   var mensajes =  ['¿Que es un XMP?',
+                                     '¿Que es un Ultra Strike?',
+                                     '¿Que es un ADA Refactor?'
+                                     '¿Que es un Jarvis Virus?'
+                                     '¿Que es un Resonador?'
+                                     '¿Que es un Power Cube?'
+                                     '¿Que es un Cubo Lawson?'
+                                     '¿Que es una Llave?'
+                                     '¿Que es un Mod?'
+                                     '¿Que es un Escudo?'
+                                     '¿Que es un AXA?'
+                                     '¿Que es un Link Amp?'
+                                     '¿Que es un Softbank Ultra Link?'
+                                     '¿Que item aumenta la distancia máxima de un portal?'
+                                     '¿Que amplificador de link tiene una razón de aumento de distancia mayor?'
+                                     '¿Que es un Heat Sink?'
+                                     '¿Que es un Multi Hack?'
+                                     '¿Que es un Force Amp?'
+                                     '¿Que es una Turret?'
+                                     '¿Que es un Media o multimedia?'
+                                     '¿Que es una Capsula?'
+                                     '¿Que es una Capsula Mufg?'
+                                     '¿Que es una Capsula de llaves?',];
+                    var msjIndex = Math.floor((Math.random() * (mensajes.length)));
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", " + mensajes[msjIndex] , null, message_id);                   
+                }
+	/////////////////
+	// FIN TRIVIA //
+	///////////////
+
                 //ACÀ TERMINA EL QUÉ ES, TENER EN CUENTA QUE SIGUEN LOS DEMÁS DE "ADA" que es la principal
-                }else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 || text.indexOf("puntos de glifo") > -1 && words(text) < 8){
+		else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 || text.indexOf("puntos de glifo") > -1 && words(text) < 8){
                     app.telegram.sendMessage(chat, "<i>Puntos de Glyph por portal para medalla Translator</i>"+
                                                    "\n\nPortales <b>L0 y L1</b> - 1 Glyph - <b>1</b> punto"+
                                                    "\nPortal <b>L2</b> - 2 Glyphs - <b>2</b> puntos"+
