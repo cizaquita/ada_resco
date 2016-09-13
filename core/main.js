@@ -1619,7 +1619,7 @@ var app = {};
                                      '¿Como uso mejor las Capsulas?',
                                      '¿Te has encontrado con algún dinosaurio que aún pase items sin usar Capsulas?',
                                      '¿Que es una Capsula Mufg?',
-                                     '¿Como puedo multiplicar items?,
+                                     '¿Como puedo multiplicar items?',
                                      '¿Como uso mejor las Capsulas Mufg?',
                                      '¿Que debo hacer si me sale una Capsula Mufg?',
                                      '¿Que debo hacer si me sale un Item Very Rare?',
