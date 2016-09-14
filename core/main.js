@@ -1152,10 +1152,10 @@ var app = {};
         			}
         			else if(text.indexOf("lawson") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADGQIAAr177AABcNaSg1J7Vz0C", 'LAWSON POWER CUBE', message_id);
-                        		app.telegram.sendMessage(chat, '\nLos Cubos Lawson -CL-, son items patrocinados por las tiendas de conveniencia japonesas lawson, que rellenan la barra de xm un cierto numero de veces y depende del nivel del jugado entregando un valor de xm al jugador de:'+
+                        		app.telegram.sendMessage(chat, '\nLos Cubos Lawson -CL-, son items patrocinados por las tiendas de conveniencia japonesas lawson, que rellenan la barra de xm un cierto numero de veces y depende del nivel del jugador entregando un valor de xm al jugador de:'+
                                             			"\n nivel <b>1</b>\t - 18.000xm."+
                                             			"\n nivel <b>2</b>\t - 20.250xm."+
-                                            			"\n nivel <b>3</b>\t - 11.500xm."+
+                                            			"\n nivel <b>3</b>\t - 21.500xm."+
                                             			"\n nivel <b>4</b>\t - 24.750xm."+
                                             			"\n nivel <b>5</b>\t - 27.000xm."+
                                             			"\n nivel <b>6</b>\t - 29.250xm."+
@@ -1181,7 +1181,7 @@ var app = {};
         			}
         			else if(text.indexOf("mod") > -1 && words(text) < 6){
         				app.telegram.sendDocument(chat, "BQADAQADHAIAAr177AABpsznQDC1C3MC", 'MODIFICADORES', message_id);
-                        		app.telegram.sendMessage(chat, '\nLos Modificadores o mods, son un tipo de items que cambian las condiciones básicas del portal y cada uno tiene una función especial, consultame de cada uno de ellos, escudo, link amp, heat sink, multi hack, foce amp y torreta y te daré información especifica de ellos. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\nLos Modificadores o mods, son un tipo de items que cambian las condiciones básicas del portal y cada uno tiene una función especial, consultame de cada uno de ellos, escudo, link amp, heat sink, multi hack, foce amp y torreta y te daré información especifica de ellos. Solo se pueden poner 2 por agente. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("multihack") > -1 || text.indexOf("multi hack") > -1 || text.indexOf("mh") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
@@ -1197,7 +1197,7 @@ var app = {};
         			}
         			else if(text.indexOf("cubo") > -1 || text.indexOf("cube") > -1 || text.indexOf("pc") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADIAIAAr177AABYXXNNKHMO7MC", 'POWER CUBE', message_id);
-                        		app.telegram.sendMessage(chat, '\nLos cubos -PC-, son items que guardan XM y te permiten recuperarla sin tener que recolectarla del suelo y su uso es para cuando te quedes sin energía cuando estas atacando, deployando, linkeando o farmeando, los uses y puedas seguir en ello (hay otras formas de conseguir XM, consultame sobre reciclar). Cada uno te da 1000 de XM por cada nivel del cubo, aunque existe un tipo especial de cubo llamado lawson, puedes consultarme que son ellos. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\nLos cubos -PC-, son items que guardan XM y te permiten recuperar XM sin tener que recolectarla del suelo y su uso es para cuando te quedes sin energía cuando estas atacando, deployando, linkeando o farmeando, los uses y puedas seguir en ello (hay otras formas de conseguir XM, consultame sobre reciclar). Cada uno te da 1000 de XM por cada nivel del cubo, aunque existe un tipo especial de cubo llamado lawson, puedes consultarme que son ellos. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("recicla") > -1 && words(text) < 5){
         				app.telegram.sendDocument(chat, "BQADAQADIQIAAr177AABwHHvq8dGtKwC", 'RECICLAR', message_id);
@@ -1205,7 +1205,7 @@ var app = {};
         			}
         			else if(text.indexOf("reso") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADIgIAAr177AABmmkMXDiPsf4C", 'RESONADORES', message_id);
-                        		app.telegram.sendMessage(chat, '\nLos resonadores -Resos-, son items que te permiten capturar el portal para tu facción, en nuestro caso, bloquea el ingreso de los shapers a nuestro mundo y el envío de sus mensajes a través del XM. Los resonadores van de diferentes niveles hasta un máximo de nivel 8, cada uno aporta un nivel de XM al portal dependiendo de su nivel, siendo los de nivel 1 de 1000 de XM y aumentando de a 500 de XM por cada nivel, hasta un máximo de 6000 en los resos nivel 8, haciendo mas dificil destruirlos según vaya aumentando su nivel, consultame que son armas para darte mas información de como destruirlos. Además de ello, solo puedes poner un cierto numero de resos según el nivel de ellos, siendo 8 resos nivel 1, 4 resos nivel 2, 3 o 4, 2 resos nivel 5 o 6, y 1 reso nivel 1 o 2. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\nLos resonadores -Resos-, son items que te permiten capturar el portal para tu facción, en nuestro caso, bloquea el ingreso de los shapers a nuestro mundo y el envío de sus mensajes a través del XM. Los resonadores van de diferentes niveles hasta un máximo de nivel 8, cada uno aporta un nivel de XM al portal dependiendo de su nivel, siendo los de nivel 1 de 1000 de XM y aumentando de a 500 de XM por cada nivel, hasta el 5 con 3000 de XM y luego aumentan de a mil, hasta un máximo de 6000 en los resos nivel 8, haciendo mas dificil destruirlos según vaya aumentando su nivel, consultame que son armas para darte mas información de como destruirlos. Además de ello, solo puedes poner un cierto numero de resos según el nivel de ellos, siendo 8 resos nivel 1, 4 resos nivel 2, 3 o 4, 2 resos nivel 5 o 6, y 1 reso nivel 1 o 2. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("torreta") > -1 ||text.indexOf("turret") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADIwIAAr177AAB5rKIHjPAX0kC", 'TORRETA', message_id);
