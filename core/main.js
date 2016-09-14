@@ -106,7 +106,7 @@ var app = {};
         };
         app.api.createAgent(name, username, from_id, function(data){
             //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-            console.log(JSON.stringify(data));
+            //console.log(JSON.stringify(data));
         });
 
         /*console.log('@' + username + ': ' + chat + ' --> ' + text +
