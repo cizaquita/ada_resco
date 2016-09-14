@@ -1686,6 +1686,12 @@ var app = {};
                         });
                     }
                 }
+            // VER MI AGENTE
+                else if(text.indexOf("quien soy") > -1){
+                    app.api.getAgent(from_id, function(data){
+                        app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                    });
+                }
 
             // FEEDBACK cuando no sabe responder
                 else{                    
