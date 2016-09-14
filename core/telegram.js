@@ -2,7 +2,7 @@
     // ADA
     //264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ
     //255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24
-    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
+    var TOKEN = '255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24',
         API_URL = 'https://api.telegram.org/bot' + TOKEN,
         TIMEOUT = 10,
         offset = localStorage.getItem('telegram_offset') || 0,
@@ -204,6 +204,28 @@
 
         request('post', url, params, function(data) {
             console.log(JSON.stringify(data));
+            if (typeof callback === 'function') {
+                callback(data && data.ok, data.description);
+            }
+        });
+    };
+    /**
+     * getFile descargar un archivo almacenado en Telegram
+     * https://core.telegram.org/bots/api#getFile
+     * @param file_id {Number} required
+     */
+    app.telegram.getFile = function(file_id) {
+        var url = API_URL + '/getFile',
+            params = {};
+
+        params.file_id = file_id;
+
+        request('post', url, params, function(data) {
+            console.log(JSON.stringify(data));
+            var file_download = "https://api.telegram.org/file/bot" + TOKEN + "/" + data.file_path;
+            request('get', file_download, null, function(file_d){
+                console.log(JSON.stringify(file_d));
+            })
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
             }

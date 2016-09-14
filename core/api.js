@@ -1,6 +1,8 @@
 (function() {
-    var API_URL = 'http://127.0.0.1:8000/',
-        TIMEOUT = 10;
+    var API_URL = 'http://127.0.0.1:1338/',
+        TIMEOUT = 10,
+        //cizaquita, fabianv, rataeltriforce
+        admins = [7455490,97115847,15498173];
 
     app.api = {};
 
@@ -29,35 +31,49 @@
      * @param faction / 0 Res - 1 Enl
      * @param city,
      * @param verified, boolean
+     *        verified_level
      * @param ingress_nick,
      * @param ingress_level, integer
      * @param telegram_nick,
      * @param telegram_id, integer
      * @param geo_latitude
      * @param geo_longitude
+     *        trivia_points
      */
-    app.api.createAgent = function(callback) {
-        var url = API_URL + "agents/",
-        	result = "",
+    app.api.createAgent = function(name, telegram_nick, telegram_id, callback) {
+        var url = API_URL + "create_agent/",
         	params = {};
 
-        params.name = "RATAELTRIFORCE";
-        params.faction = 0;
-        params.city = "BOGOTA";
-        params.verified = true;
-        params.ingress_nick = "RATAELTRIFORCE";
-        params.ingress_level = 16;
-        params.telegram_nick = "RATAELTRIFORCE";
-        params.telegram_id = 123123123;
-        params.geo_latitude = "5.7657";
-        params.geo_longitude = "30.76567";
+        params.name = name;
+        params.telegram_nick = telegram_nick;
+        params.telegram_id = telegram_id;
 
 
         request('post', url, params, function(data) {
 			console.log("data: " + JSON.stringify(data));
             if (data) {
-                result = data;
-                callback(result);
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Get Agent from BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.getAgent = function(telegram_id, callback) {
+        var url = API_URL + "get_agent/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
             } else {
                 callback(null);
             }
@@ -70,10 +86,34 @@
      */
     app.api.getFactions = function(callback) {
         var url = API_URL + "factions/",
-        	result = "";
+            result = "";
 
         request('get', url, null, function(data) {
-			//console.log("data: " + JSON.stringify(data));
+            //console.log("data: " + JSON.stringify(data));
+            if (data) {
+                result = data;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Create Faction in BOT API
+     * @param name nombre de la facción
+     * @param callback {Function} Callback function
+     */
+    app.api.createFaction = function(name, callback) {
+        var url = API_URL + "factions/",
+            result = "",
+            params = {};
+
+        params.name = name;
+
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
             if (data) {
                 result = data;
                 callback(result);

@@ -9,7 +9,9 @@ var app = {};
 (function() {
     var modules = {},
         activeModule = {},
-        GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8";
+        GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8",
+        //cizaquita, fabianv, rataeltriforce
+        admins = [7455490,97115847,15498173];
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
     // API MOODLE: AIzaSyBt9Hcwt_5fxsChvB_1yB4D1ZVCeiZlYuI
@@ -92,9 +94,10 @@ var app = {};
             //Testing variables
             username = message.from.username,
             name = message.from.first_name,
+            from_id = message.from.id;
             //Para darle reply_to_message_id
             message_id = message.message_id,
-            message_reply = message.reply_to_message;
+            reply_to_message = message.reply_to_message;
 
         /*console.log('@' + username + ': ' + chat + ' --> ' + text +
                                           '\nOr Audio id: ' + JSON.stringify(audio) +
@@ -184,12 +187,6 @@ var app = {};
         else if (text === '/interval') {
             delete activeModule[chat];            
             app.telegram.sendMessage(chat, 'Sorry, /interval command disabled.', null);
-        }
-        // TOMAR LA LISTA DE ADMINS
-        else if (text === '/adminlist') {
-            if (chat < 0) {
-                app.telegram.getChatAdministrators(chat, message.chat.title);
-            }
         }
 
         // BANEAR USUARIOS
@@ -383,141 +380,9 @@ var app = {};
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         else if(text){
-            /*if (text.indexOf("/hola ") > -1) {
-                //Slice descarta el comando inicial para tomar los parámetros
-                var echoText = text.slice(6);
-                var cantidad = echoText.length;
-                //Verificamos que el parametro tenga alguna longitud
-                if (cantidad > 2) {
-                    app.telegram.sendMessage(chat, 'Txto: ' + echoText + ", length: " + cantidad, null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/negra") > -1) {
-                var echoText = text.slice(6);
-                var cantidad = echoText.length;
-                if (cantidad > 2) {
-                    app.telegram.sendMessage(chat, '<b>' + echoText + '</b>', null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/code") > -1) {
-                var echoText = text.slice(5);
-                var cantidad = echoText.length;
-                if (cantidad > 2) {
-                    app.telegram.sendMessage(chat, '<code>' + echoText + '</code>', null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/pre") > -1) {
-                var echoText = text.slice(4);
-                var cantidad = echoText.length;
-                if (cantidad > 2) {
-                    app.telegram.sendMessage(chat, '<pre>' + echoText + '</pre>', null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/multi") > -1) {
-                var echoText = text.slice(6);
-                console.log("echotext: " + echoText);
-
-                var textEx = echoText.split(" ");
-                console.log("textEx: " + textEx);
-                var cantidad = echoText.length;
-                if (cantidad > 2) {
-                    console.log('<b>' + textEx[1] + '</b> ' + '<i>' + textEx[2] + '</i>');
-                    app.telegram.sendMessage(chat, '<b>' + textEx[1] + '</b> ' + '<i>' + textEx[2] + '</i>', null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/link") > -1) {
-                var echoText = text.slice(5);
-                var textEx = echoText.split(" ");
-                var cantidad = echoText.length;
-                if (cantidad > 2) {
-                    console.log('<a href=' + textEx[1] + '>' + textEx[2] + '</a>');
-                    app.telegram.sendMessage(chat, '<a href="' + textEx[1] + '">' + textEx[2] + '</a>', null);
-                }else{                
-                    app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                }
-            }
-
-            else if (text.indexOf("/latlon") > -1) {
-                var echoText = text.slice(7);
-                //El split es para tomar los parámetros separados por " " (Espacio)
-                var textEx = echoText.split(" ");
-                var cantidad = echoText.length;
-                if (cantidad && textEx[1] && textEx[2]) {
-                    if (cantidad > 2) {
-                        if (textEx[1].length > 3 && textEx[2].length > 3) {
-                            console.log("/latlon LOG: \nlat:" + textEx[1] +
-                                        "\nLon:" + textEx[2] +
-                                        "\nZoom:" + textEx[3]);
-                            message.location = {latitude:textEx[1], longitude:textEx[2] };
-                            if (textEx[3].length && textEx[3].length > 0) {
-                                activeModule[chat] = new app.modules.screenshot(message, textEx[3]);
-                            }else{
-                                activeModule[chat] = new app.modules.screenshot(message, 14);
-                            }
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, '/latlon [latitude] [longitude] [zoom] \n- Default zoom 14',null);
-                    }
-                }else{                
-                    app.telegram.sendMessage(chat, '/latlon [latitude] [longitude] [zoom] \n- Default zoom 14',null);
-                }
-            }
-            else if (text.indexOf("/place") > -1) {
-                app.telegram.sendMessage(chat, "/place [place name]", null);  
-                if (text.indexOf("/place ") > -1) {
-                    var echoText = text.slice(7);
-                    var cantidad = echoText.length;
-                    var lat, lon;
-                    if (cantidad > 2) {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + echoText + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
-                        xmlhttp.onreadystatechange = function() {
-                            if (xmlhttp.readyState == 4) {
-                                if(xmlhttp.status == 200) {
-                                    var obj = JSON.parse(xmlhttp.responseText);
-                                    if (obj.status == "OK") {
-                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
-                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
-                                        message.location = {latitude:lat, longitude:lon};
-                                        //app.telegram.sendMessage(chat, message, null);                                        
-                                        activeModule[chat] = new app.modules.screenshot(message);
-                                    }else{
-                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
-                                    }
-                                }
-                            }
-                        };
-                        xmlhttp.send(null);
-                        //app.telegram.sendMessage(chat, '<b>' + echoText + '</b>', null);
-                    }else{                
-                        app.telegram.sendMessage(chat, 'Debe escribir al menos 3 caracteres despues del comando...',null);
-                    }
-                };
-            }*/
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////BOT SEMÁNTICO/////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////////////////////////
-
-
-	/////////////////
-	//Departamentos//
-	////////////////
-
+    	/////////////////
+    	//Departamentos//
+    	////////////////
             if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es") > -1  && text.length > 6) 
             {
     		// Arauca
@@ -761,21 +626,18 @@ var app = {};
                         }
                     }
             }
+    	/////////////////////
+    	//Fin Departamentos//
+    	////////////////////
 
-
-	/////////////////////
-	//Fin Departamentos//
-	////////////////////
-
-        /////////////////////////////////////////////////////////////////////
-        ////////////////////////////// ADA //////////////////////////////////
-        /////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////
+            ////////////////////////////// ADA //////////////////////////////////
+            /////////////////////////////////////////////////////////////////////
 
             if (text.startsWith("ada") || text.startsWith("アダ") && text.length > 5) {
-
-	//////////////////////
-	//Ordenes Semanticas//
-	/////////////////////
+            	//////////////////////
+            	//Ordenes Semanticas//
+            	/////////////////////
             // DISTANCIA
                 if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
                     message.text = '/distance';
@@ -801,15 +663,15 @@ var app = {};
                     message.text = '/level';
                     activeModule[chat] = new app.modules.nivelreq(message);
                 }
-	//////////////////////////
-	//Fin Ordenes Semanticas//
-	/////////////////////////
+            	//////////////////////////
+            	//Fin Ordenes Semanticas//
+            	/////////////////////////
 
-            /////////////////
-            ///// INTEL /////
-            /////////////////
+                /////////////////
+                ///// INTEL /////
+                /////////////////
             // INTEL mostrar 
-                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("mapa") > -1|| text.indexOf("map") > -1) {
+                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("mapa") > -1 || text.indexOf("map") > -1|| text.indexOf("intel") > -1 ) {
                     var textSplited = text.split(" "),
                         lat, lon, querySearch;
                         querySearch = textSplited[2];
@@ -844,14 +706,13 @@ var app = {};
                         xmlhttp.send(null);
                     }
                 }
+                /////////////////////
+                ///// Fin INTEL /////
+                ////////////////////
 
-            /////////////////////
-            ///// Fin INTEL /////
-            ////////////////////
-
-	//////////////////////////////
-	//Respuetas Lenguaje Natural//
-	/////////////////////////////
+        	//////////////////////////////
+        	//Respuetas Lenguaje Natural//
+        	/////////////////////////////
 
             // Que mas REVISAR PARA CAMBIAR EL DIALOGO CADA VEZ QUE ALGO PASE TODO
                 else if(text.indexOf("que mas") > -1 || text.indexOf("que cuentas") > -1 || text.indexOf("como estas") > -1 || text.indexOf("que se cuenta") > -1 && words(text) < 6){
@@ -1023,15 +884,14 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Adios ' + name + ' ' + sal + ' Saludos ADA 😘😘😘', null, message_id);
                     }                   
                 }
-	//////////////////////////////////
-	//Fin Respuetas Lenguaje Natural//
-	/////////////////////////////////
+            	//////////////////////////////////
+            	//Fin Respuetas Lenguaje Natural//
+            	/////////////////////////////////
 
 
-	///////////////
-	//Habilidades//
-	//////////////
-
+            	///////////////
+            	//Habilidades//
+            	//////////////
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("que funciones") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora, preguntame por el clima, puedes pedirme un screenshot del intel, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se la definicion de muchos items y responder a saludos o despididas entre otras cosas, si quieres decirle a Henry Bowles y PAC. algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
@@ -1040,22 +900,21 @@ var app = {};
             // Reglas
                 else if(text.indexOf("reglas") > -1 || text.indexOf("normas") > -1 && words(text) < 6){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", en este chat sigue estas reglas:"+
-			"\n\t -No hables de información sensible, es un Chat público y accesible sin unirte."+
-			"\n\t -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
-			"\n\t -Recuerda visitar la página web www.laresistencia.co"+
-			"\n\t -Nuestro foro www.laresistencia.co/foro"+
-			"\n\t -Los tutoriales en rescol.co/tutos"+
-			"\n\n Y Recuerda <b>Refuse&Resist!!! Viva la Resistance!!!</b>"+
-			"\n Saludos ADA 😘😘😘", null, message_id);
+        			"\n\t -No hables de información sensible, es un Chat público y accesible sin unirte."+
+        			"\n\t -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
+        			"\n\t -Recuerda visitar la página web www.laresistencia.co"+
+        			"\n\t -Nuestro foro www.laresistencia.co/foro"+
+        			"\n\t -Los tutoriales en rescol.co/tutos"+
+        			"\n\n Y Recuerda <b>Refuse&Resist!!! Viva la Resistance!!!</b>"+
+        			"\n Saludos ADA 😘😘😘", null, message_id);
                 }
+            	///////////////////
+            	//Fin Habilidades//
+            	//////////////////
 
-	///////////////////
-	//Fin Habilidades//
-	//////////////////
-
-	///////////////
-	//Gif Variado//
-	//////////////
+            	///////////////
+            	//Gif Variado//
+            	//////////////
 
             // NICK
                 else if(text.indexOf("nick") > -1 || text.indexOf("@alias") > -1){
@@ -1066,13 +925,13 @@ var app = {};
                     app.telegram.sendDocument(chat, "BQADAQAD0QoAAl5bYQH9tB4Ev3VokwI", "")
                 }
 
-	///////////////////
-	//Fin Gif Variado//
-	//////////////////
+            	///////////////////
+            	//Fin Gif Variado//
+            	//////////////////
 
-	////////////////
-	//Fecha y Hora//
-	///////////////
+            	////////////////
+            	//Fecha y Hora//
+            	///////////////
 
             // LA fecha
                 else if ( text.indexOf("dia") > -1 || text.indexOf("mes") > -1 || text.indexOf("que ano es") > -1 || text.indexOf("fecha") > -1 && words(text) < 5){
@@ -1087,71 +946,73 @@ var app = {};
                     var m = addZero(d.getMonth());
                     var dia = addZero(d.getDay());
                     var dm = addZero(d.getDate());
-		    if(dia == 0){
-			dia="Domingo";
-		    }
-		    else if(dia == 1){
-			dia="Lunes";
-		    }
-		    else if(dia == 2){
-			dia="Martes";
-		    }
-		    else if(dia == 3){
-			dia="Miercoles";
-		    }
-		    else if(dia == 4){
-			dia="Jueves";
-		    }
-		    else if(dia == 5){
-			dia="Viernes";
-		    }
-		    else if(dia == 6){
-			dia="Sábado";
-		    }
-		    if(m == 0){
-			m="Enero";
-		    }
-		    else if(m == 1 ){
-			m="Febrero";
-		    }
-		    else if(m == 2 ){
-			m="Marzo";
-		    }
-		    else if(m == 3 ){
-			m="Abril";
-		    }
-		    else if(m == 4 ){
-			m="Mayo";
-		    }
-		    else if(m == 5 ){
-			m="Junio";
-		    }
-		    else if(m == 6 ){
-			m="Julio";
-		    }
-		    else if(m == 7 ){
-			m="Agosto";
-		    }
-		    else if(m == 8 ){
-			m="Septiembre";
-		    }
-		    else if(m == 9 ){
-			m="Octubre";
-		    }
-		    else if(m == 10 ){
-			m="Noviembre";
-		    }
-		    else if(m == 11 ){
-			m="Diciembre";
-		    }
+        		    if(dia == 0){
+                        dia="Domingo";
+        		    }
+        		    else if(dia == 1){
+                        dia="Lunes";
+        		    }
+        		    else if(dia == 2){
+                        dia="Martes";
+        		    }
+        		    else if(dia == 3){
+                        dia="Miercoles";
+        		    }
+        		    else if(dia == 4){
+                        dia="Jueves";
+        		    }
+        		    else if(dia == 5){
+                        dia="Viernes";
+        		    }
+        		    else if(dia == 6){
+                        dia="Sábado";
+        		    }
+                    //meses
+        		    if(m == 0){
+                        m="Enero";
+        		    }
+        		    else if(m == 1 ){
+                        m="Febrero";
+        		    }
+        		    else if(m == 2 ){
+                        m="Marzo";
+        		    }
+        		    else if(m == 3 ){
+                        m="Abril";
+        		    }
+        		    else if(m == 4 ){
+                        m="Mayo";
+        		    }
+        		    else if(m == 5 ){
+                        m="Junio";
+        		    }
+        		    else if(m == 6 ){
+                        m="Julio";
+        		    }
+        		    else if(m == 7 ){
+                        m="Agosto";
+        		    }
+        		    else if(m == 8 ){
+                        m="Septiembre";
+        		    }
+        		    else if(m == 9 ){
+                        m="Octubre";
+        		    }
+        		    else if(m == 10 ){
+                        m="Noviembre";
+        		    }
+        		    else if(m == 11 ){
+                        m="Diciembre";
+        		    }
+
                     if (username) {
                         app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }else{
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y hoy es ' + dia + ", " + dm + " de " + m + ' del año ' + y, null, message_id);
                     }                   
                 }
-		 // LA HORA
-		else if ( text.indexOf("hora") > -1 && words(text) < 5){
+            // LA HORA                
+                else if ( text.indexOf("hora") > -1 && words(text) < 5){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
@@ -1168,13 +1029,13 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
                     }                   
                 }
-	////////////////////
-	//Fin Fecha y Hora//
-	///////////////////
+            	////////////////////
+            	//Fin Fecha y Hora//
+            	///////////////////
 
-	/////////////////////
-	//Ayuda Para NOOBS//
-	///////////////////
+            	/////////////////////
+            	//Ayuda Para NO0BS//
+            	///////////////////
 
             // Subir de lvl
                 else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 || text.indexOf("concejo") > -1 && words(text) < 6) {
@@ -1184,9 +1045,9 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
                     }  
                 }
-            ////////////////////////
-            ///// DEFINICIONES /////
-            ///////////////////////
+                ////////////////////////
+                ///// DEFINICIONES /////
+                ///////////////////////
                 else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
 		            if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
 		                app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
@@ -1349,16 +1210,15 @@ var app = {};
                         }
                     }
                 }
-            ////////////////////////////
-            ///// FIN DEFINICIONES /////
-            ///////////////////////////
+                ////////////////////////////
+                ///// FIN DEFINICIONES /////
+                ///////////////////////////
 
 
-	////////////
-	// TRIVIA //
-	////////////
-		else if(text.indexOf("trivia") > -1 || text.indexOf("preguntas") > -1 && words(text) < 5){
-                   
+            	////////////
+            	// TRIVIA //
+            	////////////
+                else if(text.indexOf("trivia") > -1 || text.indexOf("preguntas") > -1 && words(text) < 5){                   
                    var mensajes =  ['¿Que es un XMP?',
                                      '¿Para que son los XMP?',
                                      '¿Como uso mejor los XMP?',
@@ -1671,12 +1531,12 @@ var app = {};
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Hola @" + username + ", " + mensajes[msjIndex] , null, message_id);                   
                 }
-	/////////////////
-	// FIN TRIVIA //
-	///////////////
+            	/////////////////
+            	// FIN TRIVIA //
+            	///////////////
 
-                //ACÀ TERMINA EL QUÉ ES, TENER EN CUENTA QUE SIGUEN LOS DEMÁS DE "ADA" que es la principal
-		else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 || text.indexOf("puntos de glifo") > -1 && words(text) < 8){
+            //ACÀ TERMINA EL QUÉ ES, TENER EN CUENTA QUE SIGUEN LOS DEMÁS DE "ADA" que es la principal
+                else if(text.indexOf("puntos") > -1 && text.indexOf("glyph") > -1 || text.indexOf("puntos de glifo") > -1 && words(text) < 8){
                     app.telegram.sendMessage(chat, "<i>Puntos de Glyph por portal para medalla Translator</i>"+
                                                    "\n\nPortales <b>L0 y L1</b> - 1 Glyph - <b>1</b> punto"+
                                                    "\nPortal <b>L2</b> - 2 Glyphs - <b>2</b> puntos"+
@@ -1687,21 +1547,22 @@ var app = {};
 
                 }
 
-/* TODO
+            /* TODO
 
-            // Portal calc xmps y otros
-*/
+                        // Portal calc xmps y otros
+            */
 
-	/////////////////////////
-	//Fin Ayuda Para NOOBS//
-	///////////////////////
+            	/////////////////////////
+            	//Fin Ayuda Para NOOBS//
+            	///////////////////////
 
-	///////////////////////////////
-	// #OnlyForTheLulz/////////////
-	//////////////////////////////
-            /////////////////
-            ///// CLIMA /////
-            /////////////////
+            	///////////////////////////////
+            	// #OnlyForTheLulz/////////////
+            	//////////////////////////////
+
+                /////////////////
+                ///// CLIMA /////
+                /////////////////
             // WEATHER clima REST API @cizaquita
                 else if(text.indexOf("clima") > -1 || text.indexOf("tiempo") > -1 && words(text) < 5){
                     //app.telegram.sendMessage(chat, "clima...", null, message_id);
@@ -1743,9 +1604,9 @@ var app = {};
                         xmlhttp.send(null);
                     }
                 }
-            //////////////////
-            ///// LANZAR /////
-            //////////////////
+                //////////////////
+                ///// LANZAR /////
+                //////////////////
             //  LANZAR: moneda, dados
                 else if(text.indexOf("lanzar") > -1 && words(text) < 5){
                     if (text.indexOf("moneda") > -1 ) {
@@ -1768,7 +1629,7 @@ var app = {};
                         };
                     });
                 }
-	    // FEED //
+            // FEED //
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
                     var entradas = "";
@@ -1783,11 +1644,38 @@ var app = {};
                         app.telegram.sendMessage(chat, texto, null);
                     });
                 }
+                //////////////////////////////////////////////////////////
+                //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
+                ///////////////////////////////////////////////////////////
+            // CREAR AGENTE
+                else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
+                    if(reply_to_message && isBotAdmin(from_id)){
+                        var agent_telegram_id = reply_to_message.from.id,
+                            agent_name = reply_to_message.from.first_name,
+                            agent_telegram_nick = reply_to_message.from.username,
+                            agent_last_name = reply_to_message.from.last_name;
+                        if (agent_last_name) {
+                            agent_name += " " + agent_last_name;
+                        };
 
-	///////////////////////
-	//Fin #OnlyForTheLulz//
-	//////////////////////
+                        app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
+                            app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                        });
 
+                    }else{
+                        app.telegram.sendMessage(-1001069963507, "intento de: " + text + ", de: @" + username, null);  
+                    }
+                }
+            // VER AGENTE
+                else if(text.indexOf("quien es") > -1){
+                    if(reply_to_message){
+                        var agent_telegram_id = reply_to_message.from.id;
+
+                        app.api.getAgent(agent_telegram_id, function(data){
+                            app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);                            
+                        });
+                    }
+                }
 
             // FEEDBACK cuando no sabe responder
                 else{                    
@@ -1804,9 +1692,9 @@ var app = {};
         ////////////////////////////// Fin ADA //////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 
-            //////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////Fin BOT SEMÁNTICO/////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////Fin BOT SEMÁNTICO/////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////
 
         }
         // Or maybe user made a mistake (do not reply in groups)
@@ -1863,6 +1751,14 @@ var app = {};
         }
 
     })();
+
+    function isBotAdmin(chat_id){
+        for (var i = admins.length - 1; i >= 0; i--) {
+            if(admins[i] == chat_id){
+                return true;
+            }
+        };
+    };
 
     function processInlineQuery(inlineQuery){
         //app.telegram.sendMessage(7455490, 'inlineQuery: ' + JSON.stringify(inlineQuery), null);
