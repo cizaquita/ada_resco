@@ -81,6 +81,48 @@
     };
 
     /**
+     * Verificar Agente from BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.verifyAgent = function(telegram_id, callback) {
+        var url = API_URL + "verify_agent/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Verificar Perfil de Agente from BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.verifyAgentProfile = function(telegram_id, callback) {
+        var url = API_URL + "verify_profile/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
      * Get Factions from BOT API
      * @param callback {Function} Callback function
      */

@@ -1669,27 +1669,52 @@ var app = {};
                         };
 
                         app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
-                            app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                            if (data && data.status == "ok") {
+                                app.telegram.sendMessage(chat, "- (" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
+                            }else{                                
+                                app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                            }
                         });
 
                     }else{
-                        app.telegram.sendMessage(-1001069963507, "intento de: " + text + ", de: @" + username, null);  
+                        app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas crear o no estás autorizado.', null, message_id);
+                        app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
                     }
                 }
             // VER AGENTE
                 else if(text.indexOf("quien es") > -1){
                     if(reply_to_message){
-                        var agent_telegram_id = reply_to_message.from.id;
+                        var agent_telegram_id = reply_to_message.from.id,
+                            verified_icon = "🔘";
 
                         app.api.getAgent(agent_telegram_id, function(data){
-                            app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);                            
+                            if (data && data.status == "ok") {
+                                if (data.verified) {
+                                    verified_icon = '☑️';
+                                }
+                                app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                               '\n\nNombre: ' + data.name +
+                                                               '\nNick: @' + data.telegram_nick + ' ' + verified_icon +
+                                                               '\nID: ' + data.telegram_id+
+                                                               '\nPuntos Trivia: ' + data.trivia_points, null, message_id);
+                            };
                         });
                     }
                 }
             // VER MI AGENTE
                 else if(text.indexOf("quien soy") > -1){
+                    var verified_icon = "🔘";
                     app.api.getAgent(from_id, function(data){
-                        app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                        if (data && data.status == "ok") {
+                            if (data.verified) {
+                                verified_icon = '☑️';
+                            }
+                            app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                           '\n\nNombre: ' + data.name +
+                                                           '\nNick: @' + data.telegram_nick + ' ' + verified_icon +
+                                                           '\nID: ' + data.telegram_id+
+                                                           '\nPuntos Trivia: ' + data.trivia_points, null, message_id);
+                        };
                     });
                 }
             // PUNTOS TRIVIA
@@ -1697,6 +1722,25 @@ var app = {};
                     app.api.getAgent(from_id, function(data){
                         app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
                     });
+                }
+            // VERIFICAR AGENTE
+                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
+                    if(reply_to_message && isBotAdmin(from_id)){
+                        var agent_telegram_id = reply_to_message.from.id,
+                            agent_telegram_nick = reply_to_message.from.username;
+                        console.log("debug validar agente:" + agent_telegram_id);
+
+                        app.api.verifyAgent(agent_telegram_id, function(data){
+                            if (data && data.status == "ok") {
+                                app.telegram.sendMessage(chat, '- (' + agent_telegram_id + ') @' + agent_telegram_nick + ', ha sido verificado ☑️', null, message_id);
+                            }else{
+                                app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                            }
+                        });                        
+                    }else{
+                        app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar o no estás autorizado.', null, message_id);
+                        app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
+                    }
                 }
 
             // FEEDBACK cuando no sabe responder
