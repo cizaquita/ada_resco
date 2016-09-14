@@ -131,6 +131,30 @@
     };
 
     /**
+     * Update Agent CITY in BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.updateTriviaPoints = function(telegram_id, action, callback) {
+        var url = API_URL + "update_trivia_points/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+        params.action = action;
+
+        console.log('\n\nTELEGRAM ID ' + telegram_id + ', ACTION: ' + action + '\n\n');
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
      * Verificar Agente from BOT API
      * @param telegram_id
      * @param verified_for admin who verify

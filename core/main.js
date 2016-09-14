@@ -159,6 +159,10 @@ var app = {};
             text = '/level';
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
+        if (text === '/trivia@ada_resco_bot') {
+            text = '/trivia';
+        }
+        // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
         /*if (text === '/language@ada_resco_bot') {
             text = '/language';
         }
@@ -690,6 +694,11 @@ var app = {};
                 else if(text.indexOf("nivel") > -1 || text.indexOf("como llego a") > -1 || text.indexOf("level") > -1 || text.indexOf("que necesito para") > -1 && words(text) < 9){
                     message.text = '/level';
                     activeModule[chat] = new app.modules.nivelreq(message);
+                }
+            // TRIVIA
+                else if(text.indexOf("trivia") > -1 || text.indexOf("pregunta") > -1 || text.indexOf("preguntar") > -1 && words(text) < 9){
+                    message.text = '/trivia';
+                    activeModule[chat] = new app.modules.trivia(message);
                 }
             	//////////////////////////
             	//Fin Ordenes Semanticas//
@@ -1246,7 +1255,7 @@ var app = {};
             	////////////
             	// TRIVIA //
             	////////////
-                else if(text.indexOf("trivia") > -1 || text.indexOf("preguntas") > -1 && words(text) < 5){                   
+                /*else if(text.indexOf("trivia") > -1 || text.indexOf("preguntas") > -1 && words(text) < 5){                   
                    var mensajes =  ['¿Que es un XMP?',
                                      '¿Para que son los XMP?',
                                      '¿Como uso mejor los XMP?',
@@ -1558,7 +1567,7 @@ var app = {};
                                      '¿Que capacidad de XM tiene un Agente nivel 16?'];
                     var msjIndex = Math.floor((Math.random() * (mensajes.length)));
                     app.telegram.sendMessage(chat, "Hola @" + username + ", " + mensajes[msjIndex] , null, message_id);                   
-                }
+                }*/
             	/////////////////
             	// FIN TRIVIA //
             	///////////////
