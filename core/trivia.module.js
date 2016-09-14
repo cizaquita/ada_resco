@@ -75,7 +75,8 @@
                 app.api.updateTriviaPoints(from_id, "restar", function(data){
                     app.telegram.sendMessage(chat, "Lo lamento @" + username + ", has respondido <b>erróneamente!</b> :(" +
                                                         "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
-                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);
+                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" " +
+                                                        "\n\n<b>Pregunta:</b> " + this.preg[0], null, message_id);
                 });
             }
 
