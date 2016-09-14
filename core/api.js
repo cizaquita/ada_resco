@@ -158,11 +158,13 @@
      * @param telegram_id
      * @param callback {Function} Callback function
      */
-    app.api.verifyAgentProfile = function(telegram_id, callback) {
-        var url = API_URL + "verify_profile/",
+    app.api.updateVerifiedLevel = function(telegram_id, verified_level, verified_for, callback) {
+        var url = API_URL + "update_agent_ver_lvl/",
             params = {};
 
         params.telegram_id = telegram_id;
+        params.verified_level = verified_level;
+        params.verified_for = verified_for;
 
         request('post', url, params, function(data) {
             console.log("data: " + JSON.stringify(data));

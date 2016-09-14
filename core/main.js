@@ -397,7 +397,7 @@ var app = {};
     	/////////////////
     	//Departamentos//
     	////////////////
-            if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
+            if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("juego por") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
             {
                 ///////////////////////////////////////////////////////////////////////
                 // FUNCION PARA GUARDAR CIUDAD
@@ -1675,6 +1675,35 @@ var app = {};
                 //////////////////////////////////////////////////////////
                 //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
                 ///////////////////////////////////////////////////////////
+            // ASIGNAR CONFIANZA
+                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
+                    if (reply_to_message && isBotAdmin(from_id)) {
+                        var agent_telegram_id = reply_to_message.from.id,
+                            agent_telegram_nick = reply_to_message.from.username,
+                            nivelConfianza = getNumbersInString(text);   
+
+                        if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
+                            if (agent_telegram_id != 7455490) {
+                                app.api.updateVerifiedLevel(agent_telegram_id, nivelConfianza, username, function(data){
+                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", se le ha asignado nivel " + data.verified_level + " de confianza.", null, message_id);
+                                });
+                            }else{
+                                app.telegram.sendMessage(chat, "R u kidding me?", null, message_id);
+                                app.telegram.kickChatMember(chat, from_id);
+                                app.telegram.sendMessage(7455490, "R u kidding me? de @" + username, null);
+                            }
+                        }else{
+                            app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 3." +
+                                                           "\n0 - Ninguno" +
+                                                           "\n1 - Screenshot de perfil" +
+                                                           "\n2 - Conoce en persona" +
+                                                           "\n3 - Para OPS", null, message_id);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas asignar confianza o no estás autorizado.', null, message_id);
+                        app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
+                    }
+                }
             // CREAR AGENTE
                 else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
                     if(reply_to_message && isBotAdmin(from_id)){
@@ -1703,17 +1732,20 @@ var app = {};
                     if(reply_to_message){
                         var agent_telegram_id = reply_to_message.from.id,
                             verified_icon = "🔘",
-                            verified_for = "";
+                            verified_for = "",
+                            verified_level = "";
+
 
                         app.api.getAgent(agent_telegram_id, function(data){
                             if (data && data.status == "ok") {
                                 if (data.verified) {
                                     verified_icon = '☑️';
                                     verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                    verified_level = data.verified_level;
                                 }
                                 app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
                                                                '\n\n<i>Nombre:</i> ' + data.name +
-                                                               '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
+                                                               '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
                                                                '\n<i>Zona de Juego:</i> ' + data.city +
                                                                '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                             };
@@ -1723,16 +1755,18 @@ var app = {};
             // CONSULTAR MI AGENTE
                 else if(text.indexOf("quien soy") > -1){
                     var verified_icon = "🔘",
-                        verified_for = "";;
+                        verified_for = "",
+                        verified_level = "";
                     app.api.getAgent(from_id, function(data){
                         if (data && data.status == "ok") {
                             if (data.verified) {
                                 verified_icon = '☑️';
                                 verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                verified_level = data.verified_level;
                             }
                             app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
                                                            '\n\n<i>Nombre:</i> ' + data.name +
-                                                           '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
+                                                           '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
                                                            '\n<i>Zona de Juego:</i> ' + data.city +
                                                            '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                         };
@@ -1744,14 +1778,8 @@ var app = {};
                         app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
                     });
                 }
-            // SOY DE CIUDAD
-                else if(text.indexOf("juego por") > -1 ){
-                    app.api.getAgent(from_id, function(data){
-                        app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
-                    });
-                }
             // VERIFICAR AGENTE
-                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
+                /*else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
                     if(reply_to_message && isBotAdmin(from_id)){
                         var agent_telegram_id = reply_to_message.from.id,
                             agent_telegram_nick = reply_to_message.from.username;
@@ -1768,7 +1796,7 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar o no estás autorizado.', null, message_id);
                         app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
                     }
-                }
+                }*/
 
             // FEEDBACK cuando no sabe responder
                 else{                    
@@ -1852,6 +1880,13 @@ var app = {};
             }
         };
     };
+    function getNumbersInString(str){
+        var numb = str.match(/\d/g);
+        if (numb) {
+            numb = numb.join("");            
+        };
+        return numb;
+    }
 
     function processInlineQuery(inlineQuery){
         //app.telegram.sendMessage(7455490, 'inlineQuery: ' + JSON.stringify(inlineQuery), null);
