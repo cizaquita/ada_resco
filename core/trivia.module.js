@@ -106,7 +106,7 @@
                         ['¿Que capacidad de XM tiene un Agente nivel 14?',"19000","xx000"],
                         ['¿Que capacidad de XM tiene un Agente nivel 15?',"20500","xx500"],
                         ['¿Que capacidad de XM tiene un Agente nivel 16?',"22000","xx000"],
-			['¿Que es un XMP?',"un tipo de arma que tienen un largo alcance y un critico no muy alto","un tipo de arma xxx xxxxxx xx xxxxx xxxxxxx x xx xxxxxxx xx xxx xxxx"],
+			            ['¿Que es un XMP?',"un tipo de arma que tienen un largo alcance y un critico no muy alto","un tipo de arma xxx xxxxxx xx xxxxx xxxxxxx x xx xxxxxxx xx xxx xxxx"],
                         ['¿Para que son los XMP?',"se usan principalmente para tumbar resonadores","Se usan xxxxxxxxxxxxxx xxxx xxxxxx xxxxxxxxxxx"],
                         ['¿Cual es el rango de ataque de un XMP 1?',"42m","4xx"],
                         ['¿De cuanto es el critico de ataque de un XMP 1?',"150 xm","1xx Xx"],
