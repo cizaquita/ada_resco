@@ -1692,6 +1692,12 @@ var app = {};
                         app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                     });
                 }
+            // PUNTOS TRIVIA
+                else if(text.indexOf("puntos") > -1 && text.indexOf("trivia") > -1){
+                    app.api.getAgent(from_id, function(data){
+                        app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
+                    });
+                }
 
             // FEEDBACK cuando no sabe responder
                 else{                    
