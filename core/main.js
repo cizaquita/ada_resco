@@ -311,8 +311,12 @@ var app = {};
         }
         ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
         else if (text === '/rr') {
-            app.telegram.sendMessage(chat, "Reiniciado...", null, message_id);
-            chrome.runtime.reload();
+            if (isBotAdmin(from_id)) {
+                app.telegram.sendMessage(chat, "Reiniciado...", null, message_id);
+                chrome.runtime.reload();                
+            }else{
+                app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
+            }
         }
         // If user has another active module
         else if (activeModule[chat]) {
