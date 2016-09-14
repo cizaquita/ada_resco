@@ -399,6 +399,8 @@ var app = {};
     	////////////////
             if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
             {
+                ///////////////////////////////////////////////////////////////////////
+                // FUNCION PARA GUARDAR CIUDAD
                 var arrayText = text.split(" ");
                 var ciudadAgente = "";
                 if (text.indexOf("ada") > -1) {
@@ -410,6 +412,7 @@ var app = {};
                 app.api.updateAgentCity(from_id, arrayText, function(data){
                     //app.telegram.sendMessage(chat, "Ciudad actualizada.", null, message_id)
                 });
+                ///////////////////////////////////////////////////////////////////////////////////////
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 5) {
         			if (username){
