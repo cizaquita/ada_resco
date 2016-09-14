@@ -1693,7 +1693,7 @@ var app = {};
                     });
                 }
             // PUNTOS TRIVIA
-                else if(text.indexOf("puntos") > -1 && text.indexOf("trivia") > -1){
+                else if(text.indexOf("puntos") > -1 ){
                     app.api.getAgent(from_id, function(data){
                         app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
                     });
