@@ -2,7 +2,7 @@
     // ADA
     //264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ
     //255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24
-    var TOKEN = '255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24',
+    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
         API_URL = 'https://api.telegram.org/bot' + TOKEN,
         TIMEOUT = 10,
         offset = localStorage.getItem('telegram_offset') || 0,
