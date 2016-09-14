@@ -84,6 +84,29 @@
     };
 
     /**
+     * Get Agent from BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.getAgentByNick = function(telegram_nick, callback) {
+        var url = API_URL + "get_agent_bynick/",
+            params = {};
+
+        params.telegram_nick = telegram_nick;
+
+        console.log('\n\nTELEGRAM @NICK A consultar ' + telegram_nick + '\n\n');
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
      * Verificar Agente from BOT API
      * @param telegram_id
      * @param callback {Function} Callback function
