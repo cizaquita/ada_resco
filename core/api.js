@@ -111,14 +111,14 @@
      * @param telegram_id
      * @param callback {Function} Callback function
      */
-    app.api.updateAgentCity = function(telegram_nick, agent_city, callback) {
+    app.api.updateAgentCity = function(telegram_id, agent_city, callback) {
         var url = API_URL + "update_agent_city/",
             params = {};
 
-        params.telegram_nick = telegram_nick;
+        params.telegram_id = telegram_id;
         params.agent_city = agent_city;
 
-        console.log('\n\nTELEGRAM ID ' + telegram_nick + ', CIUDAD' + agent_city + '\n\n');
+        console.log('\n\nTELEGRAM ID ' + telegram_id + ', CIUDAD' + agent_city + '\n\n');
 
         request('post', url, params, function(data) {
             console.log("data: " + JSON.stringify(data));

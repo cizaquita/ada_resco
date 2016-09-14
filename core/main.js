@@ -397,9 +397,19 @@ var app = {};
     	/////////////////
     	//Departamentos//
     	////////////////
-            if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es") > -1  && text.length > 6) 
+            if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
             {
-                
+                var arrayText = text.split(" ");
+                var ciudadAgente = "";
+                if (text.indexOf("ada") > -1) {
+                    ciudadAgente = arrayText.splice(0,3);
+                }else{
+                    ciudadAgente = arrayText.splice(0,2);
+                }
+                arrayText = arrayText.toString().replace(/,/g, " ");
+                app.api.updateAgentCity(from_id, arrayText, function(data){
+                    //app.telegram.sendMessage(chat, "Ciudad actualizada.", null, message_id)
+                });
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 5) {
         			if (username){
@@ -1685,7 +1695,7 @@ var app = {};
                         app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
                     }
                 }
-            // VER AGENTE
+            // CONSULTAR AGENTE
                 else if(text.indexOf("quien es") > -1){
                     if(reply_to_message){
                         var agent_telegram_id = reply_to_message.from.id,
@@ -1697,15 +1707,15 @@ var app = {};
                                     verified_icon = '☑️';
                                 }
                                 app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                               '\n\nNombre: ' + data.name +
-                                                               '\nNick: @' + data.telegram_nick + ' ' + verified_icon +
-                                                               '\nID: ' + data.telegram_id+
-                                                               '\nPuntos Trivia: ' + data.trivia_points, null, message_id);
+                                                               '\n\n<i>Nombre:</i> ' + data.name +
+                                                               '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
+                                                               '\n<i>Zona de Juego:</i> ' + data.city +
+                                                               '\n<i>Puntos Trivia:</i> ' + data.trivia_points, null, message_id);
                             };
                         });
                     }
                 }
-            // VER MI AGENTE
+            // CONSULTAR MI AGENTE
                 else if(text.indexOf("quien soy") > -1){
                     var verified_icon = "🔘";
                     app.api.getAgent(from_id, function(data){
@@ -1714,15 +1724,21 @@ var app = {};
                                 verified_icon = '☑️';
                             }
                             app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                           '\n\nNombre: ' + data.name +
-                                                           '\nNick: @' + data.telegram_nick + ' ' + verified_icon +
-                                                           '\nID: ' + data.telegram_id+
-                                                           '\nPuntos Trivia: ' + data.trivia_points, null, message_id);
+                                                           '\n\n<i>Nombre:</i> ' + data.name +
+                                                           '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
+                                                           '\n<i>Zona de Juego:</i> ' + data.city +
+                                                           '\n<i>Puntos Trivia:</i> ' + data.trivia_points, null, message_id);
                         };
                     });
                 }
             // PUNTOS TRIVIA
                 else if(text.indexOf("puntos") > -1 ){
+                    app.api.getAgent(from_id, function(data){
+                        app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
+                    });
+                }
+            // SOY DE CIUDAD
+                else if(text.indexOf("juego por") > -1 ){
                     app.api.getAgent(from_id, function(data){
                         app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
                     });
