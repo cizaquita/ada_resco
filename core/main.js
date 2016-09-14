@@ -94,10 +94,20 @@ var app = {};
             //Testing variables
             username = message.from.username,
             name = message.from.first_name,
+            last_name = message.from.last_name,
             from_id = message.from.id;
             //Para darle reply_to_message_id
             message_id = message.message_id,
             reply_to_message = message.reply_to_message;
+
+        // CREAR USUARIO AUTOMÁTICAMENTE CON CADA MENSAJE ENVIADO
+        if (last_name) {
+            name += " " + last_name;
+        };
+        app.api.createAgent(name, username, from_id, function(data){
+            //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+            console.log(JSON.stringify(data));
+        });
 
         /*console.log('@' + username + ': ' + chat + ' --> ' + text +
                                           '\nOr Audio id: ' + JSON.stringify(audio) +
