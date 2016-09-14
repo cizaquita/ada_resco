@@ -27,7 +27,10 @@
     Trivia.prototype.onMessage = function (message) {
         var chat = message.chat.id;
         var textEx = message.text,
-            text = "";
+            text = "",
+            from_id = message.from.id,
+            username = message.from.username,
+            message_id = message.message_id;
             if (textEx) {
                 text = textEx.toLowerCase();
                 text = acentos(text);
@@ -55,10 +58,11 @@
                                                 "\nPuedes pedir una <b>\"pista\"</b> si eres muy no0b."+
                                                 "\nUtiliza /cancel para terminar la trivia!", null, message_id);
             }else if(text == acentos(this.preg[1].toLowerCase())){
-                app.api.updateTriviaPoints(this.from_id, "sumar", function(data){
-                    app.telegram.sendMessage(chat, "Felicidades @" + this.username + ", has respondido <b>correctamente!</b> :D" +
+                app.api.updateTriviaPoints(from_id, "sumar", function(data){
+                    app.telegram.sendMessage(chat, "Felicidades @" + username + ", has respondido <b>correctamente!</b> :D" +
                                                     "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
-                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);
+                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" "+
+                                                        "\n\n<b>Trivia resuelta!</b>", null, message_id);
                 });
                 this.complete = true;
             }else if (text == "pista") {
@@ -68,8 +72,8 @@
                 this.complete = true;
             }
             else{
-                app.api.updateTriviaPoints(this.from_id, "restar", function(data){
-                    app.telegram.sendMessage(chat, "Lo lamento @" + this.username + ", has respondido <b>erróneamente!</b> :(" +
+                app.api.updateTriviaPoints(from_id, "restar", function(data){
+                    app.telegram.sendMessage(chat, "Lo lamento @" + username + ", has respondido <b>erróneamente!</b> :(" +
                                                         "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
                                                         "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);
                 });

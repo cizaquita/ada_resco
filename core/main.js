@@ -1694,7 +1694,7 @@ var app = {};
                         if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
                             if (agent_telegram_id != 7455490) {
                                 app.api.updateVerifiedLevel(agent_telegram_id, nivelConfianza, username, function(data){
-                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", se le ha asignado nivel " + data.verified_level + " de confianza.", null, message_id);
+                                    app.telegram.sendMessage(chat, "@" + agent_telegram_nick + ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
                                 });
                             }else{
                                 app.telegram.sendMessage(chat, "R u kidding me?", null, message_id);
@@ -1709,7 +1709,7 @@ var app = {};
                                                            "\n3 - Para OPS", null, message_id);
                         }
                     }else{
-                        app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas asignar confianza o no estás autorizado.', null, message_id);
+                        app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar o no estás autorizado.', null, message_id);
                         app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
                     }
                 }
