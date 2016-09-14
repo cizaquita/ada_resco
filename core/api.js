@@ -47,6 +47,7 @@
         params.name = name;
         params.telegram_nick = telegram_nick;
         params.telegram_id = telegram_id;
+        console.log('\n\nTELEGRAM ID A CREAR ' + telegram_id + '\n\n');
 
 
         request('post', url, params, function(data) {
@@ -69,6 +70,8 @@
             params = {};
 
         params.telegram_id = telegram_id;
+
+        console.log('\n\nTELEGRAM ID A consultar ' + telegram_id + '\n\n');
 
         request('post', url, params, function(data) {
             console.log("data: " + JSON.stringify(data));

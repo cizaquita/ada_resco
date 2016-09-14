@@ -1671,7 +1671,6 @@ var app = {};
                         if (agent_last_name) {
                             agent_name += " " + agent_last_name;
                         };
-
                         app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
                             if (data && data.status == "ok") {
                                 app.telegram.sendMessage(chat, "- (" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
