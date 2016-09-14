@@ -399,6 +399,7 @@ var app = {};
     	////////////////
             if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("estoy en") > -1 || text.indexOf("mi ubicacion es") > -1  && text.length > 6) 
             {
+                
     		// Arauca
                 if (text.indexOf("arauca") > -1 && words(text) < 5) {
         			if (username){

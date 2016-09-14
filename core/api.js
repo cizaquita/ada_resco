@@ -84,7 +84,7 @@
     };
 
     /**
-     * Get Agent from BOT API
+     * Get Agent by Nick from BOT API
      * @param telegram_id
      * @param callback {Function} Callback function
      */
@@ -95,6 +95,30 @@
         params.telegram_nick = telegram_nick;
 
         console.log('\n\nTELEGRAM @NICK A consultar ' + telegram_nick + '\n\n');
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * Update Agent CITY in BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.updateAgentCity = function(telegram_nick, agent_city, callback) {
+        var url = API_URL + "update_agent_city/",
+            params = {};
+
+        params.telegram_nick = telegram_nick;
+        params.agent_city = agent_city;
+
+        console.log('\n\nTELEGRAM ID ' + telegram_nick + ', CIUDAD' + agent_city + '\n\n');
 
         request('post', url, params, function(data) {
             console.log("data: " + JSON.stringify(data));
