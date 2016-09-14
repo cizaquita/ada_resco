@@ -133,13 +133,15 @@
     /**
      * Verificar Agente from BOT API
      * @param telegram_id
+     * @param verified_for admin who verify
      * @param callback {Function} Callback function
      */
-    app.api.verifyAgent = function(telegram_id, callback) {
+    app.api.verifyAgent = function(telegram_id, verified_for, callback) {
         var url = API_URL + "verify_agent/",
             params = {};
 
         params.telegram_id = telegram_id;
+        params.verified_for = verified_for
 
         request('post', url, params, function(data) {
             console.log("data: " + JSON.stringify(data));

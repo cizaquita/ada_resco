@@ -11,7 +11,7 @@ var app = {};
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8",
         //cizaquita, fabianv, rataeltriforce
-        admins = [7455490,97115847,15498173];
+        admins = [7455490,97115847,15498173,62857939,6396882];
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
     // API MOODLE: AIzaSyBt9Hcwt_5fxsChvB_1yB4D1ZVCeiZlYuI
@@ -1687,7 +1687,7 @@ var app = {};
                         };
                         app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
                             if (data && data.status == "ok") {
-                                app.telegram.sendMessage(chat, "- (" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
+                                app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
                             }else{                                
                                 app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                             }
@@ -1702,35 +1702,39 @@ var app = {};
                 else if(text.indexOf("quien es") > -1){
                     if(reply_to_message){
                         var agent_telegram_id = reply_to_message.from.id,
-                            verified_icon = "🔘";
+                            verified_icon = "🔘",
+                            verified_for = "";
 
                         app.api.getAgent(agent_telegram_id, function(data){
                             if (data && data.status == "ok") {
                                 if (data.verified) {
                                     verified_icon = '☑️';
+                                    verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
                                 }
                                 app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
                                                                '\n\n<i>Nombre:</i> ' + data.name +
                                                                '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
                                                                '\n<i>Zona de Juego:</i> ' + data.city +
-                                                               '\n<i>Puntos Trivia:</i> ' + data.trivia_points, null, message_id);
+                                                               '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                             };
                         });
                     }
                 }
             // CONSULTAR MI AGENTE
                 else if(text.indexOf("quien soy") > -1){
-                    var verified_icon = "🔘";
+                    var verified_icon = "🔘",
+                        verified_for = "";;
                     app.api.getAgent(from_id, function(data){
                         if (data && data.status == "ok") {
                             if (data.verified) {
                                 verified_icon = '☑️';
+                                verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
                             }
                             app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
                                                            '\n\n<i>Nombre:</i> ' + data.name +
                                                            '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon +
                                                            '\n<i>Zona de Juego:</i> ' + data.city +
-                                                           '\n<i>Puntos Trivia:</i> ' + data.trivia_points, null, message_id);
+                                                           '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                         };
                     });
                 }
@@ -1753,9 +1757,9 @@ var app = {};
                             agent_telegram_nick = reply_to_message.from.username;
                         console.log("debug validar agente:" + agent_telegram_id);
 
-                        app.api.verifyAgent(agent_telegram_id, function(data){
+                        app.api.verifyAgent(agent_telegram_id, username, function(data){
                             if (data && data.status == "ok") {
-                                app.telegram.sendMessage(chat, '- (' + agent_telegram_id + ') @' + agent_telegram_nick + ', ha sido verificado ☑️', null, message_id);
+                                app.telegram.sendMessage(chat, '(' + agent_telegram_id + ') @' + agent_telegram_nick + ', ha sido verificado ☑️', null, message_id);
                             }else{
                                 app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                             }
