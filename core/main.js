@@ -935,7 +935,7 @@ var app = {};
             	//////////////
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("que funciones") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora, preguntame por el clima, puedes pedirme un screenshot del intel, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se la definicion de muchos items y responder a saludos o despididas entre otras cosas, si quieres decirle a Henry Bowles y PAC. algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la <b>hora</b> y <b>fecha</b>, preguntame por el <b>clima</b> -por ahora solo capital del pais-, puedes pedirme un <b>screenshot</b> del intel, me puedes agregar algunos <b>/plugins</b> de iitc, se calcullar la <b>distancia</b> maxima de un portal, los requisitos para alcanzar un <b>nivel</b>, se <b>que son</b> muchos items y algunas acciones, responder a saludos o despididas, te puedo poner una <b>trivia</b>, puedo <b>lanzar</b> una moneda o dado, se molestar al un agente que le gusta el </b>spam</b>, se traer <b>feeds</b> de fevgames -en ingles- de ingress, entre otras cosas, si quieres decirle a Henry Bowles y PAC. algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
                 }
 
             // Reglas
@@ -1689,7 +1689,7 @@ var app = {};
                 //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
                 ///////////////////////////////////////////////////////////
             // ASIGNAR CONFIANZA
-                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
+                else if(text.indexOf("validar") > -1 || text.indexOf("verificar") > -1  && text.indexOf("agente") > -1){
                     var agent_telegram_id = reply_to_message.from.id,
                         agent_telegram_nick = reply_to_message.from.username,
                         nivelConfianza = getNumbersInString(text);

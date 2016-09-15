@@ -58,6 +58,7 @@
                                            "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
                                            "\n- Ada que es -item- y te diré que es y que hace este item"+
                                            "\n- Ada trivia, con ello puedes recibir una pregunta"+
+                                           "\n- Ada soy de -ciudad departamento-, con ello puedes recibir información de agentes de estos lugares en resco"+
                                            "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia</i>", null);
         }
     };
