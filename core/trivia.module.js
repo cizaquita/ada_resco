@@ -329,7 +329,7 @@
                         ['¿Que es una Capsula de Llaves?',"son items de pago","Sxx itxxx dx paxx"],
                         ['¿De que están hechas las Capsulas de Lllaves?',"estan hechas de darkxm","Esxxx hexxxs xe daxkxx"],
                         ['¿Para que son las Capsulas de Lllaves?',"guardar llaves","Guaxxxx lxxxxx"],
-                        ['¿Como aumento el espacio en mi invientario?',"comprando capsulas de llaves","comxxxxxx capxxxxx xx llxxxx"],
+                        ['¿Como aumento el espacio en mi invientario?',"comprando keylocker","comxxxxxx kxxlxxxxx"],
                         ['¿Como se hace un Hack con glifos?',"dejando presionado el boton de hack por unos segundos","Dejanxx prexxxxxxx ex botxx dx haxxx pxx uxx segxxxxx"],
                         ['¿Como se hace un Hack con complejo?',"con el glifo complex","Cxx ex glxxx comxxxx"],
                         ['¿Como se hace un Hack simple?',"con el glifo simple","Cxx ex glxxx simxxx"],
