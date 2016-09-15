@@ -47,13 +47,9 @@
         };
         /////////////////////////////////
 
-        if (chat > 0) {
-            app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad solo en grupos!</i>", inline_markup);
+        if (chat > 0 || chat == -1001061150661 || chat == -1001069963507 ) {
+            app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad solo en grupos o acá no está permitido!</i>", inline_markup);
             this.complete = true;
-        }else if(chat == -1001061150661 || chat == -1001069963507){
-            app.telegram.sendMessage(chat, "<i>Lo siento, utiliza esta funionalidad en otro grupos!</i>", inline_markup);
-            this.complete = true;
-
         }else{
             if (text == "/trivia") {
                 this.preg = pregunta();
