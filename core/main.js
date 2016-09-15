@@ -1738,7 +1738,23 @@ var app = {};
                 }
             // CREAR AGENTE
                 else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
-                    if(reply_to_message && isBotAdmin(from_id)){
+                    if(forward_from && isBotAdmin(from_id)){
+                        var agent_telegram_id = forward_from.id,
+                            agent_name = forward_from.first_name,
+                            agent_telegram_nick = forward_from.username,
+                            agent_last_name = forward_from.last_name;     
+                                                   
+                        if (agent_last_name) {
+                            agent_name += " " + agent_last_name;
+                        };
+                        app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
+                            if (data && data.status == "ok") {
+                                app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
+                            }else{                                
+                                app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                            }
+                        });
+                    }else if(reply_to_message && isBotAdmin(from_id)){
                         var agent_telegram_id = reply_to_message.from.id,
                             agent_name = reply_to_message.from.first_name,
                             agent_telegram_nick = reply_to_message.from.username,
