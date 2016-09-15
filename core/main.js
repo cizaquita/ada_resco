@@ -10,8 +10,8 @@ var app = {};
     var modules = {},
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8",
-        //cizaquita, fabianv, rataeltriforce
-        admins = [7455490,97115847,15498173,62857939,6396882];
+        //cizaquita, fabianv, rataeltriforce, pesadilla, chileno, smartgenius
+        admins = [7455490,97115847,15498173,62857939,6396882,91879222];
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
     // API MOODLE: AIzaSyBt9Hcwt_5fxsChvB_1yB4D1ZVCeiZlYuI
