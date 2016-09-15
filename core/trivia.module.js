@@ -249,7 +249,7 @@
                         ['¿Cual es la mitigación de ataque de un Escudo Común?',"30%","x0%"],
                         ['¿Cual es la mitigación de ataque de un Escudo Raro?',"40%","x0%"],
                         ['¿Cual es la mitigación de ataque de un Escudo Muy Raro?',"60%","x0%"],
-                        ['¿Cual es la mitigación de ataque de un AXXA?',"70%","x0%"],
+                        ['¿Cual es la mitigación de ataque de un AXA?',"70%","x0%"],
                         ['¿Que es un AXA?',"son escudos patrocinados","Sxx esxxxxx patxxxxxxxxx"],
                         ['¿Que pasa si pongo mas de un Escudo?',"los valores de mitigacion se suman","Lxx valxxxx xx mitixxxxxx xx suxxx"],
                         ['¿Que pasa si pongo 2 Escudos?',"los valores de mitigacion se suman","Lxx valxxxx xx mitixxxxxx xx suxxx"],
@@ -265,9 +265,9 @@
                         ['¿Que amplificador de link tiene una razón de aumento de distancia mayor?',"link amp muy raro","lixx axx mxx raxx"],
                         ['¿Que amplificador de link tiene una razón de aumento de distancia medio?',"softbank ultra link","Sofxxxxx ulxxx lixx"],
                         ['¿Que amplificador de link tiene una razón de aumento de distancia menor?',"link amp raro","lixx axx raxx"],
-                        ['¿Cual es el factor de aumento de un Link Amp Raro?',"2 veces mas","x vexxx mxx"
-                        ['¿Cual es el factor de aumento de un Softbank Ultra Link?',"5 veces mas","x vexxx mxx"
-                        ['¿Cual es el factor de aumento de un Link Amp Muy Raro?',"7 veces mas","x vexxx mxx"
+                        ['¿Cual es el factor de aumento de un Link Amp Raro?',"2 veces mas","x vexxx mxx"],
+                        ['¿Cual es el factor de aumento de un Softbank Ultra Link?',"5 veces mas","x vexxx mxx"],
+                        ['¿Cual es el factor de aumento de un Link Amp Muy Raro?',"7 veces mas","x vexxx mxx"],
                         ['¿Como obtengo Link Amp Muy Raro?',"solo atraves de passcode","soxx atrxxx xx paxscxxe"],
                         ['¿Que características especiales tiene un Softbank Ultra Link?',"aumenta defensa y aumenta links salientes","aumxxxx defxxxx y auxxxxx linxx salixxxxx"],
                         ['¿Cual es la mitigación de ataque de un Softbank Ultra Link?',"15%","xx%"],
