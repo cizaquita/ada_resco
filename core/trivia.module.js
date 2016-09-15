@@ -155,7 +155,7 @@
                         ['¿Cuanto XM se debe tener para usar un ADA Refactor en un portal 8?',"8000","xxx0"],
                         ['¿Por qué hay portales con 8 resonadores a nombre de un pitufo?',"porque todos los resos pasan a ser del agente que los coloco","porque toxxx lxx rexxx pxxxx x sxx dxx agexxx qxx lxx cxxxxx"],
                         ['¿Por qué hay portales con 8 resonadores a nombre de __ADA__?',"porque fue un sapo quien usó el ada","porque fxx xx saxx quxxx uxx xx xxx"],
-                        ['¿Que es un Jarvis Virus?',"son armas cuyo fin es infectar los portales","Sxx axxxx cxxxx xxx xx inxxxxxx xxx pxxxxxxx"],
+                        ['¿Que es un Jarvis Virus?',"son armas cuyo fin es infectar los portales","Sxx axmxx cxyx xix xs inxxxtxx xxs pxxtaxxx"],
                         ['¿Cuanto XM se debe tener para usar un Jarvis Virus?',"1000 de xm por cada nivel del portal","1xxx xx xM xxx xxxx nixxx xxx xxxxxx"],
                         ['¿Cuanto XM se debe tener para usar un Jarvis Virus en un portal 1?',"1000","1xxx"],
                         ['¿Cuanto XM se debe tener para usar un Jarvis Virus en un portal 2?',"2000","xxx0"],
