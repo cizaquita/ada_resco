@@ -1689,7 +1689,7 @@ var app = {};
                 //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
                 ///////////////////////////////////////////////////////////
             // ASIGNAR CONFIANZA
-                else if(text.indexOf("validar") > -1 || text.indexOf("verificar") > -1  && text.indexOf("agente") > -1){
+                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
                     var agent_telegram_id = reply_to_message.from.id,
                         agent_telegram_nick = reply_to_message.from.username,
                         nivelConfianza = getNumbersInString(text);
