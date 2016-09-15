@@ -99,6 +99,10 @@ var app = {};
             //Para darle reply_to_message_id
             message_id = message.message_id,
             reply_to_message = message.reply_to_message;
+            // FORWARDED MESSAGE
+            if (reply_to_message) {
+                forward_from = message.reply_to_message.forward_from;
+            };
 
         // CREAR USUARIO AUTOMÁTICAMENTE CON CADA MENSAJE ENVIADO
         if (last_name) {
@@ -1686,10 +1690,29 @@ var app = {};
                 ///////////////////////////////////////////////////////////
             // ASIGNAR CONFIANZA
                 else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
-                    if (reply_to_message && isBotAdmin(from_id)) {
-                        var agent_telegram_id = reply_to_message.from.id,
-                            agent_telegram_nick = reply_to_message.from.username,
-                            nivelConfianza = getNumbersInString(text);   
+                    var agent_telegram_id = reply_to_message.from.id,
+                        agent_telegram_nick = reply_to_message.from.username,
+                        nivelConfianza = getNumbersInString(text);
+
+                    if(forward_from && isBotAdmin(from_id)){
+                        if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
+                            if (forward_from.id != 7455490) {
+                                app.api.updateVerifiedLevel(forward_from.id, nivelConfianza, username, function(data){
+                                    app.telegram.sendMessage(chat, "@" + agent_telegram_nick + ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
+                                });
+                            }else{
+                                app.telegram.sendMessage(chat, "R u kidding me?", null, message_id);
+                                app.telegram.kickChatMember(chat, from_id);
+                                app.telegram.sendMessage(7455490, "R u kidding me? de @" + username, null);
+                            }
+                        }else{
+                            app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 3." +
+                                                           "\n0 - Ninguno" +
+                                                           "\n1 - Screenshot de perfil" +
+                                                           "\n2 - Conoce en persona" +
+                                                           "\n3 - Para OPS", null, message_id);
+                        }
+                    }else if (reply_to_message && isBotAdmin(from_id)) {
 
                         if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
                             if (agent_telegram_id != 7455490) {
@@ -1738,13 +1761,28 @@ var app = {};
                 }
             // CONSULTAR AGENTE
                 else if(text.indexOf("quien es") > -1){
-                    if(reply_to_message){
-                        var agent_telegram_id = reply_to_message.from.id,
-                            verified_icon = "🔘",
-                            verified_for = "",
-                            verified_level = "";
-
-
+                    var verified_icon = "🔘",
+                        verified_for = "",
+                        verified_level = "";
+                    console.log(forward_from);
+                    console.log(reply_to_message);
+                    if(forward_from){
+                        app.api.getAgent(forward_from.id, function(data){
+                            if (data && data.status == "ok") {
+                                if (data.verified) {
+                                    verified_icon = '☑️';
+                                    verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                    verified_level = data.verified_level;
+                                }
+                                app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                               '\n\n<i>Nombre:</i> ' + data.name +
+                                                               '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                               '\n<i>Zona de Juego:</i> ' + data.city +
+                                                               '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                            };
+                        });
+                    }else if(reply_to_message){
+                        var agent_telegram_id = reply_to_message.from.id;
                         app.api.getAgent(agent_telegram_id, function(data){
                             if (data && data.status == "ok") {
                                 if (data.verified) {
