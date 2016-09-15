@@ -240,7 +240,7 @@
                         ['¿Cuanto XM me da una llave al reciclarla?',"500","x00"],
                         ['¿Que es un Mod?',"son un tipo de items que cambian las condiciones basicas del portal","Sxx xx tixx xx itxxx xxx caxbxxx xxx conxxcxxxxx baxxxxx dxx poxxxx"],
                         ['¿Que items tienen adherencia extra?',"escudos y turret","Escxxxx y tuxxxx"], 
-                        ['¿Cuantos mods puede poner un Agente?',"2 mods","x moxx"],
+                        ['¿Cuantos mods puede poner un Agente?',"dos","xxx"],
                         ['¿Que es un Escudo?',"son mods que aumentan la defensa del portal","Sxx mxxx xxx auxxxxxx xx defxxxx xxx poxxxx"],
                         ['¿Cual es la adherencia extra de un Escudo Común?',"0%","x%"],
                         ['¿Cual es la adherencia extra de un Escudo Raro?',"15%","x5%"],
