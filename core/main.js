@@ -702,7 +702,6 @@ var app = {};
             // TRIVIA
                 else if(text.indexOf("trivia") > -1 || text.indexOf("pregunta") > -1 || text.indexOf("preguntar") > -1 && words(text) < 9){
                     message.text = '/trivia';
-                    setTimeout(delete activeModule[chat], 5000)
                     activeModule[chat] = new app.modules.trivia(message);
                 }
             	//////////////////////////

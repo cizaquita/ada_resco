@@ -71,6 +71,7 @@
 			"\n\t3.000" +
 			"\n<b>Rango máximo de recarga:</b>" +
 			"\n\t250Km " , null);
+                this.complete = true;
 
 		        }
 			else if(text == 2){
@@ -83,6 +84,7 @@
 			"\n\t 4.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t500Km ", null);
+                this.complete = true;
 
 		        }
 
@@ -95,6 +97,7 @@
 			"\n\t 5.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t750Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 4){
@@ -106,6 +109,7 @@
 			"\n\t 6.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t1.000Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 5){
@@ -117,6 +121,7 @@
 			"\n\t 7.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t1.250Km ", null);
+                this.complete = true;
 		        }
 		        else if(text == 6){
 		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>6</b> <i>necesitas:</i>"+
@@ -127,6 +132,7 @@
 			"\n\t 8000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t1.500Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 7){
@@ -138,6 +144,7 @@
 			"\n\t 9.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t1.750Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 8){
@@ -149,6 +156,7 @@
 			"\n\t 10.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t2.000Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 9){
@@ -162,6 +170,7 @@
 			"\n\t 11.500"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t2.250Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 10){
@@ -175,6 +184,7 @@
 			"\n\t 13.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t2.500Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 11){
@@ -188,6 +198,7 @@
 			"\n\t 14.500"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t2.750Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 12){
@@ -201,6 +212,7 @@
 			"\n\t 16.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t3.000Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 13){
@@ -214,6 +226,7 @@
 			"\n\t 17.500"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t3.250Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 14){
@@ -227,6 +240,7 @@
 			"\n\t 19.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t3.500Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 15){
@@ -240,6 +254,7 @@
 			"\n\t 20.500"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t3.750Km ", null);
+                this.complete = true;
 		        }
 
 		        else if(text == 16){
@@ -253,10 +268,11 @@
 			"\n\t 22.000"+
 			"\n<b>Rango máximo de recarga:</b>"+
 			"\n\t4.000Km ", null);
+                this.complete = true;
 			}
 
                 }else{
-                    app.telegram.sendMessage(this.chat, "Selecciona el nivel que quieres consultar:-", markup);                        
+                    app.telegram.sendMessage(this.chat, "Selecciona el nivel que quieres consultar:-", markup);
                 }
 
             }
