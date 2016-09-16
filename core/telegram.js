@@ -2,7 +2,7 @@
     // ADA
     //264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ
     //255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24
-    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
+    var TOKEN = '255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24',
         API_URL = 'https://api.telegram.org/bot' + TOKEN,
         TIMEOUT = 10,
         offset = localStorage.getItem('telegram_offset') || 0,
@@ -16,33 +16,27 @@
      * @param message {String} Message
      * @param markup {Object|undefined|null} Keyboard markup (null hides previous keyboard, undefined leaves it)
      */
-    app.telegram.sendMessage = function(chatId, message, markup, reply_to_message_id) {
-        var url;
-        console.log("telegram.sendMessage: " +
-                    "\nChat ID: " + chatId +
-                    "\nMensaje: " + message +
-                    "\nMarkup: " + markup);
+    app.telegram.sendMessage = function(chatId, message, markup, reply_to_message_id, callback) {
+        var url= API_URL + '/sendMessage',
+            params = {};
 
         if (markup === null) {
             markup = { hide_keyboard: true };
         }
-
         markup = JSON.stringify(markup);
-        url = API_URL + '/sendMessage';
+        params.chat_id = chatId;
+        params.text = message;
+        params.disable_web_page_preview = true;
+        params.reply_markup = markup;
+        params.parse_mode = 'HTML';
+        params.reply_to_message_id = reply_to_message_id;
 
-        request('post', url, {
-            chat_id: chatId,
-            text: message,
-            disable_web_page_preview: true,
-            reply_markup: markup,
-            parse_mode: 'HTML',
-            reply_to_message_id: reply_to_message_id
-        }, function(data) {
-            //console.log(JSON.stringify(data));
-            if(data && data.ok){
-                console.log('sendMessage enviado');
-            }else{
-                console.log('Error sendMessage: ' + JSON.stringify(data));
+        request('get', url, params, function(data) {
+            if (typeof callback === 'function') {
+                if (data) {
+                    callback(data);
+                }else
+                    callback(null);
             }
         });
     };
@@ -62,9 +56,10 @@
         params[compression ? 'photo' : 'document'] = photo;
 
         request('post', url, params, function(data) {
-            if (typeof callback === 'function') {
-                callback(data && data.ok, data.description);
-            }
+            if (data) {
+                callback(data);
+            }else
+                callback(null);
         });
     };
 

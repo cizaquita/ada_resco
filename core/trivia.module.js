@@ -13,29 +13,33 @@
      * @constructor
      */
     function Trivia(message) {
-        this.chat = message.chat.id,
-        this.from_id = message.from.id;
-        this.username = message.from.username,
-        this.message_id = message.message_id;
+        this.message_id_bot;
+        this.chat = message.chat.id;
+        this.creator_username = "";
         this.onMessage(message);
-        this.preg;
     }
 
     /**
      * @param message {object} Telegram message object
      */
     Trivia.prototype.onMessage = function (message) {
-        var chat = message.chat.id;
+        var chat = message.chat.id,
+            preg = this.preg;
         var textEx = message.text,
             text = "",
             from_id = message.from.id,
             username = message.from.username,
-            message_id = message.message_id;
+            message_id = message.message_id,
+            reply_to_message = message.reply_to_message,
+            reply_to_message_id;
             if (textEx) {
                 text = textEx.toLowerCase();
                 text = acentos(text);
             };
-        console.log(this.chat);
+            if (reply_to_message) {
+                reply_to_message_id = reply_to_message.message_id;
+            };
+        console.log(message);
         //REPLY MARKUP
         var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Seleccionar chat grupal"
@@ -46,19 +50,29 @@
             inline_keyboard: inline_keyboard
         };
         /////////////////////////////////
+        //TIEMPO
+        //setTimeout(Trivia.terminar(this.chat, from_id, username, message_id), 5000);
 
-        if (chat > 0 || chat == -1001061150661 || chat == -1001069963507 ) {
+        if (chat > 0 || chat == -1001061150661) {
             app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad solo en grupos o acá no está permitido!</i>", inline_markup);
             this.complete = true;
         }else{
             if (text == "/trivia") {
-                this.preg = pregunta();
-                app.telegram.sendMessage(chat, "<b>Pregunta:</b> " + this.preg[0] +
-                                                "\n\nSi no aciertas te elimina un punto!"+
-                                                "\nPuedes pedir una <b>\"pista\"</b> si no sabes la respuesta."+
+                // TIEMPO
+                preg = pregunta();
+                this.preg = preg;
+                app.telegram.sendMessage(chat, "<b>Pregunta:</b> " + preg[0] +
+                                                "\n\nSi no aciertas te elimina un punto, tienes <b>30</b> segundos para responder."+
+                                                "\nPara <b>RESPONDER</b> una pedir una <b>PISTA</b> a ésta pregunta dale \"reply\" o \"responder\" a éste mensaje."+
+                                                "\n\nPuedes pedir una <b>\"pista\"</b> si no sabes la respuesta."+
                                                 "\nSi aún así no la sabes me puedes preguntar que es, y el item relacionado a la pregunta."+
-                                                "\nUtiliza /cancel para terminar la trivia!", null, message_id);
-            }else if(text == acentos(this.preg[1].toLowerCase())){
+                                                "\nUtiliza /cancel para terminar la trivia!", null, message_id, 
+                                                function(data){
+                                                    console.log(JSON.stringify(data));
+                                                    this.message_id_bot = data.result.message_id;
+                                                });
+
+            }else if(text == acentos(this.preg[1].toLowerCase()) && reply_to_message_id == message_id_bot){
                 app.api.updateTriviaPoints(from_id, "sumar", function(data){
                     app.telegram.sendMessage(chat, "Felicidades @" + username + ", has respondido <b>correctamente!</b> :D" +
                                                     "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
@@ -66,13 +80,14 @@
                                                         "\n\n<b>Trivia resuelta!</b>", null, message_id);
                 });
                 this.complete = true;
-            }else if (text == "pista") {
+            }else if (text == "pista" && reply_to_message_id == message_id_bot) {
                 app.telegram.sendMessage(chat, "<b>Pista:</b> " + this.preg[2], null, message_id);
             }else if(text == "/cancel" || text == "/cancel@adarefacto_bot" || text == "/cancel@ada_resco_bot"){
                 app.telegram.sendMessage(chat, "<b>Trivia cancelada!</b>", null, message_id);
                 this.complete = true;
             }
-            else{
+            else if (reply_to_message_id == message_id_bot){
+                console.log(reply_to_message_id + " reply y bot ID " + message_id_bot)
                 app.api.updateTriviaPoints(from_id, "restar", function(data){
                     app.telegram.sendMessage(chat, "Lo lamento @" + username + ", has respondido <b>erróneamente!</b> :(" +
                                                         "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
@@ -81,7 +96,18 @@
             }
 
         }
+    };
 
+
+
+    Trivia.terminar = function(chat_id, from_id, username, message_id) {
+        app.api.updateTriviaPoints(from_id, "restar", function(data){
+            console.log("terminarTrivia");
+            app.telegram.sendMessage(chat_id, "Lo lamento @" + username + ", iniciaste una trivia que <b>nadie</b> respondió..." +
+                                                "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
+                                                "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);
+        });
+        this.complete = true;
     };
 
     function pregunta(){
