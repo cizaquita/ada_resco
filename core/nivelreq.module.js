@@ -75,7 +75,7 @@
 		        }
 			else if(text == 2){
 
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>2</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>2</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t2.500"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -87,7 +87,7 @@
 		        }
 
 		        else if(text == 3){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>3</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>3</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t20.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -98,7 +98,7 @@
 		        }
 
 		        else if(text == 4){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>4</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>4</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t70.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -109,7 +109,7 @@
 		        }
 
 		        else if(text == 5){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>5</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>5</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t150.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -119,7 +119,7 @@
 			"\n\t1.250Km ", null);
 		        }
 		        else if(text == 6){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>6</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>6</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t300.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -130,7 +130,7 @@
 		        }
 
 		        else if(text == 7){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>7</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>7</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t600.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -141,7 +141,7 @@
 		        }
 
 		        else if(text == 8){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>8</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>8</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t1'200.000"+
 			"\n\n<i>En este nivel tienes:</i>"+
@@ -152,7 +152,7 @@
 		        }
 
 		        else if(text == 9){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>9</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>9</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t2'400.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -165,7 +165,7 @@
 		        }
 
 		        else if(text == 10){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>10</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>10</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t4'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -178,7 +178,7 @@
 		        }
 
 		        else if(text == 11){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>11</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>11</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t6'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -191,7 +191,7 @@
 		        }
 
 		        else if(text == 12){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>12</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>12</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t8'400.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -204,7 +204,7 @@
 		        }
 
 		        else if(text == 13){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>13</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>13</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t12'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -217,7 +217,7 @@
 		        }
 
 		        else if(text == 14){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>14</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>14</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t17'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -230,7 +230,7 @@
 		        }
 
 		        else if(text == 15){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>15</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>15</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t24'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
@@ -243,7 +243,7 @@
 		        }
 
 		        else if(text == 16){
-		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel <b>16</b> necesitas:</i>"+
+		            app.telegram.sendMessage(this.chat, "<i>Para alcanzar el nivel</i> <b>16</b> <i>necesitas:</i>"+
 			"\n<b>Ap mínimo:</b>"+
 			"\n\t40'000.000"+
 			"\n<b>Medallas Mínimas:</b> (recuerda que por ejemplo una medalla de oro cuenta también por una de plata y una de bronce)"+
