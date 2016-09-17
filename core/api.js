@@ -201,6 +201,29 @@
     };
 
     /**
+     * Profile Picture de Agente from BOT API
+     * @param telegram_id
+     * @param photo.file_id from update photo
+     * @param callback {Function} Callback function
+     */
+    app.api.updateProfilePicture = function(telegram_id, file_id, callback) {
+        var url = API_URL + "update_profile_picture/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+        params.profile_picture = file_id;
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
      * Get Factions from BOT API
      * @param callback {Function} Callback function
      */
@@ -211,8 +234,7 @@
         request('get', url, null, function(data) {
             //console.log("data: " + JSON.stringify(data));
             if (data) {
-                result = data;
-                callback(result);
+                callback(data);
             } else {
                 callback(null);
             }

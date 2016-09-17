@@ -68,22 +68,26 @@
      * @param chatId {Number} Chat id
      * @param photo {String} Base64 encrypted image or String
      */
-    app.telegram.sendPhotoEx = function(chatId, photo, caption, reply_to_message_id, reply_markup) {
+    app.telegram.sendPhotoEx = function(chatId, photo, caption, reply_to_message_id, reply_markup, callback) {
         var url = API_URL + '/sendPhoto',
             params = {};
-            if (!reply_markup) {
-                reply_markup = null;
-            };
+            
+        if (reply_markup === null) {
+            reply_markup = { hide_keyboard: true };
+        }
+        reply_markup = JSON.stringify(reply_markup);
 
         params.chat_id = chatId;
-        params.caption = caption;
         params.photo = photo;
+        params.caption = caption;
         params.reply_to_message_id = reply_to_message_id;
         params.reply_markup = reply_markup;
 
-        request('post', url, params, function(data) {
+        request('get', url, params, function(data) {
             if (typeof callback === 'function') {
-                callback(data && data.ok, data.description);
+                callback(data);
+            }else{
+                callback(null);
             }
         });
     };
