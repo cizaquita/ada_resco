@@ -298,7 +298,7 @@
                         ['¿Que características especiales tiene un Softbank Ultra Link?',"aumenta defensa y aumenta links salientes","aumxxxx defxxxx y auxxxxx linxx salixxxxx"],
                         ['¿Cual es la mitigación de ataque de un Softbank Ultra Link?',"15%","xx%"],
                         ['¿Cuantos links de salida agrega un Softbank Ultra Link?',"8 links","x lixxx"],
-                        ['¿Que pasa si pongo mas de un LA o SBUL?',"se reduce la eficacia","Sx redxxx xx efixxxxx"],
+                        ['¿Que pasa si pongo mas de un LA o SBUL?',"se reduce su eficacia","Sx redxxx xx efixxxxx"],
                         ['¿Que pasa si pongo 2 LA o SBUL?',"el primero tiene una eficacia del 100% y el segundo del 25%","El prixxxx tienx una eficxxxx del x00% y el sexxxxx del xx%"],
                         ['¿Que pasa si pongo 3 LA o SBUL?',"el primero tiene una eficacia del 100%, el segundo del 25% y el tercero de 12.5%","El prixxxx tienx una eficxxxx del x00%, el sexxxxx del xx% y ex tercxxx dx xx.x%"],
                         ['¿Que pasa si pongo 4 LA o SBUL?',"el primero tiene una eficacia del 100%, el segundo del 25% y el tercero y cuarto de 12.5%","El prixxxx tienx una eficxxxx del x00%, el sexxxxx del xx% y ex tercxxx y cuxxxx dx xx.x%"],

@@ -880,7 +880,7 @@ var app = {};
         				sal = ", buenas noches, ¿tuviste un lindo día? Espero que si";
         			}
         			else if (h>=21 && h<24){
-        				sal = ", buenas noches, bienvenido al turno nocturno, cuentanos tus aventuras espichando sapos hoy.";
+        				sal = ", buenas noches, bienvenid@ al turno nocturno, cuentanos tus aventuras espichando sapos hoy.";
         			}
         			else {
         				sal = ", buenas noches... ¿o ya son días?... esas ambigüedades humanas me vuelven loca. Cuentame como te fue el día de ayer y que piensas hacer hoy.";
@@ -1094,6 +1094,9 @@ var app = {};
                         app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
                     }  
                 }
+            // tutos
+                else if(text.indexOf("tutos") > -1 || text.indexOf("tutorial") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", los tutoriales los puedes encontrar en rescol.co/tutos o me puedes decir 'ada que es' y te responderé, con cariño ADA 😘😘😘", null, message_id);
                 ////////////////////////
                 ///// DEFINICIONES /////
                 ///////////////////////
@@ -1106,6 +1109,9 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada refactora, todos los resos pasan a ser del agente que los coloco o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
         			}
+			    // brrn
+				else if(text.indexOf("brrn") > -1 && words(text) < 5){
+				    app.telegram.sendMessage(chat, "Hola @" + username + ", es la Big Regional Resistance Network, puedes saber mas de ella en brrn.org, con cariño ADA 😘😘😘", null, message_id);
         			else if(text.indexOf("armas") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
                         		app.telegram.sendMessage(chat, '\nLas armas que existen en ingress son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
@@ -1160,7 +1166,7 @@ var app = {};
         			}
         			else if(text.indexOf("jarvis") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADGAIAAr177AABNbT07XIKKxkC", 'JARVIS VIRUS', message_id);
-                        		app.telegram.sendMessage(chat, '\nLos Jarvis Virus, son armas cuyo fin es infectar los portales, por lo que solo pueden usarse en portales azules y así volverlos verdes. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a nombre de jarvis o al nombre de alguno de algún sapo, cuando usas un virus jarvis, todos los resos pasan a ser del agente que los coloco o de jarvis si fue un pitufo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\nLos Jarvis Virus, son armas cuyo fin es infectar los portales, por lo que solo pueden usarse en portales azules y así volverlos verdes. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a nombre de jarvis o al nombre de alguno de algún sapo, cuando usas un virus jarvis, todos los resos pasan a ser del agente que los coloco o de jarvis si fue un pitufo quien usó el jarvis virus. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("lawson") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADGQIAAr177AABcNaSg1J7Vz0C", 'LAWSON POWER CUBE', message_id);
