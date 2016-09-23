@@ -223,6 +223,27 @@
         })
     };
 
+
+    /**
+     * Get Agent by Nick from BOT API
+     * @param telegram_id
+     * @param callback {Function} Callback function
+     */
+    app.api.getTopTen = function(callback) {
+        var url = API_URL + "topten_list/",
+            params = {};
+
+        request('post', url, params, function(data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                data = data.sort(function(a, b) { return a.trivia_points < b.trivia_points ? 1 : -1; }).slice(0, 10);
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
     /**
      * Get Factions from BOT API
      * @param callback {Function} Callback function

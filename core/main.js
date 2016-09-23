@@ -340,6 +340,34 @@ var app = {};
                 app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
             }
         }
+        ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
+        else if (text === '/top5') {
+            if (agent_verified_level > 0) {
+                var text_list = "<b>TOP5 TRIVIA</b>";
+                app.api.getTopTen(function(data){
+                    for (var i = 0; i < 5; i++) {
+                        text_list += "\n<b>" + (i+1) + ")</b> " + data[i].name + " (@" + data[i].telegram_nick + ") -> " + "<b>" +data[i].trivia_points + " puntos!</b>";
+                    };
+                    app.telegram.sendMessage(chat, text_list, null, message_id)
+                });
+            }else{
+                app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
+            }
+        }
+        ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
+        else if (text === '/top10') {
+            if (agent_verified_level > 0) {
+                var text_list = "<b>TOP10 TRIVIA</b>";
+                app.api.getTopTen(function(data){
+                    for (var i = 0; i < data.length; i++) {
+                        text_list += "\n<b>" + (i+1) + ")</b> " + data[i].name + " (@" + data[i].telegram_nick + ") -> " + "<b>" +data[i].trivia_points + " puntos!</b>";
+                    };
+                    app.telegram.sendMessage(chat, text_list, null, message_id)
+                });
+            }else{
+                app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
+            }
+        }
         // If user has another active module
         else if (activeModule[chat]) {
             activeModule[chat].onMessage(message);
