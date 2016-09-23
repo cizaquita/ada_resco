@@ -234,7 +234,6 @@
             params = {};
 
         request('post', url, params, function(data) {
-            console.log("data: " + JSON.stringify(data));
             if (data) {
                 data = data.sort(function(a, b) { return a.trivia_points < b.trivia_points ? 1 : -1; }).slice(0, 10);
                 callback(data);
