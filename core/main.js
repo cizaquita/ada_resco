@@ -1097,6 +1097,8 @@ var app = {};
             // tutos
                 else if(text.indexOf("tutos") > -1 || text.indexOf("tutorial") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", los tutoriales los puedes encontrar en rescol.co/tutos o me puedes decir 'ada que es' y te responderé, con cariño ADA 😘😘😘", null, message_id);
+                }
+
                 ////////////////////////
                 ///// DEFINICIONES /////
                 ///////////////////////
@@ -1110,8 +1112,9 @@ var app = {};
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada refactora, todos los resos pasan a ser del agente que los coloco o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
         			}
 			    // brrn
-				else if(text.indexOf("brrn") > -1 && words(text) < 5){
-				    app.telegram.sendMessage(chat, "Hola @" + username + ", es la Big Regional Resistance Network, puedes saber mas de ella en brrn.org, con cariño ADA 😘😘😘", null, message_id);
+    				else if(text.indexOf("brrn") > -1 && words(text) < 5){
+    				    app.telegram.sendMessage(chat, "Hola @" + username + ", es la Big Regional Resistance Network, puedes saber mas de ella en brrn.org, con cariño ADA 😘😘😘", null, message_id);
+                    }
         			else if(text.indexOf("armas") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
                         		app.telegram.sendMessage(chat, '\nLas armas que existen en ingress son XMP, Ultra Strike, Ada Refactor y Jarvis Virus, cada una tiene un efecto diferente en los portales, por favor preguntame por cada uno de ellos y te responderé. Con cariño ADA 😘😘😘', null);
