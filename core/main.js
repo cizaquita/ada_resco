@@ -1165,11 +1165,7 @@ var app = {};
 
 //TODO Personajes, quien es....
                 else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
-		            if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
-		                app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
-		                app.telegram.sendMessage(chat, '\nIn Ingress lore, the Glyph sequences were authored by the Shapers and provide insight into their mentality, motivation, and goals.', null);
-		            }
-        			else if(text.lastIndexOf("ada") > 0 && words(text) < 7){
+		            if(text.lastIndexOf("ada") > 0 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada reparadora, todos los resos pasan a ser del agente que los coloco, o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
         			}
