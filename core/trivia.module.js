@@ -62,7 +62,6 @@
                 preg = pregunta();
                 this.preg = preg;
                 app.telegram.sendMessage(chat, "<b>Pregunta:</b> " + preg[0] +
-                                                "\n\nSi no aciertas te elimina un punto, tienes <b>30</b> segundos para responder."+
                                                 "\nPara <b>RESPONDER</b> o pedir una <b>PISTA</b> a ésta pregunta dale \"reply\" o \"responder\" a éste mensaje."+
                                                 "\n\nPuedes pedir una <b>\"pista\"</b> si no sabes la respuesta."+
                                                 "\nSi aún así no la sabes me puedes preguntar que es, y el item relacionado a la pregunta."+

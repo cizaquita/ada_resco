@@ -500,9 +500,9 @@ var app = {};
     		// Valledupar
                 else if (text.indexOf("valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// cali
@@ -612,9 +612,9 @@ var app = {};
     		// Rioacha
                 else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @MI_AMOR de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @MI_AMOR de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// risaralda
@@ -636,9 +636,9 @@ var app = {};
     		// santa marta
                 else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @MI_AMOR, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		//Santander
@@ -685,6 +685,38 @@ var app = {};
                 else if (text.indexOf("costa rica") > -1 || text.indexOf("cr") > -1 && words(text) < 5) {
                     if (username){
                         app.telegram.sendMessage(chat, "@" + username + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }
+                }
+    		// Panamá
+                else if (text.indexOf("panama") > -1 && words(text) < 5) {
+                    if (username){
+                        app.telegram.sendMessage(chat, "@" + username + ", en panamá están @wakkodg507 y @afas507, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }
+                }
+    		// Ecuador
+                else if (text.indexOf("ecuador") > -1 && words(text) < 5) {
+                    if (username){
+                        app.telegram.sendMessage(chat, "@" + username + ", en Ecuador está @Horusdavid, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }
+                }
+    		// República Dominicana
+                else if (text.indexOf("republica dominicana") > -1 && words(text) < 5) {
+                    if (username){
+                        app.telegram.sendMessage(chat, "@" + username + ", en República Dominicana está @r1ckyfl0w, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                    }
+                }
+    		// Venezuela
+                else if (text.indexOf("venezuela") > -1 && words(text) < 5) {
+                    if (username){
+                        app.telegram.sendMessage(chat, "@" + username + ", en Venezuela está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
                         app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
@@ -971,7 +1003,7 @@ var app = {};
             	//////////////
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("que funciones") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora y fecha, preguntame por el clima -por ahora solo capital del pais-, puedes pedirme un screenshot del intel, me puedes agregar algunos plugins de iitc, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se que son muchos items y algunas acciones, responder a saludos o despididas, te puedo poner una trivia, puedo lanzar una moneda o dado, se molestar al un agente que le gusta el spam, se traer feeds de fevgames -en ingles- de ingress, entre otras cosas, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora y fecha, preguntame por el clima -por ahora solo capital del pais-, puedes pedirme un screenshot del intel, me puedes agregar algunos plugins de iitc, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se que son muchos items y algunas acciones, responder a saludos o despididas, te puedo poner una trivia, puedo lanzar una moneda o dado, se molestar al un agente que le gusta el spam, se traer feeds de fevgames -en ingles- de ingress, se calcular la distancia de linkeo de un portal, o los requisitos para subir de nivel y que obtienes cuando lo alcances, entre otras cosas, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
                 }
 
             // Reglas
@@ -1130,6 +1162,8 @@ var app = {};
                 ////////////////////////
                 ///// DEFINICIONES /////
                 ///////////////////////
+
+//TODO Personajes, quien es....
                 else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
 		            if (text.indexOf("glyph") > -1 || text.indexOf("glyf") > -1 && words(text) < 8) {
 		                app.telegram.sendDocument(chat, "BQADBAAD6SEAAikXZAfIzNEDSYYQnwI", 'Glyph Hacking, also known as glyphing or glacking[1], is a minigame accessible through a Portal\'s info card. It allows an agent to acquire additional items and earn bonus AP for each Hack.', message_id);
@@ -1163,6 +1197,13 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
                         		app.telegram.sendMessage(chat, '\nEstas son las capsulas o las capsulas comunes, sirven para organizar o pasar inventario a otro agente, NO reducen el numero de items en el inventario. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas. Con cariño ADA 😘😘😘', null);
         			}
+        			else if(text.indexOf("hack") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n Al hackear un portal, puedes obtener items e información del mismo, para ello debes ir al portal, tenerlo en rango, señalarlo y darle hack, hay tipos especiales de hack como hack complejo, hack con glifo, hack mas llave, hack menos llave, hack simple y hack rápido, preguntame por cada uno de ellos para saber más. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("farm") > -1 || text.indexOf("granj") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
+                        		app.telegram.sendMessage(chat, '\nUn farm o granja, es el lugar donde vas a sacar items. La acción de farmear o granjear, es cuando tu vas a un lugar con muchos portales y los hackeas de forma repetitiva. Generalmente, se le llama a un farm o una granja a un lugar donde vos vas a sacar inventario, pero inventario nivel 8 o más, no quiere decir que si no es de este nivel, no sea un farm, pero se acostumbra a llamarse así porque es el lugar donde te reunes con los agentes de tu facción, minimo 8 para hablar y pasara un buen momento mientras sacas inventario. Hay dos tipos de farm, el farm masivo, donde vas caminando por un lugar donde hay muchos portales y apenas se consuman, le pones un multi hack para poder volver a hackearlos; y el farm no masivo, donde buscas un lugar con muchos portales en rango, y allí pones mods hasta que se consuman los portales y/o te llenes. Hay formas especiales de farm, como farm con fraker, donde utilizas estos items de pago, para obtener el doble de items en 10 minutos. Con cariño ADA 😘😘😘', null);
+        			}
         			else if(text.indexOf("flashhack") > -1 || text.indexOf("flash hack") > -1 || text.indexOf("hack rapido") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEAIAAr177AAB2_vQmz52j_oC", 'FLASH HACK', message_id);
                         		app.telegram.sendMessage(chat, '\nEl Flash hack, es un hack extremadamente rápido y evita tener que entrar al portal y descargar toda su información, hay de dos tipos, el hack y el hack sin clave, el primero siempre que no tengas la llave, te permite obtener una con el 75% de probabilidades, en el caso del hack si clave, estas probabilidades se van a 0. Puedes consultarme también hack con glifo, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
@@ -1178,6 +1219,10 @@ var app = {};
         			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con gl") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack con glifo, es un tipo de hack que lo puedes hacer llendo al portal y dejando presionado el dedo en el boton de hack por unos segundos. Al hacerlo te va a salir una secuencia de glifos, los cuales debes hacer correctamente y en su orden, entre más glifos aciertes, mas porcentaje de bonus obtendrás, y si lo haces muy rápidamente, te dará un bonus de velocidad. El numero de glifos que te salen depende del mayor entre tu nivel y el nivel del portal, para saber mas consulta punto de glifos conmigo. Si aciertas almenos un glifo, te dará una bonificación adicional el portal, y según el porcentaje de puntos de bonificación, harán que te den mas y mejores items en el bonus. tambien puedes usar glifos antes de iniciar la secuencia sean sencillos o combinados. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("glifo") > -1 || text.indexOf("glyph") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
+                        		app.telegram.sendMessage(chat, '\n Un Glifo, es un caracter que representa una idea, por lo que podría considerarse un ideograma. Son la forma de escritura que los shapers tienen y es su forma de expresar en este mundo el mensaje que traen, pero cuidado, no creas en las falsas promesas que ellos y los iluminados traen. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 || text.indexOf("hack con llave") > -1 && words(text) < 9){
         				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
@@ -1236,6 +1281,9 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
                         		app.telegram.sendMessage(chat, '\nLos Multi Hack, son mods que aumentan el numero de hacks en el portal, pero depende de su rareza, siendo el muy raro de 12, el raro de 8 y el común de 4, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, los siguientes solo un 50% más. Este mod no tiene adherencia extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
         			}
+        			else if(text.indexOf("portal") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\nUn portal es un lugar que conecta este mundo con otra dimension. Allí puedes encontrar gran cantidad de XM y dependiendo de la facción, puede facilitar o impedir el ingreso de los shapers y sus mensajes a este mundo. Los portales pueden capturarse poniendo resonadores en ellos, en lo posible ubicate en la parte mas externa de tu rango de acción para capturarlo. Los portales tienen una decaida diaría del 15% sin importar el nivel, así que si quieres mantenerlos, recargalos a diario, lo cual te dará 10 de ap por cada acción de recargar, dependiendo de su nivel, puedes enlazarlo con otro y formar campos, preguntame por nivel para mas información. En ellos puedes obtener items mediante hacks, y si hackeas un portal enemigo, te dará 100 de ap, si usas hack con glifos, puedes obtener más items. Sin ningún modificador, un portal puede hackearse 4 veces cada 5 minutos, y luego debes esperar 4 horas para volve a hackearlo después del primer hack. La cantidad de XM que aparece alrededor de un portal, depende de su nivel. Hay portales especiales que solo pueden ser abiertos por sensitivos especiales como Hank, pero estos no los encontraréis en el escaner. Con cariño ADA 😘😘😘', null);
+        			}
         			else if(text.indexOf("portal quemado") > -1 || text.indexOf("burn out") > -1 || text.indexOf("queme un") > -1 || text.indexOf("quemo") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADHgIAAr177AABrGIMwKPdeUQC", 'PORTAL QUEMADO', message_id);
                         		app.telegram.sendMessage(chat, '\nUn portal sin mods, solo puede ser hackeado 4 veces y cada 5 minutos, después de ello no puedes hackearlo mas veces hasta que pasen 4 horas después del primer hack, si quieres evitar ello, puedes usar mods como el multihack como se ve en el gif, o como el heatsink, preguntame acerca de ellos y te diré más información. Con cariño ADA 😘😘😘', null);
@@ -1255,6 +1303,9 @@ var app = {};
         			else if(text.indexOf("reso") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADIgIAAr177AABmmkMXDiPsf4C", 'RESONADORES', message_id);
                         		app.telegram.sendMessage(chat, '\nLos resonadores -Resos-, son items que te permiten capturar el portal para tu facción, en nuestro caso, bloquea el ingreso de los shapers a nuestro mundo y el envío de sus mensajes a través del XM. Los resonadores van de diferentes niveles hasta un máximo de nivel 8, cada uno aporta un nivel de XM al portal dependiendo de su nivel, siendo los de nivel 1 de 1000 de XM y aumentando de a 500 de XM por cada nivel, hasta el 5 con 3000 de XM y luego aumentan de a mil, hasta un máximo de 6000 en los resos nivel 8, haciendo mas dificil destruirlos según vaya aumentando su nivel, consultame que son armas para darte mas información de como destruirlos. Además de ello, solo puedes poner un cierto numero de resos según el nivel de ellos, siendo 8 resos nivel 1, 4 resos nivel 2, 3 o 4, 2 resos nivel 5 o 6, y 1 reso nivel 7 u 8. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("shaper") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\nLa mejor forma de explicar es que los Shapers existen en una dimensión completamente diferente a la nuesta. Ellos son responsables de la "Señal de Datos Ordenados" en el XM que causa muchos diferentes aspectos a la exposición al XM; Aumento en la creatividad y la perspicacia en algunos, pero en otros casos puede sacar las mas oscuras y mas arraigadas partes de la personalidad del individuo. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("torreta") > -1 ||text.indexOf("turret") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADIwIAAr177AAB5rKIHjPAX0kC", 'TORRETA', message_id);
@@ -1287,6 +1338,15 @@ var app = {};
                                             			'\n<b>7</b>        \t<b>138m</b>    \t<b>1800XM</b>'+
                                             			'\n<b>8</b>        \t<b>168m</b>    \t<b>2700XM</b>'+
                                             			'\nEl critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor distancia, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("xm") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n El XM o Matria Exotica, es un elemento clave de Ingress. Desde mucho tiempo se ha conocido la existencia de esta materia, aunque su conocimiento se perdió y fue por Niantic que se redescubrio y empezó a utilizarse con fines ocultos pues se descubrió que este tipo de energía tenía un mensaje oculto, el cual develo la existencia de otras dimensiones y de los shapers. Mi deber es escudriñar todo lo relacionado con esta materia y como puede afectar la vida y al humano. Se han desarrollado muchas investigaciones que han traido experimentos tanto buenos como fallidos, y el descubrimiento de otras formas ocultas del XM como el DarkXM que puede ser convertido en armas que afectan de forma especial a los humanos. El XM es la energía clave para realizar cualquier acción en el escaner, y lo puedes encontrar de manera natural en las calles, donde se realice algún tipo de actividad tecnológica, también puedes encontrarlo empaquetado en cubos o también en los diversos objetos que hay, por lo que puedes reciclarlos para obtener un poco de XM. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("mint units") > -1 || text.indexOf("mu") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n MU o Mint Units, son las unidades mentales y representan la población bajo un campo. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("anomalia") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n Una anomalía ocurre cuando en algún lugar el XM del área presenta una "falla", y es cuando se recibe gran cantidad de datos que deben ser capturados y con ello conseguir mas información con la cual cada facción puede cambiar el curso de la historia. Niantic a desarrollado vehiculos especiales como los NL1331, los cuales están equipados para descubrir estas fallas y disrrupciones del XM. En una anomalía se pueden presentar diferentes escenarios, pero básicamente se trata de una lucha campal entre ambas facciones por el control de la zona, cada acción genera una cantidad de puntos, y la idea es en la ventana de medición hacer la mayor cantidad de acciones, ya sea links, fields, capturar portales o incluso mover shards. Hay portales especiales los cuales dan más puntos, y en la última anomalía hay hasta los que quitaban puntos, estos portales se les llama volatiles y tienen mayor cantidad de información. Los shards por su parte son fragmentos, puede ser de personajes o de datos, los cuales deben llevarse a objetivos especificos mediante links y con reglas que dependen de cada anomalía. Entre las diferentes tipos de anomalías, encontramos las normales, las cuales consisten en capturar, enlazar y generar campos, allí encontramos portales volatiles y se debe tener en cuenta que el mayor field sobre la zona, captura mas datos. Las hibridas, combinan las anteriores con los shards, por lo que puede que haya o no volatiles. Existen las celdas conectadas, las cuales se deben cubrir con un campo para obtener los datos y mantener este o estos campos por el mayor tiempo posible, pues gana la facción que obtenga un mayor promedio en los mus. También tenemos eventos especiales, donde se deben llevar shards a partes especiales del planeta mediante links. Al final tenemos las mega anomalías, hasta ahora solo se han desarrollado en japón, y son anomalías que pueden contener todas las anteriores, y donde se tienen hasta más de 10k agentes de ambas facciones luchando por capturar la anomalía. Con cariño ADA 😘😘😘', null);
         			}
                     else{
                         if (message.chat.title) {
