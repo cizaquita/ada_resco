@@ -192,7 +192,7 @@
                         ['¿Cuanto XM se debe tener para usar un Jarvis Virus en un portal 7?',"7000","xxx0"],
                         ['¿Cuanto XM se debe tener para usar un Jarvis Virus en un portal 8?',"8000","xxx0"],
                         ['¿Por qué hay portales con 8 resonadores a nombre de un Sapo?',"porque un sapo uso un jarvis virus y los resos pasan a su nombre","porque ux sxxo uxx xn jxxxxs vxxxx y xox xexxs pxxxx a xu nxxxrx"],
-                        ['¿Por qué hay portales con 8 resonadores a nombre de __Jarvis__?',"porque fue un pitufo quien uso el ada","porque Fxxx xx pixxxx qxxxx uxx xx xxx"],
+                        ['¿Por qué hay portales con 8 resonadores a nombre de __Jarvis__?',"porque fue un pitufo quien uso el ada","porque Fxx xx pixxxx qxxxx uxx xx xxx"],
                         ['¿Que es un Resonador?',"son items que te permiten capturar el portal para tu faccion","Sxx ixxxx xxx xx perxxxxx caxxxxxx xx poxxxx pxxx xx faxxxxx"],
                         ['¿Cuanto XM tiene un resonador 1?',"1000","1xxx"],
                         ['¿Cuanto XM tiene un resonador 2?',"1500","xxx0"],
