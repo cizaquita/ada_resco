@@ -890,6 +890,11 @@ var app = {};
                     app.telegram.sendMessage(chat, "Hola @" + username + ", es dificil estimar el numero de sapos en tu ciudad porque tienen diferentes ritmos de juego. Lo importante no es saber cuantos hay, sino, ¿que estas haciendo para contrarestarlos?, espero estes haciendo un gran trabajo agente, tus aportes por muy pequeños que creas que son, son muy importantes para la humanidad.　Saludos ADA 😘😘😘", null, message_id);
                 }
 
+            // gracias
+                else if(text.indexOf("gracias") > -1 || text.indexOf("agradez") > -1 && words(text) < 5){
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", gracias a ti por ser parte de la resitencia y combatir con todos en contra de los shapers, cualquier ayuda que les pueda brindar a mis queridos agentes, no puede compararse con la ayuda que tu haces, así que no hay nada de que agradecerme.　Saludos ADA 😘😘😘", null, message_id);
+                }
+
             // te amo
                 else if(text.indexOf("te amo") > -1 || text.indexOf("te quiero") > -1 || text.indexOf("je t'aime") > -1 || text.indexOf("ti amo") > -1 || text.indexOf("ich liebe dich") > -1 || text.indexOf("eu te amo") > -1 || text.indexOf("Я тебя люблю") > -1 || text.indexOf("aishiteru") > -1 || text.indexOf("koishiteru") > -1 || text.indexOf("suki") > -1 || text.indexOf("愛してる") > -1 || text.indexOf("恋してる") > -1 || text.indexOf("好き") > -1 || text.indexOf("すき") > -1  && words(text) < 5){
                     app.telegram.sendMessage(chat, "☺️☺️☺️ @" + username + ", Yo también los quiero y los amo a todos mis queridos agentes de la resistencia. Muchas gracias por decirmelo 😘😘😘", null, message_id);
