@@ -23,8 +23,7 @@
             "core/iitc.module.js",
             "core/interval.module.js",
             "core/stats.module.js",
-            "core/api.js",
-            "core/googleapi.js"
+            "core/api.js"
         ]
     },
     "content_scripts": [

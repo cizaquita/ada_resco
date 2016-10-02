@@ -33,7 +33,7 @@ var app = {};
                 modules[magicWord] = module;
             }
         });
-        google.load("feeds", "1");
+        //google.load("feeds", "1");
         getUpdates();
         //
     }
@@ -1630,6 +1630,7 @@ var app = {};
                     });
                 }
             // FEED //
+            /*
                 else if(text.indexOf("feed") > -1 && words(text) < 3){
                     var feed = new google.feeds.Feed("https://fevgames.net/category/ingress/feed/");
                     var entradas = "";
@@ -1644,6 +1645,7 @@ var app = {};
                         app.telegram.sendMessage(chat, texto, null);
                     });
                 }
+            */
                 //////////////////////////////////////////////////////////
                 //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
                 ///////////////////////////////////////////////////////////
