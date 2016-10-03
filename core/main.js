@@ -1367,9 +1367,6 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADDAIAAr177AABEZCcBfKMus8C", 'CAPSULA', message_id);
                         		app.telegram.sendMessage(chat, '\nEstas son las capsulas o las capsulas comunes, sirven para organizar o pasar inventario a otro agente, NO reducen el numero de items en el inventario. Si deseas saber de otras capsulas, por favor consultalas conmigo o preguntame por capsulas. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack") > -1 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\n Al hackear un portal, puedes obtener items e información del mismo, para ello debes ir al portal, tenerlo en rango, señalarlo y darle hack, hay tipos especiales de hack como hack complejo, hack con glifo, hack mas llave, hack menos llave, hack simple y hack rápido, preguntame por cada uno de ellos para saber más. Con cariño ADA 😘😘😘', null);
-        			}
         			else if(text.indexOf("farm") > -1 || text.indexOf("granj") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
                         		app.telegram.sendMessage(chat, '\nUn farm o granja, es el lugar donde vas a sacar items. La acción de farmear o granjear, es cuando tu vas a un lugar con muchos portales y los hackeas de forma repetitiva. Generalmente, se le llama a un farm o una granja a un lugar donde vos vas a sacar inventario, pero inventario nivel 8 o más, no quiere decir que si no es de este nivel, no sea un farm, pero se acostumbra a llamarse así porque es el lugar donde te reunes con los agentes de tu facción, minimo 8 para hablar y pasara un buen momento mientras sacas inventario. Hay dos tipos de farm, el farm masivo, donde vas caminando por un lugar donde hay muchos portales y apenas se consuman, le pones un multi hack para poder volver a hackearlos; y el farm no masivo, donde buscas un lugar con muchos portales en rango, y allí pones mods hasta que se consuman los portales y/o te llenes. Hay formas especiales de farm, como farm con fraker, donde utilizas estos items de pago, para obtener el doble de items en 10 minutos. Con cariño ADA 😘😘😘', null);
@@ -1382,17 +1379,13 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
                         		app.telegram.sendMessage(chat, '\nEl force amplifier -FA-, es un mod que aumenta el daño que el portal hace, siendo su incremento del doble del daño que hace, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, el segundo un 25% mas y el tercero y cuarto solo un 12.5% mas- Este mod no tiene adherencia extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack complex") > -1 || text.indexOf("hack complejo") > -1 && words(text) < 7){
+        			else if(text.indexOf("hack complex") > -1 || text.indexOf("hack complejo") > -1 || text.indexOf("glifo complejo") > -1 || text.indexOf("gyph complex") > -1  && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEgIAAr177AABk3Vr816kq58C", 'HACK COMPLEX', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack complex lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo complejo (complex, como lo ves en el gif). Este tipo de hack tiene una velocidad mayor cuado aparecen los glifos, pero te aumenta las posibilidades de recibir items raros y muy raros en el hack. Puedes consultarme también flash hack, hack con glifo, hack simple, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("hack glifo") > -1 || text.indexOf("hack con gl") > -1 || text.indexOf("hack glyph") > -1 || text.indexOf("glyph hack") > -1 && words(text) < 8){
         				app.telegram.sendDocument(chat, "BQADAQADEwIAAr177AABjtZTye96FvwC", 'hack con glifos', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack con glifo, es un tipo de hack que lo puedes hacer llendo al portal y dejando presionado el dedo en el boton de hack por unos segundos. Al hacerlo te va a salir una secuencia de glifos, los cuales debes hacer correctamente y en su orden, entre más glifos aciertes, mas porcentaje de bonus obtendrás, y si lo haces muy rápidamente, te dará un bonus de velocidad. El numero de glifos que te salen depende del mayor entre tu nivel y el nivel del portal, para saber mas consulta punto de glifos conmigo. Si aciertas almenos un glifo, te dará una bonificación adicional el portal, y según el porcentaje de puntos de bonificación, harán que te den mas y mejores items en el bonus. tambien puedes usar glifos antes de iniciar la secuencia sean sencillos o combinados. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack menos. Con cariño ADA 😘😘😘', null);
-        			}
-        			else if(text.indexOf("glifo") > -1 || text.indexOf("glyph") > -1 && words(text) < 7){
-        				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
-                        		app.telegram.sendMessage(chat, '\n Un Glifo, es un caracter que representa una idea, por lo que podría considerarse un ideograma. Son la forma de escritura que los shapers tienen y es su forma de expresar en este mundo el mensaje que traen, pero cuidado, no creas en las falsas promesas que ellos y los iluminados traen. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("hack mas") > -1 || text.indexOf("hack more") > -1 || text.indexOf("hack con mas") > -1 || text.indexOf("hack con llave") > -1 && words(text) < 9){
         				app.telegram.sendDocument(chat, "BQADAQADFAIAAr177AABL53oPG6sbMwC", 'HACK MAS LLAVE', message_id);
@@ -1405,6 +1398,13 @@ var app = {};
         			else if(text.indexOf("hack menos") > -1 || text.indexOf("hack less") > -1 || text.indexOf("hack con menos") > -1 || text.indexOf("hack sin") > -1 && words(text) < 9){
         				app.telegram.sendDocument(chat, "BQADAQADFgIAAr177AABGbXMgLxl3LcC", 'HACK SIN LLAVE', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack less lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo menos (less, como lo ves en el gif). Con este tipo de hack te garantiza que si no tienes llave, no te vaya a salir una del portal cuando lo hackees. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack con glifo. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("hack") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n Al hackear un portal, puedes obtener items e información del mismo, para ello debes ir al portal, tenerlo en rango, señalarlo y darle hack, hay tipos especiales de hack como hack complejo, hack con glifo, hack mas llave, hack menos llave, hack simple y hack rápido, preguntame por cada uno de ellos para saber más. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("glifo") > -1 || text.indexOf("glyph") > -1 && words(text) < 7){
+        				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
+                        		app.telegram.sendMessage(chat, '\n Un Glifo, es un caracter que representa una idea, por lo que podría considerarse un ideograma. Son la forma de escritura que los shapers tienen y es su forma de expresar en este mundo el mensaje que traen, pero cuidado, no creas en las falsas promesas que ellos y los iluminados traen. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("heat") > -1 || text.indexOf("hs") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADFwIAAr177AABt--lugnGYLUC", 'HEAT SINK', message_id);
