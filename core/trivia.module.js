@@ -270,7 +270,7 @@
                         ['¿Cual es la adherencia extra de un Escudo Común?',"0%","x%"],
                         ['¿Cual es la adherencia extra de un Escudo Raro?',"15%","x5%"],
                         ['¿Cual es la adherencia extra de un Escudo Muy Raro?',"45%","4x%"],
-                        ['¿Cual es la adherencia extra de un AXA?',"70%","x0%"],
+                        ['¿Cual es la adherencia extra de un AXA?',"80%","x0%"],
                         ['¿Cual es la mitigación de ataque de un Escudo Común?',"30%","x0%"],
                         ['¿Cual es la mitigación de ataque de un Escudo Raro?',"40%","x0%"],
                         ['¿Cual es la mitigación de ataque de un Escudo Muy Raro?',"60%","x0%"],

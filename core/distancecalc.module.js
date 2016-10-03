@@ -163,7 +163,8 @@
                                                     "\n<b>Link Amp Rare</b>           - " +this.mod[2] +
                                                     "\n<b>Softbank Ultra Link</b>  - " +this.mod[1] +
                                                     "\n<b>Link Amp Very Rare</b>  - " +this.mod[0] +
-                                                    "\n\nLa Distancia máxima del portal es: " + resultado + medida + ", ¿que planes tienes para hoy?", null);
+                                                    "\n\nLa Distancia máxima del portal es: " + resultado + medida + ", ¿que planes tienes para hoy?"+
+                                                    "\nRecuerda que la formula para distancia es 160m*(promedio del portal)^4, pasalo a km si es posible.", null);
                						 this.complete = true;
 				}
 			}
