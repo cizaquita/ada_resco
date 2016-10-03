@@ -508,7 +508,7 @@
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [2] [7] [7] [8]',"24.01 km","xx.xx xx"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [2] [7] [8] [8]',"27.62 km","xx.xx xx"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [2] [8] [8] [8]',"31.64 km","xx.xx xx"],
-/*                        ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [3] [3] [3] [3]',"",""],
+/*                        ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [3] [3] [3] [3]',"2.56 km","x.xx xx],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [3] [3] [3] [4]',"",""],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [3] [3] [3] [5]',"",""],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [3] [3] [3] [6]',"",""],

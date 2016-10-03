@@ -1169,7 +1169,7 @@ var app = {};
                 ///////////////////////
 
 //TODO Personajes, quien es....
-                else if (text.indexOf("quien") > -1 || text.indexOf("quien es") > -1 || text.indexOf("quienes son") > -1 && words(text) < 9) {
+                else if (text.indexOf("quien es") > -1 || text.indexOf("quienes son") > -1 && words(text) < 9) {
 		            if(text.lastIndexOf("jahan") > 0 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\nJahan es investigadora de biotecnología y líder de anti-Magnus. Con cariño ADA 😘😘😘', null);
         			}
@@ -1271,9 +1271,9 @@ var app = {};
 		            else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
         			}
-/*Supongo así falta eliminar linea repetida y revisar esto
-		            else if(text.indexOf("quien es") > -1){
-                    if (agent_verified_level > 0) {
+		// CONSULTAR AGENTE Prueba a ciegas
+		/////Supongo así falta eliminar linea repetida y revisar esto
+                    else if (agent_verified_level > 0) {
                         var verified_icon = "🔘",
                             verified_for = "",
                             verified_level = "",
@@ -1323,12 +1323,12 @@ var app = {};
                                 };
                             });
                         }else{
-                            app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver.", null, message_id);
+                            app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver, o preguntar por uno de los personajes.", null, message_id);
                         }
                     }else{
                         app.telegram.sendMessage(chat, "Para utilizar esta función debes estar validado", null, message_id);
                     }
-                }*/
+                ///*/////
 
 
 		}
@@ -1737,7 +1737,7 @@ var app = {};
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
                     }
                 }
-            // CONSULTAR AGENTE
+/*            // CONSULTAR AGENTE
                 else if(text.indexOf("quien es") > -1){
                     if (agent_verified_level > 0) {
                         var verified_icon = "🔘",
@@ -1794,7 +1794,7 @@ var app = {};
                     }else{
                         app.telegram.sendMessage(chat, "Para utilizar esta función debes estar validado", null, message_id);
                     }
-                }
+                }*/
             // CONSULTAR MI AGENTE
                 else if(text.indexOf("quien soy") > -1){
                     var verified_icon = "🔘",
