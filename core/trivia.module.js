@@ -305,7 +305,7 @@
                         ['¿con que formula se calcula el rango de un portal?',"160m * (promedio^4)","xxxm * (proxxxxx^x)"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [1]',"160 m","xx0 x"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[8] [8] [8] [8] [8] [8] [8] [8]',"655.36 km","xxx.xx xx"],
-                        ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [2]',"259.28 m","xxx.xx x"],
+                        ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [2]',"256.28 m","xxx.xx x"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [3]',"390.62 m","xxx.xx x"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [4]',"571.91 m","xxx.xx x"],
                         ['¿Cual es el rango de alcanze de un portal -especifica la unidad- sin amplificadores de link y con la siguiente configuracion de resos?:'+'\n[1] [1] [1] [1] [1] [1] [1] [5]',"810 m","xxx x"],
