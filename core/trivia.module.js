@@ -82,10 +82,12 @@
             }else if (text == "pista" && reply_to_message_id == message_id_bot) {
                 app.telegram.sendMessage(chat, "<b>Pista:</b> " + this.preg[2], null, message_id);
             }else if(text == "/cancel" || text == "/cancel@adarefacto_bot" || text == "/cancel@ada_resco_bot"){
-		/*app.api.updateTriviaPoints(from_id, "restar", function(data){
+		   /*console.log("terminarTrivia");
+		    app.api.updateTriviaPoints(from_id, "restar", function(data){
                     app.telegram.sendMessage(chat, "Lo lamento @" + username + ", has cancelado :(" +
                                                         "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
-                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);*/
+                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);
+                    });*/
                 app.telegram.sendMessage(chat, "<b>Trivia cancelada!</b>", null, message_id);
                 this.complete = true;
             }
