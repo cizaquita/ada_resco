@@ -65,7 +65,7 @@
                                                 "\nPara <b>RESPONDER</b> o pedir una <b>PISTA</b> a ésta pregunta dale \"reply\" o \"responder\" a éste mensaje."+
                                                 "\n\nPuedes pedir una <b>\"pista\"</b> si no sabes la respuesta."+
                                                 "\nSi aún así no la sabes me puedes preguntar que es, y el item relacionado a la pregunta."+
-                                                "\nUtiliza /cancel para terminar la trivia!", null, message_id, 
+                                                "\nUtiliza /cancel para terminar ¡la trivia!", null, message_id, 
                                                 function(data){
                                                     console.log(JSON.stringify(data));
                                                     this.message_id_bot = data.result.message_id;
@@ -82,6 +82,10 @@
             }else if (text == "pista" && reply_to_message_id == message_id_bot) {
                 app.telegram.sendMessage(chat, "<b>Pista:</b> " + this.preg[2], null, message_id);
             }else if(text == "/cancel" || text == "/cancel@adarefacto_bot" || text == "/cancel@ada_resco_bot"){
+		/*app.api.updateTriviaPoints(from_id, "restar", function(data){
+                    app.telegram.sendMessage(chat, "Lo lamento @" + username + ", has cancelado :(" +
+                                                        "\n\nAhora tienes <b>" + data.trivia_points + " puntos!</b>" +
+                                                        "\nPuedes consultar tu puntaje preguntando \"Ada quien soy?\" o \"Ada mis puntos\" ", null, message_id);*/
                 app.telegram.sendMessage(chat, "<b>Trivia cancelada!</b>", null, message_id);
                 this.complete = true;
             }
