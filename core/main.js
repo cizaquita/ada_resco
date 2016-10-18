@@ -1407,9 +1407,6 @@ var app = {};
         				app.telegram.sendDocument(chat, "BQADAQADFgIAAr177AABGbXMgLxl3LcC", 'HACK SIN LLAVE', message_id);
                         		app.telegram.sendMessage(chat, '\nEl hack less lo haces introduciendo en el hack con glifo y antes de iniciar la secuencia de glifos, el glifo menos (less, como lo ves en el gif). Con este tipo de hack te garantiza que si no tienes llave, no te vaya a salir una del portal cuando lo hackees. Puedes consultarme también flash hack, hack simple, hack complejo, hack mas y hack con glifo. Con cariño ADA 😘😘😘', null);
         			}
-        			else if(text.indexOf("hack") > -1 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\n Al hackear un portal, puedes obtener items e información del mismo, para ello debes ir al portal, tenerlo en rango, señalarlo y darle hack, hay tipos especiales de hack como hack complejo, hack con glifo, hack mas llave, hack menos llave, hack simple y hack rápido, preguntame por cada uno de ellos para saber más. Con cariño ADA 😘😘😘', null);
-        			}
         			else if(text.indexOf("glifo") > -1 || text.indexOf("glyph") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADEQIAAr177AABNHVBI1woREcC", 'FORCE AMPLIFIER', message_id);
                         		app.telegram.sendMessage(chat, '\n Un Glifo, es un caracter que representa una idea, por lo que podría considerarse un ideograma. Son la forma de escritura que los shapers tienen y es su forma de expresar en este mundo el mensaje que traen, pero cuidado, no creas en las falsas promesas que ellos y los iluminados traen. Con cariño ADA 😘😘😘', null);
@@ -1466,6 +1463,9 @@ var app = {};
         			else if(text.indexOf("multihack") > -1 || text.indexOf("multi hack") > -1 || text.indexOf("mh") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADHQIAAr177AABzVQ1Kn_5Y-QC", 'MULTI HACK', message_id);
                         		app.telegram.sendMessage(chat, '\nLos Multi Hack, son mods que aumentan el numero de hacks en el portal, pero depende de su rareza, siendo el muy raro de 12, el raro de 8 y el común de 4, pero se reduce conforme vas poniendo mas de estos mods. El primero da un 100% de incremento, los siguientes solo un 50% más. Este mod no tiene adherencia extra. Si quieres saber mas de los otros mods, preguntame mods y te responderé. Con cariño ADA 😘😘😘', null);
+        			}
+        			else if(text.indexOf("hack") > -1 && words(text) < 7){
+                        		app.telegram.sendMessage(chat, '\n Al hackear un portal, puedes obtener items e información del mismo, para ello debes ir al portal, tenerlo en rango, señalarlo y darle hack, hay tipos especiales de hack como hack complejo, hack con glifo, hack mas llave, hack menos llave, hack simple y hack rápido, preguntame por cada uno de ellos para saber más. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("zeer") > -1 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\nLos N-Zeer, son los enemigos de los Shaper y ellos fueron expulsados hace mucho tiempo, y desde entonces, incluso su mera mención de existencia fue escondida por los Shapers y 13Magnus, quienes tienen la mision de purgar todas las formas de su existencia del conocimiento Humano.. Con cariño ADA 😘😘😘', null);
