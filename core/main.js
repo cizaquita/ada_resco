@@ -451,8 +451,14 @@ var app = {};
             {
                 ///////////////////////////////////////////////////////////////////////
                 // FUNCION PARA GUARDAR CIUDAD
-                var arrayText = text.split("vivo en") || text.split("soy de") || text.split("saludos desde") || text.split("juego en") || text.split("juego por") || text.split("estoy en");
-                var ciudadAgente = arrayText[1];
+                var keywords = ["vivo en ", "soy de ", "saludos desde ", "juego en ", "juego por ", "estoy en "];
+                var ciudadAgente = "";
+                for (var i = 0; i <= keywords.length-1; i++) {
+                    var arrayText = text.split(keywords[i]);
+                    if (arrayText.length > 1) {                     
+                        ciudadAgente = arrayText[1];
+                    }
+                };
                 app.api.updateAgentCity(from_id, ciudadAgente, function(data){
                     //app.telegram.sendMessage(chat, "Ciudad actualizada.", null, message_id)
                 });
