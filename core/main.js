@@ -108,7 +108,11 @@ var app = {};
             message_id = message.message_id,
             reply_to_message = message.reply_to_message,
             forward_from = null,
-            mention = message.entities[0].type == "mention";
+            mention_ex = message.entities,
+		mention = null;
+		if(mention_ex){
+			mention = mention_ex[0].type;
+		}
             // FORWARDED MESSAGE
             if (reply_to_message) {
                 forward_from = message.reply_to_message.forward_from;
@@ -1310,9 +1314,9 @@ var app = {};
                                                                        '\n<i>Zona de Juego:</i> ' + data.city +
                                                                        '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                                     }else{
-                                        app.telegram.sendMessage(chat, data, null, message_id);
+                                        app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                                     }
-                                    console.log(data)
+                                    console.log(JSON.stringify(data));
                                 });
                             };
                         }
