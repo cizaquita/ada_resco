@@ -107,7 +107,8 @@ var app = {};
             //Para darle reply_to_message_id
             message_id = message.message_id,
             reply_to_message = message.reply_to_message,
-            forward_from = null;
+            forward_from = null,
+            mention = message.entities[0].type == "mention";
             // FORWARDED MESSAGE
             if (reply_to_message) {
                 forward_from = message.reply_to_message.forward_from;
@@ -1281,7 +1282,41 @@ var app = {};
         			}
 		            else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
-        			}
+        			}else if(mention && mention == "mention"){
+                        if(agent_verified_level > 0){
+                            var verified_icon = "🔘",
+                                verified_for = "",
+                                verified_level = "",
+                                profile_picture = "",
+                                search_agent = text.split("@");
+
+                            if (search_agent[1]) {
+                                app.api.getAgentByNick(search_agent[1], function(data){
+                                    if (data && data.status == "ok") {
+                                        if (data.verified) {
+                                            verified_icon = '☑️';
+                                            verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                            verified_level = data.verified_level;
+                                        }
+                                        if (data.profile_picture != "") {
+                                            profile_picture = data.profile_picture;
+                                            app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                                console.log(data);
+                                            });
+                                        };
+                                        app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                                       '\n\n<i>Nombre:</i> ' + data.name +
+                                                                       '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                                       '\n<i>Zona de Juego:</i> ' + data.city +
+                                                                       '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                                    }else{
+                                        app.telegram.sendMessage(chat, data, null, message_id);
+                                    }
+                                    console.log(data)
+                                });
+                            };
+                        }
+                    }
 		// CONSULTAR AGENTE Prueba a ciegas
 		/////Supongo así falta eliminar linea repetida y revisar esto
                     else if (agent_verified_level > 0) {
