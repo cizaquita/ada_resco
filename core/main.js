@@ -729,11 +729,11 @@ var app = {};
                 }
                 else{
                         //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
-                        if (message.chat.title) {
+                        /*if (message.chat.title) {
                             app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de grupo: " + message.chat.title, null);  
                         }else{
                             app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de: @" + username, null);                          
-                        }
+                        }*/
                     }
             }
     	/////////////////////
@@ -1132,7 +1132,7 @@ var app = {};
                     }                   
                 }
             // LA HORA                
-                else if ( text.indexOf("hora") > -1 && words(text) < 5){
+                else if ( text.indexOf("hora") > -1 && words(text) < 7){
                     function addZero(i) {
                         if (i < 10) {
                             i = "0" + i;
