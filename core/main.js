@@ -109,10 +109,10 @@ var app = {};
             reply_to_message = message.reply_to_message,
             forward_from = null,
             mention_ex = message.entities,
-		mention = null;
-		if(mention_ex){
-			mention = mention_ex[0].type;
-		}
+    		mention = null;
+    		if(mention_ex){
+    			mention = mention_ex[0].type;
+    		}
             // FORWARDED MESSAGE
             if (reply_to_message) {
                 forward_from = message.reply_to_message.forward_from;
