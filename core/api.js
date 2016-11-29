@@ -42,7 +42,7 @@
      */
     app.api.createAgent = function(name, telegram_nick, telegram_id, callback) {
         var url = API_URL + "create_agent/",
-        	params = {};
+            params = {};
 
         params.name = name;
         params.telegram_nick = telegram_nick;
@@ -51,13 +51,42 @@
 
 
         request('post', url, params, function(data) {
-			console.log("data: " + JSON.stringify(data));
+            console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
             } else {
                 callback(null);
             }
         })
+    };
+
+    /*
+    * Crear AVATAR
+    */
+    app.api.createAvatar = function(telegram_nick, profile_picture, callback) {
+        var url = "http://rescol.co/smart/biocard/avatar.php"; //?image=sample1.jpg&nickname=SmartGenius + "create_agent/",
+            params = {},
+            file_url = "";
+
+        app.telegram.getFile(profile_picture, function(data){
+            file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
+            console.log("IMAGE URL: " + file_url)
+
+
+            params.image = file_url;
+            params.nickname = telegram_nick;
+            console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_id + '\n\n');
+
+
+            request('get', url, params, function(data) {
+                console.log("data: " + JSON.stringify(data));
+                if (data) {
+                    callback(data);
+                } else {
+                    callback(null);
+                }
+            })
+        });
     };
 
     /**

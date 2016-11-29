@@ -1905,6 +1905,31 @@ var app = {};
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
                     }
                 }
+            // CREAR AVATAR
+                else if(text.indexOf("crear avatar") > -1 ){
+                    if (agent_verified_level > 3) {
+                        if(forward_from && reply_to_message.photo) {
+                            var agent_telegram_id = forward_from.id,
+                                profile_picture = reply_to_message.photo[0].file_id;
+
+                            app.api.createAvatar(agent_telegram_id, profile_picture,function(data){
+                                app.telegram.sendMessage(chat, 'Avatar de @' + data.telegram_nick + ', ha sido creado.', null, message_id);
+                                app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                            }); 
+
+                        }else if(reply_to_message && reply_to_message.photo){
+                            var agent_telegram_id = reply_to_message.from.id,
+                                profile_picture = reply_to_message.photo[0].file_id;
+                            app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
+                                app.telegram.sendMessage(chat, 'Screenshot de perfil de perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
+                            });                        
+                        }else{
+                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
             // PUNTOS TRIVIA
                 else if(text.indexOf("puntos") > -1 ){
                     app.api.getAgent(from_id, function(data){
