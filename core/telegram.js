@@ -213,7 +213,7 @@
      * https://core.telegram.org/bots/api#getFile
      * @param file_id {Number} required
      */
-    app.telegram.getFile = function(file_id) {
+    app.telegram.getFile = function(file_id, callback) {
         var url = API_URL + '/getFile',
             params = {};
 
@@ -221,13 +221,9 @@
 
         request('post', url, params, function(data) {
             console.log(JSON.stringify(data));
-            var file_download = "https://api.telegram.org/file/bot" + TOKEN + "/" + data.file_path;
             console.log(file_download);
-            request('get', file_download, null, function(file_d){
-                console.log(JSON.stringify(file_d));
-            })
             if (typeof callback === 'function') {
-                callback(data && data.ok, data.description);
+                callback(data);//var file_download = "https://api.telegram.org/file/bot" + TOKEN + "/" + data.file_path;
             }
         });
     };
