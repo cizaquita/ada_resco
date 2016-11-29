@@ -1911,7 +1911,7 @@ var app = {};
                         if(forward_from && reply_to_message.photo) {
                             var agent_telegram_id = forward_from.id,
                                 profile_picture = reply_to_message.photo[0].file_id,
-                                agent_telegram_nick = forward_from.username;
+                                agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(data){
                                 app.telegram.sendMessage(chat, 'Avatar de @' + data.telegram_nick + ', ha sido creado.', null, message_id);
@@ -1921,7 +1921,7 @@ var app = {};
                         }else if(reply_to_message && reply_to_message.photo){
                             var agent_telegram_id = reply_to_message.from.id,
                                 profile_picture = reply_to_message.photo[0].file_id,
-                                agent_telegram_nick = forward_from.username;
+                                agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(data){
                                 app.telegram.sendMessage(chat, 'Avatar de @' + data.telegram_nick + ', ha sido creado.', null, message_id);
