@@ -76,7 +76,7 @@
             console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n');
 
 
-            request('get', url, function(data) {
+            request('get', url, null, function(data) {
                 console.log("data: " + JSON.stringify(data));
                 if (data) {
                     callback(data);
