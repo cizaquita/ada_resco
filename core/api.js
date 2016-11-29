@@ -388,7 +388,8 @@
             }
         } else {
         	if (data) {
-            	url += '?' + serialize(data);        		
+            	url += '?' + serialize(data);
+                console.log("URL GET TO QUERY: " + url);
         	}
         }
 
