@@ -221,7 +221,6 @@
 
         request('post', url, params, function(data) {
             console.log(JSON.stringify(data));
-            console.log(file_download);
             if (typeof callback === 'function') {
                 callback(data);//var file_download = "https://api.telegram.org/file/bot" + TOKEN + "/" + data.file_path;
             }
