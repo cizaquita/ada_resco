@@ -64,7 +64,7 @@
     * Crear AVATAR
     */
     app.api.createAvatar = function(telegram_nick, profile_picture, callback) {
-        var url = "http://rescol.co/smart/biocard/avatar.php"; //?image=sample1.jpg&nickname=SmartGenius + "create_agent/",
+        var url = "http://rescol.co/smart/biocard/avatar.php?"; //?image=sample1.jpg&nickname=SmartGenius + "create_agent/",
             params = {},
             file_url = "";
 
