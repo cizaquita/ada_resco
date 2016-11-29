@@ -72,13 +72,11 @@
             file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
             console.log("IMAGE URL: " + file_url)
 
-
-            params.image = file_url;
-            params.nickname = telegram_nick;
+            url += "image=" + file_url + "&nickname=" + telegram_nick;
             console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n');
 
 
-            request('get', url, params, function(data) {
+            request('get', url, function(data) {
                 console.log("data: " + JSON.stringify(data));
                 if (data) {
                     callback(data);
