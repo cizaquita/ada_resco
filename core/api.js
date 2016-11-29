@@ -75,7 +75,7 @@
 
             params.image = file_url;
             params.nickname = telegram_nick;
-            console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_id + '\n\n');
+            console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n');
 
 
             request('get', url, params, function(data) {
