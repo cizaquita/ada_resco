@@ -1914,7 +1914,7 @@ var app = {};
                                 agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Avatar de @' + data.telegram_nick + ', ha sido creado.', null, message_id);
+                                app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
                                 app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                             }); 
 
@@ -1924,7 +1924,7 @@ var app = {};
                                 agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Avatar de @' + data.telegram_nick + ', ha sido creado.', null, message_id);
+                                app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
                                 app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
                             });                        
                         }else{
