@@ -69,6 +69,7 @@
             file_url = "";
 
         app.telegram.getFile(profile_picture, function(data){
+            console.log("DATA GETFILE: " + data)
             file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
             console.log("IMAGE URL: " + file_url)
 
