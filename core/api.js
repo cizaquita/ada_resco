@@ -78,6 +78,7 @@
 
             request('get', url, null, function(data) {
                 console.log("data: " + JSON.stringify(data));
+                data = url;
                 if (data) {
                     callback(data);
                 } else {
