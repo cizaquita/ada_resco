@@ -1926,7 +1926,7 @@ var app = {};
                                 profile_picture = reply_to_message.photo[0].file_id,
                                 agent_telegram_nick = reply_to_message.from.username;
 
-                            app.api.createAvatar(agent_telegram_nick, profile_picture,function(data){                           
+                            app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
                                 app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
                                     console.log(data);
                                 });
