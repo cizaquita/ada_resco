@@ -69,13 +69,18 @@
             file_url = "";
 
         app.telegram.getFile(profile_picture, function(data){
-            console.log("DATA GETFILE: " + data)
+            console.log("DATA GETFILE: " + JSON.stringify(data));
             file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
             //console.log("IMAGE URL: " + file_url)
 
             url += "image=" + file_url + "&nickname=" + telegram_nick;
             console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n');
-            callback(url);
+//		console.log(url);
+//		console.log(decodeURIComponent(url));
+//		console.log(encodeURIComponent(url));
+//http://rescol.co/smart/biocard/generated/avatar_Cizaquita.png
+//telegram_nick
+            callback("http://rescol.co/smart/biocard/generated/avatar_" + telegram_nick + ".png");
         });
     };
 
