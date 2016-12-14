@@ -1910,7 +1910,7 @@ var app = {};
                     if (agent_verified_level > 3) {
                         if(forward_from && reply_to_message.photo) {
                             var agent_telegram_id = forward_from.id,
-                                profile_picture = reply_to_message.photo[0].file_id,
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
                                 agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                                
@@ -1923,7 +1923,7 @@ var app = {};
 
                         }else if(reply_to_message && reply_to_message.photo){
                             var agent_telegram_id = reply_to_message.from.id,
-                                profile_picture = reply_to_message.photo[0].file_id,
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
                                 agent_telegram_nick = reply_to_message.from.username;
 
                             app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
