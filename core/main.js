@@ -1910,29 +1910,37 @@ var app = {};
                     if (agent_verified_level > 3) {
                         if(forward_from && reply_to_message.photo) {
                             var agent_telegram_id = forward_from.id,
-                                profile_picture = reply_to_message.photo[0].file_id,
-                                agent_telegram_nick = reply_to_message.from.username;
-
-                            app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){
-                                app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
-                                    console.log(data);
-                                });
-                                //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
-                                //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                            }); 
+                                profile_picture = reply_to_message.photo[0].file_id;
+                                splited_text = text.split("\"");
+                                if( splited_text && splited_text.length > 0){
+                                    agent_telegram_nick = splited_text[1];
+                                    //agent_telegram_nick = reply_to_message.from.username;
+                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
+                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                    }); 
+                                }else{
+                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
+                                }
 
                         }else if(reply_to_message && reply_to_message.photo){
                             var agent_telegram_id = reply_to_message.from.id,
-                                profile_picture = reply_to_message.photo[0].file_id,
-                                agent_telegram_nick = reply_to_message.from.username;
-
-                            app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
-                                app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
-                                    console.log(data);
-                                });
-                                //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
-                                //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                            });                        
+                                profile_picture = reply_to_message.photo[0].file_id;
+                                splited_text = text.split("\"");
+                                if( splited_text && splited_text.length > 0){
+                                    agent_telegram_nick = splited_text[1];
+                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
+                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                    });
+                                }else
+                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
                         }else{
                             app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
                         }
