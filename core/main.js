@@ -1912,11 +1912,11 @@ var app = {};
                             var agent_telegram_id = forward_from.id,
                                 profile_picture = reply_to_message.photo[0].file_id;
                                 splited_text = text.split("\"");
-                                if( splited_text && splited_text.length > 0){
+                                if( splited_text && splited_text.length > 1){
                                     agent_telegram_nick = splited_text[1];
-                                    //agent_telegram_nick = reply_to_message.from.username;
+                                    agent_telegram_nick_ex = reply_to_message.from.username;
                                     app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){
-                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
                                             console.log(data);
                                         });
                                         //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
@@ -1930,10 +1930,11 @@ var app = {};
                             var agent_telegram_id = reply_to_message.from.id,
                                 profile_picture = reply_to_message.photo[0].file_id;
                                 splited_text = text.split("\"");
-                                if( splited_text && splited_text.length > 0){
+                                if( splited_text && splited_text.length > 1){
                                     agent_telegram_nick = splited_text[1];
+                                    agent_telegram_nick_ex = reply_to_message.from.username;
                                     app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
-                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick, message_id, null, function(data){
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
                                             console.log(data);
                                         });
                                         //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
