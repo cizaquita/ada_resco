@@ -1910,8 +1910,9 @@ var app = {};
                     if (agent_verified_level > 3) {
                         if(forward_from && reply_to_message.photo) {
                             var agent_telegram_id = forward_from.id,
-                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id;
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
                                 splited_text = text.split("\"");
+                                splited_text = splited_text.replace(" ", "%20");
                                 if( splited_text && splited_text.length > 1){
                                     agent_telegram_nick = splited_text[1];
                                     agent_telegram_nick_ex = reply_to_message.from.username;
@@ -1928,8 +1929,9 @@ var app = {};
 
                         }else if(reply_to_message && reply_to_message.photo){
                             var agent_telegram_id = reply_to_message.from.id,
-                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id;
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
                                 splited_text = text.split("\"");
+                                splited_text = splited_text.replace(" ", "%20");
                                 if( splited_text && splited_text.length > 1){
                                     agent_telegram_nick = splited_text[1];
                                     agent_telegram_nick_ex = reply_to_message.from.username;
