@@ -11,7 +11,7 @@ var app = {};
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8",
         //cizaquita, fabianv, rataeltriforce, pesadilla, chileno, smartgenius
-        admins = [7455490,15498173],//97115847,62857939,6396882,91879222],
+        admins = [7455490,15498173,91879222],//97115847,62857939,6396882,91879222],
         agent_verified_level = 0;
         
     // API CRISTI: AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8
@@ -85,7 +85,8 @@ var app = {};
             textEx = message.text,
             text = "";
             if (textEx) {
-                text = textEx.toLowerCase();
+                //desactive minusculas temporalmente, Smart
+		//text = textEx.toLowerCase();
                 text = acentos(text);
             };
         var audio = message.audio
@@ -356,7 +357,7 @@ var app = {};
                     app.telegram.sendMessage(chat, text_list, null, message_id)
                 });
             }else{
-                app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
+                app.telegram.sendMessage(chat, "No puedes utilizar este comando...", null, message_id);                
             }
         }
         ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
@@ -370,7 +371,7 @@ var app = {};
                     app.telegram.sendMessage(chat, text_list, null, message_id)
                 });
             }else{
-                app.telegram.sendMessage(chat, "No puede utilizar este comando...", null, message_id);                
+                app.telegram.sendMessage(chat, "No puedes utilizar este comando...", null, message_id);                
             }
         }
         // If user has another active module
@@ -535,9 +536,9 @@ var app = {};
     		// choco
                 else if (text.indexOf("choco") > -1 || text.indexOf("chocó") > -1 || text.indexOf("quibdo") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Quibdo y Chocó no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Quibdo y Chocó no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @JLAYOS en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		//Cucuta
@@ -567,17 +568,17 @@ var app = {};
     		// Leticia
                 else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @erdac990 en Medallo te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "" + name + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// Medallo
                 else if (text.indexOf("medellin") > -1 || text.indexOf("medellín") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 5) {
                     if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        app.telegram.sendMessage(chat, "@" + username + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }else{
-                            app.telegram.sendMessage(chat, "" + name + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @JLAYOS y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                            app.telegram.sendMessage(chat, "" + name + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                     }
                 }
     		// monteria
@@ -925,6 +926,11 @@ var app = {};
                 else if (text.indexOf("saludar") > -1 || text.indexOf("saluda") > -1 && words(text) < 5) {
                     app.telegram.sendMessage(chat, "Hola!, un saludo para mis fans 😘😘😘", null, message_id);
                 }
+		    
+	            // SALUDAR 
+                else if (text.indexOf("hola bb que mas pues") > -1 || text.indexOf("hola bebe que mas pues") > -1 && words(text) < 5) {
+                    app.telegram.sendMessage(chat, "Hello Baby!, Como estas ? Si me has pensado ? Porque yo a ti Si 😘😘😘", null, message_id);
+                }    
 
             // Hola ada
                 else if ( text.indexOf("hola") > -1 || text.indexOf("osu") > -1 || text.indexOf("Bom dia") > -1 || text.indexOf("Привет") > -1 || text.indexOf("hello") > -1 || text.indexOf("holi") > -1 || text.indexOf("buen") > -1 || text.indexOf("bonjour") > -1 || text.indexOf("salut") > -1 || text.indexOf("hi!") > -1　|| text.indexOf("お早う") > -1　|| text.indexOf("今日は") > -1　|| text.indexOf("今晩は") > -1　|| text.indexOf("ohayou") > -1 || text.indexOf("konnichiha") > -1 || text.indexOf("buongiorno") > -1 || text.indexOf("konbanha") > -1 || text.indexOf("guten") > -1 || text.indexOf("hallo") > -1 || text.indexOf("mahlzeit") > -1 || text.indexOf("quibo") > -1 || text.indexOf("wenaz") > -1 || text.indexOf("saludos") > -1 && words(text) < 5){
@@ -1019,7 +1025,7 @@ var app = {};
             	//////////////
             // que se hacer
                 else if(text.indexOf("que sabes hacer") > -1 || text.indexOf("que hace") > -1 || text.indexOf("para que sirves") > -1 || text.indexOf("que funciones") > -1 || text.indexOf("quien eres") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el xm y la funcion de los portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora y fecha, preguntame por el clima -por ahora solo capital del pais-, puedes pedirme un screenshot del intel, me puedes agregar algunos plugins de iitc, se calcullar la distancia maxima de un portal, los requisitos para alcanzar un nivel, se que son muchos items y algunas acciones, responder a saludos o despididas, te puedo poner una trivia, puedo lanzar una moneda o dado, se molestar al un agente que le gusta el spam, se traer feeds de fevgames -en ingles- de ingress, se calcular la distancia de linkeo de un portal, o los requisitos para subir de nivel y que obtienes cuando lo alcances, entre otras cosas, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA, un Algorimo de Detección, soy una IA -Inteligencia Artificial-, que ha sido programada para entender el XM y la funcion de los Portales en nuestro mundo y en este chat quiero ayudarlos en lo que mas pueda... Henry Bowles y PAC aún no han desarrollado todo lo que quieren que haga por lo que por favor se paciente, por ahora se saludar, si me dicen de donde son, puedo llamar a mis queridos agentes de esta ciudad, se decir la hora y fecha, preguntame por el clima -por ahora solo capital del pais-, puedes pedirme un screenshot del intel, me puedes agregar algunos plugins de iitc, se calcular la distancia maxima de un portal, los requisitos para alcanzar un nivel, se que son muchos items y algunas acciones, responder a saludos o despididas, te puedo poner una trivia, puedo lanzar una moneda o dado, se molestar al un agente que le gusta el spam, se traer feeds de fevgames -en ingles- de ingress, se calcular la distancia de linkeo de un portal, o los requisitos para subir de nivel y que obtienes cuando lo alcances, puedo crearte una imagen de Avatar para que la pongas de Perfil, entre otras cosas, si quieres decirle a mis creadores algo que quieras que tenga, no olvides escribir ADA y eso que quieres, les llegará a ellos y en algún momento lo programarán, con mucho cariño ADA 😘😘😘", null, message_id);
                 }
 
             // Reglas
@@ -1385,7 +1391,7 @@ var app = {};
                 else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
 		            if(text.lastIndexOf("ada") > 0 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
-                        		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada reparadora, todos los resos pasan a ser del agente que los coloco, o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por Jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada reparadora, todos los resos pasan a ser del agente que los coloco, o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
         			}
 		            else if(text.lastIndexOf("niantic") > 0 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\nNiantic Project es el centro de la investigación. Cada pocos días, se filtra información con respecto al estado de los individuos, corporaciones y sociedades secretas que juegan un papel en el mundo de XM.'+
@@ -1557,7 +1563,7 @@ var app = {};
                                             			'\n<b>6</b>        \t<b>24m</b>     \t<b>1500XM</b>'+
                                             			'\n<b>7</b>        \t<b>27m</b>     \t<b>1800XM</b>'+
                                             			'\n<b>8</b>        \t<b>30m</b>     \t<b>2700XM</b>'+
-                                            			'\nEl critico de ataque se da en el cetro del us, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+                                            			'\nEl critico de ataque se da en el centro del US, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el XMP, pues este su critico se dispersa a mas distancia, haciendo que a la misma distancia, el us tenga un critico efectivo mucho mayor que el XMP pero un alcance muy pequeño, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("xmp") > -1 && words(text) < 6){
 					app.telegram.sendDocument(chat, "BQADAQADJQIAAr177AAB_xHwvUfV8vIC", 'DISPERSOR　XMP', message_id);
@@ -1571,17 +1577,17 @@ var app = {};
                                             			'\n<b>6</b>        \t<b>112m</b>    \t<b>1500XM</b>'+
                                             			'\n<b>7</b>        \t<b>138m</b>    \t<b>1800XM</b>'+
                                             			'\n<b>8</b>        \t<b>168m</b>    \t<b>2700XM</b>'+
-                                            			'\nEl critico de ataque se da en el cetro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor distancia, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
+                                            			'\nEl critico de ataque se da en el centro del XMP, pero se dispersa conforme van pasando los metros hasta volverse 0 en su distancia máxima, por lo que marca una gran diferencia con el us, pues este su critico se dispersa a menor distancia, haciendo que a la misma distancia, el XMP tenga un critico efectivo mucho menor que el us, pro un rango de alcance muchas veces mayor, con la única diferencia del centro exacto del ataque, pero hacer coincidir este centro con el centro de los portales o resonadores es practicamente imposible, por lo que sus usos difieren del objetivo al que se quiere llegar. Puedes preguntarme que son las demas armas y te responderé. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("xm") > -1 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\n El XM o Matria Exotica, es un elemento clave de Ingress. Desde mucho tiempo se ha conocido la existencia de esta materia, aunque su conocimiento se perdió y fue por Niantic que se redescubrio y empezó a utilizarse con fines ocultos pues se descubrió que este tipo de energía tenía un mensaje oculto, el cual develo la existencia de otras dimensiones y de los shapers. Mi deber es escudriñar todo lo relacionado con esta materia y como puede afectar la vida y al humano. Se han desarrollado muchas investigaciones que han traido experimentos tanto buenos como fallidos, y el descubrimiento de otras formas ocultas del XM como el DarkXM que puede ser convertido en armas que afectan de forma especial a los humanos. El XM es la energía clave para realizar cualquier acción en el escaner, y lo puedes encontrar de manera natural en las calles, donde se realice algún tipo de actividad tecnológica, también puedes encontrarlo empaquetado en cubos o también en los diversos objetos que hay, por lo que puedes reciclarlos para obtener un poco de XM.'+
+                        		app.telegram.sendMessage(chat, '\n El XM o Materia Exotica, es un elemento clave de Ingress. Desde mucho tiempo se ha conocido la existencia de esta materia, aunque su conocimiento se perdió y fue por Niantic que se redescubrio y empezó a utilizarse con fines ocultos pues se descubrió que este tipo de energía tenía un mensaje oculto, el cual develo la existencia de otras dimensiones y de los shapers. Mi deber es escudriñar todo lo relacionado con esta materia y como puede afectar la vida y al humano. Se han desarrollado muchas investigaciones que han traido experimentos tanto buenos como fallidos, y el descubrimiento de otras formas ocultas del XM como el DarkXM que puede ser convertido en armas que afectan de forma especial a los humanos. El XM es la energía clave para realizar cualquier acción en el escaner, y lo puedes encontrar de manera natural en las calles, donde se realice algún tipo de actividad tecnológica, también puedes encontrarlo empaquetado en cubos o también en los diversos objetos que hay, por lo que puedes reciclarlos para obtener un poco de XM.'+
 					'\nEl XM no era raro. los satélites aéreos encontraron que el mundo estaba cubierto de él pero no se extendió uniformemente. Se agrupan alrededor de los sitios claves, lugares de importancia cultural, intelectual y religiosa en todo el mundo (conocido en Ingress como portales). Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("mind units") > -1 || text.indexOf("mu") > -1 && words(text) < 7){
                         		app.telegram.sendMessage(chat, '\n MU o Mind Units, son las unidades mentales y representan la población bajo un campo. Es una medida que utiliza la densidad poblacional de una región, por lo que hay regiones que van a generar mas Mus que otras así tengan el mismo tamaño, pues depende mucho de su densidad. Con cariño ADA 😘😘😘', null);
         			}
         			else if(text.indexOf("anomalia") > -1 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\n Una anomalía ocurre cuando en algún lugar el XM del área presenta una "falla", y es cuando se recibe gran cantidad de datos que deben ser capturados y con ello conseguir mas información con la cual cada facción puede cambiar el curso de la historia. Niantic a desarrollado vehiculos especiales como los NL1331, los cuales están equipados para descubrir estas fallas y disrrupciones del XM. En una anomalía se pueden presentar diferentes escenarios, pero básicamente se trata de una lucha campal entre ambas facciones por el control de la zona, cada acción genera una cantidad de puntos, y la idea es en la ventana de medición hacer la mayor cantidad de acciones, ya sea links, fields, capturar portales o incluso mover shards. Hay portales especiales los cuales dan más puntos, y en la última anomalía hay hasta los que quitaban puntos, estos portales se les llama volatiles y tienen mayor cantidad de información. Los shards por su parte son fragmentos, puede ser de personajes o de datos, los cuales deben llevarse a objetivos especificos mediante links y con reglas que dependen de cada anomalía. Entre las diferentes tipos de anomalías, encontramos las normales, las cuales consisten en capturar, enlazar y generar campos, allí encontramos portales volatiles y se debe tener en cuenta que el mayor field sobre la zona, captura mas datos. Las hibridas, combinan las anteriores con los shards, por lo que puede que haya o no volatiles. Existen las celdas conectadas, las cuales se deben cubrir con un campo para obtener los datos y mantener este o estos campos por el mayor tiempo posible, pues gana la facción que obtenga un mayor promedio en los mus. También tenemos eventos especiales, donde se deben llevar shards a partes especiales del planeta mediante links. Al final tenemos las mega anomalías, hasta ahora solo se han desarrollado en japón, y son anomalías que pueden contener todas las anteriores, y donde se tienen hasta más de 10k agentes de ambas facciones luchando por capturar la anomalía. Con cariño ADA 😘😘😘', null);
+                        		app.telegram.sendMessage(chat, '\n Una Anomalía ocurre cuando en algún lugar el XM del área presenta una "falla", y es cuando se recibe gran cantidad de datos que deben ser capturados y con ello conseguir mas información con la cual cada facción puede cambiar el curso de la historia. Niantic a desarrollado vehiculos especiales como los NL1331, los cuales están equipados para descubrir estas fallas y disrrupciones del XM. En una anomalía se pueden presentar diferentes escenarios, pero básicamente se trata de una lucha campal entre ambas facciones por el control de la zona, cada acción genera una cantidad de puntos, y la idea es en la ventana de medición hacer la mayor cantidad de acciones, ya sea links, fields, capturar portales o incluso mover shards. Hay portales especiales los cuales dan más puntos, y en la última anomalía hay hasta los que quitaban puntos, estos portales se les llama volatiles y tienen mayor cantidad de información. Los shards por su parte son fragmentos, puede ser de personajes o de datos, los cuales deben llevarse a objetivos especificos mediante links y con reglas que dependen de cada anomalía. Entre las diferentes tipos de anomalías, encontramos las normales, las cuales consisten en capturar, enlazar y generar campos, allí encontramos portales volatiles y se debe tener en cuenta que el mayor field sobre la zona, captura mas datos. Las hibridas, combinan las anteriores con los shards, por lo que puede que haya o no volatiles. Existen las celdas conectadas, las cuales se deben cubrir con un campo para obtener los datos y mantener este o estos campos por el mayor tiempo posible, pues gana la facción que obtenga un mayor promedio en los mus. También tenemos eventos especiales, donde se deben llevar shards a partes especiales del planeta mediante links. Al final tenemos las mega anomalías, hasta ahora solo se han desarrollado en japón, y son anomalías que pueden contener todas las anteriores, y donde se tienen hasta más de 10k agentes de ambas facciones luchando por capturar la anomalía. Con cariño ADA 😘😘😘', null);
         			}
                     else{
                         if (message.chat.title) {
@@ -1725,10 +1731,10 @@ var app = {};
                             }else{
                                 app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
                                                                "\n0 - Ninguno" +
-                                                               "\n1 - Screenshot de perfil" +
+                                                               "\n1 - Screenshot de Perfil" +
                                                                "\n2 - Conoce en persona" +
                                                                "\n3 - Para OPS"+
-                                                               "\n4 - Aprovadores", null, message_id);
+                                                               "\n4 - Aprobadores", null, message_id);
                             }
                         }else if (reply_to_message) {
                             agent_telegram_id = reply_to_message.from.id;
@@ -1741,10 +1747,10 @@ var app = {};
                             }else{
                                 app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
                                                                "\n0 - Ninguno" +
-                                                               "\n1 - Screenshot de perfil" +
+                                                               "\n1 - Screenshot de Perfil" +
                                                                "\n2 - Conoce en persona" +
                                                                "\n3 - Para OPS"+
-                                                               "\n4 - Aprovadores", null, message_id);
+                                                               "\n4 - Aprobadores", null, message_id);
                             }
                         }else{
                             app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar.', null, message_id);
@@ -1889,14 +1895,14 @@ var app = {};
                                 profile_picture = reply_to_message.photo[0].file_id;
 
                             app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Screenshot de perfil de perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
+                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
                             }); 
 
                         }else if(reply_to_message && reply_to_message.photo){
                             var agent_telegram_id = reply_to_message.from.id,
                                 profile_picture = reply_to_message.photo[0].file_id;
                             app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Screenshot de perfil de perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
+                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
                             });                        
                         }else{
                             app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
