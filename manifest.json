@@ -20,6 +20,7 @@
             "core/distancecalc.module.js",
             "core/nivelreq.module.js",
             "core/trivia.module.js",
+            "core/biocard.module.js",
             "core/iitc.module.js",
             "core/interval.module.js",
             "core/stats.module.js",

@@ -55,7 +55,7 @@
         resp += this.getCurrentStatus();
 
         if (this.chat < 0) {
-            app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
+            app.telegram.sendMessage(this.chat, "<i>Utiliza esta funcionalidad por privado!</i>", inline_markup);
             this.complete = true;
         }else{
             app.telegram.sendMessage(this.chat, resp, markup);

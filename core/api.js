@@ -335,13 +335,32 @@
      * @param longitude
      * @param callback {Function} Callback function
      */
-	app.api.getWeather = function(latitude, longitude, callback){
-    	var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si&lang=es";
+    app.api.getWeather = function(latitude, longitude, callback){
+        var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si&lang=es";
         var result = "";
         request('get', url, null, function(data) {
-        	console.log("data: " + data)
+            console.log("data: " + data)
             if (data) {
                 console.log("weather: " + JSON.stringify(data));
+                result = data;
+                callback(result);
+            } else {
+                callback(null);
+            }
+        })
+    };
+
+    /**
+     * get logos for biocard from http://rescol.co/smart/biocard/logos/jsonlogos.php
+     * @param callback {Function} Callback function
+     */
+    app.api.getBioLogos = function(callback){
+        var url = "http://rescol.co/smart/biocard/logos/jsonlogos.php";
+        var result = "";
+        request('get', url, null, function(data) {
+            console.log("data: " + data)
+            if (data) {
+                console.log("logos biocard: " + JSON.stringify(data));
                 result = data;
                 callback(result);
             } else {

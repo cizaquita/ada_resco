@@ -410,7 +410,8 @@ var app = {};
                       mensaje = hola + " " + newUser.first_name
                 }
                 app.telegram.sendMessage(chat, mensaje + ' soy ADA!, ' + bienvenido + " " + message.chat.title + "\n\nCuéntanos en qué lugar del país juegas para ponerte en contacto con el agente de la zona o ciudad." +
-                        "\n\nRecuerda visitar los tutoriales en <a href='http://rescol.co/tutos'>http://rescol.co/tutos</a> para que juntos liberemos el mundo de la influencia de los shapers." + 
+                        "\n\nRecuerda visitar los tutoriales en <a href='http://rescol.co/tutos'>http://rescol.co/tutos</a> para que juntos liberemos el mundo de la influencia de los shapers." +
+                        "\nIngresa también a nuestro chat de Trivias sobre Ingress en @ADA_trivia (<a href='https://telegram.me/ADA_trivia'>telegram.me/ADA_trivia</a>)!" +
                         "\n\n<a href='http://laresistencia.co'>LaResistencia.co</a>\n<a href='http://telegram.me/rescol'>@rescol</a>", inline_markup, message_id);
                 if (!newUser.username) {
                     //Enviamos el GIF de Dino
@@ -757,6 +758,11 @@ var app = {};
                 if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
                     message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
+                }
+            // BIOCARD
+                if(text.indexOf("biocard") > -1 && words(text) < 5){
+                    message.text = '/biocard';
+                    activeModule[chat] = new app.modules.biocard(message);
                 }
             // Ayuda
                 else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 || text.indexOf("como funciona") > -1 && words(text) < 5){
