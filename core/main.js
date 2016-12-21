@@ -197,7 +197,13 @@ var app = {};
         if (text === '/interval@ada_resco_bot') {
             text = '/interval';
         }*/
-        // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
+        if (text === '/item@ada_resco_bot' || text === '/item') {
+            var text_temp = text.split(" ");
+            if (text_temp.length > 1) {
+                text = 'ada que es ' + text_temp[1];
+            }else
+                app.telegram.sendMessage(chat, "Modo de uso -> /item [nombre de item]. Ejm: /item turret", null);
+        }
         if (text === '/cancel@ada_resco_bot') {
             text = '/cancel';
         }

@@ -75,7 +75,7 @@
 
         //Data that will be saved in LocalStorage for segmentation
         //@cizaquita
-        localStorage.setItem('stats__screenshots', JSON.stringify(screenshotsData));
+        //localStorage.setItem('stats__screenshots', JSON.stringify(screenshotsData));
         /*console.log('--------------------------'+
                     '\nSS de: @' + task.username + 
                     ', chat ID: ' + task.chat +
@@ -85,12 +85,13 @@
                     '\n--------------------------')*/
         //Send logs to @Cizaquita chat
         //Most important username, chatID and lat long(location)
-        app.telegram.sendMessage(-1001069963507, '--------------------------'+
+        /*app.telegram.sendMessage(-1001069963507, '--------------------------'+
                                         '\nSS de: @' + task.username + 
                                         ', chat ID: ' + task.chat +
                                         ', a las: ' + date + 
                                         ', lat: ' + task.location.latitude +
                                         ',' + task.location.longitude +
                                         '\n--------------------------',null)
+        */
     }
 }());
