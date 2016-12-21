@@ -1,8 +1,8 @@
 (function() {
     var API_URL = 'http://127.0.0.1:1338/',
         TIMEOUT = 10,
-        //cizaquita, fabianv, rataeltriforce
-        admins = [7455490,97115847,15498173];
+        //cizaquita, fabianv, rataeltriforce, smartgenius
+        admins = [7455490,97115847,15498173,91879222];
 
     app.api = {};
 
@@ -64,7 +64,11 @@
     * Crear AVATAR
     */
     app.api.createAvatar = function(telegram_nick, profile_picture, callback) {
-        var url = "http://rescol.co/smart/biocard/avatar.php?"; //?image=sample1.jpg&nickname=SmartGenius + "create_agent/",
+	    //En la URL se reciben dos Parametros (image) y (nickname)
+	    //en image va la URL de una imagen sea directa o relativa si estan en el propio servidor de Rescol
+	    //en nickname va el apodo del agente con URLEncode para aceptar espacion
+	    //Ejemplo: http://rescol.co/smart/biocard/avatar.php?image=uploads/sample1.jpg&nickname=SmartGenius
+        var url = "http://rescol.co/smart/biocard/avatar.php?"; 
             params = {},
             file_url = "";
 
