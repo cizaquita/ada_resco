@@ -3,6 +3,10 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
+
+
+//-1001069963507 RESCO \ -1001054945393 PruebasFTW
+
 var app = {};
 
 
@@ -220,7 +224,7 @@ var app = {};
             text = '/cancel';
         }
         if (text === '/biocard@ada_resco_bot' || text === '/biocard') {
-            
+
             //REPLY MARKUP
             var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
             inline_button_califica.text = "Crea tu Biocard!"
@@ -937,7 +941,7 @@ var app = {};
                 }
 
             // respondeme
-                else if(text.indexOf("respondeme") > -1 || text.indexOf("responde") > -1 || text.indexOf("contestame")  > -1 || text.indexOf("contesta") > -1 && words(text) < 5){
+                else if(text.indexOf("contestame")  > -1 || text.indexOf("contesta") > -1 && words(text) < 5){
                     app.telegram.sendMessage(chat, "Hola @" + username + ", soy ADA!; ¿Qué inquietud tienes?. ", null, message_id);
                 }
 
@@ -1639,11 +1643,8 @@ var app = {};
                         		app.telegram.sendMessage(chat, '\n Una Anomalía ocurre cuando en algún lugar el XM del área presenta una "falla", y es cuando se recibe gran cantidad de datos que deben ser capturados y con ello conseguir mas información con la cual cada facción puede cambiar el curso de la historia. Niantic a desarrollado vehiculos especiales como los NL1331, los cuales están equipados para descubrir estas fallas y disrrupciones del XM. En una anomalía se pueden presentar diferentes escenarios, pero básicamente se trata de una lucha campal entre ambas facciones por el control de la zona, cada acción genera una cantidad de puntos, y la idea es en la ventana de medición hacer la mayor cantidad de acciones, ya sea links, fields, capturar portales o incluso mover shards. Hay portales especiales los cuales dan más puntos, y en la última anomalía hay hasta los que quitaban puntos, estos portales se les llama volatiles y tienen mayor cantidad de información. Los shards por su parte son fragmentos, puede ser de personajes o de datos, los cuales deben llevarse a objetivos especificos mediante links y con reglas que dependen de cada anomalía. Entre las diferentes tipos de anomalías, encontramos las normales, las cuales consisten en capturar, enlazar y generar campos, allí encontramos portales volatiles y se debe tener en cuenta que el mayor field sobre la zona, captura mas datos. Las hibridas, combinan las anteriores con los shards, por lo que puede que haya o no volatiles. Existen las celdas conectadas, las cuales se deben cubrir con un campo para obtener los datos y mantener este o estos campos por el mayor tiempo posible, pues gana la facción que obtenga un mayor promedio en los mus. También tenemos eventos especiales, donde se deben llevar shards a partes especiales del planeta mediante links. Al final tenemos las mega anomalías, hasta ahora solo se han desarrollado en japón, y son anomalías que pueden contener todas las anteriores, y donde se tienen hasta más de 10k agentes de ambas facciones luchando por capturar la anomalía. Con cariño ADA 😘😘😘', null);
         			}
                     else{
-                        if (message.chat.title) {
-                            app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de grupo: " + message.chat.title, null);  
-                        }else{
-                            app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de: @" + username, null);                          
-                        }
+                        app.telegram.sendMessage(-1001054945393, "feedback qué es: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);  
+                        app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
                     }
                 }
                 ////////////////////////////
@@ -2006,6 +2007,29 @@ var app = {};
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
                     }
                 }
+            // ADA RESPONDER A UN CHAT_ID ALGUN MENSAJE
+                else if(text.indexOf("responder") > -1 ){
+                    if (agent_verified_level > 3) {
+                        var splited_text = text.split("\""),
+                            id_split_text = text.split(" "), // ada 0 | responder 1 | CHAT_ID 2 | Mensaje 3 en comillas
+                            id_responder = id_split_text[2];
+
+                        if(id_split_text && id_split_text.length > 3 && isNumber(id_responder)){
+                            if(splited_text && splited_text.length > 1){
+                                app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
+                                    if (data.ok) {
+                                        app.telegram.sendMessage(chat, 'Mensaje enviado con éxito!', null, message_id);
+                                    }else
+                                        app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
+                                }); 
+                            }else
+                                app.telegram.sendMessage(chat, "Error: Debes especificar un Mensaje como parámetro entre comillas al final, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                        }else
+                            app.telegram.sendMessage(chat, "Error: Debes introducir el ID(número) del chat al que deseas responder, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
             // PUNTOS TRIVIA
                 else if(text.indexOf("puntos") > -1 ){
                     app.api.getAgent(from_id, function(data){
@@ -2035,11 +2059,9 @@ var app = {};
             // FEEDBACK cuando no sabe responder
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
-                    if (message.chat.title) {
-                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de grupo: " + message.chat.title, null);  
-                    }else{
-                        app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de: @" + username, null);                          
-                    }
+                    app.telegram.sendMessage(-1001054945393, "feedback semántico: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
+
                 }
             }
         
@@ -2106,6 +2128,10 @@ var app = {};
         }
 
     })();
+
+    function isNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
 
     function isBotAdmin(chat_id){
         for (var i = admins.length - 1; i >= 0; i--) {
