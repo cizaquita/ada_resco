@@ -86,7 +86,7 @@ var app = {};
             text = "";
             if (textEx) {
                 //desactive minusculas temporalmente, Smart
-		//text = textEx.toLowerCase();
+                text = textEx.toLowerCase();
                 text = acentos(text);
             };
         var audio = message.audio
