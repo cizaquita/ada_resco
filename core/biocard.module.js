@@ -6,7 +6,7 @@
     app.modules = app.modules || {};
     app.modules.biocard = Biocard;
 
-    Biocard.initMessage = '/biocard';
+    //Biocard.initMessage = '/biocard';
 
     /**
      * @param message {object} Telegram message object

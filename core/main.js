@@ -101,7 +101,6 @@ var app = {};
                 }
                 text = acentos(text);
             };
-            console.log("TEXTO A MINUSCULAS AVATAR: " + text);
         var audio = message.audio
             documentEx = message.document,
             photo = message.photo,
@@ -219,6 +218,21 @@ var app = {};
         }*/
         if (text === '/cancel@ada_resco_bot') {
             text = '/cancel';
+        }
+        if (text === '/biocard@ada_resco_bot' || text === '/biocard') {
+            
+            //REPLY MARKUP
+            var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
+            inline_button_califica.text = "Crea tu Biocard!"
+            inline_button_califica.url = "https://laresistencia.co/biocard/";
+            //
+
+            inline_keyboard = [[inline_button_califica]];
+            inline_markup = {
+                inline_keyboard: inline_keyboard
+            };
+            /////////////////////////////////7
+            app.telegram.sendPhotoEx(chat, "AgADAQAD4bExGzb3eQUuKlAn0okhP3YC6C8ABEtWO8VJyjxpyAsAAgI", "", message_id, inline_markup);
         }
 ////////////////////////////////////// COMMANDS /////////////////////////////////////////////////////
         // If user asked for another module
@@ -781,8 +795,18 @@ var app = {};
                 }
             // BIOCARD
                 if(text.indexOf("biocard") > -1 && words(text) < 5){
-                    message.text = '/biocard';
-                    activeModule[chat] = new app.modules.biocard(message);
+                    //REPLY MARKUP
+                    var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
+                    inline_button_califica.text = "Crea tu Biocard!"
+                    inline_button_califica.url = "https://laresistencia.co/biocard/";
+                    //
+
+                    inline_keyboard = [[inline_button_califica]];
+                    inline_markup = {
+                        inline_keyboard: inline_keyboard
+                    };
+                    /////////////////////////////////7
+                    app.telegram.sendPhotoEx(chat, "AgADAQAD4bExGzb3eQUuKlAn0okhP3YC6C8ABEtWO8VJyjxpyAsAAgI", "", message_id, inline_markup);
                 }
             // Ayuda
                 else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 || text.indexOf("como funciona") > -1 && words(text) < 5){
