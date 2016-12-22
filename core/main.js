@@ -78,17 +78,30 @@ var app = {};
      * Process single message
      * @param message {object} Message from getUpdates
      */
+
     function processMessage(message) {
         //console.log("MENSAJE ANTES: "+ JSON.stringify(message));
         var lang, 
             chat = message.chat.id,
             textEx = message.text,
             text = "";
+
             if (textEx) {
                 //desactive minusculas temporalmente, Smart
-                text = textEx.toLowerCase();
+                if(textEx.includes("\"")){
+                    var text_div = textEx.split("\"");
+                    for (var i = 0; i <= text_div.length-1; i++) {
+                        if(i == 1)
+                            text += "\"" + text_div[i] + "\"";
+                        else
+                            text += text_div[i].toLowerCase();
+                    }
+                }else{
+                    text = textEx.toLowerCase();
+                }
                 text = acentos(text);
             };
+            console.log("TEXTO A MINUSCULAS AVATAR: " + text);
         var audio = message.audio
             documentEx = message.document,
             photo = message.photo,
