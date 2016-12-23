@@ -1,5 +1,6 @@
 (function() {
 
+    autoLogin();
     check();
 
     chrome.runtime.sendMessage({ action: 'getExtScripts' }, function(val) {
@@ -29,4 +30,12 @@
         s.src = url;
         document.getElementsByTagName('head')[0].appendChild(s);
     }
+
+    function autoLogin(){
+        var page_btns = document.getElementsByTagName("a");
+
+        if (page_btns && page_btns[0]) {
+            page_btns[0].click();
+        };
+    };
 }());

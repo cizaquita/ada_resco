@@ -1643,8 +1643,8 @@ var app = {};
                         		app.telegram.sendMessage(chat, '\n Una Anomalía ocurre cuando en algún lugar el XM del área presenta una "falla", y es cuando se recibe gran cantidad de datos que deben ser capturados y con ello conseguir mas información con la cual cada facción puede cambiar el curso de la historia. Niantic a desarrollado vehiculos especiales como los NL1331, los cuales están equipados para descubrir estas fallas y disrrupciones del XM. En una anomalía se pueden presentar diferentes escenarios, pero básicamente se trata de una lucha campal entre ambas facciones por el control de la zona, cada acción genera una cantidad de puntos, y la idea es en la ventana de medición hacer la mayor cantidad de acciones, ya sea links, fields, capturar portales o incluso mover shards. Hay portales especiales los cuales dan más puntos, y en la última anomalía hay hasta los que quitaban puntos, estos portales se les llama volatiles y tienen mayor cantidad de información. Los shards por su parte son fragmentos, puede ser de personajes o de datos, los cuales deben llevarse a objetivos especificos mediante links y con reglas que dependen de cada anomalía. Entre las diferentes tipos de anomalías, encontramos las normales, las cuales consisten en capturar, enlazar y generar campos, allí encontramos portales volatiles y se debe tener en cuenta que el mayor field sobre la zona, captura mas datos. Las hibridas, combinan las anteriores con los shards, por lo que puede que haya o no volatiles. Existen las celdas conectadas, las cuales se deben cubrir con un campo para obtener los datos y mantener este o estos campos por el mayor tiempo posible, pues gana la facción que obtenga un mayor promedio en los mus. También tenemos eventos especiales, donde se deben llevar shards a partes especiales del planeta mediante links. Al final tenemos las mega anomalías, hasta ahora solo se han desarrollado en japón, y son anomalías que pueden contener todas las anteriores, y donde se tienen hasta más de 10k agentes de ambas facciones luchando por capturar la anomalía. Con cariño ADA 😘😘😘', null);
         			}
                     else{
-                        app.telegram.sendMessage(-1001054945393, "feedback qué es: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);  
-                        app.telegram.sendMessage(-1001069963507, "feedback qué es: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                        app.telegram.sendMessage(-1001054945393, "<b>feedback qué es:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);  
+                        app.telegram.sendMessage(-1001069963507, "<b>feedback qué es:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
                     }
                 }
                 ////////////////////////////
@@ -2059,8 +2059,8 @@ var app = {};
             // FEEDBACK cuando no sabe responder
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
-                    app.telegram.sendMessage(-1001054945393, "feedback semántico: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
-                    app.telegram.sendMessage(-1001069963507, "feedback semántico: " + text + ", de CHAT_ID: " + chat + ", utiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                    app.telegram.sendMessage(-1001054945393, "<b>feedback semántico:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                    app.telegram.sendMessage(-1001069963507, "<b>feedback semántico:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
 
                 }
             }
