@@ -1324,7 +1324,6 @@ var app = {};
                             app.telegram.sendMessage(chat, 'Error: Debes estar validado para utilizar esta función.', null);
                         }
                     }else{
-
                         if(text.lastIndexOf("jahan") > 0 && words(text) < 7){
                             app.telegram.sendMessage(chat, '\nJahan es investigadora de biotecnología y líder de anti-Magnus.'+
                                 '\nJahan nació en un clan familiar que ha estado en el centro de la organización anti-Magnus desde su creación. El clan que pasa el liderazgo de una matriarca a la siguiente a través de un complicado ritual de sangre. Esta ceremonia crea un vínculo consciente de una generación a la siguiente formando una cadena ininterrumpida de memoria que se remonta a los inicios de la organización. Como la matriarca designada del clan, Jahan ve como su deber, preservar la biblioteca con el conocimiento recogido sobre N-zeer y buscar y recopilar los llamados artefactos XM primigenios que se cree que encarnan directamente la tecnología N-zeer.'+
@@ -1430,6 +1429,9 @@ var app = {};
                         }
                         else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
                                     app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
+                        }else{
+                            app.telegram.sendMessage(chat, "🔅 Para saber sobre un usuario debes dar Reply al mensaje del usuario que deseas ver o escribir su @alias. Ejm: \"Ada quién es @Alias\""+
+                                                            "🔅 Puedes buscar por un personaje de Ingress escribiendo su nombre. Ejm: \"Ada quien es Susana\"\n", null, message_id);
                         }
                     }
                 }
