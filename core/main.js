@@ -1430,8 +1430,8 @@ var app = {};
                         else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
                                     app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
                         }else{
-                            app.telegram.sendMessage(chat, "🔅 Para saber sobre un usuario debes dar Reply al mensaje del usuario que deseas ver o escribir su @alias. Ejm: \"Ada quién es @Alias\""+
-                                                            "🔅 Puedes buscar por un personaje de Ingress escribiendo su nombre. Ejm: \"Ada quien es Susana\"\n", null, message_id);
+                            app.telegram.sendMessage(chat, "🔅 Para saber sobre un usuario debes dar Reply al mensaje del usuario que deseas ver o escribir su @alias. Ejm: \"Ada quién es @Alias\"."+
+                                                            "\n🔅 Puedes buscar por un personaje de Ingress escribiendo su nombre. Ejm: \"Ada quien es Susana\".", null, message_id);
                         }
                     }
                 }
