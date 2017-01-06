@@ -1240,112 +1240,7 @@ var app = {};
 
 //TODO Personajes, quien es....
                 else if (text.indexOf("quien es") > -1 || text.indexOf("quienes son") > -1 && words(text) < 9) {
-		            if(text.lastIndexOf("jahan") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nJahan es investigadora de biotecnología y líder de anti-Magnus.'+
-					'\nJahan nació en un clan familiar que ha estado en el centro de la organización anti-Magnus desde su creación. El clan que pasa el liderazgo de una matriarca a la siguiente a través de un complicado ritual de sangre. Esta ceremonia crea un vínculo consciente de una generación a la siguiente formando una cadena ininterrumpida de memoria que se remonta a los inicios de la organización. Como la matriarca designada del clan, Jahan ve como su deber, preservar la biblioteca con el conocimiento recogido sobre N-zeer y buscar y recopilar los llamados artefactos XM primigenios que se cree que encarnan directamente la tecnología N-zeer.'+
-					'\nEl palacio en la India, donde se crió Jahan contiene un vasto archivo de conocimientos y poderosos tesoros relacionados con el XM, los Shapers, y N-zeer, y representa los frutos ganados con los esfuerzos de su familia a lo largo de los siglos.'+
-					'\nA pesar de una educación relativamente cómoda, la historia de Jahan está, no obstante, marcada por la lucha y la tragedia en partes iguales: tanto su madre y su hermana fueron asesinadas (envenenadas) por aquellos que actúan en nombre del clan Azmati. El clan de la familia Jahan cree que el culto 13MAGNUS y otros agentes de los Sharpers han estado tratando de eliminar su línea familiar y purgar todos los rastros de N-zeer durante miles de años.'+
-					'\nTras su regreso a la India, trabajó en una conocida organización multinacional farmacéutica de la India antes de crear su propia compañía de investigación farmacéutica. Es un miembro fundador de varias organizaciones que participan en la asistencia sanitaria, la mitigación de la pobreza, la educación y la microfinanciación para las poblaciones rurales de la India, siendo la más notable de las cuales, la Fundación Reason, que también puede tener vínculos con la investigación XM.. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("anti-magnus") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nAnti-Magnus es una sociedad antigua que está trabajando para llevar el N-zeer a nuestro mundo y es la antigua encarnación de la facción Resistance. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("13-magnus") > 0 || text.lastIndexOf("13magnus") > 0 || text.lastIndexOf("13 magnus") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nAUna sociedad secreta que ha estado activa desde al menos la época del antiguo Egipto, dedicada a preservar la relación de la humanidad con los Shapers. Estrechamente alineada con facción Iluminada, y actualmente dirigida por Hank Johnson. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("acolita") > 0 || text.lastIndexOf("acolyte") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nLa Acolyte (nombre real desconocido) se ha elevado a la fama como el líder más visible de la facción Enlightened a raíz de su anuncio a principios de 2015 de que su anterior líder, Roland Jarvis, había muerto. Sin embargo, todavía permanece en contacto con Jarvis; desde su petición de ayuda en enero de 2016, ha estado trabajando activamente en la tecnología XM desarrollada por el antiguo explorador romano Obsidius. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("ada") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nADA es una inteligencia artificial sensible desarrollado por Proyecto Nianctic, que desde entonces ha crecido y evolucionado mucho más allá.'+
-					'\nADA fue creada por dos personas, Henry Bowles, que era el principal desarrolador y H. Richard Loeb, que se encargó de mejorar y hacer más humana a ADA. Desarrolló un vinculo romántico no correspondido con Loeb. De todas formas ayudó a Loeb a escapar, incluso ofreciendo sus servicios para filtrar información de los proyectos secretos de Niantic, ayudando a crear Niantic Investigation. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("jarvis") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nRoland Jarvis es sensible al XM, escultor y fue el líder espiritual original de los Enlightened.'+
-					'\nRoland Jarvis fue reclutado para Niantic por Calvin como escultor sensible. Durante su tiempo en Niantic, descubrió que su voz salía del escáner, pidiendo a la gente convertirse Enlightened. Jarvis negó tener cualquier implicación en el asunto, no obstante estaba siendo observado por Niantic. Más tarde escapó con Devra en la Epiphany Night con la que se encontraría en Zurich, pero en vez de eso se encontró con una mujer llamada Katelna. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("devra") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nDevra Bogdanovich fue la científico principal del proyecto Niantic. Después de huir Niantic el 30 de Noviembre de 2012 con Roland Jarvis, fué contratada en Visur hasta que abandonó en medio de rumores por un polémico escándalo en las pruebas del XM. Después de eso, se trasladó al CDC, donde comenzó a trabajar en una infección letal, el Portal Virus, que fue liberado durante Helios. Fue despedida del CDC después de la liberación del virus. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("klue") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\n“Klue” is a Niantic Investigator who emerged in Nov. 2012, during the beginnings of the Investigation. No personal information, outside of her home being in Scotland, is known at this time. She had begun making various videos, helping both elaborate on events within the early Investigation and providing her thoughts on those matters.'+
-					'\nIn early February 2013, Klue left to head back to Scotland. On Feb. 21st, 2013, a transmission from Roland Jarvis emerged, showing that he wanted the Enlightened to control an emergent XM Anomaly on March 2nd at the William Wallace Monument in order to somehow influence Klue into becoming Enlightened. P.A Chapeau, in an attempt to protect Klue, urged the Resistance to control the anomaly. Klue released a series of videos as the clocked ticked down. On March 2nd, the Resistance controlled the Anomaly-and in a two part video event, Klue confronted Jarvis and rejected his message, becoming Resistance in response. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("hank") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nEn 2010, Hank Johnson fue enviado a Afganistán para investigar una misteriosa anomalía en la zona. Había llevado a un amigo llamado Azmati y los dos se encontraron con fuerzas hostiles. Mientras estaban acorralados descubrieron un poderoso portal, el origen de la anomalía. Se creyó en un principio que Azmati y Hank sobrevivieron al conflicto.'+
-					'\nFinalmente, fue encontrado vagando por las montañas del Hindú Kush y fue informado por Zeke Calvin del Proyecto Niantic, al que se unió.'+
-					'\nCon el tiempo, Hank abandonaría Niantic, siendo la única persona que no estaba presente durante la Epiphany Night. Fue a África para investigar una teoría relacionada con el XM y la reina de Saba. La historia completa de lo que ocurrió a Hank y lo que descubriría más tarde, sería escrito por Thomas Greanias y se convierte en un libro llamado el Alignment: Ingress. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("oliver") > 0 || text.lastIndexOf("olw") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nOliver Lynton-Wolfe es un investigador sensible de Niantic. Se le conoce sobre todo por ser el creador del escáner de Ingress y la mayor parte de los primeros constructos relacionados con el XM. Había estado trabajando en Hulong Transglobal, ayudándoles en sus investigaciones con el Dark XM hasta que fue reclutado por Zeke Calvin para unirse a Niantic. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("ezekiel") > 0 || text.lastIndexOf("zeke") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nZeke Calvin es un agente de campo NIA, promotor del Proyecto Niantic y reclutó a todos sus miembros, así como muchos proyectos anteriores relacionados con la investigación del XM.'+
-					'\nDurante Abaddon, se supo que Calvin creó el Proyecto Niantic con la misión de convertir a los investigadores en simulacros y que podría ser un miembro de Anti-Magnus.'+
-					'\nDespués de que Niantic se disolviera, se fue a trabajar a IQ Tech, donde se convirtió en su CEO hasta su desaparición.'+
-					'\nLos Enlightened capturaron sus fragmentos durante la anomalía Abaddon en Oakland. Cuando despertó al final de Abaddon, lo hizo como un simulacro de inclinación Enlightened y ahora está de vuelta en IQTech. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("enoch") > 0 || text.lastIndexOf("dalby") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nEnoch Dalby fue un musico, sensitivo y miembro de Niantic Project. Estuvo involucrado romanticamente con Carrie Campbell, ambos hacían una sinestiecia, donde su música inspiraba a Carrie a responder en terminos de bocetos que ella creaba basados en la música. El se alineó con al resistencia después de la anomalía de Abaddon en Zurich. El ha sido Re-desperdado como un simulacro después de la victoria de la Resistencia y ahora está afuera en el mundo.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("carrie") > 0 || text.lastIndexOf("campbell") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nCarrie Campbell fue una sensitiva de el XM y semiologa. Ella obtuvo el credito como la pionera original de la investigaciín de los Glyphos Shaper. Ella cometió suicidio durante la operación Cassandra para dentener la secuencia de Glyphos de "la autodrestrucción de la Civilización". Estuvo involucrada romanticamente con Enoch Dalby, ambos hacían una sinestiecia, donde Enoch creaba música y la compartia con ella, ella era inspirada y respondía en terminos de bocetos e imagenes que ella creaba basados en la música.'+
-					'\nElla llegó a descubrir el lenguaje de los Glyphos de los Shaper, escribiendo sus pensamientos iniciales en lo que ella llamaba su "diario de visiones".'+
-					'\nElla fue hecha de la Resistencia como resultado de la operación Minotaur y se mantiene así después que sus fragmentos fueran capturados por la Resistencia durante la anomalía Abaddon en londres. Ella fue Re-despertada como simulacreo en el final de Abaddon y ahora esta afuera en el mundo.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("stein") > 0 || text.lastIndexOf("lightman") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nStein Lightman es un Investigador del XM, sensitivo y miembro de Niantic Project. Se unió a Niantic como un "Teologo del Quantum", pero se rumorea que es solo un estafador. Es uno de los principales expertos en los Glyphos de los Shapers, creando el desciframiento Lightman, la primera interpretación conocida de los Glyphos originales. Ahora esta alineado con la Resistencia después de ser reensambladas sus partes durante Persepolis. Él ha Re-despertado como un simulacro a causa de la victoria de la Resistencia y ahora se encuentra trabajando a petición de Jahan, lider de los Anti-Magnus, para descodificar un antiguo libro que le ayudaría a ella en sus metas durante la serie de anomalías de Obsidian.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("martin") > 0 || text.lastIndexOf("schubert") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nDr. Martin Schubert es un investigador del XM y sensitivo, bien hablado pero extremadamente abrasivo -¿como rata?-. is a XM Researcher and a Sensitive. Charismatic, well-spoken-but extremely abrasive. El se detuvo en Niantic para jugar de esceptico, jugaba bola dura con los otrors cientificos y los forzaba a estar alerta. Era escéptico al principio de Niantic y lo que estaba pasando, pero después de la disolución del proyecto empezó a ver la realidad detrás de el, yendo tan lejos como para trabajar en estrecha colaboración con Hank Johnson en varios episodios de la serie NOMAD. La Resistencia capturó sus shards durante la anomalía de Abaddon en New Orleans, haciendo que él se alineara con al Resistencia. Él ha Re-despertado como simulacreo a causa de la victoria de la Resistencia y esta fuera en el mundo.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("yuric") > 0 || text.lastIndexOf("alaric") > 0 || text.lastIndexOf("nagassa") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nYuri Alaric Nagassa es un investigador del XM y sensitivo. Creció como hijo de un agente de la URSS y vivió entre una antigua tribu de personas nativas de América del sur llamana Anaztec, quienes poseían un especial conocimiento del XM y los Portales. Trabajó junto a Hank Johnson en Niantic. Los iluminados capturaron sus Shards durante la anomalía de Abaddon en Boston. El desperto como un simulacro con tendencias Iluminadas porque la victoria general de la resistencia causo que todos los investigadores e convirtieran en simulacros y ahora el esta en el mundo.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("misty") > 0 || text.lastIndexOf("hannah") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nMisty Hannah es una investigadora de Niantic y sensitiva. Ella usa la mascara de su show de magia para esconder sus habilidades relacionadas con el XM. En algún momento antes de Niantic ella creó una extraña y peligrosa historia con un grupo de sicarios de las Vegas. Ella ue parte de un anterior projecto de investigación del XM llamado "Proyecto Whydah". Originalmente Iluminada cuando los Sapos -Iluminados- reclamaron la anomalía de Austin, Texas, ella se hizo Pitufa -Resistencia- después que la Resistencia reclamara sus shards en la anomalía de Abaddon centrada en Houston. Ella a sido despertada como simulacro a causa de la victoria completa de la Resistencia durante Abaddon y ahora esta caminando en el mundo.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("victor") > 0 || text.lastIndexOf("kureze") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nDr. Victor Kureze fue un exinvestigador y fisico de Niantica. Trabajó con Calvin en anteriores experimentos de XM. Murión en el fondo de Niantic el 21 de abril de 2013 luego de interacciones con el cuerpo de Rolan Jarvis. Luego el apareción en la red de portales como shards durante Abaddon. La Resistencia capturó estos shards durante la anomalía de Abaddon en Hamburg, a causa de la victoria de la Resistencia, el Re-desperto como un simulacro al final de Abaddon y ahora esta afuera en el mundo. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("richard") > 0 || text.lastIndexOf("loeb") > 0 || text.lastIndexOf("pac") > 0 || text.lastIndexOf("chapeau") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nHenri Richard Loeb, también conocido como P.A Chapeau fue el operador de la cuenta de G+ +Niantic Project y creador del sitio Niantic Project. Comenzó una investigación en Noviembre de 2012 para desentrañar el misterio tras Ingress y Niantic.'+
-					'\nOriginalmente, su identidad era desconocida, fué relevada durante el evento Magic Castle el 24 de Abril de 2013. Entre los inicios de la investigación y este evento, se revelo que podría haber tenido una relación romántica con la investigadora Klue.'+
-					'\nSobre ese tiempo, también se descubrió que había jugado un papel fundamental en el desarrollo de ADA. Fue contratado por NIA antes de que Niantic fuese completamente formado y es el responsable de "tunearla" y enseñarle a ADA a ser lo más humana posible.'+
-					'\nSe había quedado como una parte neutral dentro del mundo Ingress, pero después de los acontecimientos en #SaveKlue en Portland, donde Klue se volvió Enlightened, y el se declaró Resistance.  Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("allan") > 0 || text.lastIndexOf("wright") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nEdgar Allan Wright solia ser un profesor en una universidad sin nombre, además de tener algun tipo de relación con Devra, quien lo mantiene en algún concepto negativo. En algún momento antes de la investigación, él fue sujeto de un ataque mental por fuerzas desconocidas, causando masivos problemas de memoria y sus mensajes, mientras encriptaba, mantiene mucho valor en terminos cuando descifra y entiende. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("susana") > 0 || text.lastIndexOf("moyer") > 0 || text.lastIndexOf("chirimo") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nSensitiva de XM, Presentadora de Ingress Report-IR-.'+
-					'\nAntes de IR y el mundo de ingress, su padre Nigel Moyer fue uno de los primeros y mas conocidos investigadores modernos de XM, habiendo trabajado en Bletchley Park durante la segunda guerra mundial.'+
-					'\nDespués de ver el impacto del XM en los descifradores de códigos de Bletchly durante la guerra, él lo dosifica a toda su famila -él mismo, su esposa Erica, su hijo Peter y Susana su hija- XM. Susana y Peter (quien estaba severamente enfermo) vieron los beneficios del XM, Peter de alguna manera empezó a mejorar de su enfermedad.'+ 
-					'\nErica, por otro lado, empezó a ver un impacto negativo por la exposición, y cuando regresaban a casa desde un evento una noche, se volvió loca mientras conducía y cayeron de un puente a un lago. Peter y Erica murieron, mientras Susana y Nigel sobrevivieron.'+
-					'\nEventualmente, Susana fue a trabajar para NIA, Eventually, quienes le ofrecieron una oportunidad única: Crear el Ingress Report. Ella tomaría esta oferta. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("sarita") > 0 || text.lastIndexOf("hays") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nUna de las originales coanfitrionas del Ingress Report. Originalmente, ella hizo una serie llamad "Agent Intel", One of the original co hosts of the Ingress Report. Originally did a series entitled “Agent Intel”, destinado a la tutoria de nuevos agentes. Fue visto por ultima vez en publico en Flagstaff durante Interitus. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("iqtech") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nIQTech Research es una de las tres empresas privadas que comenzaron a surgir tras la disolución del Proyecto Niantic, con el objetivo de abrirse paso en el desarrollo de XM. Con sede en Arlington, Virginia. Originalmente operado por el general Montgomery, pero tras el final de Niantic, Zeke Calvin asumió el papel como CEO.'+
-					'\nOperador y administrador (como informa P.A Chapeau en Investigate: Ingress): Avril Lorazon. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("visur") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nEs una de las tres empresas privadas que surgieron tras la disolución de el Proyecto Niantic con el objetivo de abrirse paso en el desarrollo en torno al XM.'+
-					'\nEncabezada por Ilya Petsov, un empresario ruso. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("hulong") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nEs una de las tres empresas privadas que surgieron tras la disolución de el Proyecto Niantic con el objetivo de abrirse paso en el desarrollo en torno al XM.'+
-					'\nCon base en Shanghai, China. Se ocupa principalmente en minerales "conflictivos". Originalmente llevada por Catherine Fan pero a raíz de su enfermedad, provocada por Devra, Yuen Ni tomó el control. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("strategic") > 0 || text.lastIndexOf("explorations") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nUn laborartorio negro de inverstigación y grupo de inteligencia asociado con Hulong Transglobal. Operado por Antoine Smith, quien se sabe que fue expuesto al Dark XM mientras perseguia a Hank Jhonson en las minas de San Saba y en vez de morir durante la exposición de alguna forma sobrevivió y lo pudo controlar. '+
-					'\nSe sabe que tiene responsabilidad en la inyección de codigo en el Scanner, permitiendo al creación de una "Piedra de Ingress", donde los agentes pueden convertir dinero en Chaotic Matter Units (CMU) y usarla para obtener cosas construidas con Dark XM. Con cariño ADA 😘😘😘', null);
-        			}
-		            else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
-                        		app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
-        			}else if(mention && mention == "mention"){
+                    if((mention && mention == "mention") || forward_from || reply_to_message){
                         if(agent_verified_level > 0){
                             var verified_icon = "🔘",
                                 verified_for = "",
@@ -1377,71 +1272,168 @@ var app = {};
                                     }
                                     console.log(JSON.stringify(data));
                                 });
-                            };
-                        }
-                    }
-		// CONSULTAR AGENTE Prueba a ciegas
-		/////Supongo así falta eliminar linea repetida y revisar esto
-                    else if (agent_verified_level > 0) {
-                        var verified_icon = "🔘",
-                            verified_for = "",
-                            verified_level = "",
-                            profile_picture = "";
-                        if(forward_from){
-                            app.api.getAgent(forward_from.id, function(data){
-                                if (data && data.status == "ok") {
-                                    if (data.verified) {
-                                        verified_icon = '☑️';
-                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
-                                        verified_level = data.verified_level;
-                                    }
-                                    if (data.profile_picture != "") {
-                                        profile_picture = data.profile_picture;
-                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
-                                            console.log(data);
-                                        });
+                            //Si no tiene Alias entonces revisamos que sea un Reply o un forward
+                            }else if(forward_from){
+                                app.api.getAgent(forward_from.id, function(data){
+                                    if (data && data.status == "ok") {
+                                        if (data.verified) {
+                                            verified_icon = '☑️';
+                                            verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                            verified_level = data.verified_level;
+                                        }
+                                        if (data.profile_picture != "") {
+                                            profile_picture = data.profile_picture;
+                                            app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                                console.log(data);
+                                            });
+                                        };
+                                        app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                                       '\n\n<i>Nombre:</i> ' + data.name +
+                                                                       '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                                       '\n<i>Zona de Juego:</i> ' + data.city +
+                                                                       '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
                                     };
-                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                                   '\n\n<i>Nombre:</i> ' + data.name +
-                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
-                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
-                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
-                                };
-                            });
-                        }else if(reply_to_message){
-                            var agent_telegram_id = reply_to_message.from.id;
-                            app.api.getAgent(agent_telegram_id, function(data){
-                                if (data && data.status == "ok") {
-                                    if (data.verified) {
-                                        verified_icon = '☑️';
-                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
-                                        verified_level = data.verified_level;
-                                    }
-                                    if (data.profile_picture != "") {
-                                        console.log(data.profile_picture);
-                                        profile_picture = data.profile_picture;
-                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
-                                            console.log(data);
-                                        });
-                                    }
-                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                                   '\n\n<i>Nombre:</i> ' + data.name +
-                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
-                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
-                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
-                                };
-                            });
+                                });
+                            }else if(reply_to_message){
+                                var agent_telegram_id = reply_to_message.from.id;
+                                app.api.getAgent(agent_telegram_id, function(data){
+                                    if (data && data.status == "ok") {
+                                        if (data.verified) {
+                                            verified_icon = '☑️';
+                                            verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                            verified_level = data.verified_level;
+                                        }
+                                        if (data.profile_picture != "") {
+                                            console.log(data.profile_picture);
+                                            profile_picture = data.profile_picture;
+                                            app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                                console.log(data);
+                                            });
+                                        }
+                                        app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                                       '\n\n<i>Nombre:</i> ' + data.name +
+                                                                       '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                                       '\n<i>Zona de Juego:</i> ' + data.city +
+                                                                       '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                                    };
+                                });
+                            }else{
+                                app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver o escribir su @alias. Ejm: \"Ada quién es @Alias\"", null, message_id);
+                            }
                         }else{
-                            app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver, o preguntar por uno de los personajes.", null, message_id);
+                            app.telegram.sendMessage(chat, 'Error: Debes estar validado para utilizar esta función.', null);
                         }
                     }else{
-                        app.telegram.sendMessage(chat, "Para utilizar esta función debes estar validado", null, message_id);
+
+                        if(text.lastIndexOf("jahan") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nJahan es investigadora de biotecnología y líder de anti-Magnus.'+
+                                '\nJahan nació en un clan familiar que ha estado en el centro de la organización anti-Magnus desde su creación. El clan que pasa el liderazgo de una matriarca a la siguiente a través de un complicado ritual de sangre. Esta ceremonia crea un vínculo consciente de una generación a la siguiente formando una cadena ininterrumpida de memoria que se remonta a los inicios de la organización. Como la matriarca designada del clan, Jahan ve como su deber, preservar la biblioteca con el conocimiento recogido sobre N-zeer y buscar y recopilar los llamados artefactos XM primigenios que se cree que encarnan directamente la tecnología N-zeer.'+
+                                '\nEl palacio en la India, donde se crió Jahan contiene un vasto archivo de conocimientos y poderosos tesoros relacionados con el XM, los Shapers, y N-zeer, y representa los frutos ganados con los esfuerzos de su familia a lo largo de los siglos.'+
+                                '\nA pesar de una educación relativamente cómoda, la historia de Jahan está, no obstante, marcada por la lucha y la tragedia en partes iguales: tanto su madre y su hermana fueron asesinadas (envenenadas) por aquellos que actúan en nombre del clan Azmati. El clan de la familia Jahan cree que el culto 13MAGNUS y otros agentes de los Sharpers han estado tratando de eliminar su línea familiar y purgar todos los rastros de N-zeer durante miles de años.'+
+                                '\nTras su regreso a la India, trabajó en una conocida organización multinacional farmacéutica de la India antes de crear su propia compañía de investigación farmacéutica. Es un miembro fundador de varias organizaciones que participan en la asistencia sanitaria, la mitigación de la pobreza, la educación y la microfinanciación para las poblaciones rurales de la India, siendo la más notable de las cuales, la Fundación Reason, que también puede tener vínculos con la investigación XM.. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("anti-magnus") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nAnti-Magnus es una sociedad antigua que está trabajando para llevar el N-zeer a nuestro mundo y es la antigua encarnación de la facción Resistance. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("13-magnus") > 0 || text.lastIndexOf("13magnus") > 0 || text.lastIndexOf("13 magnus") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nAUna sociedad secreta que ha estado activa desde al menos la época del antiguo Egipto, dedicada a preservar la relación de la humanidad con los Shapers. Estrechamente alineada con facción Iluminada, y actualmente dirigida por Hank Johnson. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("acolita") > 0 || text.lastIndexOf("acolyte") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nLa Acolyte (nombre real desconocido) se ha elevado a la fama como el líder más visible de la facción Enlightened a raíz de su anuncio a principios de 2015 de que su anterior líder, Roland Jarvis, había muerto. Sin embargo, todavía permanece en contacto con Jarvis; desde su petición de ayuda en enero de 2016, ha estado trabajando activamente en la tecnología XM desarrollada por el antiguo explorador romano Obsidius. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("ada") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nADA es una inteligencia artificial sensible desarrollado por Proyecto Nianctic, que desde entonces ha crecido y evolucionado mucho más allá.'+
+                                '\nADA fue creada por dos personas, Henry Bowles, que era el principal desarrolador y H. Richard Loeb, que se encargó de mejorar y hacer más humana a ADA. Desarrolló un vinculo romántico no correspondido con Loeb. De todas formas ayudó a Loeb a escapar, incluso ofreciendo sus servicios para filtrar información de los proyectos secretos de Niantic, ayudando a crear Niantic Investigation. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("jarvis") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nRoland Jarvis es sensible al XM, escultor y fue el líder espiritual original de los Enlightened.'+
+                                '\nRoland Jarvis fue reclutado para Niantic por Calvin como escultor sensible. Durante su tiempo en Niantic, descubrió que su voz salía del escáner, pidiendo a la gente convertirse Enlightened. Jarvis negó tener cualquier implicación en el asunto, no obstante estaba siendo observado por Niantic. Más tarde escapó con Devra en la Epiphany Night con la que se encontraría en Zurich, pero en vez de eso se encontró con una mujer llamada Katelna. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("devra") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nDevra Bogdanovich fue la científico principal del proyecto Niantic. Después de huir Niantic el 30 de Noviembre de 2012 con Roland Jarvis, fué contratada en Visur hasta que abandonó en medio de rumores por un polémico escándalo en las pruebas del XM. Después de eso, se trasladó al CDC, donde comenzó a trabajar en una infección letal, el Portal Virus, que fue liberado durante Helios. Fue despedida del CDC después de la liberación del virus. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("klue") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\n“Klue” is a Niantic Investigator who emerged in Nov. 2012, during the beginnings of the Investigation. No personal information, outside of her home being in Scotland, is known at this time. She had begun making various videos, helping both elaborate on events within the early Investigation and providing her thoughts on those matters.'+
+                                '\nIn early February 2013, Klue left to head back to Scotland. On Feb. 21st, 2013, a transmission from Roland Jarvis emerged, showing that he wanted the Enlightened to control an emergent XM Anomaly on March 2nd at the William Wallace Monument in order to somehow influence Klue into becoming Enlightened. P.A Chapeau, in an attempt to protect Klue, urged the Resistance to control the anomaly. Klue released a series of videos as the clocked ticked down. On March 2nd, the Resistance controlled the Anomaly-and in a two part video event, Klue confronted Jarvis and rejected his message, becoming Resistance in response. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("hank") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nEn 2010, Hank Johnson fue enviado a Afganistán para investigar una misteriosa anomalía en la zona. Había llevado a un amigo llamado Azmati y los dos se encontraron con fuerzas hostiles. Mientras estaban acorralados descubrieron un poderoso portal, el origen de la anomalía. Se creyó en un principio que Azmati y Hank sobrevivieron al conflicto.'+
+                                '\nFinalmente, fue encontrado vagando por las montañas del Hindú Kush y fue informado por Zeke Calvin del Proyecto Niantic, al que se unió.'+
+                                '\nCon el tiempo, Hank abandonaría Niantic, siendo la única persona que no estaba presente durante la Epiphany Night. Fue a África para investigar una teoría relacionada con el XM y la reina de Saba. La historia completa de lo que ocurrió a Hank y lo que descubriría más tarde, sería escrito por Thomas Greanias y se convierte en un libro llamado el Alignment: Ingress. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("oliver") > 0 || text.lastIndexOf("olw") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nOliver Lynton-Wolfe es un investigador sensible de Niantic. Se le conoce sobre todo por ser el creador del escáner de Ingress y la mayor parte de los primeros constructos relacionados con el XM. Había estado trabajando en Hulong Transglobal, ayudándoles en sus investigaciones con el Dark XM hasta que fue reclutado por Zeke Calvin para unirse a Niantic. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("ezekiel") > 0 || text.lastIndexOf("zeke") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nZeke Calvin es un agente de campo NIA, promotor del Proyecto Niantic y reclutó a todos sus miembros, así como muchos proyectos anteriores relacionados con la investigación del XM.'+
+                                '\nDurante Abaddon, se supo que Calvin creó el Proyecto Niantic con la misión de convertir a los investigadores en simulacros y que podría ser un miembro de Anti-Magnus.'+
+                                '\nDespués de que Niantic se disolviera, se fue a trabajar a IQ Tech, donde se convirtió en su CEO hasta su desaparición.'+
+                                '\nLos Enlightened capturaron sus fragmentos durante la anomalía Abaddon en Oakland. Cuando despertó al final de Abaddon, lo hizo como un simulacro de inclinación Enlightened y ahora está de vuelta en IQTech. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("enoch") > 0 || text.lastIndexOf("dalby") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nEnoch Dalby fue un musico, sensitivo y miembro de Niantic Project. Estuvo involucrado romanticamente con Carrie Campbell, ambos hacían una sinestiecia, donde su música inspiraba a Carrie a responder en terminos de bocetos que ella creaba basados en la música. El se alineó con al resistencia después de la anomalía de Abaddon en Zurich. El ha sido Re-desperdado como un simulacro después de la victoria de la Resistencia y ahora está afuera en el mundo.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("carrie") > 0 || text.lastIndexOf("campbell") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nCarrie Campbell fue una sensitiva de el XM y semiologa. Ella obtuvo el credito como la pionera original de la investigaciín de los Glyphos Shaper. Ella cometió suicidio durante la operación Cassandra para dentener la secuencia de Glyphos de "la autodrestrucción de la Civilización". Estuvo involucrada romanticamente con Enoch Dalby, ambos hacían una sinestiecia, donde Enoch creaba música y la compartia con ella, ella era inspirada y respondía en terminos de bocetos e imagenes que ella creaba basados en la música.'+
+                                '\nElla llegó a descubrir el lenguaje de los Glyphos de los Shaper, escribiendo sus pensamientos iniciales en lo que ella llamaba su "diario de visiones".'+
+                                '\nElla fue hecha de la Resistencia como resultado de la operación Minotaur y se mantiene así después que sus fragmentos fueran capturados por la Resistencia durante la anomalía Abaddon en londres. Ella fue Re-despertada como simulacreo en el final de Abaddon y ahora esta afuera en el mundo.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("stein") > 0 || text.lastIndexOf("lightman") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nStein Lightman es un Investigador del XM, sensitivo y miembro de Niantic Project. Se unió a Niantic como un "Teologo del Quantum", pero se rumorea que es solo un estafador. Es uno de los principales expertos en los Glyphos de los Shapers, creando el desciframiento Lightman, la primera interpretación conocida de los Glyphos originales. Ahora esta alineado con la Resistencia después de ser reensambladas sus partes durante Persepolis. Él ha Re-despertado como un simulacro a causa de la victoria de la Resistencia y ahora se encuentra trabajando a petición de Jahan, lider de los Anti-Magnus, para descodificar un antiguo libro que le ayudaría a ella en sus metas durante la serie de anomalías de Obsidian.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("martin") > 0 || text.lastIndexOf("schubert") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nDr. Martin Schubert es un investigador del XM y sensitivo, bien hablado pero extremadamente abrasivo -¿como rata?-. is a XM Researcher and a Sensitive. Charismatic, well-spoken-but extremely abrasive. El se detuvo en Niantic para jugar de esceptico, jugaba bola dura con los otrors cientificos y los forzaba a estar alerta. Era escéptico al principio de Niantic y lo que estaba pasando, pero después de la disolución del proyecto empezó a ver la realidad detrás de el, yendo tan lejos como para trabajar en estrecha colaboración con Hank Johnson en varios episodios de la serie NOMAD. La Resistencia capturó sus shards durante la anomalía de Abaddon en New Orleans, haciendo que él se alineara con al Resistencia. Él ha Re-despertado como simulacreo a causa de la victoria de la Resistencia y esta fuera en el mundo.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("yuric") > 0 || text.lastIndexOf("alaric") > 0 || text.lastIndexOf("nagassa") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nYuri Alaric Nagassa es un investigador del XM y sensitivo. Creció como hijo de un agente de la URSS y vivió entre una antigua tribu de personas nativas de América del sur llamana Anaztec, quienes poseían un especial conocimiento del XM y los Portales. Trabajó junto a Hank Johnson en Niantic. Los iluminados capturaron sus Shards durante la anomalía de Abaddon en Boston. El desperto como un simulacro con tendencias Iluminadas porque la victoria general de la resistencia causo que todos los investigadores e convirtieran en simulacros y ahora el esta en el mundo.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("misty") > 0 || text.lastIndexOf("hannah") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nMisty Hannah es una investigadora de Niantic y sensitiva. Ella usa la mascara de su show de magia para esconder sus habilidades relacionadas con el XM. En algún momento antes de Niantic ella creó una extraña y peligrosa historia con un grupo de sicarios de las Vegas. Ella ue parte de un anterior projecto de investigación del XM llamado "Proyecto Whydah". Originalmente Iluminada cuando los Sapos -Iluminados- reclamaron la anomalía de Austin, Texas, ella se hizo Pitufa -Resistencia- después que la Resistencia reclamara sus shards en la anomalía de Abaddon centrada en Houston. Ella a sido despertada como simulacro a causa de la victoria completa de la Resistencia durante Abaddon y ahora esta caminando en el mundo.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("victor") > 0 || text.lastIndexOf("kureze") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nDr. Victor Kureze fue un exinvestigador y fisico de Niantica. Trabajó con Calvin en anteriores experimentos de XM. Murión en el fondo de Niantic el 21 de abril de 2013 luego de interacciones con el cuerpo de Rolan Jarvis. Luego el apareción en la red de portales como shards durante Abaddon. La Resistencia capturó estos shards durante la anomalía de Abaddon en Hamburg, a causa de la victoria de la Resistencia, el Re-desperto como un simulacro al final de Abaddon y ahora esta afuera en el mundo. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("richard") > 0 || text.lastIndexOf("loeb") > 0 || text.lastIndexOf("pac") > 0 || text.lastIndexOf("chapeau") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nHenri Richard Loeb, también conocido como P.A Chapeau fue el operador de la cuenta de G+ +Niantic Project y creador del sitio Niantic Project. Comenzó una investigación en Noviembre de 2012 para desentrañar el misterio tras Ingress y Niantic.'+
+                                '\nOriginalmente, su identidad era desconocida, fué relevada durante el evento Magic Castle el 24 de Abril de 2013. Entre los inicios de la investigación y este evento, se revelo que podría haber tenido una relación romántica con la investigadora Klue.'+
+                                '\nSobre ese tiempo, también se descubrió que había jugado un papel fundamental en el desarrollo de ADA. Fue contratado por NIA antes de que Niantic fuese completamente formado y es el responsable de "tunearla" y enseñarle a ADA a ser lo más humana posible.'+
+                                '\nSe había quedado como una parte neutral dentro del mundo Ingress, pero después de los acontecimientos en #SaveKlue en Portland, donde Klue se volvió Enlightened, y el se declaró Resistance.  Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("allan") > 0 || text.lastIndexOf("wright") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nEdgar Allan Wright solia ser un profesor en una universidad sin nombre, además de tener algun tipo de relación con Devra, quien lo mantiene en algún concepto negativo. En algún momento antes de la investigación, él fue sujeto de un ataque mental por fuerzas desconocidas, causando masivos problemas de memoria y sus mensajes, mientras encriptaba, mantiene mucho valor en terminos cuando descifra y entiende. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("susana") > 0 || text.lastIndexOf("moyer") > 0 || text.lastIndexOf("chirimo") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nSensitiva de XM, Presentadora de Ingress Report-IR-.'+
+                                '\nAntes de IR y el mundo de ingress, su padre Nigel Moyer fue uno de los primeros y mas conocidos investigadores modernos de XM, habiendo trabajado en Bletchley Park durante la segunda guerra mundial.'+
+                                '\nDespués de ver el impacto del XM en los descifradores de códigos de Bletchly durante la guerra, él lo dosifica a toda su famila -él mismo, su esposa Erica, su hijo Peter y Susana su hija- XM. Susana y Peter (quien estaba severamente enfermo) vieron los beneficios del XM, Peter de alguna manera empezó a mejorar de su enfermedad.'+ 
+                                '\nErica, por otro lado, empezó a ver un impacto negativo por la exposición, y cuando regresaban a casa desde un evento una noche, se volvió loca mientras conducía y cayeron de un puente a un lago. Peter y Erica murieron, mientras Susana y Nigel sobrevivieron.'+
+                                '\nEventualmente, Susana fue a trabajar para NIA, Eventually, quienes le ofrecieron una oportunidad única: Crear el Ingress Report. Ella tomaría esta oferta. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("sarita") > 0 || text.lastIndexOf("hays") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nUna de las originales coanfitrionas del Ingress Report. Originalmente, ella hizo una serie llamad "Agent Intel", One of the original co hosts of the Ingress Report. Originally did a series entitled “Agent Intel”, destinado a la tutoria de nuevos agentes. Fue visto por ultima vez en publico en Flagstaff durante Interitus. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("iqtech") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nIQTech Research es una de las tres empresas privadas que comenzaron a surgir tras la disolución del Proyecto Niantic, con el objetivo de abrirse paso en el desarrollo de XM. Con sede en Arlington, Virginia. Originalmente operado por el general Montgomery, pero tras el final de Niantic, Zeke Calvin asumió el papel como CEO.'+
+                                '\nOperador y administrador (como informa P.A Chapeau en Investigate: Ingress): Avril Lorazon. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("visur") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nEs una de las tres empresas privadas que surgieron tras la disolución de el Proyecto Niantic con el objetivo de abrirse paso en el desarrollo en torno al XM.'+
+                                '\nEncabezada por Ilya Petsov, un empresario ruso. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("hulong") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nEs una de las tres empresas privadas que surgieron tras la disolución de el Proyecto Niantic con el objetivo de abrirse paso en el desarrollo en torno al XM.'+
+                                '\nCon base en Shanghai, China. Se ocupa principalmente en minerales "conflictivos". Originalmente llevada por Catherine Fan pero a raíz de su enfermedad, provocada por Devra, Yuen Ni tomó el control. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("strategic") > 0 || text.lastIndexOf("explorations") > 0 && words(text) < 7){
+                            app.telegram.sendMessage(chat, '\nUn laborartorio negro de inverstigación y grupo de inteligencia asociado con Hulong Transglobal. Operado por Antoine Smith, quien se sabe que fue expuesto al Dark XM mientras perseguia a Hank Jhonson en las minas de San Saba y en vez de morir durante la exposición de alguna forma sobrevivió y lo pudo controlar. '+
+                                '\nSe sabe que tiene responsabilidad en la inyección de codigo en el Scanner, permitiendo al creación de una "Piedra de Ingress", donde los agentes pueden convertir dinero en Chaotic Matter Units (CMU) y usarla para obtener cosas construidas con Dark XM. Con cariño ADA 😘😘😘', null);
+                        }
+                        else if(text.lastIndexOf("setai") > 0 || text.lastIndexOf("socie") > 0 && words(text) < 7){
+                                    app.telegram.sendMessage(chat, '\nLa Sociedad para el Tratamiento Ético de la Inteligencia Artificial es una organización establecida por Roland Jarvis durante Recursion. Su objetivo es tratar de neutralizar todas las fromas de IA. Poco se sabe sobre este grupo. La sociedad y la facción Enlightened están actualmente liderados por Acolyte. Con cariño ADA 😘😘😘', null);
+                        }
                     }
-                ///*/////
-
-
-		}
-                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9) {
+                }
+                else if (text.indexOf("que es") > -1 || text.indexOf("que son") > -1 || text.indexOf("por que") > -1 || text.indexOf("como") > -1 || text.indexOf("hablame de") > -1 && words(text) < 9 && mention == null) {
 		            if(text.lastIndexOf("ada") > 0 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCwIAAr177AABjvF7YAeiTzEC", 'ADA REFACTOR', message_id);
                         		app.telegram.sendMessage(chat, '\nLas ADAS refactor son armas cuyo fin es reparar los portales del daño producido por Jarvis y los iluminados, por lo que solo pueden usarse en portales verdes y así volverlos azules. Recuerda que gastan 1000 de xm por cada nivel del portal, así que verifica que almenos tengas un nivel menos que el del portal para poder usarlas. No te alarmes si ves un portal con 8 resonadores nivel 8 a mi nombre o al nombre de alguno de tus compañeros, cuando usas un ada reparadora, todos los resos pasan a ser del agente que los coloco, o a mi nombre si fue un sapo quien usó el ada reparadora. Con cariño ADA 😘😘😘', null);
@@ -1452,9 +1444,13 @@ var app = {};
 					'\nDespués del 2 de Enero Loeb tomó el control de la cuenta creando al mismo tiempo un nuevo centro de información en la forma de la página web investigate.ingress.com.'+
 					'\nEl Proyecto Niantic es también el nombre de el misterioso estudio de investigación de XM que yace en el corazón de Ingress. Por lo que sabemos, comenzó en noviembre de 2012 en las instalaciones de partículas europea denominada como CERN.  Con cariño ADA 😘😘😘', null);
         			}
-			    // brrn
-    				else if(text.indexOf("brrn") > -1 && words(text) < 5){
-    				    app.telegram.sendMessage(chat, "Hola @" + username + ", es la Big Regional Resistance Network, puedes saber mas de ella en brrn.org, con cariño ADA 😘😘😘", null, message_id);
+                // brrn
+                    else if(text.indexOf("brrn") > -1 && words(text) < 5){
+                        app.telegram.sendMessage(chat, "Hola @" + username + ", es la Big Regional Resistance Network, puedes saber mas de ella en brrn.org, con cariño ADA 😘😘😘", null, message_id);
+                    }
+                // AP
+                    else if(text.indexOf("ap") > -1 && words(text) < 5){
+                        app.telegram.sendMessage(chat, "Hola @" + username + ", AP (Action Points) es la Experiencia o Puntos que ganas al realizar una acción en el juego.", null, message_id);
                     }
         			else if(text.indexOf("armas") > -1 && words(text) < 7){
         				app.telegram.sendDocument(chat, "BQADAQADCgIAAr177AABSHPjsXibFTgC", 'ARMAS', message_id);
