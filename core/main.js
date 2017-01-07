@@ -447,7 +447,7 @@ var app = {};
                 }else{
                       mensaje = hola + " " + newUser.first_name
                 }
-                app.telegram.sendMessage(chat, mensaje + ' soy ADA!, ' + bienvenido + " " + message.chat.title + "\n\nCuéntanos en qué lugar del país juegas para ponerte en contacto con el agente de la zona o ciudad." +
+                app.telegram.sendMessage(chat, mensaje + ' soy ADA!, ' + bienvenido + " " + message.chat.title + "\n\nCuéntanos en qué lugar del país juegas para ponerte en contacto con el agente de la zona o ciudad.\nUtiliza <b>Ada juego en \"Ciudad\"</b> para obtener una respuesta automática." +
                         "\n\nRecuerda visitar los tutoriales en <a href='http://rescol.co/tutos'>http://rescol.co/tutos</a> para que juntos liberemos el mundo de la influencia de los shapers." +
                         "\nIngresa también a nuestro chat de Trivias sobre Ingress en @ADA_trivia (<a href='https://telegram.me/ADA_trivia'>telegram.me/ADA_trivia</a>)!" +
                         "\n\n<a href='http://laresistencia.co'>LaResistencia.co</a>\n<a href='http://telegram.me/rescol'>@rescol</a>", inline_markup, message_id);
@@ -488,301 +488,6 @@ var app = {};
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         else if(text){
-    	/////////////////
-    	//Departamentos//
-    	////////////////
-            if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("juego por") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
-            {
-                ///////////////////////////////////////////////////////////////////////
-                // FUNCION PARA GUARDAR CIUDAD
-                var keywords = ["vivo en ", "soy de ", "saludos desde ", "juego en ", "juego por ", "estoy en "];
-                var ciudadAgente = "";
-                for (var i = 0; i <= keywords.length-1; i++) {
-                    var arrayText = text.split(keywords[i]);
-                    if (arrayText.length > 1) {                     
-                        ciudadAgente = arrayText[1];
-                    }
-                };
-                app.api.updateAgentCity(from_id, ciudadAgente, function(data){
-                    //app.telegram.sendMessage(chat, "Ciudad actualizada.", null, message_id)
-                });
-                ///////////////////////////////////////////////////////////////////////////////////////
-    		// Arauca
-                if (text.indexOf("arauca") > -1 && words(text) < 5) {
-        			if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en Cúcuta, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-        			}else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en Cúcuta, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }    		
-    		// Barranquilla
-                else if (text.indexOf("barranquilla") > -1 || text.indexOf("atlantico") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Bogota
-                else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 || text.indexOf("fusag") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @JARA261 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @JARA261 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Boyacá
-                else if (text.indexOf("boyaca") > -1 || text.indexOf("boyacá") > -1 || text.indexOf("tunja") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Boyacá y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                            app.telegram.sendMessage(chat, "" + name + ", en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                        }
-                }
-    		// caldas
-                else if (text.indexOf("manizales") > -1 || text.indexOf("caldas") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Valledupar
-                else if (text.indexOf("valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// cali
-                else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// cartagena
-                else if (text.indexOf("cartagena") > -1 || text.indexOf("bolivar") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// choco
-                else if (text.indexOf("choco") > -1 || text.indexOf("chocó") > -1 || text.indexOf("quibdo") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Quibdo y Chocó no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		//Cucuta
-                else if (text.indexOf("norte de santander") > -1 || text.indexOf("cucuta") > -1 || text.indexOf("cúcuta") > -1 && words(text) < 8) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Cúcuta y Norte de Santander está @lozanorincon y @SmartGenius, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Cúcuta y Norte de Santander está @lozanorincon y @SmartGenius, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Florencia
-                else if (text.indexOf("florencia") > -1 || text.indexOf("caqueta") > -1 || text.indexOf("caquetá") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Florencia y Caquetá no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// ibague
-                else if (text.indexOf("ibague") > -1 || text.indexOf("ibagué") > -1 || text.indexOf("tolima") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Ibagué y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Leticia
-                else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Medallo
-                else if (text.indexOf("medellin") > -1 || text.indexOf("medellín") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                            app.telegram.sendMessage(chat, "" + name + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// monteria
-                else if (text.indexOf("monteria") > -1 || text.indexOf("montería") > -1 || text.indexOf("cordoba") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Cordoba y Montería no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Neiva
-                else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// pasto
-                else if (text.indexOf("pasto") > -1 || text.indexOf("nariño") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// popa
-                else if (text.indexOf("popayan") > -1 || text.indexOf("popayán") > -1 || text.indexOf("cauca") > -1 || text.indexOf("popa") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Popayán y Cauca están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Quindio
-                else if (text.indexOf("armenia") > -1 || text.indexOf("Quindío") > -1 || text.indexOf("quindio") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en el Quindío están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en el Quindío están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Rioacha
-                else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// risaralda
-                else if (text.indexOf("pereira") > -1 || text.indexOf("risaralda") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// sai
-                else if (text.indexOf("sai") > -1 || text.indexOf("san andres") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en SAI está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en SAI está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// santa marta
-                else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		//Santander
-                else if (text.indexOf("santander") > -1 || text.indexOf("bucaramanga") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// sincelejo
-                else if (text.indexOf("sincelejo") > -1 || text.indexOf("sucre") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// villavo
-                else if (text.indexOf("villavicencio") > -1 || text.indexOf("meta") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// yopal
-                else if (text.indexOf("yopal") > -1 || text.indexOf("casanare") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// territorios nacionales
-                else if (text.indexOf("guainia") > -1 || text.indexOf("guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Costa Rica
-                else if (text.indexOf("costa rica") > -1 || text.indexOf("cr") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Panamá
-                else if (text.indexOf("panama") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en panamá están @wakkodg507 y @afas507, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Ecuador
-                else if (text.indexOf("ecuador") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Ecuador está @Horusdavid, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// República Dominicana
-                else if (text.indexOf("republica dominicana") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en República Dominicana está @r1ckyfl0w, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-    		// Venezuela
-                else if (text.indexOf("venezuela") > -1 && words(text) < 5) {
-                    if (username){
-                        app.telegram.sendMessage(chat, "@" + username + ", en Venezuela está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
-                    }
-                }
-                else{
-                        //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
-                        /*if (message.chat.title) {
-                            app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de grupo: " + message.chat.title, null);  
-                        }else{
-                            app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de: @" + username, null);                          
-                        }*/
-                    }
-            }
-    	/////////////////////
-    	//Fin Departamentos//
-    	////////////////////
 
             /////////////////////////////////////////////////////////////////////
             ////////////////////////////// ADA //////////////////////////////////
@@ -798,7 +503,7 @@ var app = {};
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
             // BIOCARD
-                if(text.indexOf("biocard") > -1 && words(text) < 5){
+                else if(text.indexOf("biocard") > -1 && words(text) < 5){
                     //REPLY MARKUP
                     var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
                     inline_button_califica.text = "Crea tu Biocard!"
@@ -883,6 +588,580 @@ var app = {};
                 /////////////////////
                 ///// Fin INTEL /////
                 ////////////////////
+
+                //////////////////////////////////////////////////////////
+                //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
+                ///////////////////////////////////////////////////////////
+                
+            // ADA RESPONDER A UN CHAT_ID ALGUN MENSAJE
+                else if(text.indexOf("responder") > -1 ){
+                    if (agent_verified_level > 3) {
+                        var splited_text = text.split("\""),
+                            id_split_text = text.split(" "), // ada 0 | responder 1 | CHAT_ID 2 | Mensaje 3 en comillas
+                            id_responder = id_split_text[2];
+
+                        if(id_split_text && id_split_text.length > 3 && isNumber(id_responder)){
+                            if(splited_text && splited_text.length > 1){
+                                app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
+                                    if (data.ok) {
+                                        app.telegram.sendMessage(chat, 'Mensaje enviado con éxito!', null, message_id);
+                                    }else
+                                        app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
+                                }); 
+                            }else
+                                app.telegram.sendMessage(chat, "Error: Debes especificar un Mensaje como parámetro entre comillas al final, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                        }else
+                            app.telegram.sendMessage(chat, "Error: Debes introducir el ID(número) del chat al que deseas responder, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
+            // ASIGNAR CONFIANZA
+                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
+                    if (agent_verified_level > 3 || isBotAdmin(from_id)) {
+                        var agent_telegram_nick = 0,
+                            nivelConfianza = getNumbersInString(text);
+
+                        if(forward_from){
+                            agent_telegram_nick = reply_to_message.from.username;
+                            if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 5 || isBotAdmin(from_id)) {
+                                app.api.updateVerifiedLevel(forward_from.id, nivelConfianza, username, function(data){
+                                    app.telegram.sendMessage(chat, "@" + (data.telegram_nick != undefined ? data.telegram_nick : data.name) +
+                                                                   ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
+                                });
+                            }else{
+                                app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
+                                                               "\n0 - Ninguno" +
+                                                               "\n1 - Screenshot de Perfil" +
+                                                               "\n2 - Conoce en persona" +
+                                                               "\n3 - Para OPS"+
+                                                               "\n4 - Aprobadores", null, message_id);
+                            }
+                        }else if (reply_to_message) {
+                            agent_telegram_id = reply_to_message.from.id;
+
+                            if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
+                                app.api.updateVerifiedLevel(agent_telegram_id, nivelConfianza, username, function(data){
+                                    app.telegram.sendMessage(chat, "@" + (data.telegram_nick != undefined ? data.telegram_nick : data.name) +
+                                                                   ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
+                                });
+                            }else{
+                                app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
+                                                               "\n0 - Ninguno" +
+                                                               "\n1 - Screenshot de Perfil" +
+                                                               "\n2 - Conoce en persona" +
+                                                               "\n3 - Para OPS"+
+                                                               "\n4 - Aprobadores", null, message_id);
+                            }
+                        }else{
+                            app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar.', null, message_id);
+                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    };
+                }
+            // CREAR AGENTE
+                else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
+                    if (verified_level > 3) {
+                        if(forward_from){
+                            var agent_telegram_id = forward_from.id,
+                                agent_name = forward_from.first_name,
+                                agent_telegram_nick = forward_from.username,
+                                agent_last_name = forward_from.last_name;     
+                                                       
+                            if (agent_last_name) {
+                                agent_name += " " + agent_last_name;
+                            };
+                            app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
+                                if (data && data.status == "ok") {
+                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
+                                }else{                                
+                                    app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                }
+                            });
+                        }else if(reply_to_message){
+                            var agent_telegram_id = reply_to_message.from.id,
+                                agent_name = reply_to_message.from.first_name,
+                                agent_telegram_nick = reply_to_message.from.username,
+                                agent_last_name = reply_to_message.from.last_name;
+                            if (agent_last_name) {
+                                agent_name += " " + agent_last_name;
+                            };
+                            app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
+                                if (data && data.status == "ok") {
+                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
+                                }else{                                
+                                    app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                }
+                            });
+
+                        }else{
+                            app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas crear o no estás autorizado.', null, message_id);
+                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
+/*            // CONSULTAR AGENTE
+                else if(text.indexOf("quien es") > -1){
+                    if (agent_verified_level > 0) {
+                        var verified_icon = "🔘",
+                            verified_for = "",
+                            verified_level = "",
+                            profile_picture = "";
+                        if(forward_from){
+                            app.api.getAgent(forward_from.id, function(data){
+                                if (data && data.status == "ok") {
+                                    if (data.verified) {
+                                        verified_icon = '☑️';
+                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                        verified_level = data.verified_level;
+                                    }
+                                    if (data.profile_picture != "") {
+                                        profile_picture = data.profile_picture;
+                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                    };
+                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                                   '\n\n<i>Nombre:</i> ' + data.name +
+                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
+                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                                };
+                            });
+                        }else if(reply_to_message){
+                            var agent_telegram_id = reply_to_message.from.id;
+                            app.api.getAgent(agent_telegram_id, function(data){
+                                if (data && data.status == "ok") {
+                                    if (data.verified) {
+                                        verified_icon = '☑️';
+                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                        verified_level = data.verified_level;
+                                    }
+                                    if (data.profile_picture != "") {
+                                        console.log(data.profile_picture);
+                                        profile_picture = data.profile_picture;
+                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                    }
+                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                                   '\n\n<i>Nombre:</i> ' + data.name +
+                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
+                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                                };
+                            });
+                        }else{
+                            app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver.", null, message_id);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, "Para utilizar esta función debes estar validado", null, message_id);
+                    }
+                }*/
+            // CONSULTAR MI AGENTE
+                else if(text.indexOf("quien soy") > -1){
+                    var verified_icon = "🔘",
+                        verified_for = "",
+                        verified_level = "";
+                    app.api.getAgent(from_id, function(data){
+                        if (data && data.status == "ok") {
+                            if (data.verified) {
+                                verified_icon = '☑️';
+                                verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
+                                verified_level = data.verified_level;
+                            }
+                            if (data.profile_picture != "") {
+                                profile_picture = data.profile_picture;
+                                app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
+                                        console.log(data);
+                                    });
+                            }
+                            app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
+                                                           '\n\n<i>Nombre:</i> ' + data.name +
+                                                           '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
+                                                           '\n<i>Zona de Juego:</i> ' + data.city +
+                                                           '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
+                        };
+                    });
+                }
+            // UPDATE PROFILE PICTURE
+                else if(text.indexOf("asignar foto") > -1 ){
+                    if (agent_verified_level > 3) {
+                        if(forward_from && reply_to_message.photo) {
+                            var agent_telegram_id = forward_from.id,
+                                profile_picture = reply_to_message.photo[0].file_id;
+
+                            app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
+                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
+                            }); 
+
+                        }else if(reply_to_message && reply_to_message.photo){
+                            var agent_telegram_id = reply_to_message.from.id,
+                                profile_picture = reply_to_message.photo[0].file_id;
+                            app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
+                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
+                            });                        
+                        }else{
+                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
+            // CREAR AVATAR
+                else if(text.indexOf("crear avatar") > -1 ){
+                    if (agent_verified_level > 3) {
+                        if(forward_from && reply_to_message.photo) {
+                            var agent_telegram_id = forward_from.id,
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
+                                splited_text = text.split("\"");
+                                if( splited_text && splited_text.length > 1){
+                                    agent_telegram_nick = splited_text[1];
+                                    agent_telegram_nick = splited_text[1].replace(" ", "%20");
+                                    agent_telegram_nick_ex = reply_to_message.from.username;
+                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
+                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                    }); 
+                                }else{
+                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
+                                }
+
+                        }else if(reply_to_message && reply_to_message.photo){
+                            var agent_telegram_id = reply_to_message.from.id,
+                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
+                                splited_text = text.split("\"");
+                                if( splited_text && splited_text.length > 1){
+                                    agent_telegram_nick = splited_text[1];
+                                    agent_telegram_nick = splited_text[1].replace(" ", "%20");
+                                    agent_telegram_nick_ex = reply_to_message.from.username;
+                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
+                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
+                                            console.log(data);
+                                        });
+                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
+                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
+                                    });
+                                }else
+                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
+                        }
+                    }else{
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
+            // PUNTOS TRIVIA
+                else if(text.indexOf("puntos") > -1 ){
+                    app.api.getAgent(from_id, function(data){
+                        app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
+                    });
+                }
+
+            /////////////////
+            //Departamentos//
+            ////////////////
+                else if (text.indexOf("vivo en") > -1 || text.indexOf("soy de") > -1 || text.indexOf("saludos desde") > -1 || text.indexOf("juego en") > -1 || text.indexOf("juego por") > -1 || text.indexOf("estoy en") > -1 && text.length > 6) 
+                {
+                    ///////////////////////////////////////////////////////////////////////
+                    // FUNCION PARA GUARDAR CIUDAD
+                    var keywords = ["vivo en ", "soy de ", "saludos desde ", "juego en ", "juego por ", "estoy en "];
+                    var ciudadAgente = "";
+                    for (var i = 0; i <= keywords.length-1; i++) {
+                        var arrayText = text.split(keywords[i]);
+                        if (arrayText.length > 2) {                     
+                            ciudadAgente = arrayText[2];                            
+                            app.api.updateAgentCity(from_id, ciudadAgente, function(data){
+                                app.telegram.sendMessage(chat, "Has actualizado tu zona de juego, Utiliza <b>\"Ada quien soy?\"</b> para ver tu información.", null, message_id)
+                            });
+                        }else{
+                            app.telegram.sendMessage(chat, "Debes ingresar el nombre de tu zona de juego. Ejm: <b>Ada juego en \"Bogotá\"</b>", null, message_id)
+                        }
+                    };
+                    ///////////////////////////////////////////////////////////////////////////////////////
+                // Arauca
+                    if (text.indexOf("arauca") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en Cúcuta, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Arauca no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en Cúcuta, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }           
+                // Barranquilla
+                    else if (text.indexOf("barranquilla") > -1 || text.indexOf("atlantico") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Atlantico y Barranquilla está @EmmanuelRC, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Bogota
+                    else if (text.indexOf("bogota") > -1 || text.indexOf("bogotá") > -1 || text.indexOf("cundinamarca") > -1 || text.indexOf("soacha") > -1 || text.indexOf("fusag") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @JARA261 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en bogotá y cundinamarca están @RATAELTRIFORCE @Cizaquita @JARA261 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Boyacá
+                    else if (text.indexOf("boyaca") > -1 || text.indexOf("boyacá") > -1 || text.indexOf("tunja") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Boyacá y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                                app.telegram.sendMessage(chat, "" + name + ", en Boyaca y Tunja están @Giabastis @djdiego104 y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                            }
+                    }
+                // caldas
+                    else if (text.indexOf("manizales") > -1 || text.indexOf("caldas") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Manizales y Caldas está @Casuo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Valledupar
+                    else if (text.indexOf("valledupar") > -1 || text.indexOf("cesar") > -1 || text.indexOf("upar") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Valledupar y Cesar está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // cali
+                    else if (text.indexOf("cali") > -1 || text.indexOf("valle") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Cali y Valle del cauca están @Elektra1 @DiaMalmsteen @Zerkerus y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // cartagena
+                    else if (text.indexOf("cartagena") > -1 || text.indexOf("bolivar") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Cartagena y Bolivar está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // choco
+                    else if (text.indexOf("choco") > -1 || text.indexOf("chocó") > -1 || text.indexOf("quibdo") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Quibdo y Chocó no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Quibdo y Choco no tenemos contacto directo m(_ _)m, pero te puede ayudar @GIRLPOWERZMB en Medallo, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                //Cucuta
+                    else if (text.indexOf("norte de santander") > -1 || text.indexOf("cucuta") > -1 || text.indexOf("cúcuta") > -1 && words(text) < 8) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Cúcuta y Norte de Santander está @lozanorincon y @SmartGenius, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Cúcuta y Norte de Santander está @lozanorincon y @SmartGenius, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Florencia
+                    else if (text.indexOf("florencia") > -1 || text.indexOf("caqueta") > -1 || text.indexOf("caquetá") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Florencia y Caquetá no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Florencia y Caqueta no tenemos contacto directo m(_ _)m, pero @PesadillaII en Popayan te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // ibague
+                    else if (text.indexOf("ibague") > -1 || text.indexOf("ibagué") > -1 || text.indexOf("tolima") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Ibagué y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Ibague y Tolima no tenemos contacto en este chat m(_ _)m, pero @ampudia en ibague te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Leticia
+                    else if (text.indexOf("leticia") > -1 || text.indexOf("Amazonas") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Leticia y Amazonas no tenemos contacto directo m(_ _)m, pero @SmartGenius en Cucuta te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Medallo
+                    else if (text.indexOf("medellin") > -1 || text.indexOf("medellín") > -1 || text.indexOf("medallo") > -1 || text.indexOf("antioquia") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                                app.telegram.sendMessage(chat, "" + name + ", en Medellín y Antioquia están @GIRLPOWERZMB @edilay @SRinox y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // monteria
+                    else if (text.indexOf("monteria") > -1 || text.indexOf("montería") > -1 || text.indexOf("cordoba") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Cordoba y Montería no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Cordoba y Monteria no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Neiva
+                    else if (text.indexOf("neiva") > -1 || text.indexOf("huila") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Neiva y Huila está @fabianv, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // pasto
+                    else if (text.indexOf("pasto") > -1 || text.indexOf("nariño") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Pasto y Nariño está @Zhioon, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // popa
+                    else if (text.indexOf("popayan") > -1 || text.indexOf("popayán") > -1 || text.indexOf("cauca") > -1 || text.indexOf("popa") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Popayán y Cauca están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en popayan están @PesadillaII uno de mis fork @ADA_ST y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Quindio
+                    else if (text.indexOf("armenia") > -1 || text.indexOf("Quindío") > -1 || text.indexOf("quindio") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en el Quindío están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en el Quindío están @wild320 @SANTI4AGO y muchos más, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Rioacha
+                    else if (text.indexOf("Rioacha") > -1 || text.indexOf("guajira") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Rioacha y la Guajira no tenemos contacto en este chat m(_ _)m, pero te puede ayudar @Comindo_Alpinito_Sin_Cucharita de Santa Marta, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // risaralda
+                    else if (text.indexOf("pereira") > -1 || text.indexOf("risaralda") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en el Risaralda no tenemos contacto directo m(_ _)m, pero te puede ayudar @krishnnon y @Coincocoin o están @wild320 @SANTI4AGO en el quindio y @Casuo en manizales, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // sai
+                    else if (text.indexOf("sai") > -1 || text.indexOf("san andres") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en SAI está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en SAI está @DaeZz, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // santa marta
+                    else if (text.indexOf("santa marta") > -1 || text.indexOf("magdalena") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Santamarta y Magdalena está @Comindo_Alpinito_Sin_Cucharita, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                //Santander
+                    else if (text.indexOf("santander") > -1 || text.indexOf("bucaramanga") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Bucaramanga y Santander no tenemos contacto directo m(_ _)m, pero te puede ayudar @lozanorincon y @SmartGenius en cúcuta o @JdPerez11 en bucaramanga pero apenas empieza como tu, por lo que se pueden ayudar mutuamente 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // sincelejo
+                    else if (text.indexOf("sincelejo") > -1 || text.indexOf("sucre") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Sucre y Sincelejo no tenemos contacto directo m(_ _)m, pero te puede ayudar @EmmanuelRC en Quilla y @LoganXs en cartagena, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // villavo
+                    else if (text.indexOf("villavicencio") > -1 || text.indexOf("meta") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Villavicencio y Meta no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Lhynley en villavo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // yopal
+                    else if (text.indexOf("yopal") > -1 || text.indexOf("casanare") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en yopal y casanare no tenemos contacto en este chat m(_ _)m, pero puedes escribirle a @Llaneroebrio en yopal, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // territorios nacionales
+                    else if (text.indexOf("guainia") > -1 || text.indexOf("guaviare") > -1 || text.indexOf("vaupes") > -1 || text.indexOf("putumayo") > -1 || text.indexOf("vichada") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Guania, Guaviare, Putumayo, Vaupés y Vichada no tenemos contacto directo m(_ _)m, pero @RATAELTRIFORCE en Bogotá te puede ayudar, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Costa Rica
+                    else if (text.indexOf("costa rica") > -1 || text.indexOf("cr") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Panamá
+                    else if (text.indexOf("panama") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en panamá están @wakkodg507 y @afas507, ya entran en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Ecuador
+                    else if (text.indexOf("ecuador") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Ecuador está @Horusdavid, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // República Dominicana
+                    else if (text.indexOf("republica dominicana") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en República Dominicana está @r1ckyfl0w, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                // Venezuela
+                    else if (text.indexOf("venezuela") > -1 && words(text) < 5) {
+                        if (username){
+                            app.telegram.sendMessage(chat, "@" + username + ", en Venezuela está @LoganXs, ya entra en contacto contigo, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
+                    else{
+                            //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
+                            /*if (message.chat.title) {
+                                app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de grupo: " + message.chat.title, null);  
+                            }else{
+                                app.telegram.sendMessage(-1001069963507, "feedback ciudades: " + text + ", de: @" + username, null);                          
+                            }*/
+                        }
+                }
+            /////////////////////
+            //Fin Departamentos//
+            ////////////////////
 
         	//////////////////////////////
         	//Respuetas Lenguaje Natural//
@@ -1760,280 +2039,6 @@ var app = {};
                     });
                 }
             */
-                //////////////////////////////////////////////////////////
-                //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
-                ///////////////////////////////////////////////////////////
-            // ASIGNAR CONFIANZA
-                else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
-                    if (agent_verified_level > 3 || isBotAdmin(from_id)) {
-                        var agent_telegram_nick = 0,
-                            nivelConfianza = getNumbersInString(text);
-
-                        if(forward_from){
-                            agent_telegram_nick = reply_to_message.from.username;
-                            if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 5 || isBotAdmin(from_id)) {
-                                app.api.updateVerifiedLevel(forward_from.id, nivelConfianza, username, function(data){
-                                    app.telegram.sendMessage(chat, "@" + (data.telegram_nick != undefined ? data.telegram_nick : data.name) +
-                                                                   ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
-                                });
-                            }else{
-                                app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
-                                                               "\n0 - Ninguno" +
-                                                               "\n1 - Screenshot de Perfil" +
-                                                               "\n2 - Conoce en persona" +
-                                                               "\n3 - Para OPS"+
-                                                               "\n4 - Aprobadores", null, message_id);
-                            }
-                        }else if (reply_to_message) {
-                            agent_telegram_id = reply_to_message.from.id;
-
-                            if (nivelConfianza && nivelConfianza >= 0 && nivelConfianza < 4 || nivelConfianza && from_id == 7455490) {
-                                app.api.updateVerifiedLevel(agent_telegram_id, nivelConfianza, username, function(data){
-                                    app.telegram.sendMessage(chat, "@" + (data.telegram_nick != undefined ? data.telegram_nick : data.name) +
-                                                                   ",  ha sido validado con éxito! ("+ data.verified_level + ")", null, message_id);
-                                });
-                            }else{
-                                app.telegram.sendMessage(chat, "Debes asignar un número entre 0 y 4." +
-                                                               "\n0 - Ninguno" +
-                                                               "\n1 - Screenshot de Perfil" +
-                                                               "\n2 - Conoce en persona" +
-                                                               "\n3 - Para OPS"+
-                                                               "\n4 - Aprobadores", null, message_id);
-                            }
-                        }else{
-                            app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar.', null, message_id);
-                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
-                    };
-                }
-            // CREAR AGENTE
-                else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
-                    if (verified_level > 3) {
-                        if(forward_from){
-                            var agent_telegram_id = forward_from.id,
-                                agent_name = forward_from.first_name,
-                                agent_telegram_nick = forward_from.username,
-                                agent_last_name = forward_from.last_name;     
-                                                       
-                            if (agent_last_name) {
-                                agent_name += " " + agent_last_name;
-                            };
-                            app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
-                                if (data && data.status == "ok") {
-                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
-                                }else{                                
-                                    app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                                }
-                            });
-                        }else if(reply_to_message){
-                            var agent_telegram_id = reply_to_message.from.id,
-                                agent_name = reply_to_message.from.first_name,
-                                agent_telegram_nick = reply_to_message.from.username,
-                                agent_last_name = reply_to_message.from.last_name;
-                            if (agent_last_name) {
-                                agent_name += " " + agent_last_name;
-                            };
-                            app.api.createAgent(agent_name, agent_telegram_nick, agent_telegram_id, function(data){
-                                if (data && data.status == "ok") {
-                                    app.telegram.sendMessage(chat, "(" + agent_telegram_id + ") @" + agent_telegram_nick + ", ha sido creado.", null, message_id);
-                                }else{                                
-                                    app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                                }
-                            });
-
-                        }else{
-                            app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas crear o no estás autorizado.', null, message_id);
-                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
-                    }
-                }
-/*            // CONSULTAR AGENTE
-                else if(text.indexOf("quien es") > -1){
-                    if (agent_verified_level > 0) {
-                        var verified_icon = "🔘",
-                            verified_for = "",
-                            verified_level = "",
-                            profile_picture = "";
-                        if(forward_from){
-                            app.api.getAgent(forward_from.id, function(data){
-                                if (data && data.status == "ok") {
-                                    if (data.verified) {
-                                        verified_icon = '☑️';
-                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
-                                        verified_level = data.verified_level;
-                                    }
-                                    if (data.profile_picture != "") {
-                                        profile_picture = data.profile_picture;
-                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
-                                            console.log(data);
-                                        });
-                                    };
-                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                                   '\n\n<i>Nombre:</i> ' + data.name +
-                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
-                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
-                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
-                                };
-                            });
-                        }else if(reply_to_message){
-                            var agent_telegram_id = reply_to_message.from.id;
-                            app.api.getAgent(agent_telegram_id, function(data){
-                                if (data && data.status == "ok") {
-                                    if (data.verified) {
-                                        verified_icon = '☑️';
-                                        verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
-                                        verified_level = data.verified_level;
-                                    }
-                                    if (data.profile_picture != "") {
-                                        console.log(data.profile_picture);
-                                        profile_picture = data.profile_picture;
-                                        app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
-                                            console.log(data);
-                                        });
-                                    }
-                                    app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                                   '\n\n<i>Nombre:</i> ' + data.name +
-                                                                   '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
-                                                                   '\n<i>Zona de Juego:</i> ' + data.city +
-                                                                   '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
-                                };
-                            });
-                        }else{
-                            app.telegram.sendMessage(chat, "Debes dar Reply al mensaje del usuario que deseas ver.", null, message_id);
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, "Para utilizar esta función debes estar validado", null, message_id);
-                    }
-                }*/
-            // CONSULTAR MI AGENTE
-                else if(text.indexOf("quien soy") > -1){
-                    var verified_icon = "🔘",
-                        verified_for = "",
-                        verified_level = "";
-                    app.api.getAgent(from_id, function(data){
-                        if (data && data.status == "ok") {
-                            if (data.verified) {
-                                verified_icon = '☑️';
-                                verified_for = '\n<i>Validado por:</i> @' + data.verified_for;
-                                verified_level = data.verified_level;
-                            }
-                            if (data.profile_picture != "") {
-                                profile_picture = data.profile_picture;
-                                app.telegram.sendPhotoEx(chat, profile_picture, '', message_id, null, function(data){
-                                        console.log(data);
-                                    });
-                            }
-                            app.telegram.sendMessage(chat, '<b>Perfil de Agente</b>'+
-                                                           '\n\n<i>Nombre:</i> ' + data.name +
-                                                           '\n<i>Nick:</i> @' + data.telegram_nick + ' ' + verified_icon + verified_level +
-                                                           '\n<i>Zona de Juego:</i> ' + data.city +
-                                                           '\n<i>Puntos Trivia:</i> ' + data.trivia_points + verified_for, null, message_id);
-                        };
-                    });
-                }
-            // UPDATE PROFILE PICTURE
-                else if(text.indexOf("asignar foto") > -1 ){
-                    if (agent_verified_level > 3) {
-                        if(forward_from && reply_to_message.photo) {
-                            var agent_telegram_id = forward_from.id,
-                                profile_picture = reply_to_message.photo[0].file_id;
-
-                            app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
-                            }); 
-
-                        }else if(reply_to_message && reply_to_message.photo){
-                            var agent_telegram_id = reply_to_message.from.id,
-                                profile_picture = reply_to_message.photo[0].file_id;
-                            app.api.updateProfilePicture(agent_telegram_id, profile_picture,function(data){
-                                app.telegram.sendMessage(chat, 'Screenshot de Perfil de @' + data.telegram_nick + ', ha sido actualizada.', null, message_id);
-                            });                        
-                        }else{
-                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
-                    }
-                }
-            // CREAR AVATAR
-                else if(text.indexOf("crear avatar") > -1 ){
-                    if (agent_verified_level > 3) {
-                        if(forward_from && reply_to_message.photo) {
-                            var agent_telegram_id = forward_from.id,
-                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
-                                splited_text = text.split("\"");
-                                if( splited_text && splited_text.length > 1){
-                                    agent_telegram_nick = splited_text[1];
-                                    agent_telegram_nick = splited_text[1].replace(" ", "%20");
-                                    agent_telegram_nick_ex = reply_to_message.from.username;
-                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){
-                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
-                                            console.log(data);
-                                        });
-                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
-                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                                    }); 
-                                }else{
-                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
-                                }
-
-                        }else if(reply_to_message && reply_to_message.photo){
-                            var agent_telegram_id = reply_to_message.from.id,
-                                profile_picture = reply_to_message.photo[reply_to_message.photo.length-1].file_id,
-                                splited_text = text.split("\"");
-                                if( splited_text && splited_text.length > 1){
-                                    agent_telegram_nick = splited_text[1];
-                                    agent_telegram_nick = splited_text[1].replace(" ", "%20");
-                                    agent_telegram_nick_ex = reply_to_message.from.username;
-                                    app.api.createAvatar(agent_telegram_nick, profile_picture,function(photo_url){                           
-                                        app.telegram.sendPhotoEx(chat, photo_url, '@' + agent_telegram_nick_ex, message_id, null, function(data){
-                                            console.log(data);
-                                        });
-                                        //app.telegram.sendMessage(chat, 'Avatar de @' + agent_telegram_nick + ', ha sido creado.', null, message_id);
-                                        //app.telegram.sendMessage(chat, JSON.stringify(data), null, message_id);
-                                    });
-                                }else
-                                    app.telegram.sendMessage(chat, "Error: Debe especificar un Alias como parámetro entre comillas al final, Ejm: Ada crear avatar \"ADA Refactor\"", null, message_id);
-                        }else{
-                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje con foto del agente o no tiene permisos.", null, message_id);
-                        }
-                    }else{
-                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
-                    }
-                }
-            // ADA RESPONDER A UN CHAT_ID ALGUN MENSAJE
-                else if(text.indexOf("responder") > -1 ){
-                    if (agent_verified_level > 3) {
-                        var splited_text = text.split("\""),
-                            id_split_text = text.split(" "), // ada 0 | responder 1 | CHAT_ID 2 | Mensaje 3 en comillas
-                            id_responder = id_split_text[2];
-
-                        if(id_split_text && id_split_text.length > 3 && isNumber(id_responder)){
-                            if(splited_text && splited_text.length > 1){
-                                app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
-                                    if (data.ok) {
-                                        app.telegram.sendMessage(chat, 'Mensaje enviado con éxito!', null, message_id);
-                                    }else
-                                        app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
-                                }); 
-                            }else
-                                app.telegram.sendMessage(chat, "Error: Debes especificar un Mensaje como parámetro entre comillas al final, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
-                        }else
-                            app.telegram.sendMessage(chat, "Error: Debes introducir el ID(número) del chat al que deseas responder, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
-                    }else{
-                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
-                    }
-                }
-            // PUNTOS TRIVIA
-                else if(text.indexOf("puntos") > -1 ){
-                    app.api.getAgent(from_id, function(data){
-                        app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
-                    });
-                }
             // VERIFICAR AGENTE
                 /*else if(text.indexOf("validar") > -1 && text.indexOf("agente") > -1){
                     if(reply_to_message && isBotAdmin(from_id)){
