@@ -663,7 +663,7 @@ var app = {};
                 }
             // CREAR AGENTE
                 else if(text.indexOf("crear") > -1 && text.indexOf("agente") > -1){
-                    if (verified_level > 3) {
+                    if (isBotAdmin(from_id)) {
                         if(forward_from){
                             var agent_telegram_id = forward_from.id,
                                 agent_name = forward_from.first_name,
