@@ -2,7 +2,8 @@
     // ADA
     //264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ
     //255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24 //adaRefacto_bot
-    var TOKEN = '264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ',
+    // 345814505:AAEpl1IN-OjVmGbFy0FlWffvS2XZivmyxYs // ada_res_bot
+    var TOKEN = '345814505:AAEpl1IN-OjVmGbFy0FlWffvS2XZivmyxYs',
         API_URL = 'https://api.telegram.org/bot' + TOKEN,
         TIMEOUT = 10,
         offset = localStorage.getItem('telegram_offset') || 0,

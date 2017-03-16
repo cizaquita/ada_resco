@@ -605,11 +605,11 @@ var app = {};
                                 if(splited_text && splited_text.length > 1){
                                     app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
                                         if (data.ok) {
-                                            app.api.getAgent(id_responder, funtion(data){
+                                            app.api.getAgent(id_responder, function(data){
                                                 var send_to = data.telegram_nick;
                                                 app.telegram.sendMessage(-1001054945393, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' send_to, null, message_id);
                                                 app.telegram.sendMessage(-1001069963507, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' send_to, null, message_id);
-                                            })
+                                            });
                                         }else
                                             app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
                                     }); 
