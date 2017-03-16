@@ -1,5 +1,5 @@
 /**
- * @file Primary bot file
+ * @file Primary bot fileername
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
@@ -175,7 +175,7 @@ var app = {};
             app.telegram.sendMessage(chat, "Hola!" + 
             "\nGracias por suscribirte al bot de la Resistencia Colombia" +
             "\nEspera prontas actualizaciones." + 
-            "\n\nRecuerda visitar https://LaResistencia.co para más información :)", null);
+            "\n\nRecuerda visitar https://LaResistencia.co para más información :)\n\nDesarrollado por @Cizaquita a partir de https://github.com/veikus/ingresshelper\nCon la colaboración de @RATAELTRIFORCE.\nPuedes ayudar contactando directamente con @Cizaquita o @RATAELTRIFORCE", null);
         }
         // AYUDA COMANDOS CUANDO HAY VARIOS BOTS EN UN CHAT GRUPAL
         if (text === '/plugins@ada_resco_bot') {
@@ -596,22 +596,30 @@ var app = {};
             // ADA RESPONDER A UN CHAT_ID ALGUN MENSAJE
                 else if(text.indexOf("responder") > -1 ){
                     if (agent_verified_level > 3) {
-                        var splited_text = text.split("\""),
-                            id_split_text = text.split(" "), // ada 0 | responder 1 | CHAT_ID 2 | Mensaje 3 en comillas
-                            id_responder = id_split_text[2];
+                        if (chat == -1001054945393 || chat == -1001069963507) {
+                            var splited_text = text.split("\""),
+                                id_split_text = text.split(" "), // ada 0 | responder 1 | CHAT_ID 2 | Mensaje 3 en comillas
+                                id_responder = id_split_text[2];
 
-                        if(id_split_text && id_split_text.length > 3 && isNumber(id_responder)){
-                            if(splited_text && splited_text.length > 1){
-                                app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
-                                    if (data.ok) {
-                                        app.telegram.sendMessage(chat, 'Mensaje enviado con éxito!', null, message_id);
-                                    }else
-                                        app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
-                                }); 
+                            if(id_split_text && id_split_text.length > 3 && isNumber(id_responder)){
+                                if(splited_text && splited_text.length > 1){
+                                    app.telegram.sendMessage(id_responder, splited_text[1], null, 0, function(data){
+                                        if (data.ok) {
+                                            app.api.getAgent(id_responder, funtion(data){
+                                                var send_to = data.telegram_nick;
+                                                app.telegram.sendMessage(-1001054945393, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' send_to, null, message_id);
+                                                app.telegram.sendMessage(-1001069963507, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' send_to, null, message_id);
+                                            })
+                                        }else
+                                            app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
+                                    }); 
+                                }else
+                                    app.telegram.sendMessage(chat, "Error: Debes especificar un Mensaje como parámetro entre comillas al final, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
                             }else
-                                app.telegram.sendMessage(chat, "Error: Debes especificar un Mensaje como parámetro entre comillas al final, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
-                        }else
-                            app.telegram.sendMessage(chat, "Error: Debes introducir el ID(número) del chat al que deseas responder, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                                app.telegram.sendMessage(chat, "Error: Debes introducir el ID(número) del chat al que deseas responder, Ejm: Ada responder CHAT_ID \"Mi mensaje\"", null, message_id);
+                        }else{
+                            app.telegram.sendMessage(chat, 'Éste chat no está autorizado para responder. Utilice Resco Devs', null, message_id);
+                        }
                     }else{
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
                     }
