@@ -228,7 +228,7 @@ var app = {};
             //REPLY MARKUP
             var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
             inline_button_califica.text = "Crea tu Biocard!"
-            inline_button_califica.url = "https://laresistencia.co/biocard/";
+            inline_button_califica.url = "https://biocard.resistencia.la/";
             //
 
             inline_keyboard = [[inline_button_califica]];
@@ -433,7 +433,7 @@ var app = {};
             inline_button_web.text = "LaResistencia"
             inline_button_web.url = "http://laresistencia.co";
             inline_button_tutos.text = "Tutoriales"
-            inline_button_tutos.url = "http://rescol.co/tutos";
+            inline_button_tutos.url = "http://laresistencia.co/foro/viewforum.php?f=11";
             //
             inline_keyboard = [[inline_button_web,inline_button_tutos]];
             inline_markup = {
@@ -448,7 +448,7 @@ var app = {};
                       mensaje = hola + " " + newUser.first_name
                 }
                 app.telegram.sendMessage(chat, mensaje + ' soy ADA!, ' + bienvenido + " " + message.chat.title + "\n\nCuéntanos en qué lugar del país juegas para ponerte en contacto con el agente de la zona o ciudad.\nUtiliza <b>Ada juego en \"Ciudad\"</b> para obtener una respuesta automática." +
-                        "\n\nRecuerda visitar los tutoriales en <a href='http://rescol.co/tutos'>http://rescol.co/tutos</a> para que juntos liberemos el mundo de la influencia de los shapers." +
+                        "\n\nRecuerda visitar los tutoriales en <a href='http://laresistencia.co/foro/viewforum.php?f=11'>http://laresistencia.co/foro/viewforum.php?f=11</a> para que juntos liberemos el mundo de la influencia de los shapers." +
                         "\nIngresa también a nuestro chat de Trivias sobre Ingress en @ADA_trivia (<a href='https://telegram.me/ADA_trivia'>telegram.me/ADA_trivia</a>)!" +
                         "\n\n<a href='http://laresistencia.co'>LaResistencia.co</a>\n<a href='http://telegram.me/rescol'>@rescol</a>", inline_markup, message_id);
                 if (!newUser.username) {
@@ -507,7 +507,7 @@ var app = {};
                     //REPLY MARKUP
                     var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
                     inline_button_califica.text = "Crea tu Biocard!"
-                    inline_button_califica.url = "https://laresistencia.co/biocard/";
+                    inline_button_califica.url = "https://biocard.resistencia.la/";
                     //
 
                     inline_keyboard = [[inline_button_califica]];
@@ -1369,7 +1369,7 @@ var app = {};
         			"\n\t -Por favor evita el spam y siempre manten dialogos saludables con todos, y ante todo diviertete!!!."+
         			"\n\t -Recuerda visitar la página web www.laresistencia.co"+
         			"\n\t -Nuestro foro www.laresistencia.co/foro"+
-        			"\n\t -Los tutoriales en rescol.co/tutos"+
+        			"\n\t -Los tutoriales en laresistencia.co/foro/viewforum.php?f=11"+
         			"\n\n Y Recuerda <b>Refuse&Resist!!! Viva la Resistance!!!</b>"+
         			"\n Saludos ADA 😘😘😘", null, message_id);
                 }
@@ -1505,14 +1505,14 @@ var app = {};
             // Subir de lvl
                 else if (text.indexOf("subir de nivel") > -1 || text.indexOf("levelear") > -1 || text.indexOf("subo de nivel") > -1 || text.indexOf("concejo") > -1 && words(text) < 6) {
                     if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + username + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en laresistencia.co/foro/viewforum.php?f=11 Saludos ADA 😘😘😘', null, message_id);
                     }else{
-                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en rescol.co/tutos Saludos ADA 😘😘😘', null, message_id);
+                        app.telegram.sendMessage(chat, 'Hola @' + name + ', para subir de nivel lo mejor es revisar el intel y pensar en un plan de acción, salir a andar y tumbar muchos portales y capturarlos completos, luego realizar muchos fields procurando que sean en multicapa, esto viene dado cuando estas realizando el plan en el intel, para mas información visita nuesto foro en laresistencia.co/foro/viewforum.php?f=11 Saludos ADA 😘😘😘', null, message_id);
                     }  
                 }
             // tutos
                 else if(text.indexOf("tutos") > -1 || text.indexOf("tutorial") > -1 && words(text) < 5){
-                    app.telegram.sendMessage(chat, "Hola @" + username + ", los tutoriales los puedes encontrar en rescol.co/tutos o me puedes decir 'ada que es' y te responderé, con cariño ADA 😘😘😘", null, message_id);
+                    app.telegram.sendMessage(chat, "Hola @" + username + ", los tutoriales los puedes encontrar en laresistencia.co/foro/viewforum.php?f=11 o me puedes decir 'ada que es' y te responderé, con cariño ADA 😘😘😘", null, message_id);
                 }
 
                 ////////////////////////
