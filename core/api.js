@@ -68,7 +68,7 @@
 	    //en image va la URL de una imagen sea directa o relativa si estan en el propio servidor de Rescol
 	    //en nickname va el apodo del agente con URLEncode para aceptar espacion
 	    //Ejemplo: http://rescol.co/smart/biocard/avatar.php?image=uploads/sample1.jpg&nickname=SmartGenius
-        var url = "http://rescol.co/smart/biocard/avatar.php?"; 
+        var url = "https://biocard.resistencia.la/avatar.php?"; 
             params = {},
             file_url = "";
 
