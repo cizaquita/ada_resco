@@ -608,7 +608,7 @@ var app = {};
                                             app.api.getAgent(id_responder, function(data){
                                                 var send_to = data.telegram_nick;
                                                 app.telegram.sendMessage(-1001054945393, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' + send_to, null, message_id);
-                                                app.telegram.sendMessage(-1001069963507, 'Mensaje enviado con éxito!\nTexto: ' + id_split_text + ', enviado por: @' + username + ' a: @' + send_to, null, message_id);
+ 
                                             });
                                         }else
                                             app.telegram.sendMessage(chat, 'Error al enviar mensaje: ' + data.description , null, message_id);
@@ -663,7 +663,7 @@ var app = {};
                             }
                         }else{
                             app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas validar.', null, message_id);
-                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
+                            //app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);
                         }
                     }else{
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
@@ -706,7 +706,7 @@ var app = {};
 
                         }else{
                             app.telegram.sendMessage(chat, 'Debes dar Reply al mensaje del usuario que deseas crear o no estás autorizado.', null, message_id);
-                            app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
+                            //app.telegram.sendMessage(-1001069963507, "intento crear de: " + text + ", de: @" + username, null);  
                         }
                     }else{
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
@@ -2065,7 +2065,7 @@ var app = {};
                 else{                    
                     //app.telegram.sendMessage(chat, "No entiendo, enviaré un feedback a mi creador, gracias!", null);
                     app.telegram.sendMessage(-1001054945393, "<b>feedback semántico:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
-                    app.telegram.sendMessage(-1001069963507, "<b>feedback semántico:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                   // app.telegram.sendMessage(-1001069963507, "<b>feedback semántico:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
 
                 }
             }
