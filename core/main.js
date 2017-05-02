@@ -67,7 +67,7 @@ var app = {};
                             processCallbackQuery(callbackQuery);
                         }
                     }else{
-                        app.telegram.sendMessage(-1001069963507, 'Mensaje nulo de: ' + mess, null);
+                        app.telegram.sendMessage(-1001054945393, 'Mensaje nulo de: ' + mess, null);
                     }
                 });
 
@@ -384,7 +384,7 @@ var app = {};
             }
         }
         ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
-        else if (text === '/top5') {
+        else if (text === '/top5' || text === "/top5@ada_resco_bot") {
             if (agent_verified_level > 0) {
                 var text_list = "<b>TOP5 TRIVIA</b>";
                 app.api.getTopTen(function(data){
@@ -398,7 +398,7 @@ var app = {};
             }
         }
         ///////////  REINICIAR BOT PARA ACTUALIZAR UPDATES
-        else if (text === '/top10') {
+        else if (text === '/top10' || text === "/top10@ada_resco_bot") {
             if (agent_verified_level > 0) {
                 var text_list = "<b>TOP10 TRIVIA</b>";
                 app.api.getTopTen(function(data){

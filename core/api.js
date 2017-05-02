@@ -189,17 +189,18 @@
      * @param telegram_id
      * @param callback {Function} Callback function
      */
-    app.api.updateTriviaPoints = function(telegram_id, action, callback) {
+    app.api.updateTriviaPoints = function(telegram_id, action, points, callback) {
         var url = API_URL + "update_trivia_points/",
             params = {};
 
         params.telegram_id = telegram_id;
         params.action = action;
+        params.points = points;
 
-        console.log('\n\nTELEGRAM ID ' + telegram_id + ', ACTION: ' + action + '\n\n');
+        console.log('\n\nTELEGRAM ID ' + telegram_id + ', ACTION: ' + action + ", POINTS: " + points + " type: " + typeof(points) + '\n\n');
 
         request('post', url, params, function(data) {
-            console.log("data: " + JSON.stringify(data));
+            console.log("triviaPoints: " + JSON.stringify(data));
             if (data) {
                 callback(data);
             } else {
