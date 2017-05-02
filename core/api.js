@@ -89,6 +89,31 @@
         });
     };
 
+    /*
+    * Crear AVATAR con Imagen de Smurf The Earth 2017
+    */
+    app.api.smurfThis = function(telegram_nick, profile_picture, callback) {
+	
+	
+        var url = "https://biocard.resistencia.la/smurfme.php?version=1"; 
+            params = {},
+            file_url = "";
+
+        app.telegram.getFile(profile_picture, function(data){
+            console.log("DATA GETFILE: " + JSON.stringify(data));
+            file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
+            //console.log("IMAGE URL: " + file_url)
+    
+            url += "image=" + file_url + "&nickname=" + telegram_nick;
+        
+		//console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n' + url);
+		//		console.log(url);
+		//          callback("http://rescol.co/smart/biocard/generated/avatar_" + telegram_nick + ".png");
+	    callback(url);
+        });
+    };	
+	
+	
     /**
      * Get Agent from BOT API
      * @param telegram_id
