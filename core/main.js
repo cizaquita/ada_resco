@@ -1923,7 +1923,7 @@ var app = {};
         			}
                     else{
                         app.telegram.sendMessage(-1001054945393, "<b>feedback qué es:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
-                        app.telegram.sendMessage(-1001069963507, "<b>feedback qué es:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
+                        //app.telegram.sendMessage(-1001069963507, "<b>feedback qué es:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' para solucionar la inquietud.", null);
                     }
                 }
                 ////////////////////////////
@@ -2098,7 +2098,7 @@ var app = {};
     };
 
     function processCallbackQuery(callbackQuery){
-        app.telegram.sendMessage(-1001069963507, 'callbackQuery: ' + JSON.stringify(callbackQuery), null);
+        app.telegram.sendMessage(-1001054945393, 'callbackQuery: ' + JSON.stringify(callbackQuery), null);
             //app.telegram.editMessageReplyMarkup(callbackQuery.inline_message_id);
         if (callbackQuery.data == "data") {
             app.telegram.answerCallbackQuery(callbackQuery.id, "👍", false);
