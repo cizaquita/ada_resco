@@ -95,7 +95,7 @@
     app.api.smurfThis = function(telegram_nick, profile_picture, callback) {
 	
 	
-        var url = "https://biocard.resistencia.la/smurfme.php?version=1"; 
+        var url = "https://biocard.resistencia.la/smurfme.php?version=2"; 
             params = {},
             file_url = "";
 
@@ -104,7 +104,7 @@
             file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
             //console.log("IMAGE URL: " + file_url)
     
-            url += "image=" + file_url + "&nickname=" + telegram_nick;
+            url += "&image=" + file_url + "&nickname=" + telegram_nick;
         
 		//console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n' + url);
 		//		console.log(url);
