@@ -426,7 +426,7 @@
                         ['¿Cuantos Hacks mas da un Multi Hack Común?',"4","x",1],
                         ['¿Cuantos Hacks mas da un Multi Hack Raro?',"8","x",1],
                         ['¿Cuantos Hacks mas da un Multi Hack Muy Raro?',"12","xx",1],
-                        ['¿Que es un Force Amp?',"xx un mod","xx ux mxx",1],
+                        ['¿Que es un Force Amp?',"es un mod","xx ux mxx",1],
                         ['¿Cual es la adherencia extra de un Force Amp?',"0%","x%",1],
                         ['¿Para que son los Force Amp?',"aumentar el dano que el portal hace","auxxxxxr ex daxx qxx xl porxxx haxx",2],
                         ['¿cuanto aumenta un Force Amp la fuerza de ataque?',"el doble","ex doxxx",1],
