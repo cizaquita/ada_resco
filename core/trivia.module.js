@@ -53,7 +53,7 @@
         //TIEMPO
         //setTimeout(Trivia.terminar(this.chat, from_id, username, message_id), 5000);
 
-        if (chat > 0 || chat == -1001061150661) {
+        if (chat > 0 || chat == -1001061150661 || chat == -1001081683326) {
             app.telegram.sendMessage(chat, "<i>Utiliza esta funionalidad solo en grupos o acá no está permitido!</i>", inline_markup);
             this.complete = true;
         }else{
