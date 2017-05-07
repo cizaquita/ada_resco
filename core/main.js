@@ -500,7 +500,7 @@ var app = {};
                 ///////////////////////////////////////////////////////////
                 
             // ADA RESPONDER A UN CHAT_ID ALGUN MENSAJE
-                else if(text.indexOf("responder") > -1 ){
+                if(text.indexOf("responder") > -1 ){
                     if (agent_verified_level > 3) {
                         if (chat == -1001054945393 || chat == -1001069963507) {
                             var splited_text = text.split("\""),
@@ -833,7 +833,7 @@ var app = {};
             	//Ordenes Semanticas//
             	/////////////////////
             // DISTANCIA
-                if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
+                else if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
                     message.text = '/distance';
                     activeModule[chat] = new app.modules.distancecalc(message);
                 }
