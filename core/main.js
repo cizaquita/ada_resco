@@ -494,100 +494,6 @@ var app = {};
             /////////////////////////////////////////////////////////////////////
 
             if (text.startsWith("ada") || text.startsWith("アダ") && text.length > 5) {
-            	//////////////////////
-            	//Ordenes Semanticas//
-            	/////////////////////
-            // DISTANCIA
-                if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
-                    message.text = '/distance';
-                    activeModule[chat] = new app.modules.distancecalc(message);
-                }
-            // BIOCARD
-                else if(text.indexOf("biocard") > -1 && words(text) < 5){
-                    //REPLY MARKUP
-                    var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
-                    inline_button_califica.text = "Crea tu Biocard!"
-                    inline_button_califica.url = "https://biocard.resistencia.la/";
-                    //
-
-                    inline_keyboard = [[inline_button_califica]];
-                    inline_markup = {
-                        inline_keyboard: inline_keyboard
-                    };
-                    /////////////////////////////////7
-                    app.telegram.sendPhotoEx(chat, "AgADAQAD4bExGzb3eQUuKlAn0okhP3YC6C8ABEtWO8VJyjxpyAsAAgI", "", message_id, inline_markup);
-                }
-            // Ayuda
-                else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 || text.indexOf("como funciona") > -1 && words(text) < 5){
-                    message.text = '/help';
-                    activeModule[chat] = new app.modules.help(message);
-                }
-            // iitc semantico
-                else if(text.indexOf("iitc") > -1 && words(text) < 5){
-                    message.text = '/plugins';
-                    activeModule[chat] = new app.modules.iitc(message);
-                }
-            // screenshot
-                else if(text.indexOf("screenshot") > -1 || text.indexOf("pantallazo") > -1 || text.indexOf("intel") > -1 && words(text) < 5){
-                    message.text = '/screenshot';
-                    activeModule[chat] = new app.modules.screenshot(message);
-                }
-            // Nivel
-                else if(text.indexOf("nivel") > -1 || text.indexOf("como llego a") > -1 || text.indexOf("level") > -1 || text.indexOf("que necesito para") > -1 && words(text) < 9){
-                    message.text = '/level';
-                    activeModule[chat] = new app.modules.nivelreq(message);
-                }
-            // TRIVIA
-                else if(text.indexOf("trivia") > -1 || text.indexOf("pregunta") > -1 || text.indexOf("preguntar") > -1 && words(text) < 9){
-                    message.text = '/trivia';
-                    activeModule[chat] = new app.modules.trivia(message);
-                }
-            	//////////////////////////
-            	//Fin Ordenes Semanticas//
-            	/////////////////////////
-
-                /////////////////
-                ///// INTEL /////
-                /////////////////
-            // INTEL mostrar 
-                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("mapa") > -1 || text.indexOf("map") > -1|| text.indexOf("intel") > -1 ) {
-                    var textSplited = text.split(" "),
-                        lat, lon, querySearch;
-                        querySearch = textSplited[2];
-                        if (textSplited[3]) {
-                            querySearch += " " + textSplited[3];
-                        }else if(textSplited[4]){
-                            querySearch += " " + textSplited[4];
-                        }else if(textSplited[5]){
-                            querySearch += " " + textSplited[5];
-                        };
-
-                    if (querySearch) {
-                        var xmlhttp = new XMLHttpRequest();
-                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
-                        xmlhttp.onreadystatechange = function() {
-                            if (xmlhttp.readyState == 4) {
-                                if(xmlhttp.status == 200) {
-                                    var obj = JSON.parse(xmlhttp.responseText);
-                                    if (obj.status == "OK") {
-                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
-                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
-                                        message.location = {latitude:lat, longitude:lon};
-                                        activeModule[chat] = new app.modules.screenshot(message);
-                                        //app.telegram.sendMessage(chat, message, null);                                        
-                                        //activeModule[chat] = new app.modules.screenshot(message);
-                                    }else{
-                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
-                                    }
-                                }
-                            }
-                        };
-                        xmlhttp.send(null);
-                    }
-                }
-                /////////////////////
-                ///// Fin INTEL /////
-                ////////////////////
 
                 //////////////////////////////////////////////////////////
                 //////////////SISTEMA ADMINISTRATIVO DE USUARIOS//////////
@@ -921,6 +827,104 @@ var app = {};
                         app.telegram.sendMessage(chat, '@' + username + ', tienes <b>' + data.trivia_points + ' puntos</b> de trivia!', null, message_id);
                     });
                 }
+
+
+            	//////////////////////
+            	//Ordenes Semanticas//
+            	/////////////////////
+            // DISTANCIA
+                if(text.indexOf("distancia") > -1 || text.indexOf("alcance") > -1 || text.indexOf("rango") > -1  && words(text) < 5){
+                    message.text = '/distance';
+                    activeModule[chat] = new app.modules.distancecalc(message);
+                }
+            // BIOCARD
+                else if(text.indexOf("biocard") > -1 && words(text) < 5){
+                    //REPLY MARKUP
+                    var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
+                    inline_button_califica.text = "Crea tu Biocard!"
+                    inline_button_califica.url = "https://biocard.resistencia.la/";
+                    //
+
+                    inline_keyboard = [[inline_button_califica]];
+                    inline_markup = {
+                        inline_keyboard: inline_keyboard
+                    };
+                    /////////////////////////////////7
+                    app.telegram.sendPhotoEx(chat, "AgADAQAD4bExGzb3eQUuKlAn0okhP3YC6C8ABEtWO8VJyjxpyAsAAgI", "", message_id, inline_markup);
+                }
+            // Ayuda
+                else if(text.indexOf("help") > -1 || text.indexOf("ayuda") > -1 || text.indexOf("como funciona") > -1 && words(text) < 5){
+                    message.text = '/help';
+                    activeModule[chat] = new app.modules.help(message);
+                }
+            // iitc semantico
+                else if(text.indexOf("iitc") > -1 && words(text) < 5){
+                    message.text = '/plugins';
+                    activeModule[chat] = new app.modules.iitc(message);
+                }
+            // screenshot
+                else if(text.indexOf("screenshot") > -1 || text.indexOf("pantallazo") > -1 || text.indexOf("intel") > -1 && words(text) < 5){
+                    message.text = '/screenshot';
+                    activeModule[chat] = new app.modules.screenshot(message);
+                }
+            // Nivel
+                else if(text.indexOf("nivel") > -1 || text.indexOf("como llego a") > -1 || text.indexOf("level") > -1 || text.indexOf("que necesito para") > -1 && words(text) < 9){
+                    message.text = '/level';
+                    activeModule[chat] = new app.modules.nivelreq(message);
+                }
+            // TRIVIA
+                else if(text.indexOf("trivia") > -1 || text.indexOf("pregunta") > -1 || text.indexOf("preguntar") > -1 && words(text) < 9){
+                    message.text = '/trivia';
+                    activeModule[chat] = new app.modules.trivia(message);
+                }
+            	//////////////////////////
+            	//Fin Ordenes Semanticas//
+            	/////////////////////////
+
+
+
+                /////////////////
+                ///// INTEL /////
+                /////////////////
+            // INTEL mostrar 
+                else if (text.indexOf("muestrame") > -1 || text.indexOf("mostrar") > -1 || text.indexOf("mapa") > -1 || text.indexOf("map") > -1|| text.indexOf("intel") > -1 ) {
+                    var textSplited = text.split(" "),
+                        lat, lon, querySearch;
+                        querySearch = textSplited[2];
+                        if (textSplited[3]) {
+                            querySearch += " " + textSplited[3];
+                        }else if(textSplited[4]){
+                            querySearch += " " + textSplited[4];
+                        }else if(textSplited[5]){
+                            querySearch += " " + textSplited[5];
+                        };
+
+                    if (querySearch) {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
+                        xmlhttp.onreadystatechange = function() {
+                            if (xmlhttp.readyState == 4) {
+                                if(xmlhttp.status == 200) {
+                                    var obj = JSON.parse(xmlhttp.responseText);
+                                    if (obj.status == "OK") {
+                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
+                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
+                                        message.location = {latitude:lat, longitude:lon};
+                                        activeModule[chat] = new app.modules.screenshot(message);
+                                        //app.telegram.sendMessage(chat, message, null);                                        
+                                        //activeModule[chat] = new app.modules.screenshot(message);
+                                    }else{
+                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);                            
+                                    }
+                                }
+                            }
+                        };
+                        xmlhttp.send(null);
+                    }
+                }
+                /////////////////////
+                ///// Fin INTEL /////
+                ////////////////////
 
             /////////////////
             //Departamentos//
