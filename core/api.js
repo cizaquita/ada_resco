@@ -456,7 +456,8 @@
         try {
             xmlhttp.send(formData);
         } catch (e) {
-            app.telegram.sendMessage("error formdata: " + e.description)
+            var error = "error formdata: " + e.description;
+            app.telegram.sendMessage(error);
         }
     }
 
