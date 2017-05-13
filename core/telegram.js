@@ -118,9 +118,7 @@
     /**
      * Send photo to specified chat
      * @param chatId {Number} Chat id
-     * @param photo {String} Base64 encrypted image
-     * @param compression {Boolean} If true image will be compressed by telegram
-     * @param callback {Function} Callback function
+     * @param userId {Number} Chat id
      */
     app.telegram.unbanChatMember = function (chatId, userId) {
         var url = API_URL + '/unbanChatMember',
