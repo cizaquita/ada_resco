@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     app.modules = app.modules || {};
     app.modules.screenshot = Screenshot;
 
@@ -13,15 +13,15 @@
      * @param message {object} Telegram message object
      * @constructor
      */
-     //zoom, Added new parameter for BOGOTA ZONES
-     //Now the function automatically will recieve
-     //a zoom parameter to do the Screenshot of a zone automatically
-     //@cizaquita
+    //zoom, Added new parameter for BOGOTA ZONES
+    //Now the function automatically will recieve
+    //a zoom parameter to do the Screenshot of a zone automatically
+    //@cizaquita
 
-     //Added more Stats variables, like username,
-     //firstname, lastname for segmentation
-     //That will be sended to the task manager
-     //and saved in localStorage
+    //Added more Stats variables, like username,
+    //firstname, lastname for segmentation
+    //That will be sended to the task manager
+    //and saved in localStorage
     function Screenshot(message, zoom, portals) {
         this.zoom = zoom;
         this.username = message.chat.username;
@@ -36,18 +36,17 @@
     /**
      * @param message {object} Telegram message object
      */
-     //zoom, Added new parameter for BOGOTA ZONES
-     //Now the function automatically will recieve
-     //a zoom parameter to do the Screenshot of a zone automatically
-     //@cizaquita
+        //zoom, Added new parameter for BOGOTA ZONES
+        //Now the function automatically will recieve
+        //a zoom parameter to do the Screenshot of a zone automatically
+        //@cizaquita
     Screenshot.prototype.onMessage = function (message, zoom, portals) {
         var resp, markup, plugins,
             keyboard = [],
             text = message.text,
             location = message.location;
-            this.zoom = zoom;
-            this.portals = portals;
-
+        this.zoom = zoom;
+        this.portals = portals;
 
 
         //REPLY MARKUP
@@ -65,7 +64,7 @@
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funionalidad por privado!</i>", inline_markup);
             this.complete = true;
-        }else{
+        } else {
             //Debug information
             //console.log('Debug zoom: ' + this.zoom);
             //console.log('Debug location: ' + this.location);
@@ -87,7 +86,8 @@
                     resp = app.i18n(this.lang, 'screenshot', 'zoom_setup');
                     app.telegram.sendMessage(this.chat, resp, markup);
                     return;
-                };
+                }
+                ;
             } else if (!this.location) {
                 var button = {};
                 button.text = app.i18n(this.lang, 'screenshot', 'my_location');
@@ -101,7 +101,7 @@
                 resp = app.i18n(this.lang, 'screenshot', 'location_required');
                 if (this.chat < 0) {
                     app.telegram.sendMessage(this.chat, resp, null);
-                }else{
+                } else {
                     app.telegram.sendMessage(this.chat, resp, markup);
                 }
                 return;
@@ -111,7 +111,7 @@
             //console.log('Debug text: ' + text);
             if (this.zoom == null) {
                 this.zoom = parseInt(text);
-            }else{            
+            } else {
                 plugins = app.settings.plugins(this.chat);
                 //Añade plugin de zonas
                 plugins.push("iitc/draw-tools.user.js");
@@ -119,7 +119,7 @@
             }
 
             //Añade el plugin de portales si el campo es !null
-            if(this.portals != null){
+            if (this.portals != null) {
                 if (this.portals == 1) {
                     plugins = app.settings.plugins(this.chat);
                     //Añade plugin de PORTALES
@@ -127,9 +127,11 @@
                     plugins.push("iitc/portals.user.js");
                     app.settings.plugins(this.chat, plugins);
                     console.log("PLUGINS: antes: " + plugins);
-                };
-            };
-            
+                }
+                ;
+            }
+            ;
+
             if (this.zoom && this.zoom >= 3 && this.zoom <= 18) {
                 this.complete = true;
 
@@ -138,7 +140,7 @@
                     location: this.location,
                     zoom: this.zoom,
                     portals: this.portals
-                }); 
+                });
 
                 resp = app.i18n(this.lang, 'screenshot', 'task_saved');
                 app.telegram.sendMessage(this.chat, resp, null);
@@ -155,7 +157,7 @@
                         location: this.location
                     });
                 }
-            } else {            
+            } else {
                 keyboard = [
                     app.i18n(this.lang, 'interval', 'options_1').split(';'),
                     app.i18n(this.lang, 'interval', 'options_2').split(';'),

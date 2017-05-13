@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     app.modules = app.modules || {};
     app.modules.help = Help;
 
@@ -38,28 +38,28 @@
         /////////////////////////////////7
 
         /*resp.push(app.i18n(lang, 'help', 'line_1'));
-        resp.push(app.i18n(lang, 'help', 'line_2'));
-        resp.push(app.i18n(lang, 'help', 'line_3'));
-        resp.push(app.i18n(lang, 'help', 'line_4'));*/
+         resp.push(app.i18n(lang, 'help', 'line_2'));
+         resp.push(app.i18n(lang, 'help', 'line_3'));
+         resp.push(app.i18n(lang, 'help', 'line_4'));*/
 
         this.complete = true;
         //app.telegram.sendMessage(chat, resp.join('\n'), null);
         if (chat < 0) {
             app.telegram.sendMessage(chat, "<i>Escríbeme por privado primero</i>", inline_markup);
-        }else{
+        } else {
             app.telegram.sendMessage(chat, "\t<b>Centro de ayuda ADA</b>" +
-                                           "\n\n- Estas son algunas de las funcionalidades con las que cuento:"+
-                                           "\n- /plugins - Te permite configurar la lista de plugins para IITC."+
-                                           "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar."+
-                                           "\n- /distance - Te permite calcular el alcance que tiene un portal según sus resos y mods"+
-                                           "\n- /level - Te permite saber los requisitos y que obtienes en cierto nivel"+
-                                           "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí."+
-                                           "\n\n- Puedes preguntarme:"+
-                                           "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar."+
-                                           "\n- Ada que es -item- y te diré que es y que hace este item"+
-                                           "\n- Ada trivia, con ello puedes recibir una pregunta"+
-                                           "\n- Ada soy de -ciudad departamento-, con ello puedes recibir información de agentes de estos lugares en resco"+
-                                           "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia</i>", null);
+                "\n\n- Estas son algunas de las funcionalidades con las que cuento:" +
+                "\n- /plugins - Te permite configurar la lista de plugins para IITC." +
+                "\n- /screenshot - Toma un pantallazo de ingress.com/intel de un determinado lugar." +
+                "\n- /distance - Te permite calcular el alcance que tiene un portal según sus resos y mods" +
+                "\n- /level - Te permite saber los requisitos y que obtienes en cierto nivel" +
+                "\n- Diríjete a mi como \'Ada\' seguramente tengo alguna respuesta para tí." +
+                "\n\n- Puedes preguntarme:" +
+                "\n- Ada muestrame \'Lugar\' dónde puedes especificar una ciudad o lugar." +
+                "\n- Ada que es -item- y te diré que es y que hace este item" +
+                "\n- Ada trivia, con ello puedes recibir una pregunta" +
+                "\n- Ada soy de -ciudad departamento-, con ello puedes recibir información de agentes de estos lugares en resco" +
+                "\n\nEstaremos informando más updates!\n<i>Resistencia Colombia</i>", null);
         }
     };
 }());

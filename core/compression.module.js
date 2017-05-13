@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     app.modules = app.modules || {};
     app.modules.compression = Compression;
 

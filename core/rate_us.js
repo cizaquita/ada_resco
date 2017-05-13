@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.3
  */
-(function() {
+(function () {
     var users = localStorage.getItem('rate_us__users');
 
     if (users) {
@@ -12,7 +12,7 @@
         users = {};
     }
 
-    app.rateUs = function(chat) {
+    app.rateUs = function (chat) {
         // Send vote us messages after 3 photos sent
         var resp,
             sent = users[chat] || 0,
@@ -33,7 +33,7 @@
 
         console.log(chat, sent);
 
-        if (sent === 3 || sent === 10 || 
+        if (sent === 3 || sent === 10 ||
             sent === 30 || sent === 50 ||
             sent === 100) {
             resp = [

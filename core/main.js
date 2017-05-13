@@ -14,7 +14,7 @@ var app = {};
     var modules = {},
         activeModule = {},
         GOOGLE_API_KEY = "AIzaSyCwSyBbL7zoVg7viHlGxOk0FfGA1GDIaY8",
-        //cizaquita, fabianv, rataeltriforce, pesadilla, chileno, smartgenius
+    //cizaquita, fabianv, rataeltriforce, pesadilla, chileno, smartgenius
         admins = [7455490, 15498173, 91879222],//97115847,62857939,6396882,91879222],
         agent_verified_level = 0;
 

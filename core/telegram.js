@@ -1,4 +1,4 @@
-(function() {
+(function () {
     // ADA
     //264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ
     //255931013:AAFKhDij0XIlKhuuB1gym4V9qKCQhEbuK24 //adaRefacto_bot
@@ -17,12 +17,12 @@
      * @param message {String} Message
      * @param markup {Object|undefined|null} Keyboard markup (null hides previous keyboard, undefined leaves it)
      */
-    app.telegram.sendMessage = function(chatId, message, markup, reply_to_message_id, callback) {
-        var url= API_URL + '/sendMessage',
+    app.telegram.sendMessage = function (chatId, message, markup, reply_to_message_id, callback) {
+        var url = API_URL + '/sendMessage',
             params = {};
 
         if (markup === null) {
-            markup = { hide_keyboard: true };
+            markup = {hide_keyboard: true};
         }
         markup = JSON.stringify(markup);
         params.chat_id = chatId;
@@ -32,11 +32,11 @@
         params.parse_mode = 'HTML';
         params.reply_to_message_id = reply_to_message_id;
 
-        request('get', url, params, function(data) {
+        request('get', url, params, function (data) {
             if (typeof callback === 'function') {
                 if (data) {
                     callback(data);
-                }else
+                } else
                     callback(null);
             }
         });
@@ -49,17 +49,17 @@
      * @param compression {Boolean} If true image will be compressed by telegram
      * @param callback {Function} Callback function
      */
-    app.telegram.sendPhoto = function(chatId, photo, compression, callback) {
+    app.telegram.sendPhoto = function (chatId, photo, compression, callback) {
         var url = API_URL + (compression ? '/sendPhoto' : '/sendDocument'),
             params = {};
 
         params.chat_id = chatId;
         params[compression ? 'photo' : 'document'] = photo;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             if (typeof callback === 'function') {
                 callback(data);
-            }else
+            } else
                 callback(null);
         });
     };
@@ -69,12 +69,12 @@
      * @param chatId {Number} Chat id
      * @param photo {String} Base64 encrypted image or String
      */
-    app.telegram.sendPhotoEx = function(chatId, photo, caption, reply_to_message_id, reply_markup, callback) {
+    app.telegram.sendPhotoEx = function (chatId, photo, caption, reply_to_message_id, reply_markup, callback) {
         var url = API_URL + '/sendPhoto',
             params = {};
-            
+
         if (reply_markup === null) {
-            reply_markup = { hide_keyboard: true };
+            reply_markup = {hide_keyboard: true};
         }
         reply_markup = JSON.stringify(reply_markup);
 
@@ -84,10 +84,10 @@
         params.reply_to_message_id = reply_to_message_id;
         params.reply_markup = reply_markup;
 
-        request('get', url, params, function(data) {
+        request('get', url, params, function (data) {
             if (typeof callback === 'function') {
                 callback(data);
-            }else{
+            } else {
                 callback(null);
             }
         });
@@ -100,14 +100,14 @@
      * @param compression {Boolean} If true image will be compressed by telegram
      * @param callback {Function} Callback function
      */
-    app.telegram.kickChatMember = function(chatId, userId) {
+    app.telegram.kickChatMember = function (chatId, userId) {
         var url = API_URL + '/kickChatMember',
             params = {};
 
         params.chat_id = chatId;
         params.user_id = userId;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
             }
@@ -122,14 +122,14 @@
      * @param compression {Boolean} If true image will be compressed by telegram
      * @param callback {Function} Callback function
      */
-    app.telegram.unbanChatMember = function(chatId, userId) {
+    app.telegram.unbanChatMember = function (chatId, userId) {
         var url = API_URL + '/unbanChatMember',
             params = {};
 
         params.chat_id = chatId;
         params.user_id = userId;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
             }
@@ -140,13 +140,13 @@
      * Returns a Chat object on success.
      * @param chatId {Number} Chat id
      */
-    app.telegram.getChat = function(chatId) {
+    app.telegram.getChat = function (chatId) {
         var url = API_URL + '/getChat',
             params = {};
 
         params.chat_id = chatId;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log(JSON.stringify(data));
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
@@ -158,14 +158,14 @@
      * https://core.telegram.org/bots/api#getchatadministrators
      * @param chatId {Number} Chat id
      */
-    app.telegram.getChatAdministrators = function(chatId, chat_title) {
+    app.telegram.getChatAdministrators = function (chatId, chat_title) {
         var url = API_URL + '/getChatAdministrators',
             params = {}, text = " - Admins de " + chat_title + " -\n";
-            //
+        //
 
         params.chat_id = chatId;
-        request('post', url, params, function(data) {
-            data.result.forEach(function(val) {
+        request('post', url, params, function (data) {
+            data.result.forEach(function (val) {
                 text += "\n(" + val.user.id + ") @" + val.user.username + " - " + val.status;
             });
             app.telegram.sendMessage(chatId, text, null);
@@ -176,13 +176,13 @@
      * https://core.telegram.org/bots/api#getchatmemberscount
      * @param chatId {Number} Chat id
      */
-    app.telegram.getChatMembersCount = function(chatId) {
+    app.telegram.getChatMembersCount = function (chatId) {
         var url = API_URL + '/getChatMembersCount',
             params = {};
 
         params.chat_id = chatId;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log(JSON.stringify(data));
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
@@ -196,13 +196,13 @@
      * @param offset {Number} optional
      * @param limit {Number} optional
      */
-    app.telegram.getUserProfilePhotos = function(userId) {
+    app.telegram.getUserProfilePhotos = function (userId) {
         var url = API_URL + '/getUserProfilePhotos',
             params = {};
 
         params.user_id = userId;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log(JSON.stringify(data));
             if (typeof callback === 'function') {
                 callback(data && data.ok, data.description);
@@ -214,13 +214,13 @@
      * https://core.telegram.org/bots/api#getFile
      * @param file_id {Number} required
      */
-    app.telegram.getFile = function(file_id, callback) {
+    app.telegram.getFile = function (file_id, callback) {
         var url = API_URL + '/getFile',
             params = {};
 
         params.file_id = file_id;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log(JSON.stringify(data));
             if (typeof callback === 'function') {
                 callback(data);//var file_download = "https://api.telegram.org/file/bot" + TOKEN + "/" + data.file_path;
@@ -234,7 +234,7 @@
      * @param chatId {Number} Chat id
      * @param sticker {String} file_id
      */
-    app.telegram.sendSticker = function(chatId, sticker, reply_to_message_id) {
+    app.telegram.sendSticker = function (chatId, sticker, reply_to_message_id) {
         var url = API_URL + '/sendSticker',
             params = {};
 
@@ -242,10 +242,10 @@
         params.sticker = sticker;
         params.reply_to_message_id = reply_to_message_id;
 
-        request('post', url, params, function(data) {
-            if(data && data.ok){
+        request('post', url, params, function (data) {
+            if (data && data.ok) {
                 //console.log('sticker enviado');
-            }else{
+            } else {
                 console.log('Error enviando sticker: ' + JSON.stringify(data));
             }
         });
@@ -257,7 +257,7 @@
      * @param chatId {Number} Chat id
      * @param sticker {String} file_id
      */
-    app.telegram.sendDocument = function(chatId, document, caption, reply_to_message_id) {
+    app.telegram.sendDocument = function (chatId, document, caption, reply_to_message_id) {
         var url = API_URL + '/sendDocument',
             params = {};
 
@@ -266,11 +266,11 @@
         params.caption = caption;
         params.reply_to_message_id = reply_to_message_id;
 
-        request('post', url, params, function(data) {
-            if(data && data.ok){
+        request('post', url, params, function (data) {
+            if (data && data.ok) {
                 //console.log('sticker enviado');
                 console.log(JSON.stringify(data));
-            }else{
+            } else {
                 console.log('Error enviando sticker: ' + JSON.stringify(data));
             }
         });
@@ -286,21 +286,21 @@
      +
      * Type of action to broadcast. Choose one, depending on what the user
      * is about to receive: typing for text messages, upload_photo for photos,
-     * record_video or upload_video for videos, record_audio or upload_audio 
+     * record_video or upload_video for videos, record_audio or upload_audio
      * for audio files, upload_document for general files, find_location for location data.
      */
 
-    app.telegram.sendChatAction = function(chatId, action) {
+    app.telegram.sendChatAction = function (chatId, action) {
         var url = API_URL + '/sendChatAction',
             params = {};
 
         params.chat_id = chatId;
         params.action = action;
 
-        request('post', url, params, function(data) {
-            if(data && data.ok){
+        request('post', url, params, function (data) {
+            if (data && data.ok) {
                 console.log('chatAction enviado');
-            }else{
+            } else {
                 console.log('Error enviando chatAction: ' + JSON.stringify(data));
             }
         });
@@ -318,7 +318,7 @@
      * https://core.telegram.org/bots/api#sendvenue
      */
 
-    app.telegram.sendVenue = function(chatId, lat, lon, title, address) {
+    app.telegram.sendVenue = function (chatId, lat, lon, title, address) {
         var url = API_URL + '/sendVenue',
             params = {};
 
@@ -328,10 +328,10 @@
         params.title = title;
         params.address = address;
 
-        request('post', url, params, function(data) {
-            if(data && data.ok){
+        request('post', url, params, function (data) {
+            if (data && data.ok) {
                 console.log('sendVenue enviado');
-            }else{
+            } else {
                 console.log('Error enviando sendVenue: ' + JSON.stringify(data));
             }
         });
@@ -345,7 +345,7 @@
      * https://core.telegram.org/bots/api#editMessageText
      */
 
-    app.telegram.editMessageText = function(inline_message_id, text) {
+    app.telegram.editMessageText = function (inline_message_id, text) {
         var url = API_URL + '/editMessageText',
             params = {};
         var inline_button_califica = {}, inline_button_buscar = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
@@ -358,7 +358,7 @@
         inline_button_callback.text = "👌";
         inline_button_callback.callback_data = "cris";
 
-        inline_keyboard = [[inline_button_buscar],[inline_button_califica,inline_button_callback]];
+        inline_keyboard = [[inline_button_buscar], [inline_button_califica, inline_button_callback]];
         inline_markup = {
             inline_keyboard: inline_keyboard
         };
@@ -367,7 +367,7 @@
         params.text = text;
         params.reply_markup = inline_markup;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             //console.log(JSON.stringify(data));
         });
     };
@@ -380,7 +380,7 @@
      * https://core.telegram.org/bots/api#editMessageText
      */
 
-    app.telegram.editMessageReplyMarkup = function(inline_message_id) {
+    app.telegram.editMessageReplyMarkup = function (inline_message_id) {
         var url = API_URL + '/editMessageReplyMarkup',
             params = {};
         var inline_button_califica = {}, inline_button_buscar = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
@@ -393,7 +393,7 @@
         inline_button_callback.text = "👌";
         inline_button_callback.callback_data = "cris";
 
-        inline_keyboard = [[inline_button_buscar],[inline_button_califica,inline_button_callback]];
+        inline_keyboard = [[inline_button_buscar], [inline_button_califica, inline_button_callback]];
         inline_markup = {
             inline_keyboard: inline_keyboard
         };
@@ -401,7 +401,7 @@
         params.inline_message_id = inline_message_id;
         params.reply_markup = inline_markup;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             //console.log(JSON.stringify(data));
         });
     };
@@ -414,10 +414,10 @@
      * https://core.telegram.org/bots/api#sendvenue
      */
 
-    app.telegram.answerInlineQuery = function(inline_query_id, results) {
+    app.telegram.answerInlineQuery = function (inline_query_id, results) {
 
         /*console.log("*************************************************************" +
-                    "\nResults telegram: " + JSON.stringify(results));*/
+         "\nResults telegram: " + JSON.stringify(results));*/
         //console.log("answerInlineQuery: " + JSON.stringify(inlineQuery));
         //console.log("answerInlineQuery: " + inlineQuery.id);
         var url = API_URL + '/answerInlineQuery',
@@ -429,11 +429,11 @@
         //console.log("params: " + params);
         //console.log("json params: " + JSON.stringify(params));
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log('answerInlineQuery:' + JSON.stringify(data));
-            if(data && data.ok){
+            if (data && data.ok) {
                 console.log('answerInlineQuery enviado' + JSON.stringify(data));
-            }else{
+            } else {
                 console.log('Error enviando answerInlineQuery: ' + JSON.stringify(data));
             }
         });
@@ -447,10 +447,10 @@
      * https://core.telegram.org/bots/api#answercallbackquery
      */
 
-    app.telegram.answerCallbackQuery = function(callback_query_id, text, show_alert) {
+    app.telegram.answerCallbackQuery = function (callback_query_id, text, show_alert) {
 
         /*console.log("*************************************************************" +
-                    "\nResults telegram: " + JSON.stringify(results));*/
+         "\nResults telegram: " + JSON.stringify(results));*/
         //console.log("answerInlineQuery: " + JSON.stringify(inlineQuery));
         //console.log("answerInlineQuery: " + inlineQuery.id);
         var url = API_URL + '/answerCallbackQuery',
@@ -460,7 +460,7 @@
         params.text = text;
         params.show_alert = show_alert;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log('answerCallbackQuery:' + JSON.stringify(data));
         });
     };
@@ -469,14 +469,14 @@
      * Get new messages from server
      * @param callback {Function} Callback function
      */
-    app.telegram.getUpdates = function(callback) {
+    app.telegram.getUpdates = function (callback) {
         var result = [],
             url = API_URL + '/getUpdates';
 
-        request('get', url, { timeout: TIMEOUT, offset: offset }, function(data) {
+        request('get', url, {timeout: TIMEOUT, offset: offset}, function (data) {
             if (data && data.ok) {
                 //console.log("data: " +JSON.stringify(data));
-                data.result.forEach(function(val) {
+                data.result.forEach(function (val) {
                     result.push(val);
                     offset = val.update_id + 1;
                     localStorage.setItem('telegram_offset', offset);
@@ -513,11 +513,11 @@
                 }
                 if (i === 'caption') {
                     formData.append(i, data[i]);
-                }else if (i === 'photo') {
+                } else if (i === 'photo') {
                     formData.append('photo', dataURItoBlob(data[i]), 'screen.png');
                 } /*else if (i === 'document') {
-                    formData.append('document', dataURItoBlob(data[i]), 'screen.png');
-                }*/ else {
+                 formData.append('document', dataURItoBlob(data[i]), 'screen.png');
+                 }*/ else {
                     formData.append(i, data[i]);
                 }
             }
@@ -525,7 +525,7 @@
             url += '?' + serialize(data);
         }
 
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             var result = null;
 
             if (xmlhttp.readyState !== 4) {
@@ -544,9 +544,9 @@
         };
 
         xmlhttp.open(method, url, true);
-        try{
+        try {
             xmlhttp.send(formData);
-        }catch(e){
+        } catch (e) {
             app.telegram.sendMessage("error formdata: " + e.description)
         }
     }

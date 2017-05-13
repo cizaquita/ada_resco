@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     var inProgress, tasks, portalOwners;
 
     app.taskManager = {};
@@ -13,11 +13,11 @@
      * @param options {object} Task options
      * @param callback {Function} Function that will be called after telegram sent response
      */
-    app.taskManager.add = function(options, callback) {
+    app.taskManager.add = function (options, callback) {
         options = JSON.parse(JSON.stringify(options)); // TODO: Find better way to clone objects
         options.callback = callback;
         tasks.push(options);
-        saveTasks();         
+        saveTasks();
 
         if (!inProgress) {
             startNextTask();
@@ -28,7 +28,7 @@
      * Return task length count
      * @returns {Number} Tasks count
      */
-    app.taskManager.queueLength = function() {
+    app.taskManager.queueLength = function () {
         var count = tasks ? tasks.length : 0;
 
         if (inProgress) {
@@ -47,7 +47,7 @@
         tasks = [];
     }
 
-    chrome.runtime.onMessage.addListener(function(params, sender, callback) {
+    chrome.runtime.onMessage.addListener(function (params, sender, callback) {
         var plugins,
             action = params && params.action;
 
@@ -59,7 +59,7 @@
             case 'getExtScripts':
                 if (inProgress) {
                     plugins = app.settings.plugins(inProgress.chat);
-                    plugins.forEach(function(val, k) {
+                    plugins.forEach(function (val, k) {
                         plugins[k] = location.origin + '/' + val;
                     });
 
@@ -101,13 +101,13 @@
             timeout = 2 * 60 * 1000;
         }
 
-        chrome.windows.create({ url: url, type: 'popup' }, function(window) {
+        chrome.windows.create({url: url, type: 'popup'}, function (window) {
             task.windowId = window.id;
             task.timeoutId = setTimeout(makeScreenshot, timeout);
             console.log(JSON.stringify(window));
 
             //if (isFullScreen) {
-                chrome.windows.update(window.id, { state: 'fullscreen' });
+            chrome.windows.update(window.id, {state: 'fullscreen'});
             //}
         });
     }
@@ -133,7 +133,7 @@
         clearTimeout(task.timeoutId);
         saveTasks();
 
-        chrome.tabs.captureVisibleTab(window, { format: 'png' }, function(img) {
+        chrome.tabs.captureVisibleTab(window, {format: 'png'}, function (img) {
             var compression, lang, resp;
 
             if (!img) {
@@ -145,18 +145,18 @@
                 app.telegram.sendPhoto(task.chat, img, compression, callback);
 
                 //Si trae el parametro PORTALS vamos a buscar y recorrer los portales verdes
-                if(task.portals != null){
-                    function main () {
-                      window.alert = "test";
+                if (task.portals != null) {
+                    function main() {
+                        window.alert = "test";
                     }
 
                     var script = document.createElement('script');
-                    script.appendChild(document.createTextNode('('+ main +')();'));
+                    script.appendChild(document.createTextNode('(' + main + ')();'));
                     (document.body || document.head || document.documentElement).appendChild(script);
 
                     window.plugin.ownerlist.getPortals();
                     portalOwners = window.plugin.ownerlist.listPortals;
-                    setTimeout(forEachPortalInfo, 1*60*1000);
+                    setTimeout(forEachPortalInfo, 1 * 60 * 1000);
                 }
                 //app.telegram.sendPhoto(7455490, img, compression, callback);
                 //app.telegram.sendChatAction(task.chat, null);                
@@ -168,37 +168,37 @@
             }
 
             chrome.windows.remove(window);
-            
+
             //ELIMINA EL PLUGINde zonas o de PORTALES
             var plugins = app.settings.plugins(task.chat);
             //console.log("PLUGINS: antes " + plugins);
-            for(var i in plugins){
+            for (var i in plugins) {
                 var elPlugin = plugins[i];
                 if (elPlugin == "iitc/draw-tools.user.js") {
                     plugins.pop("iitc/draw-tools.user.js");
-                }else if(elPlugin == "iitc/portals.user.js"){
-                    plugins.pop("iitc/portals.user.js");                    
-                }else if(elPlugin == "iitc/debug-raw-portal-data.user.js"){
-                    plugins.pop("iitc/debug-raw-portal-data.user.js");                     
+                } else if (elPlugin == "iitc/portals.user.js") {
+                    plugins.pop("iitc/portals.user.js");
+                } else if (elPlugin == "iitc/debug-raw-portal-data.user.js") {
+                    plugins.pop("iitc/debug-raw-portal-data.user.js");
                 }
 
-            } 
+            }
             app.settings.plugins(task.chat, plugins);
             //console.log("PLUGINS: desps " + plugins);  
             startNextTask();
         });
     }
 
-    function forEachPortalInfo(){
+    function forEachPortalInfo() {
         var msgResult;
-        portalOwners.forEach(function(item, index){
-            if(item.portal.options.team == 2){//Team iluminado
+        portalOwners.forEach(function (item, index) {
+            if (item.portal.options.team == 2) {//Team iluminado
                 var owner = window.portalDetail.get(item.portal.options.guid);
                 var coords = item.portal.getLatLng();
                 var message = "Portal: " + item.portal.options.data.title +
-                              "\nOwner: " + owner.owner +
-                              "\nNivel: " + item.portal.options.data.level +
-                              "\nLink: " + "https://www.ingress.com/intel?ll=" + coords.lat + "," + coords.lng + "&z=17&pll=" + coords.lat + "," + coords.lng;
+                    "\nOwner: " + owner.owner +
+                    "\nNivel: " + item.portal.options.data.level +
+                    "\nLink: " + "https://www.ingress.com/intel?ll=" + coords.lat + "," + coords.lng + "&z=17&pll=" + coords.lat + "," + coords.lng;
                 msgResult.concat(message);
             }
         });

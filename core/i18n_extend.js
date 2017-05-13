@@ -3,10 +3,10 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     var texts = app.i18nTexts;
 
-    app.i18n = function(lang, module, key) {
+    app.i18n = function (lang, module, key) {
         var result;
 
         result = texts[module] && texts[module][key] && texts[module][key][lang];

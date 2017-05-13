@@ -1,8 +1,5 @@
-(function() {
-    var API_URL = 'http://127.0.0.1:1338/',
-        TIMEOUT = 10,
-        //cizaquita, fabianv, rataeltriforce, smartgenius
-        admins = [7455490,97115847,15498173,91879222];
+(function () {
+    var API_URL = 'http://127.0.0.1:1338/';
 
     app.api = {};
 
@@ -10,12 +7,12 @@
      * Get Agents from BOT API
      * @param callback {Function} Callback function
      */
-    app.api.getAgents = function(callback) {
+    app.api.getAgents = function (callback) {
         var url = API_URL + "agents/",
-        	result = "";
+            result = "";
 
-        request('get', url, null, function(data) {
-			//console.log("data: " + JSON.stringify(data));
+        request('get', url, null, function (data) {
+            //console.log("data: " + JSON.stringify(data));
             if (data) {
                 result = data;
                 callback(result);
@@ -27,20 +24,14 @@
 
     /**
      * Create new Agent in BOT API
-     * @param name, 
-     * @param faction / 0 Res - 1 Enl
-     * @param city,
-     * @param verified, boolean
+     * @param name,
      *        verified_level
-     * @param ingress_nick,
-     * @param ingress_level, integer
      * @param telegram_nick,
      * @param telegram_id, integer
-     * @param geo_latitude
-     * @param geo_longitude
+     * @param callback
      *        trivia_points
      */
-    app.api.createAgent = function(name, telegram_nick, telegram_id, callback) {
+    app.api.createAgent = function (name, telegram_nick, telegram_id, callback) {
         var url = API_URL + "create_agent/",
             params = {};
 
@@ -50,7 +41,7 @@
         console.log('\n\nTELEGRAM ID A CREAR ' + telegram_id + '\n\n');
 
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -61,20 +52,20 @@
     };
 
     /*
-    * Crear AVATAR
-    */
-    app.api.createAvatar = function(telegram_nick, profile_picture, callback) {
-	    //En la URL se reciben dos Parametros (image) y (nickname)
-	    //en image va la URL de una imagen sea directa o relativa si estan en el propio servidor de Rescol
-	    //en nickname va el apodo del agente con URLEncode para aceptar espacion
-	    //Ejemplo: http://rescol.co/smart/biocard/avatar.php?image=uploads/sample1.jpg&nickname=SmartGenius
-        var url = "https://biocard.resistencia.la/avatar.php?"; 
-            params = {},
-            file_url = "";
+     * Crear AVATAR
+     */
+    app.api.createAvatar = function (telegram_nick, profile_picture, callback) {
+        //En la URL se reciben dos Parametros (image) y (nickname)
+        //en image va la URL de una imagen sea directa o relativa si estan en el propio servidor de Rescol
+        //en nickname va el apodo del agente con URLEncode para aceptar espacion
+        //Ejemplo: http://rescol.co/smart/biocard/avatar.php?image=uploads/sample1.jpg&nickname=SmartGenius
+        var url = "https://biocard.resistencia.la/avatar.php?";
+        var file_url = "";
 
-        app.telegram.getFile(profile_picture, function(data){
+        app.telegram.getFile(profile_picture, function (data) {
             console.log("DATA GETFILE: " + JSON.stringify(data));
-            file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
+            file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/"
+            file_url = file_url + data.result.file_path;
             //console.log("IMAGE URL: " + file_url)
 
             url += "image=" + file_url + "&nickname=" + telegram_nick;
@@ -85,41 +76,40 @@
 //http://rescol.co/smart/biocard/generated/avatar_Cizaquita.png
 //telegram_nick
 //          callback("http://rescol.co/smart/biocard/generated/avatar_" + telegram_nick + ".png");
-	    callback(url);
+            callback(url);
         });
     };
 
     /*
-    * Crear AVATAR con Imagen de Smurf The Earth 2017
-    */
-    app.api.smurfThis = function(telegram_nick, profile_picture, callback) {
-	
-	
-        var url = "https://biocard.resistencia.la/smurfme.php?version=2"; 
-            params = {},
-            file_url = "";
+     * Crear AVATAR con Imagen de Smurf The Earth 2017
+     */
+    app.api.smurfThis = function (telegram_nick, profile_picture, callback) {
 
-        app.telegram.getFile(profile_picture, function(data){
+
+        var url = "https://biocard.resistencia.la/smurfme.php?version=2";
+        var file_url = "";
+
+        app.telegram.getFile(profile_picture, function (data) {
             console.log("DATA GETFILE: " + JSON.stringify(data));
             file_url = "https://api.telegram.org/file/bot264896440:AAELr7j2DD9zzsiOAxbMteoHyNHO_r5XaiQ/" + data.result.file_path;
             //console.log("IMAGE URL: " + file_url)
-    
+
             url += "&image=" + file_url + "&nickname=" + telegram_nick;
-        
-		//console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n' + url);
-		//		console.log(url);
-		//          callback("http://rescol.co/smart/biocard/generated/avatar_" + telegram_nick + ".png");
-	    callback(url);
+
+            //console.log('\n\nTELEGRAM AVATAR A CREAR ' + telegram_nick + '\n\n' + url);
+            //		console.log(url);
+            //          callback("http://rescol.co/smart/biocard/generated/avatar_" + telegram_nick + ".png");
+            callback(url);
         });
-    };	
-	
-	
+    };
+
+
     /**
      * Get Agent from BOT API
      * @param telegram_id
      * @param callback {Function} Callback function
      */
-    app.api.getAgent = function(telegram_id, callback) {
+    app.api.getAgent = function (telegram_id, callback) {
         var url = API_URL + "get_agent/",
             params = {};
 
@@ -127,7 +117,7 @@
 
         console.log('\n\nTELEGRAM ID A consultar ' + telegram_id + '\n\n');
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -139,10 +129,10 @@
 
     /**
      * Get Agent by Nick from BOT API
-     * @param telegram_id
+     * @param telegram_nick
      * @param callback {Function} Callback function
      */
-    app.api.getAgentByNick = function(telegram_nick, callback) {
+    app.api.getAgentByNick = function (telegram_nick, callback) {
         var url = API_URL + "get_agent_bynick/",
             params = {};
 
@@ -150,7 +140,7 @@
 
         console.log('\n\nTELEGRAM @NICK A consultar ' + telegram_nick + '\n\n');
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -163,9 +153,10 @@
     /**
      * Update Agent CITY in BOT API
      * @param telegram_id
+     * @param agent_city
      * @param callback {Function} Callback function
      */
-    app.api.updateAgentCity = function(telegram_id, agent_city, callback) {
+    app.api.updateAgentCity = function (telegram_id, agent_city, callback) {
         var url = API_URL + "update_agent_city/",
             params = {};
 
@@ -174,7 +165,7 @@
 
         console.log('\n\nTELEGRAM ID ' + telegram_id + ', CIUDAD' + agent_city + '\n\n');
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -187,9 +178,11 @@
     /**
      * Update Agent CITY in BOT API
      * @param telegram_id
+     * @param action
+     * @param points
      * @param callback {Function} Callback function
      */
-    app.api.updateTriviaPoints = function(telegram_id, action, points, callback) {
+    app.api.updateTriviaPoints = function (telegram_id, action, points, callback) {
         var url = API_URL + "update_trivia_points/",
             params = {};
 
@@ -199,7 +192,7 @@
 
         console.log('\n\nTELEGRAM ID ' + telegram_id + ', ACTION: ' + action + ", POINTS: " + points + " type: " + typeof(points) + '\n\n');
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("triviaPoints: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -215,14 +208,14 @@
      * @param verified_for admin who verify
      * @param callback {Function} Callback function
      */
-    app.api.verifyAgent = function(telegram_id, verified_for, callback) {
+    app.api.verifyAgent = function (telegram_id, verified_for, callback) {
         var url = API_URL + "verify_agent/",
             params = {};
 
         params.telegram_id = telegram_id;
-        params.verified_for = verified_for
+        params.verified_for = verified_for;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -235,17 +228,19 @@
     /**
      * Verificar Perfil de Agente from BOT API
      * @param telegram_id
+     * @param verified_level
+     * @param verified_for
      * @param callback {Function} Callback function
      */
-    app.api.updateVerifiedLevel = function(telegram_id, verified_level, verified_for, callback) {
-        var url = API_URL + "update_agent_ver_lvl/",
-            params = {};
+    app.api.updateVerifiedLevel = function (telegram_id, verified_level, verified_for, callback) {
+        var url = API_URL + "update_agent_ver_lvl/";
+        var params = {};
 
         params.telegram_id = telegram_id;
         params.verified_level = verified_level;
         params.verified_for = verified_for;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -258,17 +253,17 @@
     /**
      * Profile Picture de Agente from BOT API
      * @param telegram_id
-     * @param photo.file_id from update photo
+     * @param file_id from update photo
      * @param callback {Function} Callback function
      */
-    app.api.updateProfilePicture = function(telegram_id, file_id, callback) {
+    app.api.updateProfilePicture = function (telegram_id, file_id, callback) {
         var url = API_URL + "update_profile_picture/",
             params = {};
 
         params.telegram_id = telegram_id;
         params.profile_picture = file_id;
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -281,16 +276,17 @@
 
     /**
      * Get Agent by Nick from BOT API
-     * @param telegram_id
      * @param callback {Function} Callback function
      */
-    app.api.getTopTen = function(callback) {
+    app.api.getTopTen = function (callback) {
         var url = API_URL + "topten_list/",
             params = {};
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             if (data) {
-                data = data.sort(function(a, b) { return a.trivia_points < b.trivia_points ? 1 : -1; }).slice(0, 10);
+                data = data.sort(function (a, b) {
+                    return a.trivia_points < b.trivia_points ? 1 : -1;
+                }).slice(0, 10);
                 callback(data);
             } else {
                 callback(null);
@@ -302,11 +298,11 @@
      * Get Factions from BOT API
      * @param callback {Function} Callback function
      */
-    app.api.getFactions = function(callback) {
-        var url = API_URL + "factions/",
-            result = "";
+    app.api.getFactions = function (callback) {
+        var url = API_URL + "factions/";
+        var result = "";
 
-        request('get', url, null, function(data) {
+        request('get', url, null, function (data) {
             //console.log("data: " + JSON.stringify(data));
             if (data) {
                 callback(data);
@@ -321,7 +317,7 @@
      * @param name nombre de la facción
      * @param callback {Function} Callback function
      */
-    app.api.createFaction = function(name, callback) {
+    app.api.createFaction = function (name, callback) {
         var url = API_URL + "factions/",
             result = "",
             params = {};
@@ -329,7 +325,7 @@
         params.name = name;
 
 
-        request('post', url, params, function(data) {
+        request('post', url, params, function (data) {
             console.log("data: " + JSON.stringify(data));
             if (data) {
                 result = data;
@@ -344,11 +340,11 @@
      * Get cat-facts testing API request
      * @param callback {Function} Callback function
      */
-    app.api.getCatFact = function(callback) {
+    app.api.getCatFact = function (callback) {
         var url = "http://catfacts-api.appspot.com/api/facts?number={}",
-        	result = "";
+            result = "";
 
-        request('get', url, null, function(data) {
+        request('get', url, null, function (data) {
             if (data) {
                 console.log("data: " + JSON.stringify(data));
                 result = data.facts;
@@ -361,14 +357,14 @@
 
     /**
      * get weather from https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/
-     * param latitude
+     * @param latitude
      * @param longitude
      * @param callback {Function} Callback function
      */
-    app.api.getWeather = function(latitude, longitude, callback){
+    app.api.getWeather = function (latitude, longitude, callback) {
         var url = "https://api.forecast.io/forecast/55a69d9bdee001b95ce6c22ab9cbea66/" + latitude + "," + longitude + "?units=si&lang=es";
         var result = "";
-        request('get', url, null, function(data) {
+        request('get', url, null, function (data) {
             console.log("data: " + data)
             if (data) {
                 console.log("weather: " + JSON.stringify(data));
@@ -384,11 +380,11 @@
      * get logos for biocard from http://rescol.co/smart/biocard/logos/jsonlogos.php
      * @param callback {Function} Callback function
      */
-    app.api.getBioLogos = function(callback){
+    app.api.getBioLogos = function (callback) {
         var url = "http://rescol.co/smart/biocard/logos/jsonlogos.php";
         var result = "";
-        request('get', url, null, function(data) {
-            console.log("data: " + data)
+        request('get', url, null, function (data) {
+            console.log("data: " + data);
             if (data) {
                 console.log("logos biocard: " + JSON.stringify(data));
                 result = data;
@@ -423,22 +419,22 @@
                 }
                 if (i === 'caption') {
                     formData.append(i, data[i]);
-                }else if (i === 'photo') {
+                } else if (i === 'photo') {
                     formData.append('photo', dataURItoBlob(data[i]), 'screen.png');
                 } /*else if (i === 'document') {
-                    formData.append('document', dataURItoBlob(data[i]), 'screen.png');
-                }*/ else {
+                 formData.append('document', dataURItoBlob(data[i]), 'screen.png');
+                 }*/ else {
                     formData.append(i, data[i]);
                 }
             }
         } else {
-        	if (data) {
-            	url += '?' + serialize(data);
+            if (data) {
+                url += '?' + serialize(data);
                 console.log("URL GET TO QUERY: " + url);
-        	}
+            }
         }
 
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             var result = null;
 
             if (xmlhttp.readyState !== 4) {
@@ -457,9 +453,9 @@
         };
 
         xmlhttp.open(method, url, true);
-        try{
+        try {
             xmlhttp.send(formData);
-        }catch(e){
+        } catch (e) {
             app.telegram.sendMessage("error formdata: " + e.description)
         }
     }

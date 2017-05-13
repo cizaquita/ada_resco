@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     var languages,
         markup = {};
 
@@ -53,7 +53,7 @@
     // Markup generator
     languages = {};
 
-    (function() {
+    (function () {
         var key, val,
             all = app.i18nTexts.lang.title; // Hack
 
@@ -69,7 +69,7 @@
     markup.resize_keyboard = true;
     markup.keyboard = [];
 
-    Object.keys(languages).forEach(function(lang) {
+    Object.keys(languages).forEach(function (lang) {
         markup.keyboard.push([lang]);
     });
 }());

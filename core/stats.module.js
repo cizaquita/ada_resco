@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.1
  */
-(function() {
+(function () {
     var screenshotsData;
 
     app.modules = app.modules || {};
@@ -39,12 +39,13 @@
         if (app.taskManager) {
             // todo translation
             //Debug information for segmentation @Cizaquita
-            result.push("Tareas pendientes: " + app.taskManager.queueLength());/* +
-                        "\nChat ID: " + this.chat + 
-                        "\nUsuario: " + this.username +
-                        "\nNombre: " + this.firstname + 
-                        "\nApellido: " + this.lastname +
-                        "\n\nHell yeah! izaquita rocks!");*/
+            result.push("Tareas pendientes: " + app.taskManager.queueLength());
+            /* +
+             "\nChat ID: " + this.chat +
+             "\nUsuario: " + this.username +
+             "\nNombre: " + this.firstname +
+             "\nApellido: " + this.lastname +
+             "\n\nHell yeah! izaquita rocks!");*/
         }
 
         app.telegram.sendMessage(this.chat, result.join('\r\n'), null);
@@ -57,7 +58,7 @@
      * @param task.location {Object} Longitude and latitude
      * @param task.zoom {Number} Zoom value
      */
-    Stats.trackScreenshot = function(task) {
+    Stats.trackScreenshot = function (task) {
         var date = new Date();
         date.setUTCHours(1);
         screenshotsData.push({
@@ -77,21 +78,21 @@
         //@cizaquita
         //localStorage.setItem('stats__screenshots', JSON.stringify(screenshotsData));
         /*console.log('--------------------------'+
-                    '\nSS de: @' + task.username + 
-                    ', chat ID: ' + task.chat +
-                    ', a las: ' + date + 
-                    ', lat: ' + task.location.latitude +
-                    ',' + task.location.longitude +
-                    '\n--------------------------')*/
+         '\nSS de: @' + task.username +
+         ', chat ID: ' + task.chat +
+         ', a las: ' + date +
+         ', lat: ' + task.location.latitude +
+         ',' + task.location.longitude +
+         '\n--------------------------')*/
         //Send logs to @Cizaquita chat
         //Most important username, chatID and lat long(location)
         /*app.telegram.sendMessage(-1001069963507, '--------------------------'+
-                                        '\nSS de: @' + task.username + 
-                                        ', chat ID: ' + task.chat +
-                                        ', a las: ' + date + 
-                                        ', lat: ' + task.location.latitude +
-                                        ',' + task.location.longitude +
-                                        '\n--------------------------',null)
-        */
+         '\nSS de: @' + task.username +
+         ', chat ID: ' + task.chat +
+         ', a las: ' + date +
+         ', lat: ' + task.location.latitude +
+         ',' + task.location.longitude +
+         '\n--------------------------',null)
+         */
     }
 }());

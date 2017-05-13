@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.0
  */
-(function() {
+(function () {
     var plugins, markup;
 
     app.modules = app.modules || {};
@@ -19,7 +19,7 @@
         'Mostrar Nombre de los portales': 'iitc/portal-names.user.js',
         'Mostrar Nivel de los portales': 'iitc/portal-level-numbers.user.js',
         'Mostrar la dirección de los Links': 'iitc/link-show-direction.user.js',
-        'Zonas':'iitc/draw-tools.user.js'
+        'Zonas': 'iitc/draw-tools.user.js'
     };
 
     /**
@@ -32,7 +32,7 @@
         this.chat = message.chat.id;
         this.lang = app.settings.lang(this.chat);
 
-        
+
         //REPLY MARKUP
         var inline_button_califica = {}, inline_button_callback = {}, inline_keyboard, inline_markup;
         inline_button_califica.text = "Ir"
@@ -57,7 +57,7 @@
         if (this.chat < 0) {
             app.telegram.sendMessage(this.chat, "<i>Utiliza esta funcionalidad por privado!</i>", inline_markup);
             this.complete = true;
-        }else{
+        } else {
             app.telegram.sendMessage(this.chat, resp, markup);
         }
     }
@@ -113,11 +113,11 @@
      * @returns {String} String with modules names and their statuses
      */
 
-     //We need to hide the DrawTools in the plugin list, only works
-     //For Bogota zones, for now only /norte command
-     //will be announced when ready
-     //@cizauqita
-    IITC.prototype.getCurrentStatus = function() {
+        //We need to hide the DrawTools in the plugin list, only works
+        //For Bogota zones, for now only /norte command
+        //will be announced when ready
+        //@cizauqita
+    IITC.prototype.getCurrentStatus = function () {
         var name, url, isEnabled,
             result = [],
             enabled = app.settings.plugins(this.chat);
@@ -136,32 +136,33 @@
                 result.push('✅' + name);
             } else {
                 if (name !== 'Zonas') {
-                    result.push('❎' + name);             
-                };
+                    result.push('❎' + name);
+                }
+                ;
             }
         }
 
         return result.join('\n');
     };
 
-    var acentos = (function() {
-        var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç", 
-        to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
-        mapping = {};
+    var acentos = (function () {
+        var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+            to = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+            mapping = {};
 
-        for(var i = 0, j = from.length; i < j; i++ )
-        mapping[ from.charAt( i ) ] = to.charAt( i );
+        for (var i = 0, j = from.length; i < j; i++)
+            mapping[from.charAt(i)] = to.charAt(i);
 
-        return function( str ) {
+        return function (str) {
             var ret = [];
-            for( var i = 0, j = str.length; i < j; i++ ) {
-                var c = str.charAt( i );
-                if( mapping.hasOwnProperty( str.charAt( i ) ) )
-                    ret.push( mapping[ c ] );
+            for (var i = 0, j = str.length; i < j; i++) {
+                var c = str.charAt(i);
+                if (mapping.hasOwnProperty(str.charAt(i)))
+                    ret.push(mapping[c]);
                 else
-                    ret.push( c );
-            }      
-            return ret.join( '' );
+                    ret.push(c);
+            }
+            return ret.join('');
         }
 
     })();
@@ -170,7 +171,7 @@
      * Build keyboard with modules list
      * @returns {Array} Array ready to use in markup
      */
-    IITC.prototype.buildKeyboard = function() {
+    IITC.prototype.buildKeyboard = function () {
         var name,
             result = [];
 
@@ -179,8 +180,9 @@
                 continue;
             }
             if (name !== 'Zonas') {
-                result.push([name]);                
-            };
+                result.push([name]);
+            }
+            ;
         }
 
         result.push([app.i18n(this.lang, 'iitc', 'complete_setup')]);

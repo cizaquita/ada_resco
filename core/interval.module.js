@@ -3,7 +3,7 @@
  * @author Artem Veikus artem@veikus.com
  * @version 2.2
  */
-(function() {
+(function () {
     var allowedTimeouts, allowedPauses, timeoutMarkup, pauseMarkup,
         intervals;
 
@@ -11,10 +11,10 @@
     app.modules.interval = Interval;
 
     //Disable command, possible bug and exploitation
-	//Looks like this slow the Tasks
-	//@cizaquita
-	//The result of this command will be a /cancel command
-	//For future testing the command will be /intervalEx
+    //Looks like this slow the Tasks
+    //@cizaquita
+    //The result of this command will be a /cancel command
+    //For future testing the command will be /intervalEx
     Interval.initMessage = '/interval_disable';
 
     intervals = localStorage.getItem('interval__tasks');
@@ -25,18 +25,18 @@
         intervals = [];
     }
 
-    setInterval(function() {
+    setInterval(function () {
         var lang,
             ts = new Date().getTime();
 
-        intervals.forEach(function(task, k) {
+        intervals.forEach(function (task, k) {
             if (!task) {
                 return;
             }
 
             if (task.nextPhotoAt <= ts) {
-                (function(k) {
-                    app.taskManager.add(task, function(result, error) {
+                (function (k) {
+                    app.taskManager.add(task, function (result, error) {
                         // Remove interval after bot lost access to group
                         if (error === 'Error: Bad Request: Not in chat' || error === 'Error: Bot was kicked from a chat') {
                             delete(intervals[k]);
@@ -161,7 +161,7 @@
      * Prepare and send response for each step
      * @param step {String}
      */
-    Interval.prototype.sendMessage = function(step) {
+    Interval.prototype.sendMessage = function (step) {
         var resp, markup, keyboard;
 
         switch (step) {
@@ -230,11 +230,11 @@
      * Find active task for current chat
      * @returns {number} Array index of found task (or -1)
      */
-    Interval.prototype.findActiveTask = function() {
+    Interval.prototype.findActiveTask = function () {
         var result = -1,
             chat = this.chat;
 
-        intervals.forEach(function(interval, i) {
+        intervals.forEach(function (interval, i) {
             if (interval && interval.chat === chat) {
                 result = i;
             }
