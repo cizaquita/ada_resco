@@ -1338,7 +1338,7 @@ var app = {};
 
                     var sal = new String();
                     var d = new Date();
-                    var h = addZero(d.getHours());
+                    var h = addZero(d.getHours()-5);
                     if (h >= 5 && h < 6) {
                         sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
                     }
@@ -1381,7 +1381,7 @@ var app = {};
 
                     var sal = new String();
                     var d = new Date();
-                    var h = addZero(d.getHours());
+                    var h = addZero(d.getHours()-5);
                     if (h >= 5 && h < 6) {
                         sal = ",que tengas un buen día.";
                     }
@@ -1548,15 +1548,71 @@ var app = {};
                         }
                         return i;
                     }
-
                     var d = new Date();
                     var h = addZero(d.getHours());
                     var m = addZero(d.getMinutes());
                     var s = addZero(d.getSeconds());
-                    if (username) {
-                        app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
-                    } else {
-                        app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' en Colombia GMT-5', null, message_id);
+
+                    var textSplited = text.split(" "),
+                        lat, lon, querySearch, timeZone = 0,timeZoneName = "", timeZoneId = "";
+                    querySearch = textSplited[2];
+                    if (textSplited[3]) {
+                        querySearch += " " + textSplited[3];
+                    } else if (textSplited[4]) {
+                        querySearch += " " + textSplited[4];
+                    } else if (textSplited[5]) {
+                        querySearch += " " + textSplited[5];
+                    }
+
+                    if (querySearch) {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address=' + querySearch + '&key=AIzaSyDm9cM0rKxtdzBZrEj97tbJvSuQsqLGq_4', true);
+                        xmlhttp.onreadystatechange = function () {
+                            if (xmlhttp.readyState == 4) {
+                                if (xmlhttp.status == 200) {
+                                    var obj = JSON.parse(xmlhttp.responseText);
+                                    if (obj.status == "OK") {
+                                        lat = obj["results"][0]["geometry"]["location"]["lat"];
+                                        lon = obj["results"][0]["geometry"]["location"]["lng"];
+
+                                        var xmlhttpx = new XMLHttpRequest();
+                                        xmlhttpx.open('GET', 'https://maps.googleapis.com/maps/api/timezone/json?location=' + lat + ',' + lon + '&timestamp=999999&key=AIzaSyBo_i7hWWx1oztcrkTWjKH0zdk5_3y94cM', true);
+                                        xmlhttpx.onreadystatechange = function () {
+
+                                            if (xmlhttpx.readyState == 4) {
+                                                if (xmlhttpx.status == 200) {
+                                                    var obj = JSON.parse(xmlhttpx.responseText);
+                                                    if (obj.status == "OK") {
+                                                        timeZone = obj.rawOffset / 3600;
+                                                        timeZoneId = obj.timeZoneId;
+                                                        timeZoneName = obj.timeZoneName;
+                                                        app.telegram.sendMessage(chat, "Nombre: <b>" + timeZoneName + "</b>\nZona: <b>" + timeZoneId + "</b> GMT" + timeZone, null);
+                                                        h = addZero(d.getHours()+(timeZone));
+
+                                                        if (username) {
+                                                            app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' para <b>' + timeZoneId + '</b>', null, message_id);
+                                                        } else {
+                                                            app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' para <b>' + timeZoneId + '</b>', null, message_id);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        };
+                                        xmlhttpx.send(null);
+                                        
+                                    } else {
+                                        app.telegram.sendMessage(chat, app.i18n(lang, 'place', 'not_found'), null);
+                                    }
+                                }
+                            }
+                        };
+                        xmlhttp.send(null);
+                    }else{
+                        if (username) {
+                            app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' GMT', null, message_id);
+                        } else {
+                            app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' GMT', null, message_id);
+                        }
                     }
                 }
                 ////////////////////
