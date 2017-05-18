@@ -1338,7 +1338,7 @@ var app = {};
 
                     var sal = new String();
                     var date = new Date();
-                    var d = new Date(date.valueOf() + (300 * 60000));
+                    var d = new Date(date.valueOf() + (-300 * 60000));
                     var h = addZero(d.getHours());
                     if (h >= 5 && h < 6) {
                         sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
@@ -1587,7 +1587,7 @@ var app = {};
                                                         timeZone = obj.rawOffset / 60;
                                                         timeZoneId = obj.timeZoneId;
                                                         timeZoneName = obj.timeZoneName;
-                                                        app.telegram.sendMessage(chat, "Nombre: <b>" + timeZoneName + "</b>\nZona: <b>" + timeZoneId + "</b> GMT" + timeZone, null);
+                                                        //app.telegram.sendMessage(chat, "Nombre: <b>" + timeZoneName + "</b>\nZona: <b>" + timeZoneId + "</b> GMT" + timeZone, null);
 
                                                         var date = new Date();//var date2 = new Date(date.valueOf() + date.getTimezoneOffset());
                                                         var d = new Date(date.valueOf() + (timeZone * 60000));
@@ -1597,9 +1597,9 @@ var app = {};
                                                         var h = addZero(d.getHours());
 
                                                         if (username) {
-                                                            app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' para <b>' + timeZoneId + '</b>', null, message_id);
+                                                            app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las <b>' + h + ":" + m + ":" + s + '</b> para ' + timeZoneId, null, message_id);
                                                         } else {
-                                                            app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' para <b>' + timeZoneId + '</b>', null, message_id);
+                                                            app.telegram.sendMessage(chat, 'Hola ' + name + ', soy ADA y son las <b>' + h + ":" + m + ":" + s + '</b> para ' + timeZoneId, null, message_id);
                                                         }
                                                     }
                                                 }
