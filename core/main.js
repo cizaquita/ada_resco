@@ -1337,8 +1337,9 @@ var app = {};
                     }
 
                     var sal = new String();
-                    var d = new Date();
-                    var h = addZero(d.getHours()-5);
+                    var date = new Date();
+                    var d = new Date(date.valueOf() + (300 * 60000));
+                    var h = addZero(d.getHours());
                     if (h >= 5 && h < 6) {
                         sal = ",buenos días, es muy temprano, ¿preparado para espichar sapos hoy?";
                     }
@@ -1548,7 +1549,7 @@ var app = {};
                         }
                         return i;
                     }
-                    var d = new Date();
+                    var d = new Date();//var date2 = new Date(date.valueOf() + date.getTimezoneOffset());
                     var h = addZero(d.getHours());
                     var m = addZero(d.getMinutes());
                     var s = addZero(d.getSeconds());
@@ -1583,11 +1584,17 @@ var app = {};
                                                 if (xmlhttpx.status == 200) {
                                                     var obj = JSON.parse(xmlhttpx.responseText);
                                                     if (obj.status == "OK") {
-                                                        timeZone = obj.rawOffset / 3600;
+                                                        timeZone = obj.rawOffset / 60;
                                                         timeZoneId = obj.timeZoneId;
                                                         timeZoneName = obj.timeZoneName;
                                                         app.telegram.sendMessage(chat, "Nombre: <b>" + timeZoneName + "</b>\nZona: <b>" + timeZoneId + "</b> GMT" + timeZone, null);
-                                                        h = addZero(d.getHours()+(timeZone));
+
+                                                        var date = new Date();//var date2 = new Date(date.valueOf() + date.getTimezoneOffset());
+                                                        var d = new Date(date.valueOf() + (timeZone * 60000));
+                                                        var h = addZero(d.getHours());
+                                                        var m = addZero(d.getMinutes());
+                                                        var s = addZero(d.getSeconds());
+                                                        var h = addZero(d.getHours());
 
                                                         if (username) {
                                                             app.telegram.sendMessage(chat, 'Hola @' + username + ', soy ADA y son las ' + h + ":" + m + ":" + s + ' para <b>' + timeZoneId + '</b>', null, message_id);
