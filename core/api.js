@@ -275,6 +275,32 @@
 
 
     /**
+     * UpdateProfile from BOT API
+     * @param telegram_id
+     * @param name
+     * @param telegram_nick
+     * @param callback {Function} Callback function
+     */
+    app.api.updateProfile = function (telegram_id, name, telegram_nick, callback) {
+        var url = API_URL + "update_profile/",
+            params = {};
+
+        params.telegram_id = telegram_id;
+        params.name = name;
+        params.telegram_nick = telegram_nick;
+
+        request('post', url, params, function (data) {
+            console.log("data: " + JSON.stringify(data));
+            if (data) {
+                callback(data);
+            } else {
+                callback(null);
+            }
+        })
+    };    
+
+
+    /**
      * Get Agent by Nick from BOT API
      * @param callback {Function} Callback function
      */

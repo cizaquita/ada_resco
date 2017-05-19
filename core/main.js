@@ -735,6 +735,37 @@ var app = {};
                         app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
                     }
                 }
+                // UPDATE PROFILE
+                else if (text.indexOf("update profile") > -1) {
+                    if (agent_verified_level > 3) {
+                        if (forward_from) {
+                            var agent_telegram_id = forward_from.id,
+                                agent_telegram_name = forward_from.first_name,
+                                agent_last_name = forward_from.last_name,
+                                agent_telegram_nick = forward_from.username;
+                                if (agent_last_name) agent_telegram_name  += " " + agent_last_name;
+
+                            app.api.updateProfile(agent_telegram_id, agent_telegram_name, agent_telegram_nick, function (data) {
+                                app.telegram.sendMessage(chat, 'Perfil de @' + data.telegram_nick + ', ha sido actualizado.', null, message_id);
+                            });
+
+                        } else if (reply_to_message) {
+                            var agent_telegram_id = reply_to_message.id,
+                                agent_telegram_name = reply_to_message.first_name,
+                                agent_last_name = reply_to_message.last_name,
+                                agent_telegram_nick = reply_to_message.username;
+                                if (agent_last_name) agent_telegram_name  += " " + agent_last_name;
+
+                            app.api.updateProfile(agent_telegram_id, agent_telegram_name, agent_telegram_nick, function (data) {
+                                app.telegram.sendMessage(chat, 'Perfil de @' + data.telegram_nick + ', ha sido actualizado.', null, message_id);
+                            });
+                        } else {
+                            app.telegram.sendMessage(chat, "Error: Dar Reply al mensaje del agente o no tiene permisos.", null, message_id);
+                        }
+                    } else {
+                        app.telegram.sendMessage(chat, 'No puedes utilizar esta función.', null, message_id);
+                    }
+                }
                 // CREAR AVATAR
                 else if (text.indexOf("crear avatar") > -1) {
                     if (agent_verified_level > 3) {
