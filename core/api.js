@@ -1,5 +1,5 @@
 (function () {
-    var API_URL = 'http://127.0.0.1:1338/';
+    var API_URL = 'http://ada.resistencia.la:1338/';
 
     app.api = {};
 
