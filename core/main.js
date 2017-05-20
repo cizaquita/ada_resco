@@ -750,10 +750,10 @@ var app = {};
                             });
 
                         } else if (reply_to_message) {
-                            var agent_telegram_id = reply_to_message.id,
-                                agent_telegram_name = reply_to_message.first_name,
-                                agent_last_name = reply_to_message.last_name,
-                                agent_telegram_nick = reply_to_message.username;
+                            var agent_telegram_id = reply_to_message.from.id,
+                                agent_telegram_name = reply_to_message.from.first_name,
+                                agent_last_name = reply_to_message.from.last_name,
+                                agent_telegram_nick = reply_to_message.from.username;
                                 if (agent_last_name) agent_telegram_name  += " " + agent_last_name;
 
                             app.api.updateProfile(agent_telegram_id, agent_telegram_name, agent_telegram_nick, function (data) {
