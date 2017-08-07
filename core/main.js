@@ -1249,6 +1249,36 @@ var app = {};
                             app.telegram.sendMessage(chat, "" + name + ", en Costa Rica están @Polderong @LeMich1, por favor ingresa a esta dirección http://goo.gl/Cjaqbp para que ingreses al grupo de entrenamiento de cr 😉, cualquier duda la puedes indicar aquí 😉, saludos ADA 😘😘😘", null, message_id);
                         }
                     }
+                    // Bolivia
+                    else if (text.indexOf("Bolivia") > -1){
+                        var showname = name;
+                        if (username) {
+                            showname = username;
+                        }
+                        if(words(text) > 7){
+                            if(text.indexOf("Santa Cruz") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Santa Cruz - Bolivia están @Brujinga @88mary256 (+591 73103204), cualquier duda las puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("La Paz") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en La Paz - Bolivia están @DavionHK @RuddyJarvis @denvas92, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Cochabamba") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Cochabamba - Bolivia están @Wilgut(+591 76460996) @Afrodita55, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Chuquisaca") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Chuquisaca - Bolivia están @Salvathore, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Oruro") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Oruro - Bolivia están @Timitoo, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Tarija") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Tarija - Bolivia están @Drigo92 @Gongallogalan(+591 77170035), cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Potosi") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Potosi - Bolivia están @Salvathore, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Beni") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Beni - Bolivia están @88mary256, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            } else if (text.indexOf("Pando") > -1){
+                                app.telegram.sendMessage(chat, "@" + showname + ", en Pando - Bolivia están @DavionHK, cualquier duda les puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                            }
+                        } else {
+                            app.telegram.sendMessage(chat, "@" + showname + ", en Bolivia están @Brujinga @Benjikun, cualquier duda los puedes contactar, saludos ADA 😘😘😘", null, message_id);
+                        }
+                    }
                     else {
                         app.telegram.sendMessage(chat, "Lo siento la ciudad que ingresaste no se encuentra en mi base de datos.\nIntenta buscando por una ciudad capital.", null, message_id);
                         app.telegram.sendMessage(-1001054945393, "<b>feedback ciudades:</b> " + text + " | <b>CHAT_ID:</b> " + chat + "\nUtiliza -> 'Ada responder' si sabes.", null);
